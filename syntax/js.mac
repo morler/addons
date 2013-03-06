@@ -1,0 +1,48 @@
+'*******************************************************************************
+' EverEdit Syntax File
+' Language:   JScript
+' Maintainer:  www.everedit.net  
+' History:
+'   2012/02/15 Create
+'*******************************************************************************
+Include( ".\const.mac" )
+
+Set js=CreateParser()
+
+'comment
+Set rJsLineComment=js.CreateRegion( COLOR_COMMENT1, "+//+", "$", True )
+Set rJsBlockComment=js.CreateRegion( COLOR_COMMENT1, "+/*+", "+*/+", True )
+js.AddRegion( rJsLineComment )
+js.AddRegion( rJsBlockComment )
+
+Set rJsRegex=js.CreateRegion( COLOR_STRING2, "(?<=(?<![\w\)\]/]\s*)|\*/)/(?=(?:\\\\)+/|.*?(?:[^\\/]/|[^\\](?:\\\\)*(?:\\/)?/))", "(?<=[^\\](?:\\\\)*(?:\\/)?)/", False )
+js.AddRegion( rJsRegex )
+
+'string
+Set rJsString2=js.CreateStringRegion( COLOR_STRING1, """", "\", False )
+Set rJsString1=js.CreateStringRegion( COLOR_STRING1, "'", "\", False )
+js.AddRegion( rJsString2 )
+js.AddRegion( rJsString1 )
+
+'function
+js.AddItem( js.CreateItem(COLOR_FUNCTION, "[\w_]+(?=\()", False) )
+
+'Reserved words
+js.AddWord( js.CreateWord(COLOR_WORD1, "abstract boolean break byte case catch char class const continue default delete do double else extends false final finally float for function goto if implements import in instanceof int interface long native new null package private protected public return short static super switch synchronized this throw throws transient true try typeof var void while with", True ) )
+
+'Built-in objects
+js.AddWord( js.CreateWord(COLOR_WORD2, "Anchor anchors Applet applets Area Array Button Checkbox Date document FileUpload Form forms Frame frames Hidden history Image images Link links Area location Math MimeType mimeTypes navigator options Password Plugin plugins Radio Reset Select String Submit Text Textarea window", True) )
+
+'number
+js.AddItem( js.CreateItem(COLOR_NUMBER, "\b\d+\b", False) )
+
+'folding
+Call js.FoldText( "\{", False )
+Call js.UnfoldText( "\}", False )
+Call js.CommentLine("//")
+Call js.CommentBlock("/*", "*/")
+Call js.SetPairs( "[](){}""""''" )
+Call js.IndentText( "{$", False )
+Call js.UnindentText( "^\s*}$", False )
+
+js.AddSnippet "js.snippet"

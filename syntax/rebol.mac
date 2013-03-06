@@ -1,0 +1,71 @@
+'*******************************************************************************
+' EverEdit Syntax File
+' Language:    Rebol
+' Maintainer:  qtxie  
+' History:
+'   2012/06/19 Create
+'*******************************************************************************
+Helper.Include( ".\const.mac" )
+
+Set rebol=Parser.CreateParser()
+
+'comment
+Set rLineComment=rebol.CreateRegion( COLOR_COMMENT1, "+;+", "$", True )
+
+rebol.AddRegion( rLineComment )
+
+'add todo to comment
+Set iTodo=rebol.CreateItem( COLOR_HIGHLIGHT2, "\b(TODO|FIX|FIXME)\b", False )
+rLineComment.AddItem( iTodo )
+
+'double quote string
+Set rString2=rebol.CreateStringRegion( COLOR_STRING1, """", "\", False )
+rebol.AddRegion( rString2 )
+
+'integer arithmetic
+Set nl_words1=rebol.CreateItem( COLOR_WORD1, "\+|\-|\*|\%|\<|\>|\:|\&|\||\^|\~|\$|\=|\'|\#", False )
+rebol.AddItem(nl_words1)
+
+'Functions
+rebol.AddItem( rebol.CreateItem(COLOR_WORD1, "(?<![a-zA-Z0-9_\-])(REBOL|either|abs|append|none|absolute|add|arccosine|arcsine|arctangent|cosine|divide|exp|log\-10|log\-2|log\-e|max|maximum|min|minimum|multiply|negate|power|random|remainder|sine|square\-root|subtract|tangent|complement|and|or|xor|not|all|any|break|catch|exit|halt|reduce|return|shield|if|else|for|forall|foreach|forskip|loop|repeat|while|until|do|change|clear|copy|fifth|find|first|format|fourth|free|func|head|insert|last|match|next|parse|past|pick|remove|second|set|select|skip|sort|tail|third|trim|alias|bind|use|import|make|make\-object|delete|echo|does|form|format|import|input|load|mold|prin|print|probe|read|save|secure|send|write|help|probe|trace|unless|context|newline|end|self|yes|join|query|intersect|in|repend|attempt|has|set\-flag)(?![a-zA-Z0-9_\-])", True ) )
+
+'datatypes
+rebol.AddItem( rebol.CreateItem(COLOR_WORD1, "(?<![a-zA-Z0-9_\-])(any\-block|block|path|set\-path|lit\-path|any\-function|function|native|action|op|routine|any\-string|string|file|email|url|tag|binary|issue|any\-type|any\-word|word|set\-word|get\-word|refinement|number|integer|decimal|series|list|bitset|char|datatype|date|error|event|hash|image|logic|money|object|pair|paren|port|struct|symbol|tag|time|tuple|unset)(?![a-zA-Z0-9_\-])", True ) )
+
+'single quote char
+rebol.AddItem( rebol.CreateItem(COLOR_STRING2, "'.'", False) )
+
+'macro
+rebol.AddItem( rebol.CreateItem(COLOR_MACRO, "\#\s*if\s+!?defined",False ) )
+rebol.AddItem( rebol.CreateItem(COLOR_MACRO, "\#\s*(if|pragma|else|elif|error|ifndef|define|endif|undef|ifdef)\b", False ) )
+
+Set iInclude1=rebol.CreateItem( COLOR_MACRO, "#\s*include\s*(.*?)", False )
+'iInclude1.Capture 1, COLOR_WORD1
+
+rebol.AddItem( iInclude1 )
+
+'shape string
+set shapeStr = rebol.CreateItem(COLOR_WORD1, "#[^\[\s]+", False)
+rebol.AddItem(shapeStr)
+
+'path string
+set pathStr = rebol.CreateItem(COLOR_WORD1, "%\S+", False)
+rebol.AddItem(pathStr)
+
+'rebol doc
+ Set nldoc_words=rebol.CreateItem(COLOR_COMMENT1, "^\s((Title|Author|File|Rights|License|Date|Purpose|Encap|Version)\:\s*(.+)$", True)
+rebol.AddItem(nldoc_words)
+
+'number
+rebol.AddItem( rebol.CreateItem(COLOR_NUMBER, "\b\d+\b", False) )
+
+'folding
+Call rebol.FoldText( "\[", False )
+Call rebol.UnfoldText( "\]", False )
+
+Call rebol.IndentText( "\[$", False )
+Call rebol.UnindentText( "^\s*\]$", False )
+
+Call rebol.SetPairs( "[]{}()""""''" )
+
+Call rebol.CommentLine(";")

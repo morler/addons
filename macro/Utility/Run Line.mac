@@ -1,0 +1,28 @@
+'获取当前激活的文档
+Set doc=App.ActiveDoc
+
+'当前光标位置
+Dim nLine
+nLine=doc.CaretLine
+
+'光标行的文本
+Dim strLine
+strLine=doc.GetLineText( nLine )
+If Len(strLine)<>0 Then
+
+	'运行并捕获该命令的输出
+	Dim strText
+	Set objShell = CreateObject("WScript.Shell")
+	Set objExecObject = objShell.Exec ("%comspec% /c " & strLine)
+	Do While Not objExecObject.StdOut.AtEndOfStream
+		strText = strText+objExecObject.StdOut.ReadAll()
+	Loop
+
+	'向文档发送一个命令:当前行之后新建行
+	Const EWC_NEWLINEAFTER=44
+	doc.SendCommand( EWC_NEWLINEAFTER )
+
+	'插入
+	doc.Insert( strText )
+End If
+

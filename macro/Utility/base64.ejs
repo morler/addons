@@ -1,0 +1,188 @@
+/**
+* base64 Encode Plugin for EverEdit.
+* Author: SmallFish
+* Date: 2012/11/16 星期五 19:57:24
+*/
+
+function readFile(filePath) {
+	var fp = new ActiveXObject("Scripting.FileSystemObject"),
+		text = "",
+		file,
+		stream;
+	if(fp.FileExists(filePath)) {
+		file = fp.GetFile(filePath);
+		stream = file.OpenAsTextStream(1, -2);
+		text = stream.ReadAll();
+		stream.close();
+	}
+	return text;
+}
+
+var Base64 = function(){
+
+	var table = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
+
+	return {
+		/**
+		 * Encodes data using base64 algorithm
+		 * @param {String} input
+		 * @returns {String}
+		 */
+		encode: function(input, isBinaryData) {
+
+			var i = 0, a, b, c, len, result = [];
+			var b64 = table;
+
+			/* 鸡肋，尚未找到二进制读取的方法 */
+			if (!isBinaryData) {
+				input = this._utf8_encode(input);
+			}
+			
+			len = input.length - input.length % 3;
+
+			while(i<len)
+			{
+				a = input.charCodeAt(i++);
+				b = input.charCodeAt(i++);
+				c = input.charCodeAt(i++);
+				result.push( b64.charAt(a>>2) + b64.charAt( (a&3)<<4 | b>>4 ) + b64.charAt( (b&0x0f)<<2 | c>>6 ) + b64.charAt(c&0x3f) );
+			}
+
+			i = input.length % 3;
+			a = input.charCodeAt(len);
+
+			if(i==1){
+				result.push( table.charAt(a>>2) );
+				result.push( table.charAt( (a&3)<<4 ) );
+				result.push("==");
+			} else if (i==2) {
+				result.push( table.charAt(a>>2) );
+				b = text.charCodeAt(len+1);
+				result.push( table.charAt( (a&3)<<4 | b>>4 ) );
+				result.push( table.charAt( (b&0x0f)<<2 ) );
+				result.push("=");
+			}
+			return result.join('');
+		},
+
+		decode: function(input, isBinaryData){
+			var output = "";
+			var chr1, chr2, chr3;
+			var a, b, c, d;
+			var i = 0;
+			var len = input.length - 4;
+			var b64 = table;
+
+			while (i < len) {
+
+				a = b64.indexOf(input.charAt(i++));
+				b = b64.indexOf(input.charAt(i++));
+				c = b64.indexOf(input.charAt(i++));
+				d = b64.indexOf(input.charAt(i++));
+
+				chr1 = (a << 2) | (b >> 4);
+				chr2 = ((b & 15) << 4) | (c >> 2);
+				chr3 = ((c & 3) << 6) | d;
+
+				output = output + String.fromCharCode(chr1) + String.fromCharCode(chr2) + String.fromCharCode(chr3);
+			}
+
+			a = b64.indexOf(input.charAt(i++));
+			b = b64.indexOf(input.charAt(i++));
+			c = b64.indexOf(input.charAt(i++));
+			d = b64.indexOf(input.charAt(i++));
+
+			chr1 = (a << 2) | (b >> 4);
+			chr2 = ((b & 15) << 4) | (c >> 2);
+			chr3 = ((c & 3) << 6) | d;
+
+			output = output + String.fromCharCode(chr1);
+
+			if (c != 64) {
+				output = output + String.fromCharCode(chr2);
+			}
+			if (d != 64) {
+				output = output + String.fromCharCode(chr3);
+			}
+
+			if (!isBinaryData) {
+				output = this._utf8_decode(output);
+			}
+
+			return output;
+		},
+
+		// private method for UTF-8 encoding
+		_utf8_encode : function (string) {
+
+			var utftext = "";
+
+			for (var n = 0; n < string.length; n++) {
+
+				var c = string.charCodeAt(n);
+
+				if (c < 128) {
+					utftext += String.fromCharCode(c);
+				}
+				else if((c > 127) && (c < 2048)) {
+					utftext += String.fromCharCode((c >> 6) | 192);
+					utftext += String.fromCharCode((c & 63) | 128);
+				}
+				else {
+					utftext += String.fromCharCode((c >> 12) | 224);
+					utftext += String.fromCharCode(((c >> 6) & 63) | 128);
+					utftext += String.fromCharCode((c & 63) | 128);
+				}
+			}
+
+			return utftext;
+		},
+
+		// private method for UTF-8 decoding
+		_utf8_decode : function (utftext) {
+			var string = "";
+			var i = 0;
+			var c = c1 = c2 = 0;
+
+			while ( i < utftext.length ) {
+
+				c = utftext.charCodeAt(i);
+
+				if (c < 128) {
+					string += String.fromCharCode(c);
+					i++;
+				}
+				else if((c > 191) && (c < 224)) {
+					c2 = utftext.charCodeAt(i+1);
+					string += String.fromCharCode(((c & 31) << 6) | (c2 & 63));
+					i += 2;
+				}
+				else {
+					c2 = utftext.charCodeAt(i+1);
+					c3 = utftext.charCodeAt(i+2);
+					string += String.fromCharCode(((c & 15) << 12) | ((c2 & 63) << 6) | (c3 & 63));
+					i += 3;
+				}
+			}
+
+			return string;
+		}
+	};
+}();
+
+var filePath = ActiveDoc.PathName;
+var text = ActiveDoc.Text;
+
+if(/^(?:[A-Za-z0-9\+\/=]{4})+$/.test(text.replace(/\r\n/g, ''))) {
+	ActiveDoc.Text = Base64.decode(text);
+} else {
+	if(/\.(?:gif|jpg|png|bmp)$/i.test(filePath)) {
+		text = readFile(filePath);
+		ActiveDoc.Text = filePath + "\r\n" + text.length + "\r\n" + btoa(text);
+	} else if(ActiveDoc.SelText) {
+		ActiveDoc.SelText = Base64.encode(ActiveDoc.SelText);
+	} else {
+		ActiveDoc.Text = Base64.encode(text);
+	}
+}
+

@@ -1,0 +1,69 @@
+'*******************************************************************************
+' EverEdit Syntax File
+' Language:    C++
+' Maintainer:  www.everedit.net  
+' History:
+'   2012/02/15 Created
+'	2012/06/17 Fixed bugs of include macro parser
+'*******************************************************************************
+Include( ".\const.mac" )
+
+Set cpp=CreateParser()
+
+'comment
+Set rLineComment=cpp.CreateRegion( COLOR_COMMENT1, "+//+", "$", True )
+Set rBlockComment=cpp.CreateRegion( COLOR_COMMENT1, "+/*+", "+*/+", True )
+cpp.AddRegion( rLineComment )
+cpp.AddRegion( rBlockComment )
+
+'add todo to comment
+Set iTodo=cpp.CreateItem( COLOR_HIGHLIGHT2, "\b(TODO|FIX)\b", False )
+rLineComment.AddItem( iTodo )
+rBlockComment.AddItem( iTodo )
+
+'single quote string
+Set rString1=cpp.CreateStringRegion( COLOR_STRING1, "'", "\", False )
+cpp.AddRegion( rString1 )
+
+Set rString2=cpp.CreateStringRegion( COLOR_STRING1, """", "\", False )
+cpp.AddRegion( rString2 )
+
+'function
+cpp.AddItem( cpp.CreateItem(COLOR_FUNCTION, "[\w_]+(?=\()", False) )
+
+'Reserved words
+cpp.AddWord( cpp.CreateWord(COLOR_WORD1, "auto bool break case catch char cerr cin class const continue cout default delete do double else enum explicit extern float for friend goto if inline int long namespace new operator private protected public register return short signed sizeof static struct switch template this throw try typedef union unsigned using virtual void volatile wchar_t while", True ) )
+
+'macro
+cpp.AddItem( cpp.CreateItem(COLOR_MACRO, "#\s*if\s+!?defined",False ) )
+cpp.AddItem( cpp.CreateItem(COLOR_MACRO, "#\s*(if|pragma|else|elif|error|ifndef|define|endif|undef|ifdef)\b", False ) )
+
+'operators
+cpp.AddItem( cpp.CreateItem(COLOR_OPERATOR, "[\{\}\(\)\+\-\*\\=%&\^!~\|<>?\.;\[\]]",False ) )
+Set rError=cpp.CreateRegion( COLOR_COMMENT1, "#\s*error\b", "$", True )
+cpp.AddRegion( rError )
+
+Set iInclude1=cpp.CreateItem( COLOR_MACRO, "#\s*include\s*(<.*?>)", False )
+iInclude1.Capture 1, COLOR_STRING2
+Set iInclude2=cpp.CreateItem( COLOR_MACRO, "#\s*include\s*(?="")", False )
+iInclude2.Capture 1, COLOR_STRING2
+
+cpp.AddItem( iInclude1 )
+cpp.AddItem( iInclude2 )
+
+'number
+cpp.AddItem( cpp.CreateItem(COLOR_NUMBER, "\b\d+\b", False) )
+
+cpp.AddSnippet "c.snippet"
+
+'folding
+Call cpp.FoldText( "\{", False )
+Call cpp.UnfoldText( "\}", False )
+
+Call cpp.IndentText( "(\[|{|\w+:$)", False )
+Call cpp.UnindentText( "^\s*}|\]$", False )
+
+Call cpp.SetPairs( "[]{}()""""''" )
+
+Call cpp.CommentLine("//")
+Call cpp.CommentBlock("/*", "*/")

@@ -1,0 +1,371 @@
+[Snippet]
+Title=HTML
+Count=92
+[Item0]
+Trigger=php
+Title=<?php...?>
+Snippet=#<?php\n\t$0\n?>\n
+[Item1]
+Trigger=abbr
+Title=Abbreviation
+Snippet=#<abbr title="${1:EverEdit}">${SELECTED_TEXT}$2</abbr>$0
+[Item2]
+Trigger=acronym
+Title=Acronym
+Snippet=#<acronym title="${1:EverEdit}">${SELECTED_TEXT}$2</acronym>$0
+[Item3]
+Trigger=add
+Title=Address
+Snippet=#<address>${SELECTED_TEXT}$1</address>$0
+[Item4]
+Trigger=base
+Title=Base
+Snippet=#<base href="${1:http://everedit.net/}" target="${3:_blank}" />\n$0
+[Item5]
+Trigger=big
+Title=Big Text
+Snippet=#<big>${SELECTED_TEXT}$1</big>$0
+[Item6]
+Trigger=bq
+Title=Blockquote
+Snippet=#<blockquote cite="${1:http://www.example.com/}">\n    <${2:p}>$0</$2>\n</blockquote>
+[Item7]
+Trigger=body
+Title=Body
+Snippet=#<body>\n    ${SELECTED_TEXT}$0\n</body>
+[Item8]
+Trigger=b
+Title=Boldface Text
+Snippet=#<b>${SELECTED_TEXT}$1</b>$0
+[Item9]
+Trigger=button
+Title=Button
+Snippet=#<button name="${1:test}" type="${2:button}" value="${3:val}">${6:Button Text}</button>$0
+[Item10]
+Trigger=caption
+Title=Caption
+Snippet=#<caption>${SELECTED_TEXT}$1</caption>$0
+[Item11]
+Trigger=cite
+Title=Citation
+Snippet=#<cite>${SELECTED_TEXT}$1</cite>$0
+[Item12]
+Trigger=code
+Title=Code
+Snippet=#<code>${SELECTED_TEXT}$1</code>$0
+[Item13]
+Trigger=dfn
+Title=Definition
+Snippet=#<dfn>${SELECTED_TEXT}$1</dfn>$0
+[Item14]
+Trigger=dd
+Title=Definition Description
+Snippet=#<dd>${SELECTED_TEXT}$1</dd>$0
+[Item15]
+Trigger=dl
+Title=Definition List
+Snippet=#<dl>\n    ${SELECTED_TEXT}$0\n</dl>
+[Item16]
+Trigger=dt
+Title=Definition Title
+Snippet=#<dt>${SELECTED_TEXT}$1</dt>$0
+[Item17]
+Trigger=del
+Title=Deleted Text
+Snippet=#<del cite="${2:example.htm}" datetime="${4:YYYYMMDD}">$5</del>$0
+[Item18]
+Trigger=div
+Title=Div
+Snippet=#<div id="${1:test}"${2: class="test"}>\n    $0\n</div>
+[Item19]
+Trigger=xmlenc
+Title=Document Encoding (XML)
+Snippet=#<?xml version="1.0" encoding="${1:UTF-8}"?>$0
+[Item20]
+Trigger=select
+Title=Dropdown List
+Snippet=#<select name="${1:test}">\n    ${SELECTED_TEXT}$0\n</select>
+[Item21]
+Trigger=option
+Title=Dropdown Option
+Snippet=#<option value="${1:val}"${2: selected="selected"}>$3</option>$0
+[Item22]
+Trigger=option
+Title=Dropdown Option Chain
+Snippet=#</option>\n<option value="${1:val}"${2: selected="selected"}>$3</option>$0
+[Item23]
+Trigger=optgroup
+Title=Dropdown Option Group
+Snippet=#<optgroup label="${1:Text Editors}">\n    ${SELECTED_TEXT}$0\n</optgroup>
+[Item24]
+Trigger=em
+Title=Emphasis
+Snippet=#<em>${SELECTED_TEXT}$1</em>$0
+[Item25]
+Trigger=fieldset
+Title=Fieldset
+Snippet=#<fieldset>\n    ${SELECTED_TEXT}$0\n</fieldset>
+[Item26]
+Trigger=form
+Title=Form
+Snippet=#<form method="${1:post}" action="${2:testing.php}"${3: id="test"} name="$4">\n    $0\n</form>
+[Item27]
+Trigger=frame
+Title=Frame
+Snippet=#<frame src="${1:example.htm}"${2: id="test"} name="$3" />
+[Item28]
+Trigger=frameset
+Title=Frameset
+Snippet=#<frameset${1: cols="vals"}${2: rows="vals"}>\n    $0\n</frameset>
+[Item29]
+Trigger=head
+Title=Head
+Snippet=#<head>\n    $0\n</head>
+[Item30]
+Trigger=he
+Title=Heading
+Snippet=#<h${1:1}>$2</h$1>$0
+[Item31]
+Trigger=hr
+Title=Horizonal Rule
+Snippet=#<hr />
+[Item32]
+Trigger=doctype
+Title=HTML 4.0 Transitional
+Snippet=#<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">\n$0
+[Item33]
+Trigger=doctype
+Title=HTML 4.01 Strict
+Snippet=#<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"\n    "http://www.w3.org/TR/html4/strict.dtd">\n$0
+[Item34]
+Trigger=html
+Title=HTML Tag
+Snippet=#<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">\n$0\n</html>
+[Item35]
+Trigger=a
+Title=Hyperlink
+Snippet=#<a href="${1:http://everedit.net/}"${2: title=""}${4: target="_blank"}>$6</a>$0
+[Item36]
+Trigger=img
+Title=Image
+Snippet=#<img src="${1:images/testing.jpg}"${2: width=""}${3: height=""}${4: alt=""} />$0
+[Item37]
+Trigger=map
+Title=Imagemap
+Snippet=#<map id="${1:test}" name="$2">\n    $0\n</map>
+[Item38]
+Trigger=area
+Title=Imagemap Area
+Snippet=#<area shape="${1:rect}" coords="${2:0,0,10,10}" href="${3:example.htm}"${4: target="_blank"} alt="$6" />$0
+[Item39]
+Trigger=iframe
+Title=Inline Frame
+Snippet=#<iframe src="${1:example.htm}"${2: width="" height=""}${5: id="test"} name="$6"></iframe>$0
+[Item40]
+Trigger=input
+Title=Input
+Snippet=#<input type="${1:text}" name="${2:test}"${3: value=""}$0 />
+[Item41]
+Trigger=ins
+Title=Inserted Text
+Snippet=#<ins${1: cite=""}${3: datetime=""}>$5</ins>$0
+[Item42]
+Trigger=i
+Title=Italicized Text
+Snippet=#<i>${SELECTED_TEXT}$1</i>$0
+[Item43]
+Trigger=kbd
+Title=Keyboard Text
+Snippet=#<kbd>${SELECTED_TEXT}$1</kbd>$0
+[Item44]
+Trigger=label
+Title=Label
+Snippet=#<label for="${1:test}">$2</label>$0
+[Item45]
+Trigger=br
+Title=Line Break
+Snippet=#<br />$0
+[Item46]
+Trigger=link
+Title=Link
+Snippet=#<link rel="${1:stylesheet}" href="${2:print.css}" type="$3" media="$4"/>\n$0
+[Item47]
+Trigger=li
+Title=List Item
+Snippet=#<li>${SELECTED_TEXT}$1</li>$0
+[Item48]
+Trigger=li
+Title=List Item Chain
+Snippet=#<li>$1</li>$0
+[Item49]
+Trigger=email
+Title=Mailto Link
+Snippet=#<a href="mailto:${1:test@example.com}">$2</a>$0
+[Item50]
+Trigger=meta
+Title=Meta (HTTP-Equiv)
+Snippet=#<meta http-equiv="${1:Content-type}" content="${2:text/html}; charset=${3:UTF-8}" />\n$0
+[Item51]
+Trigger=meta
+Title=Meta (Name)
+Snippet=#<meta name="${1:description}" content="${2:everedit}" />\n$0
+[Item52]
+Trigger=tt
+Title=Monospaced Text
+Snippet=#<tt>${SELECTED_TEXT}$1</tt>$0
+[Item53]
+Trigger=anchor
+Title=Named Anchor
+Snippet=#<a id="${1:test}" name="$1">$2</a>$0
+[Item54]
+Trigger=noframes
+Title=No Frames
+Snippet=#<noframes>${SELECTED_TEXT}$1</noframes>$0
+[Item55]
+Trigger=noscript
+Title=No Script
+Snippet=#<noscript>${SELECTED_TEXT}$1</noscript>$0
+[Item56]
+Trigger=objflash
+Title=Object (Flash Movie)
+Snippet=#<object type="application/x-shockwave-flash" data="${1:c.swf?path=movie.swf}" width="${2:300}" height="${3:300}">\n    <param name="movie" value="$1" />\n</object>$0
+[Item57]
+Trigger=objqt
+Title=Object (Quicktime Movie)
+Snippet=#<object classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" codebase="http://www.apple.com/qtactivex/qtplugin.cab" width="${1:100}" height="${2:100}">\n    <param name="src" value="${3:test.mov}" />\n    <param name="controller" value="true" />\n    <object type="video/quicktime" data="$3" width="$1" height="$2" class="$4">\n        <param name="controller" value="true" />\n    </object>\n</object>$0
+[Item58]
+Trigger=ol
+Title=Ordered List
+Snippet=#<ol>\n    ${SELECTED_TEXT}$0\n</ol>
+[Item59]
+Trigger=p
+Title=Paragraph
+Snippet=#<p>${SELECTED_TEXT}$0</p>
+[Item60]
+Trigger=param
+Title=Parameter
+Snippet=#<param name="${1:test}" value="${2:val}" />$0
+[Item61]
+Trigger=pre
+Title=Preformatted Text
+Snippet=#<pre>${SELECTED_TEXT}$1</pre>$0
+[Item62]
+Trigger=q
+Title=Quotation
+Snippet=#<q>${SELECTED_TEXT}$1</q>$0
+[Item63]
+Trigger=samp
+Title=Sample Code
+Snippet=#<samp>${SELECTED_TEXT}$1</samp>$0
+[Item64]
+Trigger=script
+Title=Script
+Snippet=#<script type="${1:text/javascript}">\n    $0\n</script>
+[Item65]
+Trigger=scriptx
+Title=Script (External file)
+Snippet=#<script type="${1:text/javascript}" src="${2:js/application.js}"></script>\n$0
+[Item66]
+Trigger=small
+Title=Small Text
+Snippet=#<small>${SELECTED_TEXT}$1</small>$0
+[Item67]
+Trigger=span
+Title=Span
+Snippet=#<span class="${1:test}">$2</span>$0
+[Item68]
+Trigger=strong
+Title=Strong Emphasis
+Snippet=#<strong>${SELECTED_TEXT}$1</strong>$0
+[Item69]
+Trigger=style
+Title=Style
+Snippet=#<style type="text/css" media="${1:screen}" id="${2:test}">\n    $0\n</style>
+[Item70]
+Trigger=stylex
+Title=Style (External file)
+Snippet=#<style type="text/css" media="${1:screen}">@import url('${3:style.css}');</style>\n$0
+[Item71]
+Trigger=stylex
+Title=Style (XML)
+Snippet=#<?xml-stylesheet href="${1:example.css}" type="text/css"?>\n$0
+[Item72]
+Trigger=sub
+Title=Subscript
+Snippet=#<sub>${SELECTED_TEXT}$1</sub>$0
+[Item73]
+Trigger=sup
+Title=Superscript
+Snippet=#<sup>${SELECTED_TEXT}$1</sup>$0
+[Item74]
+Trigger=table
+Title=Table
+Snippet=#<table>\n    ${SELECTED_TEXT}$0\n</table>
+[Item75]
+Trigger=tbody
+Title=Table Body
+Snippet=#<tbody>\n    ${SELECTED_TEXT}$0\n</tbody>
+[Item76]
+Trigger=td
+Title=Table Cell
+Snippet=#<td>${SELECTED_TEXT}$1</td>$0
+[Item77]
+Trigger=col
+Title=Table Column
+Snippet=#<col col="${1:20}">$2</col>$0
+[Item78]
+Trigger=colgroup
+Title=Table Column Group
+Snippet=#<colgroup span="${1:2}">\n    $0\n</colgroup>
+[Item79]
+Trigger=tfoot
+Title=Table Footer
+Snippet=#<tfoot>\n    ${SELECTED_TEXT}$0\n</tfoot>
+[Item80]
+Trigger=thead
+Title=Table Header
+Snippet=#<thead>\n    ${SELECTED_TEXT}$0\n</thead>
+[Item81]
+Trigger=th
+Title=Table Header Cell
+Snippet=#<th>${SELECTED_TEXT}$1</th>$0
+[Item82]
+Trigger=tr
+Title=Table Row
+Snippet=#<tr>\n    ${SELECTED_TEXT}$0\n</tr>
+[Item83]
+Trigger=bdo
+Title=Text Direction
+Snippet=#<bdo dir="${1:rtl}">${SELECTED_TEXT}$0</bdo>
+[Item84]
+Trigger=textarea
+Title=Textarea
+Snippet=#<textarea name="${1:test}" rows="${2:10}" cols="${3:10}">\n    $0\n</textarea>
+[Item85]
+Trigger=title
+Title=Title
+Snippet=#<title>${1:Untitled Page}</title>\n$0
+[Item86]
+Trigger=ul
+Title=Unordered List
+Snippet=#<ul>\n    ${SELECTED_TEXT}$0\n</ul>
+[Item87]
+Trigger=var
+Title=Variable
+Snippet=#<var>${SELECTED_TEXT}$1</var>$0
+[Item88]
+Trigger=doctype
+Title=XHTML 1.0 Frameset
+Snippet=#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN"\n    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">\n$0
+[Item89]
+Trigger=doctype
+Title=XHTML 1.0 Strict
+Snippet=#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"\n\t"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">\n$0
+[Item90]
+Trigger=doctype
+Title=XHTML 1.0 Transitional
+Snippet=#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"\n    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">\n$0
+[Item91]
+Title=XHTML 1.1
+Trigger=doctype
+Snippet=#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"\n    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">\n$0

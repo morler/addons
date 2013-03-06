@@ -1,0 +1,25 @@
+'*******************************************************************************
+' EverEdit Syntax File
+' Language:    Pascal
+' Maintainer:  www.everedit.net  
+' History:
+'   2012/08/16 Create
+'*******************************************************************************
+Include( ".\const.mac" )
+
+Set pas=CreateParser()
+
+Set rComment1=pas.CreateRegion(COLOR_COMMENT1, "+{+", "+}+", False )
+Set rComment2=pas.CreateRegion(COLOR_COMMENT1, "+(*+", "+*)+", False )
+
+Set rString1=cpp.CreateStringRegion( COLOR_STRING1, "'", "", False )
+
+
+activedoc
+pas.AddRegion( rComment )
+pas.AddItem( iKey )
+pas.AddItem( iVar )
+pas.AddItem( iRef )
+pas.SetPairs( "[]''""{}()" )
+
+pas.CommentLine ";"

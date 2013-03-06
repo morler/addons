@@ -1,0 +1,147 @@
+[Snippet]
+Title=PHP
+Count=35
+[Item0]
+Trigger=if?
+Title=$.. = ( .. ) ? .. : ..
+Snippet=#$${1:retVal} = ( ${2:condition} ) ? ${3:a} : ${4:b} ;
+[Item1]
+Trigger=array
+Title=$.. = array (..)
+Snippet=#$${1:arrayName} = array( '$2'${3:,} );$0
+[Item2]
+Trigger=globals
+Title=$GLOBALS['..']
+Snippet=#$GLOBALS['${1:variable}']${2: = }${3:something}${4:;}$0
+[Item3]
+Trigger=ph
+Title=<? .. ?>
+Snippet=#<?${1:=} $0 ?>
+[Item4]
+Trigger=php
+Title=<?php .. ?>
+Snippet=#<?php\n\n\t$0\n\n?>
+[Item5]
+Trigger=case
+Title=case ..
+Snippet=#case '${1:variable}':\n\t${0:# code...}\nbreak;
+[Item6]
+Trigger=class
+Title=class ..
+Snippet=#class ${1:ClassName}\n{\n\tfunction __construct ( ${2:argument} )\n\t{\n\t\t${0:# code...}\n\t}\n}\n
+[Item7]
+Trigger=cookie
+Title=COOKIE['..']
+Snippet=#$_COOKIE['${1:variable}']
+[Item8]
+Trigger=def
+Title=define( )
+Snippet=#define('$1', $2);\n$0
+[Item9]
+Trigger=def?
+Title=defined( )
+Snippet=#defined( '$1' )$0
+[Item10]
+Trigger=do
+Title=do .. while ..
+Snippet=#do\n{\n\t${0:# code...}\n\t\n} while ( ${1:$a <= 10} );
+[Item11]
+Trigger=else
+Title=else ..
+Snippet=#else\n{\n\t${0:# code...}\n}
+[Item12]
+Trigger=elseif
+Title=elseif ..
+Snippet=#elseif ( ${1:condition} )\n{\n\t${0:# code...}\n}
+[Item13]
+Trigger=env
+Title=ENV['..']
+Snippet=#$_ENV['${1:variable}']
+[Item14]
+Trigger=files
+Title=FILES['..']
+Snippet=#$_FILES['${1:variable}']
+[Item15]
+Trigger=for
+Title=for ..
+Snippet=#for ( $${1:i}=${2:0}; $${1:i} < $3; $${1:i}++ )\n{ \n\t${0:# code...}\n}
+[Item16]
+Trigger=foreach
+Title=foreach ..
+Snippet=#foreach( $${1:variable} as $${2:key} => $${3:value} )\n{\n\t${0:# code...}\n}
+[Item17]
+Trigger=function
+Title=function ..
+Snippet=#${1:public }function ${2:FunctionName} (${3: value}${4:=''})\n{\n\t${0:# code...}\n}
+[Item18]
+Trigger=get
+Title=GET['..']
+Snippet=#$_GET['${1:variable}']
+[Item19]
+Trigger=if
+Title=if ..
+Snippet=#if ( ${1:condition} )\n{\n\t${0:# code...}\n}
+[Item20]
+Trigger=ifelse
+Title=if .. else ..
+Snippet=#if ( ${1:condition} )\n{\n\t${2:# code...}\n}\nelse\n{\n\t${3:# code...}\n}\n$0
+[Item21]
+Trigger=incl
+Title=include(..)
+Snippet=#include( '${1:file}' );$0
+[Item22]
+Trigger=incl1
+Title=include_once(..)
+Snippet=#include_once( '${1:file}' );$0
+[Item23]
+Trigger=post
+Title=POST['..']
+Snippet=#$_POST['${1:variable}']
+[Item24]
+Trigger=print
+Title=print ".."
+Snippet=#print "${1:string}"${2: . };$0
+[Item25]
+Trigger=req
+Title=REQUEST['..']
+Snippet=#$_REQUEST['${1:variable}']
+[Item26]
+Trigger=req
+Title=require(..)
+Snippet=#require( '${1:file}' );$0
+[Item27]
+Trigger=req1
+Title=require_once(..)
+Snippet=#require_once( '${1:file}' );$0
+[Item28]
+Trigger=retres
+Title=return $resVal
+Snippet=#return ${1:resVal};$0
+[Item29]
+Trigger=ret0
+Title=return FALSE
+Snippet=#return FALSE;$0
+[Item30]
+Trigger=ret1
+Title=return TRUE
+Snippet=#return TRUE;$0
+[Item31]
+Trigger=sever
+Title=SERVER['..']
+Snippet=#$_SERVER['${1:variable}']
+[Item32]
+Trigger=session
+Title=SESSION['..']
+Snippet=#$_SESSION['${1:variable}']
+[Item33]
+Trigger=switch
+Title=switch ..
+Snippet=#switch ( $1 )\n{\n\tcase $2:\n\t\t${3:# code...}\n\t\tbreak;\t\t\n\tdefault:\n\t\t$0;\n\t\tbreak;\n}
+[Item34]
+Trigger=while
+Title=while ..
+Snippet=#while ( ${1:$a <= 10} )\n{\n\t${0:# code...}\n}
+[Item35]
+Trigger=while
+Title=while ..
+Snippet=#while ( ${1:$a <= 10} )\n{\n\t${0:# code...}\n}

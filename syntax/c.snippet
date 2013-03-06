@@ -1,0 +1,135 @@
+[Snippet]
+Title=C/C++
+Count=33
+[Item0]
+Trigger=def
+Title=#define
+Snippet=##define ${1:identifier} ${2:replacement}\r\n$0
+[Item1]
+Trigger=macro
+Title=#define (Macro)
+Snippet=##define ${1:macroName}(${2:arguments}) (${3:replacement})\r\n$0
+[Item2]
+Trigger=iff
+Title=#if block
+Snippet=##if ${1:constant_expression}\r\n$2\r\n#endif\r\n$0
+[Item3]
+Trigger=ifdef
+Title=#ifdef block
+Snippet=##ifdef ${1:symbol}\r\n$2\r\n#endif\r\n$0
+[Item4]
+Trigger=once
+Title=#ifndef (Guard)
+Snippet=##ifndef __${1:FILENAME_HPP}__\r\n#define __$1__\r\n\r\n$0\r\n\r\n#endif
+[Item5]
+Trigger=ifndef
+Title=#ifndef block
+Snippet=##ifndef ${1:symbol}\r\n$2\r\n#endif\r\n$0
+[Item6]
+Trigger=inc
+Title=#include (File)
+Snippet=##include "${1:filename.h}"\n$0
+[Item7]
+Trigger=inc
+Title=#include (Library)
+Snippet=##include <${1:library}>\r\n$0
+[Item8]
+Trigger=ccast
+Title=const_cast
+Snippet=#const_cast<${1:type}>(${2:expression})$0
+[Item9]
+Trigger=do
+Title=Do...while loop
+Snippet=#do {\n\t$0\n} while (${1:condition});
+[Item10]
+Trigger=doi
+Title=Do...while loop (iterators)
+Snippet=#do {\r\n\t$0\r\n} while (${1:iterator} != ${2:container}.end());
+[Item11]
+Trigger=dcast
+Title=dynamic_cast
+Snippet=#dynamic_cast<${1:type}*>(${2:expression})$0
+[Item12]
+Trigger=enum
+Title=Enumeration
+Snippet=#enum ${1:name} {\r\n\t$0\r\n};
+[Item13]
+Trigger=for
+Title=For loop
+Snippet=#for (${1:unsigned int} ${2:i} = ${3:0}; $2 ${4:<} ${5:count}; $2${6:++}) {\n\t$0\n}
+[Item14]
+Trigger=fori
+Title=For loop (iterators)
+Snippet=#for (${1:iterator} = ${2:container}.begin(); $1 != $2.end(); $1++) {\r\n\t$0\r\n}
+[Item15]
+Trigger=func
+Title=Function declaration
+Snippet=#${1:int} ${2:functionName}(${3:parameters}) {\r\n\t$0\r\n}
+[Item16]
+Trigger=if
+Title=If conditional
+Snippet=#if (${1:condition}) {\r\n\t$0\r\n}
+[Item17]
+Trigger=main
+Title=Main() function
+Snippet=#int main(int argc, char *argv[]) {\r\n\t$0\r\n\treturn 0;\r\n}
+[Item18]
+Trigger=ns
+Title=Namespace
+Snippet=#namespace ${1:name} {\r\n\r\n$0\r\n\r\n}
+[Item19]
+Trigger=overload
+Title=Overload operator
+Snippet=#${1:returnType} ${2:className}::operator${3:+}(${4:parameters}) {\r\n\t$0\r\n}
+[Item20]
+Trigger=rcast
+Title=reinterpret_cast
+Snippet=#reinterpret_cast<${1:type}>(${2:expression})$0
+[Item21]
+Trigger=sclass
+Title=Specialized class
+Snippet=#template <>\r\nclass ${1:className} <${2:typeName}> {\r\n\t$0\r\n};
+[Item22]
+Trigger=smethod
+Title=Specialized method
+Snippet=#template <>\r\n${1:int} ${2:className}<${3:typeName}>::${4:methodName}(${5:parameters}) {\r\n\t$0\r\n}
+[Item23]
+Trigger=scast
+Title=static_cast
+Snippet=#static_cast<${1:type}>(${2:expression})$0
+[Item24]
+Trigger=struct
+Title=Struct declaration
+Snippet=#struct ${1:name} {\r\n\t$0\r\n};
+[Item25]
+Trigger=switch
+Title=Switch statement
+Snippet=#switch (${1:statement}) {\n${2:default:}\n\t$0\n\tbreak;\n}
+[Item26]
+Trigger=template
+Title=Template line
+Snippet=#template <typename ${1:T}>\r\n$0
+[Item27]
+Trigger=try
+Title=Try
+Snippet=#try {\r\n\t$0\r\n}
+[Item28]
+Trigger=tdef
+Title=Typedef
+Snippet=#typedef ${1:type} ${2:alias};\r\n$0
+[Item29]
+Trigger=using
+Title=Using
+Snippet=#using ${1:std}::${2:name};\r\n$0
+[Item30]
+Trigger=usens
+Title=Using namespace
+Snippet=#using namespace ${1:std};\r\n$0
+[Item31]
+Trigger=while
+Title=While loop
+Snippet=#while (${1:condition}) {\r\n\t$0\r\n}
+[Item32]
+Trigger=whilei
+Title=While loop (iterators)
+Snippet=#while (${1:iterator} != ${2:container}.end()) {\r\n\t$0\r\n}

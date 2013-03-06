@@ -1,0 +1,13 @@
+'*******************************************************************************
+' EverEdit Syntax File
+' Language:    HTML
+' Maintainer:  www.everedit.net  
+' History:
+'   2012/02/15 Create
+'*******************************************************************************
+Include( ".\html_base.mac" )
+
+html.AddRegion( rScript )
+html.AddRegion( rCss )
+html.AddRegion( rHtmlBlockComment )
+html.AddRegion( rHtmlTag )

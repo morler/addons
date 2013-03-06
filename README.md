@@ -2,8 +2,7 @@ addons
 ======
 
 Add-ons for EverEdit
-Test
 
 
+2013-03-06
 
-what

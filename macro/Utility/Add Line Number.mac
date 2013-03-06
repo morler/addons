@@ -1,0 +1,8 @@
+Set doc=App.ActiveDoc
+doc.SendCommand( 7 )
+
+cnt=doc.LineCount
+For idx=1 To cnt
+	s= CStr(idx) & Chr(9) & ": "
+	Call doc.InsertAt( idx-1, 0, s )
+Next 

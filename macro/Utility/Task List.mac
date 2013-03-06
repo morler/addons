@@ -1,0 +1,9 @@
+Dim strCommand
+strCommand = "tasklist"
+Set objShell = CreateObject("WScript.Shell")
+Set objExecObject = objShell.Exec ("%comspec% /c " & strCommand)
+Do While Not objExecObject.StdOut.AtEndOfStream
+	strText = strText+objExecObject.StdOut.ReadAll()
+Loop
+
+App.ActiveDoc.Insert( strText )

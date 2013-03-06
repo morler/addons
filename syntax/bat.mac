@@ -1,0 +1,30 @@
+'*******************************************************************************
+' EverEdit Syntax File
+' Language:    Windows Batch
+' Maintainer:  www.everedit.net  
+' History:
+'   2012/08/07 Create
+'*******************************************************************************
+Include( ".\const.mac" )
+
+Set bat=CreateParser()
+
+Set rComment=bat.CreateRegion(COLOR_COMMENT1, "\brem\b", "$", False )
+Set rString1=bat.CreateStringRegion( COLOR_STRING1, "'", "", False )
+Set rString2=bat.CreateStringRegion( COLOR_STRING1, """", "", False )
+Set wWord1=bat.CreateWord( COLOR_WORD1, "BEGIN END RETURN ASSOC AT ATTRIB BREAK CACLS CALL CD CHCP CHDIR CHKDSK CLS CMD COLOR COMP COMPACT CONVERT COPY DATE DEL DIR DISKCOMP DISKCOPY DOSKEY ECHO ENDLOCAL ERASE EXIT FC FIND FINDSTR FOR FORMAT FTYPE GOTO GRAFTABL HELP IF KEYB LABEL MD MKDIR MODE MORE MOVE PATH PAUSE POPD PRINT PROMPT RD RECOVER REN RENAME REPLACE RESTORE RMDIR SET SETLOCAL SHIFT SORT SUBST START TIME TREE TYPE VER VERIFY VOL XCOPY EXIST ON OFF", False )
+wWord1.AutoCase=True
+
+Set wWord2=bat.CreateWord( COLOR_COMMENT1, "REM", False )
+wWord2.AutoCase=True
+
+bat.AddRegion( rComment )
+bat.AddRegion( rString1 )
+bat.AddRegion( rString2 )
+bat.AddWord( wWord1 )
+
+rComment.AddWord( wWord2 )
+
+
+bat.SetPairs( "[]{}()""""''" )
+bat.CommentLine( "REM " )

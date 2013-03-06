@@ -1,0 +1,15 @@
+[Snippet]
+Title=JavaScript
+Count=3
+[Item0]
+Trigger=fun
+Title=Function
+Snippet=#function ${1:function_name}(${2:first_argument}) {\n\t$0\n\treturn true;\n}
+[Item1]
+Trigger=fun:
+Title=Function in Object
+Snippet=#${1:function_name} : function (${2:first_argument}) {\n\t$0\n\treturn true;\n}
+[Item2]
+Trigger=proto
+Title=Prototype
+Snippet=#${1:class_name}.prototype.${2:method_name} = function(${3:first_argument})\n{\n\t$0\n};

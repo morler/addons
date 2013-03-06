@@ -1,0 +1,91 @@
+[Snippet]
+Title=Python
+Count=22
+[Item0]
+Trigger=case
+Title=case ...
+Snippet=#case '${1:variable}':\n\t${0:# code...}\n\tbreak;
+[Item1]
+Trigger=class
+Title=class ...
+Snippet=#class ${1:ClassName}\n{\n\tfunction ${2:__construct}(${3:argument})\n\t{\n\t\t${0:# code...}\n\t}\n}\n
+[Item2]
+Trigger=$_
+Title=COOKIE['бн']
+Snippet=#$_COOKIE['${1:variable}']
+[Item3]
+Trigger=def
+Title=define(бн, бн)
+Snippet=#define('$1', $2);\n$0
+[Item4]
+Trigger=do
+Title=do бн while бн
+Snippet=#do {\n\t$0\n} while ($$1);\n
+[Item5]
+Trigger=elseif
+Title=elseif ...
+Snippet=#elseif (${1:condition}) {\n\t$0\n}\n
+[Item6]
+Trigger=$_
+Title=ENV['бн']
+Snippet=#$_ENV['${1:variable}']
+[Item7]
+Title=FILES['бн']
+Trigger=$_
+Snippet=#$_FILES['${1:variable}']
+[Item8]
+Title=for ...
+Trigger=for
+Snippet=#for (\$${1:i}=${2:0}; \$${1:i} < $3; \$${1:i}++) { \n\t$0\n}\n
+[Item9]
+Title=GET['бн']
+Trigger=$_
+Snippet=#$_POST['${1:variable}']
+[Item10]
+Title=GLOBALS['бн']
+Trigger=$_
+Snippet=#$GLOBALS['${1:variable}']${2: = }${3:something}
+[Item11]
+Title=if бн else бн
+Trigger=if
+Snippet=#if (${1:condition}) {\n\t${2:# code...}\n} else {\n\t${3:# code...}\n}\n$0\n
+[Item12]
+Title=include бн
+Trigger=inc
+Snippet=#include '${1:file}';$0
+[Item13]
+Title=include_once бн
+Trigger=inc
+Snippet=#include_once '${1:file}';$0
+[Item14]
+Title=POST['бн']
+Trigger=$_
+Snippet=#$_POST['${1:variable}']
+[Item15]
+Title=REQUEST['бн']
+Trigger=$_
+Snippet=#$_REQUEST['${1:variable}']
+[Item16]
+Title=require бн
+Trigger=req
+Snippet=#require '${1:file}';$0
+[Item17]
+Title=require_once бн
+Trigger=req
+Snippet=#require_once '${1:file}';$0
+[Item18]
+Title=SERVER['бн']
+Trigger=$_
+Snippet=#$_SERVER['${1:variable}']
+[Item19]
+Title=SESSION['бн']
+Trigger=$_
+Snippet=#$_SESSION['${1:variable}']
+[Item20]
+Title=switch бн
+Trigger=switch
+Snippet=#switch (${1:variable}) {\n\tcase '${2:value}':\n\t\t${3:# code...}\n\t\tbreak;\n\t$0\n\tdefault:\n\t\t${4:# code...}\n\t\tbreak;\n}\n
+[Item21]
+Title=while ...
+Trigger=while
+Snippet=#while (${1:$a <= 10}) {\n\t${0:# code...}\n}

@@ -1,0 +1,71 @@
+[Snippet]
+Title=Perl
+Count=15
+[Item0]
+Trigger=unless
+Title=Conditional
+Snippet=#unless ($1) {\r\n\t${2:# body...}\r\n}\r\n
+[Item1]
+Trigger=if
+Title=Conditional
+Snippet=#if ($1) {\r\n\t${2:# body...}\r\n}\r\n
+[Item2]
+Trigger=ife
+Title=Conditional if..else
+Snippet=#if ($1) {\r\n\t${2:# body...}\r\n} else {\r\n\t${3:# else...}\r\n}\r\n
+[Item3]
+Trigger=ifee
+Title=Conditional if..elsif..else
+Snippet=#if ($1) {\r\n\t${2:# body...}\r\n} elsif ($3) {\r\n\t${4:# elsif...}\r\n} else {\r\n\t${5:# else...}\r\n}\r\n
+[Item4]
+Trigger=xif
+Title=Conditional One-line
+Snippet=#${1:expression} if ${2:condition};\r\n
+[Item5]
+Trigger=xunless
+Title=Conditional One-line
+Snippet=#${1:expression} unless ${2:condition};\r\n
+[Item6]
+Trigger=sub
+Title=Function
+Snippet=#sub ${1:function_name} {\r\n\t${2:# body...}\r\n}\r\n
+[Item7]
+Trigger=fore
+Title=Loop
+Snippet=#foreach ${1:my} $${2:x} (@${3:array}) {\n\t${4:# body...}\n}\n
+[Item8]
+Trigger=while
+Title=Loop
+Snippet=#while ($1) {\r\n\t${2:# body...}\r\n}\r\n
+[Item9]
+Trigger=for
+Title=Loop
+Snippet=#for (my $${1:var} = 0; $$1 < ${2:expression}; $$1++) {\n\t${3:# body...}\n}\n 
+[Item10]
+Trigger=xwhile
+Title=Loop One-line
+Snippet=#${1:expression} while ${2:condition};\r\n
+[Item11]
+Trigger=xfore
+Title=Loop One-line
+Snippet=#${1:expression} foreach @${2:array};\r\n
+[Item12]
+Trigger=class
+Title=Package
+Snippet=#package ${1:ClassName};\n\n${2:use base qw:ParentClass};\n\n}sub new {\n\tmy $class = shift;\n\t$class = ref $class if ref $class;\n\tmy $self = bless {}, $class;\n\t$self;\n}\n
+[Item13]
+Trigger=test
+Title=Test
+Snippet=##!/usr/bin/perl -w\r\n\r\nuse strict;\r\nuse Test::More tests => ${1:1};\r\nuse ${2:ModuleName};\r\n\r\nok(${3:assertion});\r\n
+[Item14]
+Trigger=eval
+Title=Try/Except
+Snippet=#eval {\n\t${1:# do something risky...}\n};\nif ($2) {\n\t${3:# handle failure...}\n}\n
+[Item15]
+Trigger=eval
+Title=Try/Except
+Snippet=#eval {\r\n\t${1:# do something risky...}\r\n};\r\nif (\\$@) {\r\n\t${2:# handle failure...}\r\n}\r\n
+[Item16]
+Trigger=while
+Title=Loop
+Snippet=#while ($1) {\r\n\t${2:# body...}\r\n}\r\n

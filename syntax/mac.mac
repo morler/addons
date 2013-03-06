@@ -1,0 +1,22 @@
+'*******************************************************************************
+' EverEdit Syntax File
+' Language:    EverEdit Macro
+' Maintainer:  www.everedit.net  
+' History:
+'   2012/02/15 Create
+'	2012/06/24 Update
+'*******************************************************************************
+Include( ".\vbs.mac" )
+
+Set wWordFunc=vbs.CreateWord( COLOR_WORD2, "ActiveDoc Include CreateParser Capture CreateRegion CreateStringRegion CreateItem CreateWord AddRegion AddItem FoldText UnfoldText AddParser CommentLine CommentBlock SetPairs IndentText UnindentText AddWord AutoCase AddSnippet Scope", False )
+wWordFunc.AutoCase=True
+
+Set wWordConst=vbs.CreateWord( COLOR_WORD2, "COLOR_DEFAULT COLOR_COMMENT1 COLOR_COMMENT2 COLOR_STRING1 COLOR_STRING2 COLOR_TAG COLOR_MACRO COLOR_URL COLOR_EMAIL COLOR_NUMBER COLOR_FOUND COLOR_WORD1 COLOR_WORD2 COLOR_WORD3 COLOR_WORD4 COLOR_PAIR COLOR_FUNCTION COLOR_VAR COLOR_SUBLAN COLOR_OPERATOR COLOR_HIGHLIGHT1 COLOR_HIGHLIGHT2 COLOR_HIGHLIGHT3 COLOR_HIGHLIGHT4 COLOR_HIGHLIGHT5 COLOR_HIGHLIGHT6 COLOR_HIGHLIGHT7 COLOR_HIGHLIGHT8 COLOR_IGNORE COLOR_CONCEAL", False )
+wWordConst.AutoCase=True
+
+Set wWordObject=vbs.CreateWord( COLOR_WORD3, "Helper App Parser", False )
+wWordObject.AutoCase=True
+
+vbs.AddWord( wWordFunc )
+vbs.AddWord( wWordObject )
+vbs.AddWord( wWordConst )

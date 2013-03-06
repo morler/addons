@@ -1,0 +1,59 @@
+[Snippet]
+Title=Java
+Count=13
+[Item0]
+Trigger=class
+Title=Class
+Snippet=#${1:public }class ${2:MyClass} extends ${3:Object}\n{\n\t$2 (${4:arguments}) {\n\t\t${0:// expression}\n\t}\n}\n
+[Item1]
+Trigger=if
+Title=If Statement
+Snippet=#if (${1:condition}) {\r\n\t${0:// expression}\r\n}
+[Item2]
+Trigger=ifelse
+Title=If/Else Statement
+Snippet=#if (${1:condition}) {\r\n\t${0:// expression}\r\n} else {\r\n\r\n}\r\n
+[Item3]
+Trigger=jcout
+Title=JSP: c:out
+Snippet=#<c:out value="$1"/>$0
+[Item4]
+Trigger=log
+Title=Logger
+Snippet=#/** Logger for this class and subclasses. */\r\nprotected final Log log = LogFactory.getLog(getClass());\r\n  
+[Item5]
+Trigger=main
+Title=Main Method
+Snippet=#public static void main(String[] args) {\r\n\t${1:System.exit(0)};\r\n}
+[Item6]
+Trigger=pm
+Title=Private Method
+Snippet=#/**\r\n * $2\r\n *\r\n * @param $4 $5\r\n * ${6:@return} $7\r\n */\r\nprivate ${1:void} ${2:method}(${3:String} $4) {\r\n\t$0\r\n}
+[Item7]
+Trigger=ps
+Title=Private Static Final
+Snippet=#private static final ${1:String} ${2:str} = ${3:"value"};
+[Item8]
+Trigger=pv
+Title=Private Variable
+Snippet=#private ${1:String} ${2:str} = ${3:"value"};
+[Item9]
+Trigger=pum
+Title=Public Method
+Snippet=#/**\r\n * $2\r\n *\r\n * @param $4 $5\r\n * ${6:@return} $7\r\n */\r\npublic ${1:void} ${2:method}(${3:String} $4) {\r\n\t$0\r\n}\r\n\r\n
+[Item10]
+Trigger=sout
+Title=System.out.println
+Snippet=#System.out.println("${1:foo = }");\n
+[Item11]
+Trigger=tc
+Title=Try/Catch/Finally
+Snippet=#try {\r\n\t${2:// expression}\r\n} catch (${1:Exception} e) {\r\n\t${3:// expression}\r\n} finally {\r\n\t${0:// expression}\r\n}
+[Item12]
+Trigger=while
+Title=While Statement
+Snippet=#while (${1:condition}) {\r\n\t${0:// expression}\r\n}
+[Item13]
+Trigger=while
+Title=While Statement
+Snippet=#while (${1:condition}) {\r\n\t${0:// expression}\r\n}

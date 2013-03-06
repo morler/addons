@@ -1,0 +1,48 @@
+'*******************************************************************************
+' EverEdit Syntax File
+' Language:    ASP
+' Maintainer:  www.everedit.net  
+' History:
+'   2012/02/15 Create
+'   2012/06/05 Improve for EE 2.0
+'*******************************************************************************
+Include( ".\html_base.mac" )
+
+Set rAsp=html.CreateRegion( COLOR_DEFAULT, "+<%+", "+%>+", False )
+
+'comment
+Set rAspLineComment=html.CreateRegion( COLOR_COMMENT1, "+'+", "$", False )
+'string
+Set rAspString2=html.CreateStringRegion( COLOR_STRING1, """", "", True )
+
+rAsp.AddRegion( rAspLineComment )
+rAsp.AddRegion( rAspString2 )
+
+'Reserved words
+Set wWord1=html.CreateWord( COLOR_WORD1, "And ByRef ByVal Call Case Class Const Dim Do Each Else ElseIf Empty End Eqv Erase Error Exit Explicit False For Function Get If Imp In Is Let Loop Mod Next Not Nothing Null On Option Or Private Property Public Randomize ReDim Resume Select Set Step Sub Then To True Until Wend While Xor", False )
+wWord1.AutoCase=True
+'Functions and objects
+Set wWord2=html.CreateWord( COLOR_WORD2, "Anchor Array Asc Atn CBool CByte CCur CDate CDbl Chr CInt CLng Cos CreateObject CSng CStr Date DateAdd DateDiff DatePart DateSerial DateValue Day Dictionary Document Element Err Exp FileSystemObject  Filter Fix Int Form FormatCurrency FormatDateTime FormatNumber FormatPercent GetObject Hex History Hour InputBox InStr InstrRev IsArray IsDate IsEmpty IsNull IsNumeric IsObject Join LBound LCase Left Len Link LoadPicture Location Log LTrim RTrim Trim Mid Minute Month MonthName MsgBox Navigator Now Oct Replace Right Rnd Round ScriptEngine ScriptEngineBuildVersion ScriptEngineMajorVersion ScriptEngineMinorVersion Second Sgn Sin Space Split Sqr StrComp String StrReverse Tan Time TextStream TimeSerial TimeValue TypeName UBound UCase VarType Weekday WeekDayName Window Year", False )
+wWord2.AutoCase=True
+Set wWord3=html.CreateWord( COLOR_WORD3, "Response Cookies Request", False )
+wWord3.AutoCase=True
+
+rAsp.AddItem(wWord1)
+rAsp.AddItem(wWord2)
+rAsp.AddItem(wWord3)
+
+'<% %>
+rAsp.AddItem( html.CreateItem(COLOR_SUBLAN, "<%|%>", False) )
+
+rAsp.CommentLine("'")
+rAsp.SetPairs( "[](){}""""" )
+
+'-----------------------add rAsp to html parser
+html.AddRegion( rAsp )
+
+'default html tags
+html.AddRegion( rScript )
+html.AddRegion( rCss )
+html.AddRegion( rHtmlBlockComment )
+html.AddRegion( rHtmlTag )
+

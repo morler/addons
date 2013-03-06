@@ -1,0 +1,58 @@
+'*******************************************************************************
+' EverEdit Syntax File
+' Language:    Markdown
+' Maintainer:  www.everedit.net  
+' History:
+'   2012/05/15 Create
+'*******************************************************************************
+Include( ".\const.mac" )
+
+Set mk=CreateParser()
+
+Set i_mditem=mk.CreateItem(COLOR_WORD1, "^#{1,6}.*$", False)
+Set i_mdno=mk.CreateItem(COLOR_HIGHLIGHT1, "(?<=^\s*)([\*\+\-]|(\d+\.))\s.*$", False)
+Set i_mdstrong=mk.CreateItem(COLOR_ERROR, "\*\*\S*?\*\*", False)
+
+Set i_mdlink=mk.CreateItem(COLOR_DEFAULT, "\[(.+?)\]:(.*)", False)
+i_mdlink.Capture 1, COLOR_WORD1
+i_mdlink.Capture 2, COLOR_URL
+
+Set i_mdlink2=mk.CreateItem(COLOR_DEFAULT, "\[(.+?)\]\((#.*?)\)", False)
+i_mdlink2.Capture 1, COLOR_WORD1
+i_mdlink2.Capture 2, COLOR_URL
+
+
+Set r_mdline=mk.CreateRegion(COLOR_HIGHLIGHT2, "\*\x20\*\x20\*", "$", False, True)
+Set r_mdlist=mk.CreateRegion(COLOR_WORD2, "^\*\s+.*$", "^(?=\S)", False)
+r_mdlist.AddItem(i_mdlink2)
+Set r_mdquote=mk.CreateRegion(COLOR_COMMENT2, "^\s*>", "^$", False)
+
+Set r_mdcode=mk.CreateRegion(COLOR_COMMENT1, "(?<=^(\x20{4}|\t)).", "^(?!\x20{4})", False)
+Set r_mdcodeline=mk.CreateStringRegion(COLOR_COMMENT1, "`", "", False)
+
+Set r_tag		=mk.CreateRegion( COLOR_WORD1, "<\w+|</+|<!+", "/?>", False )
+'html string in tag
+Set r_hdstring	=mk.CreateStringRegion( COLOR_STRING1, """", "", True )
+Set r_hsstring	=mk.CreateStringRegion( COLOR_STRING1, "'", "", True )
+r_tag.AddRegion( r_hdstring )
+r_tag.AddRegion( r_hsstring )
+'word in tag
+r_tag.AddItem( mk.CreateItem(COLOR_WORD2, "\b[\w\-]+\s*=", False) )
+
+
+r_mdcode.AddRegion( r_tag )
+
+mk.AddItem( i_mditem )
+mk.AddItem( i_mdno )
+mk.AddItem( i_mdlink )
+mk.AddItem( i_mdlink2 )
+mk.AddItem( i_mdstrong )
+mk.AddRegion( r_mdline )
+mk.AddRegion( r_mdlist )
+mk.AddRegion( r_mdquote )
+mk.AddRegion( r_mdcode )
+mk.AddRegion( r_mdcodeline )
+
+mk.AddRegion( r_tag )'this is a hack, if r_tag will return a same state, your can add it to other parents without re-creating.
+
+mk.SetPairs( "<>[](){}""""''" )

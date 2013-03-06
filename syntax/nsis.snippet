@@ -1,0 +1,75 @@
+[Snippet]
+Title=NSIS
+Count=15
+[Item0]
+Trigger=!ifndef
+Title=!ifndef..!define
+Snippet=#!ifndef ${1:symbol}\n\t!define ${1:symbol} ${2:value}\n!endif\n$0
+[Item1]
+Title=!macro..
+Trigger=!macro
+Snippet=#!macro ${1:macro_name} ${2:parm..}\n\t$3\n!macroend\n$0
+[Item2]
+Title=Do..LoopUntil..
+Trigger=do
+Snippet=#${Do}\n\t$2\n\t;${Continue}\n\t;${ExitDo}\n${LoopUntil} ${1:expression}\n$0
+[Item3]
+Title=FindWindow
+Trigger=findw
+Snippet=#FindWindow $${1:0} "${2:#32770}" "$3" $${4:HWNDPARENT}\n$0
+[Item4]
+Title=For..Next
+Trigger=for
+Snippet=#${For} $${1:var} ${2:value1} ${3:value2}\n\t$4\n\t;${Continue}\n\t;${Break}\n${Next}\n$0
+[Item5]
+Title=ForEach..Next
+Trigger=foreach
+Snippet=#${ForEach} $${1:var} ${2:value1} ${3:value2} ${4:-|+} ${5:step_size}\n\t$6\n\t;${Continue}\n\t;${Break}\n${Next}\n$0
+[Item6]
+Title=Function..
+Trigger=function
+Snippet=#Function ${1:func}\n\t$0\nFunctionEnd
+[Item7]
+Title=If..Else..
+Trigger=if
+Snippet=#${If} $1\n\t$2\n${Else}\n\t$3\n${EndIf}\n$0
+[Item8]
+Title=IfThen..|..|
+Trigger=ifthen
+Snippet=#${IfThen} ${1:expression} ${|} ${2:statement} ${|}\n$0
+[Item9]
+Title=MessageBox
+Trigger=mess
+Snippet=#MessageBox MB_ICONINFORMATION|MB_OK "$1"\n$0
+[Item10]
+Title=Section..
+Trigger=section
+Snippet=#Section\t${1:section_name} ${2:index_output} \n\t$0\nSectionEnd
+[Item11]
+Title=SectionGroup..
+Trigger=sectiongroup
+Snippet=#SectionGroup /e ${1:section_group_name} ${2:index_output}\n\t$0\nSectionGroupEnd
+[Item12]
+Title=Select..Case..
+Trigger=select
+Snippet=#${Select} ${1:value}\n\t${Case} ${2:value1}\n\t\t$3\n\t${Case2} ${4:value2} ${5:value3}\n\t\t$6\n\t${CaseElse}\n\t\t$7\n${EndSelect}\n$0
+[Item13]
+Title=Switch..Case..
+Trigger=switch
+Snippet=#${Switch} ${1:value}\n\t${Case} ${2:value1}\n\t\t$3\n\t\t${Break}\n\t${Case} ${4:value2}\n\t\t$5\n\t${Default}\n\t\t$6\n${EndSwitch}\n$0
+[Item14]
+Title=While..
+Trigger=while
+Snippet=#${While} ${1:expression}\n\t$2\n\t;${Continue}\n\t;${Break}\n${EndWhile}\n$0
+[Item15]
+Title=While..EndWhile
+Trigger=while
+Snippet=#${While} ${1:expression}\n\t$2\n\t;${Continue}\n\t;${Break}\n${EndWhile}\n$0
+[Item16]
+Title=While..EndWhile
+Trigger=while
+Snippet=#${While} ${1:expression}\n\t$2\n\t;${Continue}\n\t;${Break}\n${EndWhile}\n$0
+[Item17]
+Title=While..EndWhile
+Trigger=while
+Snippet=#${While} ${1:expression}\n\t$2\n\t;${Continue}\n\t;${Break}\n${EndWhile}\n$0
