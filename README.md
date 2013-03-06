@@ -1,8 +1,8 @@
-addons
+EverEdit Add-Ons
 ======
 
-Add-ons for EverEdit
+You can download add-ons of everedit here!
 
 
-2013-03-06
+Enjoy!
 

@@ -5,6 +5,7 @@
 ' Maintainer: www.gccyugi.com
 ' History:
 '   2012/06/28 Create
+'   2013/03/22 Update some details
 '*******************************************************************************
 
 Include(".\const.mac")
@@ -25,6 +26,9 @@ lua.AddRegion(sr_single_string)
 lua.AddRegion(sr_double_string)
 lua.AddRegion(sr_multi_string)
 
+'function def
+lua.AddItem(lua.CreateItem(COLOR_FUNCTION, "\b(function)\s+([a-zA-Z_.:]+[.:])?([a-zA-Z_]\w*)\s*(?=(\()([^)]*)(\)))", False))
+
 'number
 lua.AddItem(lua.CreateItem(COLOR_NUMBER, "\b\d+\b", False))
 
@@ -43,11 +47,11 @@ lua.AddItem(lua.CreateWord(COLOR_WORD2, "openfile closefile readfrom writeto app
 lua.AddItem(lua.CreateWord(COLOR_WORD3, "_VERSION assert collectgarbage dofile error gcinfo loadfile loadstring print tonumber tostring type unpack _ALERT _ERRORMESSAGE _INPUT _PROMPT _OUTPUT _STDERR _STDIN _STDOUT call dostring foreach foreachi getn globals newtype rawget rawset require sort tinsert tremove _G getfenv getmetatable ipairs loadlib next pairs pcall rawegal rawget rawset require setfenv setmetatable xpcall", True))
 
 'extra
-Call lua.FoldText("^\s*(function|if|do|while|repeat|for)\b", True)
-Call lua.UnfoldText("end$", True)
+Call lua.FoldText("^\s*\b(function|local\s+function|if|do|while|repeat|for)\b", True)
+Call lua.UnfoldText("\bend\b", True)
 
 Call lua.IndentText("^\s*(function|if|else|do|while|elseif|repeat|for)", True)
-Call lua.UnindentText("(end|else)$", True)
+Call lua.UnindentText("\b(end|else)$", True)
 
 Call lua.SetPairs("[](){}""""''")
 

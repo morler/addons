@@ -60,7 +60,7 @@ cpp.AddSnippet "c.snippet"
 Call cpp.FoldText( "\{", False )
 Call cpp.UnfoldText( "\}", False )
 
-Call cpp.IndentText( "(\[|{|\w+:$)", False )
+Call cpp.IndentText( "(\[|{|\w+:)$", False )
 Call cpp.UnindentText( "^\s*}|\]$", False )
 
 Call cpp.SetPairs( "[]{}()""""''" )
