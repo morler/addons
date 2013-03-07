@@ -8,6 +8,7 @@
 Include( ".\const.mac" )
 
 Set rCssScript=CreateParser()
+rCssScript.Name="source.css"
 
 'css string
 Set rCssString2=rCssScript.CreateStringRegion( COLOR_STRING2, """", "", True )
