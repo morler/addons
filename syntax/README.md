@@ -113,9 +113,9 @@ string Name;//get,set
 SyntaxRegion  DefaultRegion;//read-only
 
 //functions
-bool  AddSnippet( string strPathName );
-void  AddItem( SyntaxItem item );
-void  AddWord( WordItem item );
+bool  AddSnippet(string strPathName);
+void  AddItem(SyntaxItem item);//Add a SyntaxItem to default region
+void  AddWord(WordItem item);//Add a WordItem to default region
 void  AddRegion(SyntaxRegion child);
 SyntaxRegion  CopyRegion(SyntaxRegion copyFrom);
 SyntaxItem  CreateItem(int state, string strMatch, bool bCase, bool bToRight=false);
@@ -131,6 +131,62 @@ void  SetPairs(string strText);
 void  CommentBlock(string strOn, string strOff);
 void  CommentLine(string strText);
 ```
+
+###AddSnippet(string strPathName)
+Add a snippet file to default region. **strPathName** is the file name which locates at **syntax folder**.
+
+example: <code>cpp.AddSnippet "c.snippet"</code>
+
+###AddRegion(SyntaxRegion child)
+Add a child region to the default region. Child's parent will be changed to default region after calling this function.
+
+###CopyRegion(SyntaxRegion copyFrom)
+One region should belong to only one parent. While if you want to add a region to multiple ones, you should copy it first.
+
+<code>Set newRegion=cpp.CopyRegion rLineComment</code>
+
+<code>yourRegion.AddRegion newRegion</code>
+
+###CreateItem(int state, string strMatch, bool bCase, bool bToRight=false)
+Create a SyntaxItem.
+
+**state**:Color
+
+**strMatch**:Regular expression
+
+**bCase**:Case sensitive flag
+
+**bToRight**:(Optional).If this SyntaxItem was matched at EOL, the right edge will be painted with the background of this item.
+
+###CreateWord(int state, string strMatch, bool bCase, string strDelimiters="")
+Create a SyntaxWord. Words should be speraterd by spaces' '
+example: <code>cpp.CreateWord COLOR_WORD1, "int float double fo while my-data", "-"</code>
+
+**state**:Color
+
+**strMatch**:Words, example: <code>void int float while do class</code>
+
+**bCase**:Case sensitive flag
+
+**strDelimiters**:(Optional).The charactors in strDelimiters will be treated as a part of Word. example: <code>-#_</code>
+
+
+###CreateRegion( int state, string strBegin, string strEnd, bool bCase, bool bToRight=false );
+Create a SyntaxRegion.
+
+example:
+
+<code>cpp.CreateRegion COLOR_COMMENT2, "+/*+", "+*/+", False</code>
+
+<code>html.CreateRegion COLOR_TAG, "<\w+", "+>+", False</code>
+
+**state**:Color
+
+**strBegin**:The beginning of this region. If you use plus(+) at both end and beginning of strBegin, strBegin wil not be treated as a regular expression
+
+**strEnd**:The end of this region. If you use plus(+) at both end and beginning of strEnd, strEnd wil not be treated as a regular expression
+
+**bToRight**:(Optional)..If this SyntaxItem was matched at EOL, the right edge will be painted with the background of this item.
 
 ##SyntaxWord
 SyntaxWord is a collection list which contains your keywords. We can use SyntaxWord to define keyword match, it’s faster than regular expression match. Besides, there is a useful property of SyntaxWord, AutoCase! The SyntaxWord with AutoCase property could automatic correct your input with right case.
