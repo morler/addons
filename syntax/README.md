@@ -140,53 +140,53 @@ example: <code>cpp.AddSnippet "c.snippet"</code>
 ###AddRegion(SyntaxRegion child)
 Add a child region to the default region. Child's parent will be changed to default region after calling this function.
 
+example: <code>cpp.AddRegion myregion</code>
+
 ###CopyRegion(SyntaxRegion copyFrom)
-One region should belong to only one parent. While if you want to add a region to multiple ones, you should copy it first.
+One region should have a unique parent, while if you want to add a region to multiple ones, you should make a shadow  first.
 
 <code>Set newRegion=cpp.CopyRegion rLineComment</code>
 
 <code>yourRegion.AddRegion newRegion</code>
 
 ###CreateItem(int state, string strMatch, bool bCase, bool bToRight=false)
-Create a SyntaxItem.
 
-**state**:Color
+<code>state</code>:Color
 
-**strMatch**:Regular expression
+<code>strMatch</code>:Regular expression
 
-**bCase**:Case sensitive flag
+<code>bCase</code>:Case sensitive flag
 
-**bToRight**:(Optional).If this SyntaxItem was matched at EOL, the right edge will be painted with the background of this item.
+<code>bToRight</code>:(Optional).If this SyntaxItem will be matched at EOL, the right edge will be painted with the background of this item.
 
 ###CreateWord(int state, string strMatch, bool bCase, string strDelimiters="")
-Create a SyntaxWord. Words should be speraterd by spaces' '
+Create a SyntaxWord. Words should be speraterd by spaces.
+
 example: <code>cpp.CreateWord COLOR_WORD1, "int float double fo while my-data", "-"</code>
 
-**state**:Color
+<code>state</code>:Color
 
-**strMatch**:Words, example: <code>void int float while do class</code>
+<code>strMatch</code>:Words, example: <code>void int float while do class</code>
 
-**bCase**:Case sensitive flag
+<code>bCase</code>:Case sensitive flag
 
-**strDelimiters**:(Optional).The charactors in strDelimiters will be treated as a part of Word. example: <code>-#_</code>
+<code>strDelimiters</code>:(Optional).The charactors in <code>strDelimiters</code> will be treated as a part of Word. example: <code>-#_</code>
 
 
 ###CreateRegion( int state, string strBegin, string strEnd, bool bCase, bool bToRight=false );
 Create a SyntaxRegion.
 
-example:
-
-<code>cpp.CreateRegion COLOR_COMMENT2, "+/*+", "+*/+", False</code>
+example:<code>cpp.CreateRegion COLOR_COMMENT2, "+/*+", "+*/+", False</code>
 
 <code>html.CreateRegion COLOR_TAG, "<\w+", "+>+", False</code>
 
-**state**:Color
+<code>state</code>:Color
 
-**strBegin**:The beginning of this region. If you use plus(+) at both end and beginning of strBegin, strBegin wil not be treated as a regular expression
+<code>strBegin</code>:The beginning of this region. If you use plus <code>+</code> at both end and beginning of strBegin, <code>strBegin</code> wil not be treated as a regular expression.
 
-**strEnd**:The end of this region. If you use plus(+) at both end and beginning of strEnd, strEnd wil not be treated as a regular expression
+<code>strEnd</code>:The end of this region. If you use plus <code>+</code> at both end and beginning of strEnd, <code>strEnd</code> wil not be treated as a regular expression.
 
-**bToRight**:(Optional)..If this SyntaxItem was matched at EOL, the right edge will be painted with the background of this item.
+<code>bToRight</code>:(Optional)..If this SyntaxItem was matched at EOL, the right edge will be painted with the background of this item.
 
 ##SyntaxWord
 SyntaxWord is a collection list which contains your keywords. We can use SyntaxWord to define keyword match, it’s faster than regular expression match. Besides, there is a useful property of SyntaxWord, AutoCase! The SyntaxWord with AutoCase property could automatic correct your input with right case.
@@ -196,8 +196,10 @@ SyntaxWord is a collection list which contains your keywords. We can use SyntaxW
 bool AutoCase
 string Name
 ```
+
 ##SyntaxItem
 SyntaxItem was generally be used to describe a regular expression match pattern. A SyntaxItem can be added to multiple SyntaxRegion, but the Color/State was only one which belongs to its parent region. If you want to match a same string, but the Color/State was different, you should create it again.
+
 ```c++
 //properties
 string Name;
@@ -207,7 +209,7 @@ void Capture(int group, int state);
 ```
 
 ##SyntaxRegion
-SyntaxRegion is a very important object in EverEdit’s parser. If you create a parser, EverEdit will create a default region automatically; all other regions will be added to this default region. Region can be added recursively, but one region just has only one parent region. Do not try to add a same region to multiple parent regions.
+SyntaxRegion is a very important object in EverEdit’s parser. If you create a parser, EverEdit will contain a default region automatically; all other regions will be added to this default region. Region can be added recursively, but one region just has only one parent region. **Do not** try to add a same region to multiple parent regions.
 
 ```c++
 //properties
