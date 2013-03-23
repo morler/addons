@@ -1,37 +1,41 @@
-#Foramt
-You should use a specific format to define snippets of EverEdit. All the snippets were stored as pure text format(ini), you can edit it directly with any text editor or Snippet Manager of EverEdit(Recommend).
+##Foramt
+You should use a specific format to define snippets of EverEdit. All the snippets were stored as a pure text format(ini), you can edit it directly with any text editor or Snippet Manager of EverEdit(Recommend).
 
-**A snippet sample:**
+###sample:
+```c++
+for (${1:unsigned int} ${2:i} = ${3:0}; $2 ${4:<} ${5:count}; $2${6:++}) {
+    $0
+}
+```
 
-    for (${1:unsigned int} ${2:i} = ${3:0}; $2 ${4:<} ${5:count}; $2${6:++}) {
-        $0
-    }
+##Define vars
+It’s easy to define a var in snippet, for example:<code>${1:myvar}</code>. <code>1</code> means it’s the first var, the value should be 1~9, 0 is the last edit point. You’d better define vars with asc order.
 
+##Use vars
+We can make a reference of defined var, fox example <code>$1</code>. It means we ref the first var that has been defined yet. If you want to insert $, just input it twice <code>$$</code>.
 
-#Define vars
-It’s easy to define a var in snippet, for example:${1:myvar}. 1 means it’s the first var, the value should be 1~9, 0 is the last edit point. You’d better define vars with order.
-
-#Use vars
-We can ref the var after defining, fox example $1. It means we ref the first var that has been defined. If you want to insert $, just input it twice $$.
-
-#Jump
-Use Tab or Shift+Tab to jump between each edit point
+##Jump
+Use Tab or Shift+Tab to jump between edit points.
 
 #Last edit point
-$0 is the last edit point. Cursor will not move after reach $0
+<code>$0</code> is the last edit point. Cursor will not move around after reaching <code>$0</code>.
 
-#Use snippet manager
-Main menu->View->Snippet will open the snippet manager, right click the snippet item and edit. It will display as forllows:
-    @Title:For loop
-    @Trigger:for
-    @Snippet:Input content from next line!
-    for (${1:unsigned int} ${2:i} = ${3:0}; $2 ${4:<} ${5:count}; $2${6:++}) {
-      $0
-    }
-#Enable your snippet
-A snippet file can’t be valid until you bind it in Syntax Files. You can use the below sequence to add a snippet.
-    Cpp.AddSnippet “my.snippet”
+##Use snippet manager
+Main **menu->View->Snippet** will open the snippet manager, right click the snippet item and edit a selected item. It will display as forllows:
 
+```c++
+@Title:For loop
+@Trigger:for
+@Snippet:Input content from next line!
+for (${1:unsigned int} ${2:i} = ${3:0}; $2 ${4:<} ${5:count}; $2${6:++}) {
+  $0
+}
+```
+##Enable your snippet
+A snippet file wouldn't become valid until you bind it in <code>Syntax Files</code>. You can use the below sequence to add a snippet.
 
-#Others
-EverEdit doesn’t support the nested vars, such as ${1:data ${2:text}}.
+```c++
+Cpp.AddSnippet “my.snippet”
+```
+
+**Note**:EverEdit doesn’t support the nested vars, such as <code>${1:data ${2:text}}</code>.
