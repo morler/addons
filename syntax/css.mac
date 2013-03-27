@@ -8,6 +8,8 @@
 Include( ".\const.mac" )
 
 Set rCssScript=CreateParser()
+rCssScript.WordChars="-"
+
 rCssScript.Name="source.css"
 
 'css string
@@ -30,8 +32,6 @@ rCssScript.AddSnippet "css.snippet"
 
 Call rCssScript.CommentBlock("/*", "*/")
 Call rCssScript.SetPairs( "()[]{}""""''" )
-Call rCssScript.FoldText( "\{", False )
-Call rCssScript.UnfoldText( "\}", False )
-Call rCssScript.IndentText( "{$", False )
-Call rCssScript.UnindentText( "^\s*}$", False )
+Call rCssScript.FoldText( "\{", False, "\}", False )
+Call rCssScript.IndentText( "{$", False, "^\s*}$", False)
 

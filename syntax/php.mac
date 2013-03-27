@@ -8,7 +8,7 @@
 '*******************************************************************************
 Include( ".\html_base.mac" )
 
-Set rPhp=html.CreateRegion( COLOR_DEFAULT, "<\?php(?![a-zA-Z0-9_\-])", "+?>+", False )
+Set rPhp=html.CreateRegion( COLOR_DEFAULT, "<\?(php)?(?![a-zA-Z0-9_\-])", "+?>+", False )
 
 'comment
 Set rPhpBlockComment=html.CreateRegion( COLOR_COMMENT1, "+/*+", "+*/+", False )
@@ -41,7 +41,7 @@ rPhp.AddWord( html.CreateWord(COLOR_MACRO, "__COMPILER_HALT_OFFSET__ ABDAY_1 ABD
 
 
 '<php and ?>
-rPhp.AddItem( html.CreateItem(COLOR_SUBLAN, "<\?php|\?>", False) )
+rPhp.AddItem( html.CreateItem(COLOR_SUBLAN, "<\?(php)?|\?>", False) )
 
 'php vars
 rPhp.AddItem( html.CreateItem(COLOR_VAR, "\$\w+", False) )

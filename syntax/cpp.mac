@@ -12,7 +12,7 @@ Set cpp=CreateParser()
 
 'comment
 Set rLineComment=cpp.CreateRegion( COLOR_COMMENT1, "+//+", "$", True )
-Set rBlockComment=cpp.CreateRegion( COLOR_COMMENT1, "+/*+", "+*/+", True )
+Set rBlockComment=cpp.CreateRegion( COLOR_COMMENT2, "+/*+", "+*/+", True )
 cpp.AddRegion( rLineComment )
 cpp.AddRegion( rBlockComment )
 
