@@ -4,30 +4,32 @@
 ' Language:		newLISP v10.4.3
 ' Maintainer:	moofly.net/blog  
 ' History:
-'   2012/06/17	Created
-'	2012/06/18	Íê³É³õ²½µÄÓï·¨¸ßÁÁ¡¢´úÂëÕÛµþ¡¢´úÂëËõ½ø¹¤×÷
-'	2012/06/19	½â¾öÁË²¿·Ö¡°-¡±·ûºÅÎÊÌâ£¨¸ÐÐ»EE£¡£©£¬Ìí¼ÓÁËnewLISPdocÎÄµµÉú³ÉÆ÷Óï·¨¸ßÁÁÖ§³Ö
-'	2012/06/20	ÐÞÕýÁËnewlispdocÓï·¨×ÅÉ«ÅäÖÃµÄ¶àÓàäÖÈ¾
-'	..........	Ìí¼ÓÁË{}ºÍ[text][/text]Á½ÖÖ×Ö·û´®×ÅÉ«
-'	2012/06/21	µ÷ÕûÁËnewLISPdocÓï·¨£¬Ê¹µÃ@exampleºó½ÓµÄÊ¾Àý´úÂëÕý³£ÏÔÊ¾
-'	2012/06/27	ÐÞ¸ÄÁËËõ½øÓï·¨£¬²ÉÓÃ¸ü¼òµ¥¸ü·½±ãµÄÕýÔò£¬Ö§³ÖÁË×Ô¶¨Òåº¯ÊýµÄËõ½ø
-'	2012/06/28	ÔÙ´ÎÐÞ¸ÄËõ½øÓï·¨£¬ÏÖÔÚÖ§³Ö¸ü¶àÇé¿öÏÂµÄËõ½ø
-'	..........	µ÷Õû×¢ÊÍÓï·¨£¬Ö§³ÖÐÐÄÚ×¢ÊÍ
-'	2012/07/04	ÐÞ¸´ÐÐÄÚ×¢ÊÍºÍnewLISPdocÓï·¨ÉèÖÃ³åÍ»µÄBUG
+' 2012/06/17	Created
+'	2012/06/18	å®Œæˆåˆæ­¥çš„è¯­æ³•é«˜äº®ã€ä»£ç æŠ˜å ã€ä»£ç ç¼©è¿›å·¥ä½œ
+'	2012/06/19	è§£å†³äº†éƒ¨åˆ†â€œ-â€ç¬¦å·é—®é¢˜ï¼ˆæ„Ÿè°¢EEï¼ï¼‰ï¼Œæ·»åŠ äº†newLISPdocæ–‡æ¡£ç”Ÿæˆå™¨è¯­æ³•é«˜äº®æ”¯æŒ
+'	2012/06/20	ä¿®æ­£äº†newlispdocè¯­æ³•ç€è‰²é…ç½®çš„å¤šä½™æ¸²æŸ“
+'	..........	æ·»åŠ äº†{}å’Œ[text][/text]ä¸¤ç§å­—ç¬¦ä¸²ç€è‰²
+'	2012/06/21	è°ƒæ•´äº†newLISPdocè¯­æ³•ï¼Œä½¿å¾—@exampleåŽæŽ¥çš„ç¤ºä¾‹ä»£ç æ­£å¸¸æ˜¾ç¤º
+'	2012/06/27	ä¿®æ”¹äº†ç¼©è¿›è¯­æ³•ï¼Œé‡‡ç”¨æ›´ç®€å•æ›´æ–¹ä¾¿çš„æ­£åˆ™ï¼Œæ”¯æŒäº†è‡ªå®šä¹‰å‡½æ•°çš„ç¼©è¿›
+'	2012/06/28	å†æ¬¡ä¿®æ”¹ç¼©è¿›è¯­æ³•ï¼ŒçŽ°åœ¨æ”¯æŒæ›´å¤šæƒ…å†µä¸‹çš„ç¼©è¿›
+'	..........	è°ƒæ•´æ³¨é‡Šè¯­æ³•ï¼Œæ”¯æŒè¡Œå†…æ³¨é‡Š
+'	2012/07/04	ä¿®å¤è¡Œå†…æ³¨é‡Šå’ŒnewLISPdocè¯­æ³•è®¾ç½®å†²çªçš„BUG
+' 2013/03/29  å¢žåŠ WordCharsè®¾ç½®é¡¹
 '*******************************************************************************
 
 Include( ".\const.mac" )
 
 Set newlisp=CreateParser()
+newlisp.WordChars="-"
 
-'¶¨ÒåÐÐ×¢ÊÍ
+'å®šä¹‰è¡Œæ³¨é‡Š
 Set regionLine1=newlisp.CreateRegion(COLOR_COMMENT1, "^[;](?!;\s+\@)", "$", True)
 Set regionLine2=newlisp.CreateRegion(COLOR_COMMENT1, "^#", "$", True)
 
-'¶¨ÒåÐÐÄÚ×¢ÊÍ
+'å®šä¹‰è¡Œå†…æ³¨é‡Š
 Set regionLine3=newlisp.CreateRegion(COLOR_COMMENT1, "(?<!(\;|^))\;", "$",True)
 
-'±êÃ÷ÎÄ±¾×Ö·û´®
+'æ ‡æ˜Žæ–‡æœ¬å­—ç¬¦ä¸²
 Set regionString1=newlisp.CreateStringRegion( COLOR_STRING1, """", "\", False )
 Set regionString2=newlisp.CreateRegion( COLOR_STRING1, "+{+", "(?<!\\)\}", False )
 Set regionString3=newlisp.CreateRegion( COLOR_STRING1, "+[text]+", "+[/text]+", False )
@@ -51,36 +53,36 @@ Set nl_words5=newlisp.CreateWord( COLOR_WORD3, "array? atom? context? directory?
 'Numbers
 Set nl_words6=newlisp.CreateItem( COLOR_WORD2, "\b\d+\b", False )
 
-'±äÁ¿Ãû²»¸ßÁÁ
+'å˜é‡åä¸é«˜äº®
 Set nl_words7=newlisp.CreateItem( COLOR_DEFAULT, "(\')([^(\s]+)(?![a-zA-Z0-9_\-])", False )
 nl_words7.Capture 1, COLOR_WORD1
 
-'newLISPdoc Óï·¨
+'newLISPdoc è¯­æ³•
 Set nldoc_content=newlisp.CreateItem(COLOR_COMMENT1, "^[;]{2}(\s\@(module|index|description|location|version|author|syntax|param|return|example))?(\s)?(.+)?", False)
 nldoc_content.Capture 1, COLOR_WORD2
 nldoc_content.Capture 4, COLOR_WORD3
 
-'TODO\BUG\FIX\DONE×¢ÊÍ¸ñÊ½Ö§³Ö
+'TODO\BUG\FIX\DONEæ³¨é‡Šæ ¼å¼æ”¯æŒ
 Set todo=newlisp.CreateItem(COLOR_COMMENT1, "^[;](todo|bug|fix|done)\s*(.+)$", False)
 todo.Capture 1, COLOR_WORD2
 todo.Capture 2, COLOR_WORD3
 
-'À¨ºÅÆ¥Åä
+'æ‹¬å·åŒ¹é…
 Call newlisp.SetPairs("[](){}""""")
 
-'¿ì½Ý¼üÐÐ×¢ÊÍ
+'å¿«æ·é”®è¡Œæ³¨é‡Š
 Call newlisp.CommentLine(";")
 
-'´úÂëÕÛµþ
+'ä»£ç æŠ˜å 
 Call newlisp.FoldText( "\(", False )
 Call newlisp.UnfoldText( "\)", False )
 
-'´úÂë×Ô¶¯Ëõ½ø
+'ä»£ç è‡ªåŠ¨ç¼©è¿›
 Call newlisp.IndentText( "^\s*(\([^()]+((\(([^()]|(?R3))*\))|$))(?!\))\s*(\;.+)?$", False )
 Call newlisp.UnindentText( "^\s*\)$", False )
 
 '
-'´´½¨µÄÆ¥Åä¼ÓÈëÖ÷ÇøÓò
+'åˆ›å»ºçš„åŒ¹é…åŠ å…¥ä¸»åŒºåŸŸ
 newlisp.AddRegion(regionLine1)
 newlisp.AddRegion(regionLine2)
 newlisp.AddRegion(regionLine3)
