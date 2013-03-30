@@ -12,7 +12,7 @@ Set mk=CreateParser()
 
 Set i_mditem=mk.CreateItem(COLOR_WORD1, "^#{1,6}.*$", False)
 Set i_mdno=mk.CreateItem(COLOR_HIGHLIGHT1, "(?<=^\s*)([\*\+\-]|(\d+\.))\s.*$", False)
-Set i_mdstrong=mk.CreateItem(COLOR_ERROR, "\*\*[\S\s]+\*\*", False)
+Set i_mdstrong=mk.CreateItem(COLOR_ERROR, "\*\*[\S\s]+?\*\*", False)
 
 Set i_mdlink=mk.CreateItem(COLOR_DEFAULT, "\[(.+?)\]:(.*)", False)
 i_mdlink.Capture 1, COLOR_WORD1
