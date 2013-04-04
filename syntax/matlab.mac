@@ -44,6 +44,9 @@ mlab.AddWord( iWord4 )
 mlab.AddWord( iWord5 )
 mlab.AddItem( iOperator )
 
+'number
+mlab.AddItem( mlab.CreateItem(COLOR_NUMBER, "\b\d+\b", False) )
+
 mlab.IndentText "\b(function)\s*$", False,  "\b(end)\s*$", False
 mlab.FoldText "\b(function)\s*$", False, "\b(end)\s*$", False
 mlab.SetPairs( "[]''""{}()" )
