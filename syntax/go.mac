@@ -40,7 +40,7 @@ go.AddItem( iOperator )
 go.AddItem( go.CreateItem(COLOR_NUMBER, "\b\d+\b", False) )
 
 go.IndentText "\{\s*$", False,  "}\s*$", False
-go.FoldText "\{\s*$", False, "\}\s*$", False
+go.FoldText "\{", False, "\}", False
 go.SetPairs( "[]''""{}()" )
 go.CommentLine( "//" )
 go.CommentBlock "/*", "*/"
