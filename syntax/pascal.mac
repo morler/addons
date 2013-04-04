@@ -42,6 +42,9 @@ pas.AddWord( iWord3 )
 pas.AddWord( iWord4 )
 pas.AddItem( iOperator )
 
+'number
+pas.AddItem( pas.CreateItem(COLOR_NUMBER, "\b\d+\b", False) )
+
 pas.IndentText "\b(begin|repeat|asm|if|else)\s*$", False,  "\b(end|until)\s*$", False
 pas.FoldText "\b(begin)\s*$", False, "\b(end)\s*$", False
 pas.SetPairs( "[]''""{}()" )
