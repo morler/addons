@@ -1,0 +1,46 @@
+'*******************************************************************************
+' EverEdit Syntax File
+' Language:    Free Pascal
+' Maintainer:  www.everedit.net  
+' History:
+'   2013/04/04 Update
+'*******************************************************************************
+Include( ".\const.mac" )
+
+Set go=CreateParser()
+
+Set rComment1=go.CreateRegion(COLOR_COMMENT1, "+//+", "$", False )
+Set rComment2=go.CreateRegion(COLOR_COMMENT2, "+/*+", "+*/+", False )
+
+Set rString1=go.CreateStringRegion( COLOR_STRING1, "'", "\", False )
+Set rString2=go.CreateStringRegion( COLOR_STRING2, """", "\", False )
+
+Set rString3=go.CreateStringRegion( COLOR_STRING1, "", "`", False )
+
+'Reserved words
+Set iWord1=go.CreateWord(COLOR_WORD1, "break case chan const continue default defer else fallthrough for func go goto if import interface map package range return select struct switch type var", True)
+
+'Functions
+Set iWord2=go.CreateWord(COLOR_WORD2, "append cap close closed cmplx copy imag len make new panic print println real recover", True)
+
+'operators
+Set iOperator=go.CreateItem(COLOR_OPERATOR, "[\{\}\(\)\+\-\*\\=%&\^!~\|<>?\.;@\$\[\]]",False )
+
+
+go.AddRegion( rComment1 )
+go.AddRegion( rComment2 )
+go.AddRegion( rString1 )
+go.AddRegion( rString2 )
+go.AddRegion( rString3 )
+go.AddWord( iWord1 )
+go.AddWord( iWord2 )
+go.AddItem( iOperator )
+
+'number
+go.AddItem( go.CreateItem(COLOR_NUMBER, "\b\d+\b", False) )
+
+go.IndentText "\{\s*$", False,  "}\s*$", False
+go.FoldText "\{\s*$", False, "\}\s*$", False
+go.SetPairs( "[]''""{}()" )
+go.CommentLine( "//" )
+go.CommentBlock "/*", "*/"
