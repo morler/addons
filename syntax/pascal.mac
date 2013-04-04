@@ -34,6 +34,8 @@ Set iOperator=pas.CreateItem(COLOR_OPERATOR, "[\{\}\(\)\+\-\*\\=%&\^!~\|<>?\.;@\
 
 pas.AddRegion( rComment1 )
 pas.AddRegion( rComment2 )
+pas.AddRegion( rString1 )
+
 pas.AddWord( iWord1 )
 pas.AddWord( iWord2 )
 pas.AddWord( iWord3 )
