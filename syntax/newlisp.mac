@@ -36,7 +36,7 @@ Set regionString3=newlisp.CreateRegion( COLOR_STRING1, "+[text]+", "+[/text]+", 
 
 
 'integer arithmetic
-Set nl_words1=newlisp.CreateItem( COLOR_WORD1, "(?<![0-9A-Za-z_?])(\+|\-|\*|\/|\%|\<|\>|\!|\:|\&|\||\^|\~|\!|\$|\=|\')(?![0-9A-Za-z_?])", False )
+Set nl_words1=newlisp.CreateItem( COLOR_OPERATOR, "[\{\}\(\)\+\-\*\\=%&\^!~\|<>?\.,:;\[\]]", False )
 
 'List processing, flow control and integer arithmetic
 Set nl_words2=newlisp.CreateWord( COLOR_WORD1, "and append apply args assoc begin bind case catch chop clean cond cons constant count curry def-new define define-macro difference do-until do-while doargs dolist dostring dotimes dotree dup ends-with exists eval expand extend first filter find find-all flat fn for for-all if index intersect lambda lambda-macro last length let letex letn list lookup map match member not nth or pop pop-assoc push quote ref ref-all rest replace reverse rotate select self set set-ref set-ref-all setf setq silent slice sort starts-with swap unify unique union unless until when while", False, "-" )
