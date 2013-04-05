@@ -1,0 +1,29 @@
+'*******************************************************************************
+' EverEdit Syntax File
+' Language:    VIM v7.3-04
+' Maintainer:  Morler
+' History:
+'   2013/04/04 Created
+'*******************************************************************************
+Include( ".\const.mac" )
+
+Set vim=CreateParser()
+vim.WordChars="_"
+
+'comment
+Set rLineComment=vim.CreateRegion( COLOR_COMMENT1, "^""", "$", True )
+vim.AddRegion( rLineComment )
+
+'add todo to comment
+Set iTodo=vim.CreateItem( COLOR_HIGHLIGHT2, "\b(COMBAK|FIXME|TODO|XXX)\b", False )
+rLineComment.AddItem( iTodo )
+
+'TODO\BUG\FIX\DONE注释格式支持
+Set syn_words=vim.CreateItem(COLOR_COMMENT1, "^\s*syn\s+(keyword\s+\w+\s+|match\s+\w+\s+(display|contained)\s+)(.+)$", False)
+syn_words.Capture 1, COLOR_WORD1
+syn_words.Capture 3, COLOR_WORD3
+vim.AddItem(syn_words)
+
+Call vim.SetPairs( "[]{}()""""''" )
+
+Call vim.CommentLine("//")
