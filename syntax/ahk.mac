@@ -9,7 +9,7 @@ Include( ".\const.mac" )
 
 Set ahk=CreateParser()
 
-Set rComment1=ahk.CreateRegion(COLOR_COMMENT1, "+;+", "$", False )
+Set rComment1=ahk.CreateRegion(COLOR_COMMENT1, "(?<!`);", "$", False )
 Set rComment2=ahk.CreateRegion(COLOR_COMMENT2, "+/*+", "+*/+", False )
 Set rComment3=ahk.CreateRegion(COLOR_COMMENT1, "+//+", "$", False )
 
