@@ -1,0 +1,53 @@
+'*******************************************************************************
+' EverEdit Syntax File
+' Language:    AutoHotKey
+' Maintainer:  www.everedit.net  
+' History:
+'   2013/04/06 Create
+'*******************************************************************************
+Include( ".\const.mac" )
+
+Set ahk=CreateParser()
+
+Set rComment1=ahk.CreateRegion(COLOR_COMMENT1, "(?<!`);", "$", False )
+Set rComment2=ahk.CreateRegion(COLOR_COMMENT2, "+/*+", "+*/+", False )
+Set rComment3=ahk.CreateRegion(COLOR_COMMENT1, "+//+", "$", False )
+
+Set rString1=ahk.CreateStringRegion( COLOR_STRING1, "'", "`", False )
+Set rString2=ahk.CreateStringRegion( COLOR_STRING2, """", "`", False )
+
+Set iWord1=ahk.CreateWord(COLOR_WORD1, "Abs ACos Asc ASin ATan AutoTrim BlockInput Break Ceil Chr Click ClipWait contains Continue Control ControlClick ControlFocus ControlGet ControlGetFocus ControlGetPos ControlGetText ControlMove ControlSend ControlSendRaw ControlSetText CoordMode Cos Critical DetectHiddenText DetectHiddenWindows DllCall Drive DriveGet DriveSpaceFree Edit Else EndRepeat EnvAdd EnvDiv EnvGet EnvMult EnvSet EnvSub EnvUpdate Exit ExitApp Exp FileAppend FileCopy FileCopyDir FileCreateDir FileCreateShortcut FileDelete FileExist FileGetAttrib FileGetShortcut FileGetSize FileGetTime FileGetVersion FileInstall FileMove FileMoveDir FileRead FileReadLine FileRecycle FileRecycleEmpty FileRemoveDir FileSelectFile FileSelectFolder FileSetAttrib FileSetTime Floor FormatTime GetKeyState Gosub Goto GroupActivate GroupAdd GroupClose GroupDeactivate Gui GuiControl GuiControlGet HideAutoItWin Hotkey if IfEqual IfExist IfGreater IfGreaterOrEqual IfInString IfLess IfLessOrEqual IfMsgBox IfNotEqual IfNotExist IfNotInString IfWinActive IfWinExist IfWinNotActive IfWinNotExist IL_Add IL_Create IL_Destroy ImageSearch IniDelete IniRead IniWrite Input InputBox InStr is IsFunc IsLabel KeyHistory KeyWait LeftClick LeftClickDrag ListHotkeys ListLines ListVars Ln Log Loop LV_Add LV_Delete LV_DeleteCol LV_GetCount LV_GetNext LV_GetText LV_Insert LV_InsertCol LV_Modify LV_ModifyCol LV_SetImageList Menu Mod MouseClick MouseClickDrag MouseGetPos MouseMove MsgBox not NumGet NumPut OnExit OnMessage OutputDebug Pause PixelGetColor PixelSearch PostMessage Process Progress Random RegDelete RegExMatch RegExReplace RegisterCallback RegRead RegWrite Reload Repeat Return RightClick RightClickDrag Round Run RunAs RunWait SB_SetIcon SB_SetParts SB_SetText Send SendEvent SendInput SendMessage SendMode SendPlay SendRaw SetBatchLines SetCapslockState SetControlDelay SetDefaultMouseSpeed SetEnv SetFormat SetKeyDelay SetMouseDelay SetNumlockState SetScrollLockState SetStoreCapslockMode SetTimer SetTitleMatchMode SetWinDelay SetWorkingDir Shutdown Sin Sleep Sort SoundBeep SoundGet SoundGetWaveVolume SoundPlay SoundSet SoundSetWaveVolume SplashImage SplashTextOff SplashTextOn SplitPath Sqrt StatusBarGetText StatusBarWait StringCaseSense StringGetPos StringLeft StringLen StringLower StringMid StringReplace StringRight StringSplit StringTrimLeft StringTrimRight StringUpper StrLen SubStr Suspend SysGet Tan Thread ToolTip Transform TrayTip TV_Add TV_Delete TV_Get TV_GetChild TV_GetCount TV_GetNext TV_GetParent TV_GetPrev TV_GetSelection TV_GetText TV_Modify URLDownloadToFile VarSetCapacity While WinActivate WinActivateBottom WinClose WinGet WinGetActiveStats WinGetActiveTitle WinGetClass WinGetPos WinGetText WinGetTitle WinHide WinKill WinMaximize WinMenuSelectItem WinMinimize WinMinimizeAll WinMinimizeAllUndo WinMove WinRestore WinSet WinSetTitle WinShow WinWait WinWaitActive WinWaitClose WinWaitNotActive", False)
+iWord1.AutoCase=True 
+
+Set iWord2=ahk.CreateWord(COLOR_WORD2, "A_AhkPath A_AhkVersion A_AppData A_AppDataCommon A_AutoTrim A_BatchLines A_CaretX A_CaretY A_ComputerName A_ControlDelay A_CURSOR A_DD A_DDD A_DDDD A_DefaultMouseSpeed A_Desktop A_DesktopCommon A_DetectHiddenText A_DetectHiddenWindows A_EndChar A_EventInfo A_ExitReason A_FormatFloat A_FormatInteger A_Gui A_GuiControl A_GuiControlEvent A_GuiEvent A_GuiHeight A_GuiWidth A_GuiX A_GuiY A_HOUR A_IconFile A_IconHidden A_IconNumber A_IconTip A_INDEX A_IPADDRESS1 A_IPADDRESS2 A_IPADDRESS3 A_IPADDRESS4 A_ISADMIN A_IsCompiled A_IsCritical A_IsPaused A_IsSuspended A_KeyDelay A_Language A_LastError A_LineFile A_LineNumber A_LOOPFIELD A_LOOPFILEATTRIB A_LOOPFILEDIR A_LoopFileExt A_LOOPFILEFULLPATH A_LoopFileLongPath A_LOOPFILENAME A_LOOPFILESHORTNAME A_LoopFileShortPath A_LOOPFILESIZE A_LOOPFILESIZEKB A_LOOPFILESIZEMB A_LOOPFILETIMEACCESSED A_LOOPFILETIMECREATED A_LOOPFILETIMEMODIFIED A_LOOPREADLINE A_LOOPREGKEY A_LOOPREGNAME A_LOOPREGSUBKEY A_LOOPREGTIMEMODIFIED A_LOOPREGTYPE A_MDAY A_MIN A_MM A_MMM A_MMMM A_MON A_MouseDelay A_MSEC A_MyDocuments A_Now A_NowUTC A_NUMBATCHLINES A_OSTYPE A_OSVERSION A_PRIORHOTKEY A_ProgramFiles A_Programs A_ProgramsCommon A_ScreenHeight A_ScreenWidth A_SCRIPTDIR A_SCRIPTFULLPATH A_SCRIPTNAME A_SEC A_SPACE A_StartMenu A_StartMenuCommon A_Startup A_StartupCommon A_StringCaseSense A_TAB A_Temp A_THISFUNC A_THISHOTKEY A_THISLABEL A_ThisMenu A_ThisMenuItem A_ThisMenuItemPos A_TICKCOUNT A_TIMEIDLE A_TIMEIDLEPHYSICAL A_TIMESINCEPRIORHOTKEY A_TIMESINCETHISHOTKEY A_TitleMatchMode A_TitleMatchModeSpeed A_UserName A_WDAY A_WinDelay A_WinDir A_WORKINGDIR A_YDAY A_YEAR A_YWeek A_YYYY Clipboard ClipboardAll ComSpec ErrorLevel False ProgramFiles True", False)
+iWord2.AutoCase=True
+
+Set iWord3=ahk.CreateWord(COLOR_WORD3, "ABORT ADD ahk_class ahk_group ahk_id ahk_pid ALNUM ALPHA AltSubmit AltTab AltTabAndMenu AltTabMenu AltTabMenuDismiss AlwaysOnTop Background BETWEEN BitAnd BitNot BitOr BitShiftLeft BitShiftRight BitXOr Border Bottom Button Buttons ByRef CANCEL Cancel CAPACITY Caption Center CHECK Check3 Checkbox Checked CheckedGray Choose ChooseString Close ComboBox CONTROLLIST COUNT DATE DateTime DAYS DDL DEFAULT DELETE DELETEALL Delimiter Deref Destroy DIGIT DISABLE Disabled DropDownList Eject ENABLE Enabled Error Expand ExStyle FILESYSTEM First Flash FLOAT FLOATFAST Focus Font global Group GroupBox Hidden Hide HKCC HKCR HKCU HKEY_CLASSES_ROOT HKEY_CURRENT_CONFIG HKEY_CURRENT_USER HKEY_LOCAL_MACHINE HKEY_USERS HKLM HKU HOURS HScroll ICON ID IDLAST IGNORE ImageList IN INTEGER INTEGERFAST LABEL Label LastFound LastFoundExist Left Limit Lines LIST ListBox ListView local Logoff LOWER Lowercase MAINWINDOW Maximize MaximizeBox Minimize MinimizeBox MinMax MINUTES MonthCal MOUSE Move Multi NA NO NoActivate NODEFAULT NoHide NOICON NOMAINWINDOW NOSTANDARD NoTab Number NUMBER OK Owner PARSE Password Pic Picture PIXEL Pos Pow ProcessName Radio READ ReadOnly Redraw REG_BINARY REG_DWORD REG_EXPAND_SZ REG_MULTI_SZ REG_SZ Region RELATIVE RENAME Resize Restore RETRY RGB Right SCREEN SECONDS Section SERIAL SETLABEL ShiftAltTab SHOW Single Slider STANDARD static STATUS StatusBar StatusCD Style Submit SysMenu Tab Tab2 TabStop Text Theme TIME TIP TOGGLECHECK TOGGLEENABLE ToolWindow Top Topmost TransColor Transparent TRAY TreeView TRYAGAIN TYPE UNCHECK Unicode UpDown UPPER Uppercase USEERRORLEVEL Vis VisFirst Visible VScroll WantCtrlA WantF2 WantReturn Wrap XDIGIT YES", False)
+iWord3.AutoCase=True
+
+Set iWord4=ahk.CreateWord(COLOR_WORD4, "ALT ALTDOWN ALTUP APPSKEY ASC BACKSPACE BLIND BROWSER_BACK BROWSER_FAVORITES BROWSER_FORWARD BROWSER_HOME BROWSER_REFRESH BROWSER_SEARCH BROWSER_STOP BS Capslock CONTROL CTRL CTRLBREAK CTRLDOWN CTRLUP DEL DOWN END ENTER ESC ESCAPE F1 F10 F11 F12 F13 F14 F15 F16 F17 F18 F19 F2 F20 F21 F22 F23 F24 F3 F4 F5 F6 F7 F8 F9 HOME INS INSERT Joy1 Joy10 Joy11 Joy12 Joy13 Joy14 Joy15 Joy16 Joy17 Joy18 Joy19 Joy2 Joy20 Joy21 Joy22 Joy23 Joy24 Joy25 Joy26 Joy27 Joy28 Joy29 Joy3 Joy30 Joy31 Joy32 Joy4 Joy5 Joy6 Joy7 Joy8 Joy9 JoyAxes JoyButtons JoyInfo JoyName JoyPOV JoyR JoyU JoyV JoyX JoyY JoyZ LALT LAUNCH_APP1 LAUNCH_APP2 LAUNCH_MAIL LAUNCH_MEDIA LButton LCONTROL LCTRL LEFT LSHIFT LWIN LWINDOWN MButton MEDIA_NEXT MEDIA_PLAY_PAUSE MEDIA_PREV MEDIA_STOP Numlock NUMPAD0 NUMPAD1 NUMPAD2 NUMPAD3 NUMPAD4 NUMPAD5 NUMPAD6 NUMPAD7 NUMPAD8 NUMPAD9 NUMPADADD NUMPADCLEAR NUMPADDEL NUMPADDIV NUMPADDOT NUMPADDOWN NUMPADEND NUMPADENTER NUMPADHOME NUMPADINS NUMPADLEFT NUMPADMULT NUMPADPGDN NUMPADPGUP NUMPADRIGHT NUMPADSUB NUMPADUP PAUSE PGDN PGUP PRINTSCREEN RALT RAW RButton RCONTROL RCTRL RIGHT RSHIFT RWIN RWINDOWN ScrollLock SHIFT SHIFTDOWN SHIFTUP SPACE TAB UP VOLUME_DOWN VOLUME_MUTE VOLUME_UP WheelDown WheelLeft WheelRight WheelUp XButton1 XButton2", False)
+iWord4.AutoCase=True
+
+Set iOperator=ahk.CreateItem(COLOR_OPERATOR, "[\{\}\(\)\+\-\*\\=%&\^!~\|<>?\.;@\$\[\]]",False )
+
+
+ahk.AddRegion( rComment1 )
+ahk.AddRegion( rComment2 )
+ahk.AddRegion( rComment3 )
+ahk.AddRegion( rString1 )
+ahk.AddRegion( rString2 )
+
+ahk.AddWord( iWord1 )
+ahk.AddWord( iWord2 )
+ahk.AddWord( iWord3 )
+ahk.AddWord( iWord4 )
+ahk.AddItem( iOperator )
+
+'number
+ahk.AddItem( ahk.CreateItem(COLOR_NUMBER, "\b\d+\b", False) )
+
+ahk.IndentText "\{\s*$", False, "}\s*$", False
+ahk.FoldText "\{", False, "\}", False
+ahk.SetPairs( "[]''""{}()" )
+ahk.CommentLine( "^" )
+ahk.CommentBlock "/*", "*/"
