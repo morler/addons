@@ -3,8 +3,8 @@
 ' Language:    CSS
 ' Maintainer:  www.everedit.net Morler 
 ' History:
-'   2012/02/15 Createg
-'	2013/04-06 Modifed from Zubkov Andrey (zubkov.and@ya.ru), 30.10.2012 at Editplus.com
+'   2012/02/15 Create
+'   2012/02/15 Modifed from Zubkov Andrey (zubkov.and@ya.ru), 30.10.2012 at Editplus.com
 '*******************************************************************************
 Include( ".\const.mac" )
 
