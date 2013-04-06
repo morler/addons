@@ -9,8 +9,9 @@ Include( ".\const.mac" )
 
 Set ahk=CreateParser()
 
-Set rComment1=ahk.CreateRegion(COLOR_COMMENT1, "+^+", "$", False )
+Set rComment1=ahk.CreateRegion(COLOR_COMMENT1, "+;+", "$", False )
 Set rComment2=ahk.CreateRegion(COLOR_COMMENT2, "+/*+", "+*/+", False )
+Set rComment3=ahk.CreateRegion(COLOR_COMMENT1, "+//+", "$", False )
 
 Set rString1=ahk.CreateStringRegion( COLOR_STRING1, "'", "`", False )
 Set rString2=ahk.CreateStringRegion( COLOR_STRING2, """", "`", False )
@@ -32,6 +33,7 @@ Set iOperator=ahk.CreateItem(COLOR_OPERATOR, "[\{\}\(\)\+\-\*\\=%&\^!~\|<>?\.;@\
 
 ahk.AddRegion( rComment1 )
 ahk.AddRegion( rComment2 )
+ahk.AddRegion( rComment3 )
 ahk.AddRegion( rString1 )
 ahk.AddRegion( rString2 )
 
