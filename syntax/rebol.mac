@@ -3,6 +3,7 @@
 ' Language:    Rebol
 ' Maintainer:  qtxie  
 ' History:
+'   2012/04/08 Do not highlight Rebol header.
 '   2012/06/19 Create
 '*******************************************************************************
 Helper.Include( ".\const.mac" )
@@ -53,8 +54,8 @@ set pathStr = rebol.CreateItem(COLOR_WORD1, "%\S+", False)
 rebol.AddItem(pathStr)
 
 'rebol doc
- Set nldoc_words=rebol.CreateItem(COLOR_COMMENT1, "^\s((Title|Author|File|Rights|License|Date|Purpose|Encap|Version)\:\s*(.+)$", True)
-rebol.AddItem(nldoc_words)
+'Set nldoc_words=rebol.CreateItem(COLOR_COMMENT1, "^\s((Title|Author|File|Rights|License|Date|Purpose|Encap|Version)\:\s*(.+)$", True)
+'rebol.AddItem(nldoc_words)
 
 'number
 rebol.AddItem( rebol.CreateItem(COLOR_NUMBER, "\b\d+\b", False) )
