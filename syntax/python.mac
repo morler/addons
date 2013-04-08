@@ -3,6 +3,7 @@
 ' Language:    Python
 ' Maintainer:  qtxie  
 ' History:
+'   2013/04/07 Add comment block for '''comment'''
 '   2012/06/22 Create
 '*******************************************************************************
 Include( ".\const.mac" )
@@ -14,9 +15,11 @@ Set rLineComment=python.CreateRegion( COLOR_COMMENT1, "+#+", "$", True )
 Set iLineComment=python.CreateItem( COLOR_COMMENT2, "\#\#.+", False )
 iLineComment.Capture 1, COLOR_COMMENT2
 Set rBlockComment=python.CreateRegion( COLOR_WORD3,  "+""""""+", "+""""""+", False )
+Set rBlockComment2=python.CreateRegion( COLOR_WORD4,  "+'''+", "+'''+", False )
 rLineComment.AddItem( iLineComment )
 python.AddRegion( rLineComment )
 python.AddRegion( rBlockComment )
+python.AddRegion( rBlockComment2 )
 
 'add todo to comment
 Set iTodo=python.CreateItem( COLOR_HIGHLIGHT2, "\b(TODO|FIX|FIXME)\b", False )
@@ -62,5 +65,6 @@ Call python.SetPairs( "[]{}()""""''" )
 
 Call python.CommentLine("#")
 Call python.CommentBlock("""""""", """""""")
+Call python.CommentBlock("''''''", "''''''")
 
 python.AddSnippet "py.snippet"
