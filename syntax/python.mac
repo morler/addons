@@ -65,6 +65,5 @@ Call python.SetPairs( "[]{}()""""''" )
 
 Call python.CommentLine("#")
 Call python.CommentBlock("""""""", """""""")
-Call python.CommentBlock("''''''", "''''''")
 
 python.AddSnippet "py.snippet"
