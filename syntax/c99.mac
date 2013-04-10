@@ -5,7 +5,8 @@
 ' History:
 '   2013/04/04 Created
 '	2013/04/08	fix missing operators '/' & decimal point '.'
-'	2013/04/10	little update about macro
+'	2013/04/10	little update about macro & support binary numbers
+'
 '*******************************************************************************
 Include( ".\const.mac" )
 
@@ -65,7 +66,7 @@ macro_token.Capture 3, COLOR_VAR
 c99.AddItem( macro_token )
 
 'number
-c99.AddItem( c99.CreateItem(COLOR_NUMBER, "\b([0-9]+\.?[0-9]*|0x[0-9a-fA-F]+)\b", False) )
+c99.AddItem( c99.CreateItem(COLOR_NUMBER, "\b([0-9]+\.?[0-9]*|0x[0-9a-fA-F]+|0[b][01]+)\b", False) )
 
 c99.AddSnippet "c.snippet"
 
