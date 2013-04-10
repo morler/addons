@@ -5,14 +5,34 @@
 ' History:
 '   2012/05/15 Create
 '   2013/03/30 Update i_mdstrong
+'   2013/04/10 Add scope names
 '*******************************************************************************
 Include( ".\const.mac" )
 
 Set mk=CreateParser()
 
 Set i_mditem=mk.CreateItem(COLOR_WORD1, "^#{1,6}.*$", False)
-Set i_mdno=mk.CreateItem(COLOR_HIGHLIGHT1, "(?<=^\s*)([\*\+\-]|(\d+\.))\s.*$", False)
-Set i_mdstrong=mk.CreateItem(COLOR_ERROR, "\*\*[\S\s]+?\*\*", False)
+i_mditem.Name="heading.markdown"
+
+Set i_mdno=mk.CreateItem(COLOR_WORD2, "(?<=^\s*)([\*\+\-]|(\d+\.))\s.*$", False)
+
+Set i_mdistrong=mk.CreateItem(COLOR_HIGHLIGHT3, "\*\*\*[\S\s]+?\*\*\*", False)
+i_mdistrong.Name="istrong.markdown"
+
+Set i_mdistrong2=mk.CreateItem(COLOR_HIGHLIGHT3, "___[\S\s]+?___", False)
+i_mdistrong2.Name="istrong.markdown"
+
+Set i_mdstrong=mk.CreateItem(COLOR_HIGHLIGHT2, "\*\*[\S\s]+?\*\*", False)
+i_mdstrong.Name="strong.markdown"
+
+Set i_mdstrong2=mk.CreateItem(COLOR_HIGHLIGHT2, "__[\S\s]+?__", False)
+i_mdstrong2.Name="strong.markdown"
+
+Set i_mditalic=mk.CreateItem(COLOR_HIGHLIGHT4, "\*[\S\s]+?\*", False)
+i_mditalic.Name="italic.markdown"
+
+Set i_mditalic2=mk.CreateItem(COLOR_HIGHLIGHT4, "_[\S\s]+?_", False)
+i_mditalic2.Name="italic.markdown"
 
 Set i_mdlink=mk.CreateItem(COLOR_DEFAULT, "\[(.+?)\]:(.*)", False)
 i_mdlink.Capture 1, COLOR_WORD1
@@ -23,7 +43,18 @@ i_mdlink2.Capture 1, COLOR_WORD1
 i_mdlink2.Capture 2, COLOR_URL
 
 
-Set r_mdline=mk.CreateRegion(COLOR_HIGHLIGHT2, "\*\x20\*\x20\*", "$", False, True)
+Set r_mdline1=mk.CreateRegion(COLOR_HIGHLIGHT2, "\*\x20\*\x20\*", "$", False, True)
+r_mdline1.Name="line.markdown"
+
+Set r_mdline2=mk.CreateRegion(COLOR_HIGHLIGHT2, "-\x20-\x20-", "$", False, True)
+r_mdline2.Name="line.markdown"
+
+Set r_mdline3=mk.CreateRegion(COLOR_HIGHLIGHT2, "---", "$", False, True)
+r_mdline3.Name="line.markdown"
+
+Set r_mdline4=mk.CreateRegion(COLOR_HIGHLIGHT2, "^\*\*\*$", "$", False, True)
+r_mdline4.Name="line.markdown"
+
 Set r_mdlist=mk.CreateRegion(COLOR_WORD2, "^\*\s+.*$", "^(?=\S)", False)
 r_mdlist.AddItem(i_mdlink2)
 Set r_mdquote=mk.CreateRegion(COLOR_COMMENT2, "^\s*>", "^$", False)
@@ -31,9 +62,9 @@ Set r_mdquote=mk.CreateRegion(COLOR_COMMENT2, "^\s*>", "^$", False)
 Set r_mdcode=mk.CreateRegion(COLOR_COMMENT1, "(?<=^(\x20{4}|\t)).", "^(?!\x20{4})", False)
 Set r_mdcodeline=mk.CreateStringRegion(COLOR_COMMENT1, "`", "", False)
 
-Set r_tag		=mk.CreateRegion( COLOR_WORD1, "<\w+|</+|<!+", "/?>", False )
+Set r_tag=mk.CreateRegion( COLOR_WORD1, "<\w+|</+|<!+", "/?>", False )
 'html string in tag
-Set r_hdstring	=mk.CreateStringRegion( COLOR_STRING1, """", "", True )
+Set r_hdstring  =mk.CreateStringRegion( COLOR_STRING1, """", "", True )
 Set r_hsstring	=mk.CreateStringRegion( COLOR_STRING1, "'", "", True )
 r_tag.AddRegion( r_hdstring )
 r_tag.AddRegion( r_hsstring )
@@ -47,13 +78,26 @@ mk.AddItem( i_mditem )
 mk.AddItem( i_mdno )
 mk.AddItem( i_mdlink )
 mk.AddItem( i_mdlink2 )
+
+mk.AddItem( i_mditalic2 )
+mk.AddItem( i_mdstrong2 )
+mk.AddItem( i_mdistrong2 )
+
+mk.AddRegion( r_mdline4 )
+mk.AddItem( i_mditalic )
 mk.AddItem( i_mdstrong )
-mk.AddRegion( r_mdline )
+mk.AddItem( i_mdistrong )
+
+mk.AddRegion( r_mdline1 )
+mk.AddRegion( r_mdline2 )
+mk.AddRegion( r_mdline3 )
+
 mk.AddRegion( r_mdlist )
 mk.AddRegion( r_mdquote )
 mk.AddRegion( r_mdcode )
 mk.AddRegion( r_mdcodeline )
 
-mk.AddRegion( r_tag )'this is a hack, if r_tag will return a same state, your can add it to other parents without re-creating.
+'this is a hack, if r_tag will return a same state, your can add it to other parents without re-creating.
+mk.AddRegion( r_tag )
 
 mk.SetPairs( "<>[](){}""""''" )
