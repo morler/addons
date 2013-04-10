@@ -4,6 +4,7 @@
 ' Maintainer:  www.everedit.net  
 ' History:
 '   2012/08/07 Create
+'   2012/04/10 Add label match
 '*******************************************************************************
 Include( ".\const.mac" )
 
@@ -18,13 +19,15 @@ wWord1.AutoCase=True
 Set wWord2=bat.CreateWord( COLOR_COMMENT1, "REM", False )
 wWord2.AutoCase=True
 
+Set iLabel=bat.CreateItem( COLOR_WORD2, "^\s*:[^\n]+", False )
+
 bat.AddRegion( rComment )
 bat.AddRegion( rString1 )
 bat.AddRegion( rString2 )
+bat.AddItem( iLabel )
 bat.AddWord( wWord1 )
 
 rComment.AddWord( wWord2 )
-
 
 bat.SetPairs( "[]{}()""""''" )
 bat.CommentLine( "REM " )
