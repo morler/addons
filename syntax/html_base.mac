@@ -6,6 +6,7 @@
 '   2012/02/15 Create
 '   2012/06/05 Improved for EE 2.0
 '   2012/10/29 Improved for EE 2.50
+'  2012/04/11 Move css to css_base, js to js_base
 '*******************************************************************************
 Include( ".\const.mac" )
 
@@ -48,30 +49,9 @@ Set rScriptEnd=html.CreateRegion( COLOR_SUBLAN, "+</script+", "+>+", False )
 rJsScript.AddRegion( rScriptEnd )
 rScriptEnd.TransRegion=html.DefaultRegion
 
-'js comment
-Set rJsBlockComment=html.CreateRegion( COLOR_COMMENT1, "+/*+", "\*/|.?(?=</script>)", False )
-Set rJsLineComment=html.CreateRegion( COLOR_COMMENT1, "+//+", "$", True )
-
-'js string
-Set rJsString2	=html.CreateStringRegion( COLOR_STRING2, """", "\", True )
-Set rJsString1	=html.CreateStringRegion( COLOR_STRING1, "'", "\", True )
-
-rJsScript.AddRegion( rJsBlockComment )
-rJsScript.AddRegion( rJsLineComment )
-rJsScript.AddRegion( rJsString2 )
-rJsScript.AddRegion( rJsString1 )
-
-'js number
-rJsScript.AddItem( html.CreateItem(COLOR_NUMBER, "\b\d+\b", False) )
-
-'js operators
-rJsScript.AddItem( html.CreateItem(COLOR_OPERATOR, "[\{\}\(\)\+\-\*\\=%&\^!~\|<>?\.;\[\]]",False ) )
-
-
-'js reserved words
-rJsScript.AddWord( html.CreateWord(COLOR_WORD1, "abstract boolean break byte case catch char class const continue default delete do double else extends false final finally float for function goto if implements import in instanceof int interface long native new null package private protected public return short static super switch synchronized this throw throws transient true try typeof var void while with", True) )
-'js built-in objects
-rJsScript.AddWord( html.CreateWord(COLOR_WORD2, "Anchor anchors Applet applets Area Array Button Checkbox Date document FileUpload Form forms Frame frames Hidden history Image images Link links Area location Math MimeType mimeTypes navigator options Password Plugin plugins Radio Reset Select String Submit Text Textarea window", True ) )
+Set js_creator=html
+Set rJsRegion=rJsScript
+Include( ".\js_base.mac" )
 
 '---------------------------------------------------------------------
 'css tag
@@ -84,45 +64,14 @@ Set rCssEnd=html.CreateRegion( COLOR_SUBLAN, "+</style+", "+>+", False )
 rCssScript.AddRegion( rCssEnd )
 rCssEnd.TransRegion=html.DefaultRegion
 
-'css string
-Set rCssString2=html.CreateStringRegion( COLOR_STRING2, """", "", True )
-Set rCssString1=html.CreateStringRegion( COLOR_STRING1, "'", "", True )
+Set css_creator=html
+Set rCssRegion=rCssScript
+Include( ".\css_base.mac" )
 
-rCssScript.AddRegion( rCssString2 )
-rCssScript.AddRegion( rCssString1 )
+html.FoldText "<(html|body|table|tr|div|span|pre|p|code)", False
+html.UnfoldText "</(html|body|table|tr|div|span|pre|p|code)", False
+html.CommentBlock "<!--", "-->"
+html.SetPairs( "<>()[]{}""""''" )
+html.AddSnippet( "html.snippet" )
 
-'css comment
-Set rCssBlockComment=html.CreateRegion( COLOR_COMMENT1, "+/*+", "\*/|.?(?=</style>)", False )
-rCssScript.AddRegion( rCssBlockComment )
-
-rCssScript.AddWord( html.CreateWord(COLOR_WORD1, "ascent azimuth background background-attachment background-color background-image background-position background-repeat baseline bbox border border-collapse border-color border-spacing border-style border-top border-right border-bottom border-left border-top-color border-right-color border-bottom-color border-left-color border-top-style border-right-style border-bottom-style border-left-style border-top-width border-right-width border-bottom-width border-left-width border-width bottom cap-height caption-side centerline clear clip color content counter-increment counter-reset cue cue-after cue-before cursor definition-src descent direction display elevation empty-cells float font font-family font-size font-size-adjust font-stretch font-style font-variant font-weight height left letter-spacing line-height list-style list-style-image list-style-position list-style-type margin margin-top margin-right margin-bottom margin-left marker-offset marks mathline max-height max-width min-height min-width orphans outline outline-color outline-style outline-width overflow padding padding-top padding-right padding-bottom padding-left page page-break-after page-break-before page-break-inside panose-1 pause pause-after pause-before pitch pitch-range play-during position quotes richness right size slope src speak speak-header speak-numeral speak-punctuation speech-rate stemh stemv stress table-layout text-align text-decoration text-indent text-shadow text-transform unicode-bidi unicode-range units-per-em vertical-align visibility voice-family volume white-space widows width widths word-spacing x-height z-index break-word -moz-pre-wrap", False, "-") )
-
-rCssScript.AddWord( html.CreateWord(COLOR_WORD2, "-moz-box -webkit-box above absolute adjacent all allow-end alternate always aqua armenian auto avoid back background-attachment background-color background-image background-position background-repeat balance baseline behind below bidi-override black blink block block-axis blue bold bolder border-box border-top-color both bottom box break-all break-word button capitalize caption center center-left center-right child circle clip close-quote code collapse condensed contain content-box continuous cover crosshair cubic-bezier cue-after cue-before current cursive dashed decimal decimal-leading-zero default digits disc distribute dotted double e-resize ease ease-in ease-in-out ease-out ellipsis embed end expanded extra-condensed extra-expanded fantasy far-left far-right fast faster female field fill first fixed flat font-family font-size font-style font-variant font-weight force-end front fuchsia georgian gray green groove height help hidden hide high higher horizontal hsl hsla hyphenate icon infinite inherit inline inline-axis inline-block inline-table inset inside inter-cluster inter-ideograph inter-word invert italic justify kashida large larger last left left-side leftwards level lighter lime line-height line-through linear list-item list-style-image list-style-position list-style-type loud low lower lower-alpha lower-greek lower-latin lower-roman lowercase ltr male maroon marquee matrix matrix3d medium menu message-box middle mix modal monospace move multiple n-resize narrower navy ne-resize new no-close-quote no-content no-display no-open-quote no-repeat none normal nowrap nw-resize oblique olive once open-quote orange outline-color outline-style outline-width outset outside overline padding-box panner parent paused perspective pointer pre pre-line pre-wrap preserve-3d progress purple rect red relative repeat repeat-x repeat-y reverse rgb rgba ridge right right-side rightwards root rotate rotate3d rotateX rotateY rotateZ round rtl running s-resize sans-serif scale scale3d scaleX scaleY scaleZ scroll scrollbar se-resize semi-condensed semi-expanded separate serif show silent silver single skew skewX skewY slow slower small small-caps small-caption smaller soft solid spell-out square start static status-bar stretch sub super suppress sw-resize tab table table-caption table-cell table-column table-column-group table-footer-group table-header-group table-row table-row-group teal text text-bottom text-top thick thin top translate translate3d translateX translateY translateZ transparent ultra-condensed ultra-expanded underline unrestricted upper-alpha upper-latin upper-roman uppercase url vertical visible w-resize wait white wider width window x-fast x-high x-large x-loud x-low x-slow x-small x-soft xx-large xx-small yellow", False, "-") )
-rCssScript.AddItem( html.CreateItem(COLOR_WORD3, "#[a-fA-F0-9]+\b", True) )
-
-Call html.FoldText( "<(html|body|table|tr|div|span|pre|p|code)", False )
-Call html.UnfoldText( "</(html|body|table|tr|div|span|pre|p|code)", False )
-Call html.CommentBlock("<!--", "-->")
-Call html.SetPairs( "<>()[]{}""""''" )
-'Call html.IndentText( "<(html|body|table|tr|div|span|pre|p|code)", False )
-'Call html.UnindentText( "</(html|body|table|tr|div|span|pre|p|code)>$", False )
-
-html.AddSnippet "html.snippet"
-Call rJsScript.FoldText( "\{", False )
-Call rJsScript.UnfoldText( "\}", False )
-Call rJsScript.CommentLine("//")
-Call rJsScript.CommentBlock("/*", "*/")
-Call rJsScript.SetPairs( "[](){}""""''" )
-Call rJsScript.IndentText( "{$", False )
-Call rJsScript.UnindentText( "^\s*}$", False )
-
-Call rCssScript.CommentBlock("/*", "*/")
-Call rCssScript.SetPairs( "()[]{}""""''" )
-Call rCssScript.FoldText( "\{", False )
-Call rCssScript.UnfoldText( "\}", False )
-Call rCssScript.IndentText( "{$", False )
-Call rCssScript.UnindentText( "^\s*}$", False )
-
-rCssScript.AddSnippet "css.snippet"
-rJsScript.AddSnippet "js.snippet"
 rTagStyle.AddSnippet "css.snippet"
