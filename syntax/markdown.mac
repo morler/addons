@@ -16,19 +16,19 @@ i_mditem.Name="heading.markdown"
 
 Set i_mdno=mk.CreateItem(COLOR_WORD2, "(?<=^\s*)([\*\+\-]|(\d+\.))\s.*$", False)
 
-Set i_mdistrong=mk.CreateItem(COLOR_HIGHLIGHT3, "\*\*\*[\S\s]+?\*\*\*", False)
+Set i_mdistrong=mk.CreateItem(COLOR_HIGHLIGHT3, "(?<!\\)\*\*\*[^\*]+?\*\*\*", False)
 i_mdistrong.Name="istrong.markdown"
 
 Set i_mdistrong2=mk.CreateItem(COLOR_HIGHLIGHT3, "___[\S\s]+?___", False)
 i_mdistrong2.Name="istrong.markdown"
 
-Set i_mdstrong=mk.CreateItem(COLOR_HIGHLIGHT2, "\*\*[\S\s]+?\*\*", False)
+Set i_mdstrong=mk.CreateItem(COLOR_HIGHLIGHT2, "(?<!\\)\*\*[^\*]+?\*\*", False)
 i_mdstrong.Name="strong.markdown"
 
 Set i_mdstrong2=mk.CreateItem(COLOR_HIGHLIGHT2, "__[\S\s]+?__", False)
 i_mdstrong2.Name="strong.markdown"
 
-Set i_mditalic=mk.CreateItem(COLOR_HIGHLIGHT4, "\*[\S\s]+?\*", False)
+Set i_mditalic=mk.CreateItem(COLOR_HIGHLIGHT4, "(?<!\\|\*)\*[^\*]+?\*", False)
 i_mditalic.Name="italic.markdown"
 
 Set i_mditalic2=mk.CreateItem(COLOR_HIGHLIGHT4, "_[\S\s]+?_", False)
@@ -65,7 +65,7 @@ Set r_mdcodeline=mk.CreateStringRegion(COLOR_COMMENT1, "`", "", False)
 Set r_tag=mk.CreateRegion( COLOR_WORD1, "<\w+|</+|<!+", "/?>", False )
 'html string in tag
 Set r_hdstring  =mk.CreateStringRegion( COLOR_STRING1, """", "", True )
-Set r_hsstring	=mk.CreateStringRegion( COLOR_STRING1, "'", "", True )
+Set r_hsstring  =mk.CreateStringRegion( COLOR_STRING1, "'", "", True )
 r_tag.AddRegion( r_hdstring )
 r_tag.AddRegion( r_hsstring )
 'word in tag
@@ -73,6 +73,9 @@ r_tag.AddItem( mk.CreateItem(COLOR_WORD2, "\b[\w\-]+\s*=", False) )
 
 
 r_mdcode.AddRegion( r_tag )
+
+'symbols
+mk.AddItem( mk.CreateItem(COLOR_HIGHLIGHT1, "(?<!\\)\\[^\\]", False) )
 
 mk.AddItem( i_mditem )
 mk.AddItem( i_mdno )
