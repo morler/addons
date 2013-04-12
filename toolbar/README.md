@@ -44,9 +44,43 @@ There are 3 params of a command.
 ##DLL Fucntion
 The dll should be a pure C DLL and located at toolbar directory, and the format of functions should follow the below type define.
 
+##Sample code of dll
 ```
 DWORD YourDllName(EE_Context* pContext, LPRECT lpButton, LPCTSTR lpText);
 ```
+
+```
+#include <windows.h>
+#include "eecore.h"
+#include "eesdk.h"
+
+extern "C" {
+    _declspec(dllexport) DWORD MyToolBarCallBack(EE_Context* pContext, LPRECT lpRect, LPCTSTR lpText);
+};
+
+DWORD MyToolBarCallBack(EE_Context* pContext, LPRECT lpRect, LPCTSTR lpText)
+{
+	::MessageBox(pContext->hMain, _T("Hello world!"), _T("My DLL"), MB_OK );
+	return 0;
+}
+
+BOOL APIENTRY DllMain( HMODULE hModule,
+                       DWORD  ul_reason_for_call,
+                       LPVOID lpReserved
+                )
+{
+    switch (ul_reason_for_call)
+    {
+        case DLL_PROCESS_ATTACH:
+        case DLL_THREAD_ATTACH:
+        case DLL_THREAD_DETACH:
+        case DLL_PROCESS_DETACH:
+        break;
+    }
+    return TRUE;
+}
+```
+
 
 ##Call a dll function from etb file
 Example:
