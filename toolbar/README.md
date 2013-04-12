@@ -44,11 +44,11 @@ There are 3 params of a command.
 ##DLL Fucntion
 The dll should be a pure C DLL and located at toolbar directory, and the format of functions should follow the below type define.
 
-##Sample code of dll
 ```
 DWORD YourDllName(EE_Context* pContext, LPRECT lpButton, LPCTSTR lpText);
 ```
 
+##Sample code of dll
 ```
 #include <windows.h>
 #include "eecore.h"
