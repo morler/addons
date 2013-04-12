@@ -5,7 +5,7 @@
 ' History:
 '   2012/02/15 Created
 '   2012/06/17 Fixed bugs of include macro parser
-'   2012/04/12 Merged from cpp.mac
+'   2012/04/12 Merged from c99.mac
 '*******************************************************************************
 Include( ".\const.mac" )
 
