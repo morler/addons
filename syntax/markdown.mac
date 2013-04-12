@@ -3,9 +3,10 @@
 ' Language:    Markdown
 ' Maintainer:  www.everedit.net  
 ' History:
-'   2012/05/15 Create
-'   2013/03/30 Update i_mdstrong
-'   2013/04/10 Add scope names
+'   2012/05/15 Created
+'   2013/03/30 Updated i_mdstrong
+'   2013/04/10 Added scope names
+'   2013/04/12 Supported code span(```)
 '*******************************************************************************
 Include( ".\const.mac" )
 
@@ -61,6 +62,7 @@ Set r_mdquote=mk.CreateRegion(COLOR_COMMENT2, "^\s*>", "^$", False)
 
 Set r_mdcode=mk.CreateRegion(COLOR_COMMENT1, "(?<=^(\x20{4}|\t)).", "^(?!\x20{4})", False)
 Set r_mdcodeline=mk.CreateStringRegion(COLOR_COMMENT1, "`", "", False)
+Set r_mdcodeblock=mk.CreateRegion(COLOR_COMMENT2, "^```", "^```", False)
 
 Set r_tag=mk.CreateRegion( COLOR_WORD1, "<\w+|</+|<!+", "/?>", False )
 'html string in tag
@@ -98,6 +100,7 @@ mk.AddRegion( r_mdline3 )
 mk.AddRegion( r_mdlist )
 mk.AddRegion( r_mdquote )
 mk.AddRegion( r_mdcode )
+mk.AddRegion( r_mdcodeblock )
 mk.AddRegion( r_mdcodeline )
 
 'this is a hack, if r_tag will return a same state, your can add it to other parents without re-creating.
