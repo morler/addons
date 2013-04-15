@@ -68,7 +68,7 @@ Set css_creator=html
 Set rCssRegion=rCssScript
 Include( ".\css_base.mac" )
 
-html.FoldText "   <(html|body|table|tbody|tr|div|blockquote|pre|code|p|form|ul|ol|dl|menu|article|section|aside|nav|footer|header|datalist|figure)", False
+html.FoldText "<(html|body|table|tbody|tr|div|blockquote|pre|code|p|form|ul|ol|dl|menu|article|section|aside|nav|footer|header|datalist|figure)", False
 html.UnfoldText "</(html|body|table|tbody|tr|div|blockquote|pre|code|p|form|ul|ol|dl|menu|article|section|aside|nav|footer|header|datalist|figure)", False
 html.CommentBlock "<!--", "-->"
 html.SetPairs( "<>()[]{}""""''" )
