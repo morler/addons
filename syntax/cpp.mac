@@ -4,11 +4,13 @@
 ' Maintainer:  www.everedit.net  
 ' History:
 '   2012/02/15 Created
-'	2012/06/17 Fixed bugs of include macro parser
+'   2012/06/17 Fixed bugs of include macro parser
+'   2012/04/12 Merged from c99.mac
 '*******************************************************************************
 Include( ".\const.mac" )
 
 Set cpp=CreateParser()
+cpp.WordChars="_"
 
 'comment
 Set rLineComment=cpp.CreateRegion( COLOR_COMMENT1, "+//+", "$", True )
@@ -29,20 +31,23 @@ Set rString2=cpp.CreateStringRegion( COLOR_STRING1, """", "\", False )
 cpp.AddRegion( rString2 )
 
 'function
-cpp.AddItem( cpp.CreateItem(COLOR_FUNCTION, "[\w_]+(?=\()", False) )
+cpp.AddItem( cpp.CreateItem(COLOR_FUNCTION, "[\w_][\w\d_]+(?=\()", False) )
 
 'Reserved words
-cpp.AddWord( cpp.CreateWord(COLOR_WORD1, "auto bool break case catch char cerr cin class const continue cout default delete do double else enum explicit extern float for friend goto if inline int long namespace new operator private protected public register return short signed sizeof static struct switch template this throw try typedef union unsigned using virtual void volatile wchar_t while", True ) )
+cpp.AddWord( cpp.CreateWord(COLOR_WORD1, "goto break return continue asm __asm__ case default if else switch while for do", True ) )
 
-'macro
-cpp.AddItem( cpp.CreateItem(COLOR_MACRO, "#\s*if\s+!?defined",False ) )
-cpp.AddItem( cpp.CreateItem(COLOR_MACRO, "#\s*(if|pragma|else|elif|error|ifndef|define|endif|undef|ifdef)\b", False ) )
+'C data types & structures & storage modifiers & operators
+cpp.AddWord( cpp.CreateWord(COLOR_WORD2, "int long short char void signed unsigned float double _Complex _Imaginary _Bool bool complex imaginary typedef struct union enum static register auto volatile extern const fortran restrict inline sizeof", True ) )
+
+'C Standard Library Functions (based on Yang Zhang <imyeyeslove@163.com> uploaded VIM syntax file for C: http://www.vim.org/scripts/script.php?script_id=2952)
+cpp.AddWord( cpp.CreateWord(COLOR_WORD3, "__assert_fail __assert_perror_fail __assert __ctype_b_loc __ctype_tolower_loc __ctype_toupper_loc tolower toupper isctype isascii toascii __tolower_l tolower_l __toupper_l toupper_l setlocale localeconv newlocale duplocale freelocale uselocale __nldbl_nexttowardf __REDIRECT_NTH __REDIRECT_NTH __REDIRECT_NTH matherr matherr setjmp __sigsetjmp _setjmp longjmp _longjmp siglongjmp __sysv_signal sysv_signal signal __REDIRECT_NTH bsd_signal kill killpg raise ssignal gsignal psignal psiginfo __sigpause sigpause sigpause sigblock sigsetmask siggetmask sigemptyset sigfillset sigaddset sigdelset sigismember sigisemptyset sigandset sigorset sigprocmask sigsuspend sigaction sigpending sigwait sigwaitinfo sigtimedwait sigqueue sigvec sigreturn siginterrupt sigstack sigaltstack sighold sigrelse sigignore sigset __libc_current_sigrtmin __libc_current_sigrtmax remove rename renameat tmpfile __REDIRECT tmpfile64 tmpnam tmpnam_r tempnam fclose fflush fflush_unlocked fcloseall fopen freopen __REDIRECT __REDIRECT fopen64 freopen64 fdopen fopencookie fmemopen open_memstream setbuf setvbuf setbuffer setlinebuf fprintf printf sprintf vfprintf vprintf vsprintf snprintf vsnprintf vasprintf __asprintf asprintf vdprintf dprintf fscanf scanf sscanf __REDIRECT __REDIRECT __REDIRECT __isoc99_fscanf __isoc99_scanf __isoc99_sscanf vfscanf vscanf vsscanf __REDIRECT __REDIRECT __REDIRECT __isoc99_vfscanf __isoc99_vscanf __isoc99_vsscanf fgetc getc getchar getc_unlocked getchar_unlocked fgetc_unlocked fputc putc putchar fputc_unlocked putc_unlocked putchar_unlocked getw putw fgets gets fgets_unlocked __getdelim getdelim getline fputs puts ungetc fread fwrite fputs_unlocked fread_unlocked fwrite_unlocked fseek ftell rewind fseeko ftello __REDIRECT __REDIRECT fgetpos fsetpos __REDIRECT __REDIRECT fseeko64 ftello64 fgetpos64 fsetpos64 clearerr feof ferror clearerr_unlocked feof_unlocked ferror_unlocked perror fileno fileno_unlocked popen pclose ctermid cuserid obstack_printf obstack_vprintf flockfile ftrylockfile funlockfile memcpy memmove memccpy memset memcmp memchr memchr memchr rawmemchr rawmemchr rawmemchr memrchr memrchr memrchr strcpy strncpy strcat strncat strcmp strncmp strcoll strxfrm strcoll_l strxfrm_l strdup strndup strchr strchr strchr strrchr strrchr strrchr strchrnul strchrnul strchrnul strcspn strspn strpbrk strpbrk strpbrk strstr strstr strstr strtok __strtok_r strtok_r strcasestr strcasestr strcasestr memmem __mempcpy mempcpy strlen strnlen strerror __REDIRECT_NTH __xpg_strerror_r strerror_r strerror_l __bzero bcopy bzero bcmp index index index rindex rindex rindex ffs ffsl ffsll strcasecmp strncasecmp strcasecmp_l strncasecmp_l strsep strsignal __stpcpy stpcpy __stpncpy stpncpy strverscmp strfry memfrob basename basename basename __ctype_get_mb_cur_max atof atoi atol atoll strtod strtof strtold strtol strtoul strtoq strtouq strtoll strtoull strtol_l strtoul_l strtoll_l strtoull_l strtod_l strtof_l strtold_l l64a a64l random srandom initstate setstate random_r srandom_r initstate_r setstate_r rand srand rand_r drand48 erand48 lrand48 nrand48 mrand48 jrand48 srand48 seed48 lcong48 drand48_r erand48_r lrand48_r nrand48_r mrand48_r jrand48_r srand48_r seed48_r lcong48_r malloc calloc realloc free cfree valloc posix_memalign abort atexit at_quick_exit on_exit exit quick_exit _Exit getenv __secure_getenv putenv setenv unsetenv clearenv mktemp mkstemp __REDIRECT mkstemp64 mkstemps __REDIRECT mkstemps64 mkdtemp mkostemp __REDIRECT mkostemp64 mkostemps __REDIRECT mkostemps64 system canonicalize_file_name realpath bsearch qsort qsort_r abs labs llabs div ldiv lldiv ecvt fcvt gcvt qecvt qfcvt qgcvt ecvt_r fcvt_r qecvt_r qfcvt_r mblen mbtowc wctomb mbstowcs wcstombs rpmatch getsubopt setkey posix_openpt grantpt unlockpt ptsname ptsname_r getpt getloadavg clock time difftime mktime strftime strptime strftime_l strptime_l gmtime localtime gmtime_r localtime_r asctime ctime asctime_r ctime_r tzset stime timegm timelocal dysize nanosleep clock_getres clock_gettime clock_settime clock_nanosleep clock_getcpuclockid timer_create timer_delete timer_settime timer_gettime timer_getoverrun getdate getdate_r feclearexcept fegetexceptflag feraiseexcept fesetexceptflag fetestexcept fegetround fesetround fegetenv feholdexcept fesetenv feupdateenv feenableexcept fedisableexcept fegetexcept imaxabs imaxdiv strtoimax strtoumax wcstoimax wcstoumax __strtol_internal __strtoul_internal __wcstol_internal __wcstoul_internal __strtoll_internal __strtoull_internal __wcstoll_internal __wcstoull_internal wcscpy wcsncpy wcscat wcsncat wcscmp wcsncmp wcscasecmp wcsncasecmp wcscasecmp_l wcsncasecmp_l wcscoll wcsxfrm wcscoll_l wcsxfrm_l wcsdup wcschr wcschr wcschr wcsrchr wcsrchr wcsrchr wcschrnul wcscspn wcsspn wcspbrk wcspbrk wcspbrk wcsstr wcsstr wcsstr wcstok wcslen wcswcs wcswcs wcswcs wcsnlen wmemchr wmemchr wmemchr wmemcmp wmemcpy wmemmove wmemset wmempcpy btowc wctob mbsinit mbrtowc wcrtomb __mbrlen mbrlen __btowc_alias __wctob_alias mbsrtowcs wcsrtombs mbsnrtowcs wcsnrtombs wcwidth wcswidth wcstod wcstof wcstold wcstol wcstoul wcstoll wcstoull wcstoq wcstouq wcstol_l wcstoul_l wcstoll_l wcstoull_l wcstod_l wcstof_l wcstold_l wcpcpy wcpncpy open_wmemstream fwide fwprintf wprintf swprintf vfwprintf vwprintf vswprintf fwscanf wscanf swscanf __REDIRECT __REDIRECT __REDIRECT __isoc99_fwscanf __isoc99_wscanf __isoc99_swscanf vfwscanf vwscanf vswscanf __REDIRECT __REDIRECT __REDIRECT __isoc99_vfwscanf __isoc99_vwscanf __isoc99_vswscanf fgetwc getwc getwchar fputwc putwc putwchar fgetws fputws ungetwc getwc_unlocked getwchar_unlocked fgetwc_unlocked fputwc_unlocked putwc_unlocked putwchar_unlocked fgetws_unlocked fputws_unlocked wcsftime wcsftime_l iswalnum iswalpha iswcntrl iswdigit iswgraph iswlower iswprint iswpunct iswspace iswupper iswxdigit iswblank wctype iswctype towlower towupper wctrans towctrans iswalnum_l iswalpha_l iswcntrl_l iswdigit_l iswgraph_l iswlower_l iswprint_l iswpunct_l iswspace_l iswupper_l iswxdigit_l iswblank_l wctype_l iswctype_l towlower_l towupper_l wctrans_l towctrans_l access euidaccess eaccess faccessat lseek __REDIRECT_NTH lseek64 close read write pread pwrite __REDIRECT __REDIRECT pread64 pwrite64 pipe pipe2 alarm sleep ualarm usleep pause chown fchown lchown fchownat chdir fchdir getcwd get_current_dir_name getwd dup dup2 dup3 execve fexecve execv execle execl execvp execlp execvpe nice _exit pathconf fpathconf sysconf confstr getpid getppid getpgrp __REDIRECT_NTH __getpgid getpgid setpgid setpgrp __REDIRECT_NTH setsid getsid getuid geteuid getgid getegid getgroups group_member setuid setreuid seteuid setgid setregid setegid getresuid getresgid setresuid setresgid fork vfork ttyname ttyname_r isatty ttyslot link linkat symlink readlink symlinkat readlinkat unlink unlinkat rmdir tcgetpgrp tcsetpgrp getlogin getlogin_r setlogin gethostname sethostname sethostid getdomainname setdomainname vhangup revoke profil acct getusershell endusershell setusershell daemon chroot getpass fsync gethostid sync getpagesize getdtablesize truncate __REDIRECT_NTH truncate64 ftruncate __REDIRECT_NTH ftruncate64 brk sbrk syscall lockf __REDIRECT lockf64 fdatasync crypt encrypt swab ctermid remove rename renameat tmpfile __REDIRECT tmpfile64 tmpnam tmpnam_r tempnam fclose fflush fflush_unlocked fcloseall fopen freopen __REDIRECT __REDIRECT fopen64 freopen64 fdopen fopencookie fmemopen open_memstream setbuf setvbuf setbuffer setlinebuf fprintf printf sprintf vfprintf vprintf vsprintf snprintf vsnprintf vasprintf __asprintf asprintf vdprintf dprintf fscanf scanf sscanf __REDIRECT __REDIRECT __REDIRECT __isoc99_fscanf __isoc99_scanf __isoc99_sscanf vfscanf vscanf vsscanf __REDIRECT __REDIRECT __REDIRECT __isoc99_vfscanf __isoc99_vscanf __isoc99_vsscanf fgetc getc getchar getc_unlocked getchar_unlocked fgetc_unlocked fputc putc putchar fputc_unlocked putc_unlocked putchar_unlocked getw putw fgets gets fgets_unlocked __getdelim getdelim getline fputs puts ungetc fread fwrite fputs_unlocked fread_unlocked fwrite_unlocked fseek ftell rewind fseeko ftello __REDIRECT __REDIRECT fgetpos fsetpos __REDIRECT __REDIRECT fseeko64 ftello64 fgetpos64 fsetpos64 clearerr feof ferror clearerr_unlocked feof_unlocked ferror_unlocked perror fileno fileno_unlocked popen pclose ctermid cuserid obstack_printf obstack_vprintf flockfile ftrylockfile funlockfile", True ) )
 
 'operators
-cpp.AddItem( cpp.CreateItem(COLOR_OPERATOR, "[\{\}\(\)\+\-\*\\=%&\^!~\|<>?\.;\[\]]",False ) )
+cpp.AddItem( cpp.CreateItem(COLOR_OPERATOR, "[\{\}\(\)\+\-\*\\=%&\^!~\|<>?\.,:;\/\[\]]",False ) )
 Set rError=cpp.CreateRegion( COLOR_COMMENT1, "#\s*error\b", "$", True )
 cpp.AddRegion( rError )
 
+'include
 Set iInclude1=cpp.CreateItem( COLOR_MACRO, "#\s*include\s*(<.*?>)", False )
 iInclude1.Capture 1, COLOR_STRING2
 Set iInclude2=cpp.CreateItem( COLOR_MACRO, "#\s*include\s*(?="")", False )
@@ -51,19 +56,22 @@ iInclude2.Capture 1, COLOR_STRING2
 cpp.AddItem( iInclude1 )
 cpp.AddItem( iInclude2 )
 
+'macro
+cpp.AddItem( cpp.CreateItem(COLOR_MACRO, "#\s*if\s+!?defined",False ) )
+
+Set macro_token=cpp.CreateItem( COLOR_MACRO, "#\s*((if|pragma|elif|error|ifndef|define|undef|ifdef)\s+([A-Za-z0-9_]+)|(else|endif))$", False )
+macro_token.Capture 3, COLOR_VAR
+
+cpp.AddItem( macro_token )
 'number
-cpp.AddItem( cpp.CreateItem(COLOR_NUMBER, "\b\d+\b", False) )
+cpp.AddItem( cpp.CreateItem(COLOR_NUMBER, "\b([0-9]+\.?[0-9]*|0x[0-9a-fA-F]+)\b", False) )
+
 
 cpp.AddSnippet "c.snippet"
+cpp.FoldText "\{", False, "\}", False
+cpp.IndentText "(\[|{|\w+:)$", False, "^\s*}|\]$", False
 
-'folding
-Call cpp.FoldText( "\{", False )
-Call cpp.UnfoldText( "\}", False )
+cpp.CommentLine("//")
+cpp.CommentBlock "/*", "*/"
 
-Call cpp.IndentText( "(\[|{|\w+:)$", False )
-Call cpp.UnindentText( "^\s*}|\]$", False )
-
-Call cpp.SetPairs( "[]{}()""""''" )
-
-Call cpp.CommentLine("//")
-Call cpp.CommentBlock("/*", "*/")
+cpp.SetPairs( "[]{}()""""''" )
