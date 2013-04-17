@@ -34,7 +34,7 @@ cpp.AddRegion( rString2 )
 cpp.AddItem( cpp.CreateItem(COLOR_FUNCTION, "[\w_][\w\d_]+(?=\()", False) )
 
 'Reserved words
-cpp.AddWord( cpp.CreateWord(COLOR_WORD1, "goto break return continue asm __asm__ case default if else switch while for do", True ) )
+cpp.AddWord( cpp.CreateWord(COLOR_WORD1, "break case catch cerr cin class continue cout default delete do else explicit for friend goto if namespace new operator private protected public return switch template this throw try using virtual wchar_t while", True ) )
 
 'C data types & structures & storage modifiers & operators
 cpp.AddWord( cpp.CreateWord(COLOR_WORD2, "int long short char void signed unsigned float double _Complex _Imaginary _Bool bool complex imaginary typedef struct union enum static register auto volatile extern const fortran restrict inline sizeof", True ) )
@@ -59,10 +59,7 @@ cpp.AddItem( iInclude2 )
 'macro
 cpp.AddItem( cpp.CreateItem(COLOR_MACRO, "#\s*if\s+!?defined",False ) )
 
-Set macro_token=cpp.CreateItem( COLOR_MACRO, "#\s*((if|pragma|elif|error|ifndef|define|undef|ifdef)\s+([A-Za-z0-9_]+)|(else|endif))$", False )
-macro_token.Capture 3, COLOR_VAR
-
-cpp.AddItem( macro_token )
+cpp.AddItem( cpp.CreateItem(COLOR_MACRO, "#\s*(if|pragma|else|elif|error|ifndef|define|endif|undef|ifdef)\b", False ) )
 'number
 cpp.AddItem( cpp.CreateItem(COLOR_NUMBER, "\b([0-9]+\.?[0-9]*|0x[0-9a-fA-F]+)\b", False) )
 

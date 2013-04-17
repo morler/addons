@@ -34,5 +34,5 @@ xml.AddRegion( rXmlTag )
 
 xml.SetPairs( "[]{}()""""''" )
 xml.CommentBlock "<!--", "-->"
-xml.FoldText "<\w+.*?(?<!/)>", False
-xml.UnfoldText "</\w+>", False
+xml.FoldText "<[\w\-_]+.*?(?<!/)>", False
+xml.UnfoldText "</[\w\-_]+>", False
