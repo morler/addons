@@ -14,7 +14,7 @@ Set rLineComment=vbs.CreateRegion(COLOR_COMMENT1, "'", "$", True )
 Set rString2=vbs.CreateStringRegion( COLOR_STRING1, """", "", False )
 
 'Reserved words
-Set wWord1=vbs.CreateWord( COLOR_WORD1, "And As ByRef ByVal Call Case Class Const Dim Do Each Else ElseIf Empty End Eqv Erase Error Exit Explicit False For Function Get Goto If Imp In Is Let Loop Mod Next Not Nothing Null On Option Or Private Property Public Randomize ReDim Resume Select Set Step Sub Then To True Until Wend While Xor", False )
+Set wWord1=vbs.CreateWord( COLOR_WORD1, "And As ByRef ByVal Call Case Class Const Dim Do Each Else ElseIf Empty End Eqv Erase Error Exit Explicit False For Function Get Goto If Imp In Is Let Loop Mod New Next Not Nothing Null On Option Or Private Property Public Randomize ReDim Resume Select Set Step Sub Then To True Until Wend While Xor", False )
 wWord1.AutoCase=True
 'Functions and objects
 Set wWord2=vbs.CreateWord( COLOR_WORD2, "Anchor Array Asc Atn CBool CByte CCur CDate CDbl Chr CInt CLng Cos CreateObject CSng CStr Date DateAdd DateDiff DatePart DateSerial DateValue Day Dictionary Document Element Err Exp FileSystemObject  Filter Fix Int Form FormatCurrency FormatDateTime FormatNumber FormatPercent GetObject Hex History Hour InputBox InStr InstrRev IsArray IsDate IsEmpty IsNull IsNumeric IsObject Join LBound LCase Left Len Link LoadPicture Location Log LTrim RTrim Trim Mid Minute Month MonthName MsgBox Navigator Now Oct Replace Right Rnd Round ScriptEngine ScriptEngineBuildVersion ScriptEngineMajorVersion ScriptEngineMinorVersion Second Sgn Sin Space Split Sqr StrComp String StrReverse Tan Time TextStream TimeSerial TimeValue TypeName UBound UCase VarType Weekday WeekDayName Window Year", False )
