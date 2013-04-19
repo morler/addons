@@ -8,7 +8,7 @@ Snippet=#${1:!important}
 [Item1]
 Trigger=background
 Title=background: color image repeat attachment position
-Snippet=#background:${6: #${1:DDD}} url($2) ${3:repeat/repeat-x/repeat-y/no-repeat} ${4:scroll/fixed} ${5:top left/top center/top right/center left/center center/center right/bottom left/bottom center/bottom right/x-% y-%/x-pos y-pos};$0
+Snippet=#background: #${1:DDD} url($2) ${3:repeat} ${4:scroll} ${5:top};$0
 [Item2]
 Trigger=background
 Title=background-attachment: scroll/fixed
@@ -40,7 +40,7 @@ Snippet=#background-image: url($1);$0
 [Item9]
 Trigger=background
 Title=background-position: position
-Snippet=#background-position: ${1:top left/top center/top right/center left/center center/center right/bottom left/bottom center/bottom right/x-% y-%/x-pos y-pos};$0
+Snippet=#background-position: ${1:top};$0
 [Item10]
 Trigger=background
 Title=background-repeat: r/r-x/r-y/n-r
@@ -60,7 +60,7 @@ Snippet=#border-bottom-color: #${1:999};$0
 [Item14]
 Trigger=border
 Title=border-bottom-style: style
-Snippet=#border-bottom-style: ${1:none/hidden/dotted/dashed/solid/double/groove/ridge/inset/outset};$0
+Snippet=#border-bottom-style: ${1:solid};$0
 [Item15]
 Trigger=border
 Title=border-bottom-width: size
@@ -80,11 +80,11 @@ Snippet=#border-right-color: #${1:999};$0
 [Item19]
 Trigger=border
 Title=border-left-style: style
-Snippet=#border-left-style: ${1:none/hidden/dotted/dashed/solid/double/groove/ridge/inset/outset};$0
+Snippet=#border-left-style: ${1:solid};$0
 [Item20]
 Trigger=border
 Title=border-left-width: size
-Snippet=#border-left-width: ${1:1}px
+Snippet=#border-left-width: ${1:1}px;
 [Item21]
 Trigger=border
 Title=border-right: size style color
@@ -96,15 +96,15 @@ Snippet=#border-right-color: #${1:999};$0
 [Item23]
 Trigger=border
 Title=border-right-style: style
-Snippet=#border-right-style: ${1:none/hidden/dotted/dashed/solid/double/groove/ridge/inset/outset};$0
+Snippet=#border-right-style: ${1:none};$0
 [Item24]
 Trigger=border
 Title=border-right-width: size
-Snippet=#border-right-width: ${1:1}px
+Snippet=#border-right-width: ${1:1}px;
 [Item25]
 Trigger=border
 Title=border-style: style
-Snippet=#border-style: ${1:none/hidden/dotted/dashed/solid/double/groove/ridge/inset/outset};$0
+Snippet=#border-style: ${1:none};$0
 [Item26]
 Trigger=border
 Title=border-top: size style color
@@ -116,11 +116,11 @@ Snippet=#border-top-color: #${1:999};$0
 [Item28]
 Trigger=border
 Title=border-top-style: style
-Snippet=#border-top-style: ${1:none/hidden/dotted/dashed/solid/double/groove/ridge/inset/outset};$0
+Snippet=#border-top-style: ${1:none};$0
 [Item29]
 Trigger=border
 Title=border-top-width: size
-Snippet=#border-top-width: ${1:1}px
+Snippet=#border-top-width: ${1:1}px;
 [Item30]
 Trigger=border
 Title=border-width: size
@@ -144,7 +144,7 @@ Snippet=#color: rgb(${1:255},${2:255},${3:255});$0
 [Item35]
 Trigger=cursor
 Title=cursor: type
-Snippet=#cursor: {${1:default/auto/crosshair/pointer/move/*-resize/text/wait/help}};$0
+Snippet=#cursor: ${1:default/auto/crosshair/pointer/move/resize/text/wait/help};$0
 [Item36]
 Trigger=cursor
 Title=cursor: url
@@ -168,7 +168,7 @@ Snippet=#display: inline;$0
 [Item41]
 Trigger=display
 Title=display: table-types
-Snippet=#display: ${1:table/inline-table/table-row-group/table-header-group/table-footer-group/table-row/table-column-group/table-column/table-cell/table-caption};$0
+Snippet=#display: ${1:table};$0
 [Item42]
 Trigger=background
 Title=filter: AlphaImageLoader [for IE PNGs]
