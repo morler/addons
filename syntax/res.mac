@@ -1,0 +1,52 @@
+'*******************************************************************************
+' EverEdit Syntax File
+' Language:    Resource File
+' Maintainer:  www.everedit.net  
+' History:
+'  2013/04/19 Created
+'*******************************************************************************
+Include( ".\const.mac" )
+
+Set res=CreateParser()
+
+'comment
+Set rLineComment=res.CreateRegion( COLOR_COMMENT1, "+//+", "$", True )
+Set rBlockComment=res.CreateRegion( COLOR_COMMENT2, "+/*+", "+*/+", True )
+res.AddRegion( rLineComment )
+res.AddRegion( rBlockComment )
+
+'string
+Set rString1=res.CreateStringRegion( COLOR_STRING1, "'", "\", False )
+res.AddRegion( rString1 )
+
+Set rString2=res.CreateStringRegion( COLOR_STRING1, """", "\", False )
+res.AddRegion( rString2 )
+
+'words
+res.AddWord( res.CreateWord(COLOR_WORD1, "LANGUAGE ACCELERATORS TEXTINCLUDE TOOLBAR BITMAP STRINGTABLE", True ) )
+
+res.AddWord( res.CreateWord(COLOR_WORD2, "BEGIN END BUTTON SEPARATOR POPUP MENUITEM ICON", True ) )
+
+res.AddWord( res.CreateWord(COLOR_WORD3, "STYLE DS_MODALFRAME CAPTION FONT", True ) )
+
+'macro
+res.AddItem( res.CreateItem(COLOR_MACRO, "#\s*if\s+!?defined",False ) )
+res.AddItem( res.CreateItem(COLOR_MACRO, "#\s*(if|pragma|else|elif|error|ifndef|define|endif|undef|ifdef)\b", False ) )
+
+Set iInclude1=res.CreateItem( COLOR_MACRO, "#\s*include\s*(<.*?>)", False )
+iInclude1.Capture 1, COLOR_STRING2
+Set iInclude2=res.CreateItem( COLOR_MACRO, "#\s*include\s*(?="")", False )
+iInclude2.Capture 1, COLOR_STRING2
+
+res.AddItem( iInclude1 )
+res.AddItem( iInclude2 )
+
+'number
+res.AddItem( res.CreateItem(COLOR_NUMBER, "\b([0-9]+\.?[0-9]*|0x[0-9a-fA-F]+)\b", False) )
+
+'folding
+res.FoldText "\bBEGIN$", False, "\bEND$", False
+res.IndentText "\bBEGIN$", False, "\bEND$", False
+res.SetPairs( "[]{}()""""''" )
+res.CommentLine("//")
+res.CommentBlock "/*", "*/"
