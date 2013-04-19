@@ -1,0 +1,25 @@
+'*******************************************************************************
+' EverEdit Syntax File
+' Language:    JSP
+' Maintainer:  www.everedit.net  
+' History:
+'   2013/04/19 Create
+'*******************************************************************************
+Include( ".\html_base.mac" )
+
+Set rJsp=html.CreateRegion( COLOR_DEFAULT, "+<%+", "+%>+", False )
+Set java_creator=html
+Set rJavaRegion=rJsp
+Include( ".\java_base.mac" )
+
+'<% %>
+rJsp.AddItem( html.CreateItem(COLOR_SUBLAN, "<%|%>", False) )
+
+'-----------------------add rJsp to html parser
+html.AddRegion( rJsp )
+
+'default html tags
+html.AddRegion( rScript )
+html.AddRegion( rCss )
+html.AddRegion( rHtmlBlockComment )
+html.AddRegion( rHtmlTag )
