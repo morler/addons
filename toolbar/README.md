@@ -1,9 +1,9 @@
-##About User Defined Toolbar
-Most of users want to link a customized toolbar for some special file type,
-such as HTML or Markdown. Everedit will switch this toolbar automatically on changing current view.
+##About User Mode
+Most of users want to link a customized toolbar/menu/shortcuts for some special file type,
+such as HTML or Markdown. Everedit will switch the toolbar/menu automatically on changing current view.
 
 ##File format
-User defined toolbar is stored as a pure text file (ini format), you can edit with Everedit or any other text editors!
+**User mode** file is stored as a pure text file (ini format), you can edit with Everedit or any other text editors!
 
 ###Import an icon list
 ```
@@ -94,7 +94,7 @@ BOOL APIENTRY DllMain( HMODULE hModule,
 ```
 
 
-##Call a dll function from etb file
+##Call a dll function from ESM file
 Example:
 
 ```
@@ -106,7 +106,7 @@ The dll shoud be located at toolbar directory, otherwise you should tell the ful
 ```
 Command0=1,Hover text,c:\windows\MyDll.dll,MyDllFunctionName,lpText
 ```
-##Link toolbar to a file type
+##Link ESM file to a syntax type
 1. Main menu->Tools->Syntax
 1. Select your file type
 1. Click advacned button
