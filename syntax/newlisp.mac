@@ -14,7 +14,8 @@
 '	2012/06/28	再次修改缩进语法，现在支持更多情况下的缩进
 '	..........	调整注释语法，支持行内注释
 '	2012/07/04	修复行内注释和newLISPdoc语法设置冲突的BUG
-' 2013/03/29  增加WordChars设置项
+' 	2013/03/29  增加WordChars设置项
+'	2013/04/23	小更新
 '*******************************************************************************
 
 Include( ".\const.mac" )
@@ -36,7 +37,7 @@ Set regionString3=newlisp.CreateRegion( COLOR_STRING1, "+[text]+", "+[/text]+", 
 
 
 'integer arithmetic
-Set nl_words1=newlisp.CreateItem( COLOR_OPERATOR, "[\{\}\(\)\+\-\*\\=%&\^!~\|<>?\.,:;\[\]]", False )
+Set nl_words1=newlisp.CreateItem( COLOR_OPERATOR, "[\{\}\(\)\+\*\\=%&\^!~\|<>?\.,:;\[\]]|(<?![a-zA-z])-(?![a-zA-Z])", False )
 
 'List processing, flow control and integer arithmetic
 Set nl_words2=newlisp.CreateWord( COLOR_WORD1, "and append apply args assoc begin bind case catch chop clean cond cons constant count curry def-new define define-macro difference do-until do-while doargs dolist dostring dotimes dotree dup ends-with exists eval expand extend first filter find find-all flat fn for for-all if index intersect lambda lambda-macro last length let letex letn list lookup map match member not nth or pop pop-assoc push quote ref ref-all rest replace reverse rotate select self set set-ref set-ref-all setf setq silent slice sort starts-with swap unify unique union unless until when while", False, "-" )
@@ -54,8 +55,8 @@ Set nl_words5=newlisp.CreateWord( COLOR_WORD3, "array? atom? context? directory?
 Set nl_words6=newlisp.CreateItem( COLOR_WORD2, "\b\d+\b", False )
 
 '变量名不高亮
-Set nl_words7=newlisp.CreateItem( COLOR_DEFAULT, "(\')([^(\s]+)(?![a-zA-Z0-9_\-])", False )
-nl_words7.Capture 1, COLOR_WORD1
+Set nl_words7=newlisp.CreateItem( COLOR_DEFAULT, "(\')([^()\s]+)(?![a-zA-Z0-9_\-])", False )
+nl_words7.Capture 2, COLOR_VAR
 
 'newLISPdoc 语法
 Set nldoc_content=newlisp.CreateItem(COLOR_COMMENT1, "^[;]{2}(\s\@(module|index|description|location|version|author|syntax|param|return|example))?(\s)?(.+)?", False)
