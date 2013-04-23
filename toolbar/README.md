@@ -29,7 +29,19 @@ There are 3 params of a command.
 <table>
 	<tr>
 		<td>type</td>
-		<td>0:insert a snippet</br>1:call a dll function</td>
+		<td>0:insert a snippet</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>1:call a dll function</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>2:Run a exe or open a URL</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>3:Execute a macro file</td>
 	</tr>
 	<tr>
 		<td>title</td>
