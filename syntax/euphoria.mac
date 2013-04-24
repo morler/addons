@@ -6,19 +6,21 @@
 ' History:
 '   2012/07/19	Created
 '	2013/04/20	updated
+'	2013/04/24	updating (un)fold and (un)indent texts methods
+'			support more numbers formats(like '0b111 0t456 0xAB4')
 '*******************************************************************************
 
 Include( ".\const.mac" )
 
 Set euphoria=CreateParser()
 
-'¶¨ÒåĞĞ×¢ÊÍ
+'å®šä¹‰è¡Œæ³¨é‡Š
 Set LineComment=euphoria.CreateRegion(COLOR_COMMENT1, "+--+", "$", True)
 
-'¶¨Òå¿é×¢ÊÍ
+'å®šä¹‰å—æ³¨é‡Š
 Set BlockComment=euphoria.CreateRegion(COLOR_COMMENT1, "+/*+", "+*/+", True)
 
-'±êÃ÷ÎÄ±¾×Ö·û´®
+'æ ‡æ˜æ–‡æœ¬å­—ç¬¦ä¸²
 Set regionString1=euphoria.CreateStringRegion( COLOR_STRING1, """", "\", False )
 Set regionString2=euphoria.CreateStringRegion( COLOR_STRING1, "''", "\", False )
 
@@ -29,39 +31,39 @@ euphoria.AddItem( euphoria.CreateItem(COLOR_OPERATOR, "[\{\}\(\)\+\-\*\\=%&\^!~\
 euphoria.AddItem( euphoria.CreateItem(COLOR_FUNCTION, "[\w_][\w\d_]+(?=\()", False) )
 
 'Keywords
-Set eu_words2=euphoria.CreateWord( COLOR_WORD1, "and as break by case constant continue do else elsdef elsif elsifdef end entry enum exit export fallthru for function global goto if ifdef include label loop namespace not or override procedure public retry return routine switch then to type until while with without xor", False, "" )
+Set eu_words2=euphoria.CreateWord( COLOR_WORD1, "and as break by case constant continue do else elsdef elsif elsifdef end entry enum exit export fallthru for function global goto if ifdef elsedef include label loop namespace not or override procedure public retry return routine switch then to type until while with without xor", False, "" )
 
 'Fuctions
 Set eu_words3=euphoria.CreateWord( COLOR_WORD2, "? abort and_bits append arctan atom c_func c_proc call call_func call_proc clear_screen close command_line compare cos date delete delete_routine equal find find_from floor get_key get_pixel getc getenv gets hash head include_paths insert integer length log machine_func machine_proc match match_from mem_copy mem_set not_bits object open option_switches or_bits peek peek2s peek2u peek4s peek4u peek_string peeks pixel platform poke poke2 poke4 position power prepend print printf profile profile_time puts rand remainder remove repeat replace routine_id sequence sin splice sprintf sqrt system system_exec tail tan task_clock_start task_clock_stop task_create task_list task_schedule task_self task_status task_suspend task_yield time trace warning xor_bits", False, "-?" )
 
 'Numbers
-Set eu_words4=euphoria.CreateItem( COLOR_NUMBER, "\b[0-9]+\.?[0-9]*\b", False )
+Set eu_words4=euphoria.CreateItem( COLOR_NUMBER, "\b([0-9]+\.?[0-9]*|0(b[01]+|t[0-7]+|d[0-9]+|x[0-9A-Fa-f]+))\b", False )
 
 'Constants
 euphoria.AddItem( euphoria.CreateItem(COLOR_NUMBER, "\b[A-Z_]+\b",True ) )
 
 
-'TODO\BUG\FIX\DONE×¢ÊÍ¸ñÊ½Ö§³Ö
+'TODO\BUG\FIX\DONEæ³¨é‡Šæ ¼å¼æ”¯æŒ
 Set todo=euphoria.CreateItem(COLOR_COMMENT1, "^\-\-(todo|bug|fix|done)\s*(.+)$", False)
 todo.Capture 1, COLOR_WORD2
 todo.Capture 2, COLOR_WORD3
 
-'À¨ºÅÆ¥Åä
+'æ‹¬å·åŒ¹é…
 Call euphoria.SetPairs("[](){}""""")
 
-'¿ì½İ¼üĞĞ×¢ÊÍ
+'å¿«æ·é”®è¡Œæ³¨é‡Š
 Call euphoria.CommentLine("--")
 
-'´úÂëÕÛµş
-Call euphoria.FoldText( "\(", False )
-Call euphoria.UnfoldText( "\)", False )
+'ä»£ç æŠ˜å 
+Call euphoria.FoldText( "^\s*(if|for|switch|while|loop|ifdef|function|procedure|type)", False )
+Call euphoria.UnfoldText( "^\s*end\s", False )
 
-'´úÂë×Ô¶¯Ëõ½ø
-Call euphoria.IndentText( "\(", False )
-Call euphoria.UnindentText( "\)", False )
+'ä»£ç è‡ªåŠ¨ç¼©è¿›
+Call euphoria.IndentText( "((do|then|else|entry)|^\s*(function|procedure)\s.+)$", False )
+Call euphoria.UnindentText( "^\s*(end\s|else)", False )
 
 '
-'´´½¨µÄÆ¥Åä¼ÓÈëÖ÷ÇøÓò
+'åˆ›å»ºçš„åŒ¹é…åŠ å…¥ä¸»åŒºåŸŸ
 euphoria.AddRegion(LineComment)
 euphoria.AddRegion(BlockComment)
 euphoria.AddRegion(regionString1)
