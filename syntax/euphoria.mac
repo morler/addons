@@ -55,11 +55,11 @@ Call euphoria.SetPairs("[](){}""""")
 Call euphoria.CommentLine("--")
 
 '代码折叠
-Call euphoria.FoldText( "^\s*(if|for|switch|while|loop|ifdef|function|procedure|type)", False )
+Call euphoria.FoldText( "^\s*(if|for|switch|while|loop|ifdef|function|procedure|type)\s", False )
 Call euphoria.UnfoldText( "^\s*end\s", False )
 
 '代码自动缩进
-Call euphoria.IndentText( "((do|then|else|entry)|^\s*(function|procedure)\s.+)$", False )
+Call euphoria.IndentText( "(\s(do|then)|^\s*((else|entry)|(function|procedure)\s.+))$", False )
 Call euphoria.UnindentText( "^\s*(end\s|else)", False )
 
 '
