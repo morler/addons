@@ -24,7 +24,11 @@ Set BlockComment=euphoria.CreateRegion(COLOR_COMMENT1, "+/*+", "+*/+", True)
 '标明文本字符串
 Set regionString1=euphoria.CreateStringRegion( COLOR_STRING1, """", "\", False )
 Set regionString2=euphoria.CreateStringRegion( COLOR_STRING1, "''", "\", False )
-Set regionString3=euphoria.CreateStringRegion( COLOR_STRING1, "``", "\", False )
+
+'Raw strings
+euphoria.AddRegion( euphoria.CreateRegion( COLOR_STRING1, "+`+", "+`+", False ) )
+euphoria.AddRegion( euphoria.CreateRegion( COLOR_STRING1, "[""]{3}", "[""]{3}", False ) )
+
 
 'binary & hexadecimal strings
 euphoria.AddRegion( euphoria.CreateRegion(COLOR_STRING1, "[bx]""", """", True) )
@@ -73,7 +77,6 @@ euphoria.AddRegion(LineComment)
 euphoria.AddRegion(BlockComment)
 euphoria.AddRegion(regionString1)
 euphoria.AddRegion(regionString2)
-euphoria.AddRegion(regionString3)
 euphoria.AddWord(eu_words2)
 euphoria.AddWord(eu_words3)
 euphoria.AddWord(eu_words4)
