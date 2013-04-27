@@ -34,7 +34,7 @@ euphoria.AddRegion( euphoria.CreateRegion( COLOR_STRING1, "[""]{3}", "[""]{3}", 
 euphoria.AddRegion( euphoria.CreateRegion(COLOR_STRING1, "[bx]""", """", True) )
 
 'operators
-euphoria.AddItem( euphoria.CreateItem(COLOR_OPERATOR, "[\{\}\(\)\+\-\*\\=%&\^!~\|<>?\.,:;\/\[\]]",False ) )
+euphoria.AddItem( euphoria.CreateItem(COLOR_OPERATOR, "[\{\}\(\)\+\-\*\\=%&\^!~\|<>?\.,:;\/\[\]\$]",False ) )
 
 'function
 euphoria.AddItem( euphoria.CreateItem(COLOR_FUNCTION, "[\w_][\w\d_]+(?=\()", False) )
@@ -49,7 +49,7 @@ Set eu_words3=euphoria.CreateWord( COLOR_WORD2, "? abort and_bits append arctan 
 Set eu_words4=euphoria.CreateItem( COLOR_NUMBER, "(?<!\w)[+-]?([0-9_]+\.?[0-9_]*|0(b[01_]+|t[0-7_]+|d[0-9_]+|x[0-9A-Fa-f_]+)|[0-9_]+e-?[0-9_]+|#[0-9A-Fa-f_]+)(?!\w)", False )
 
 'Constants
-euphoria.AddItem( euphoria.CreateItem(COLOR_NUMBER, "\b[A-Z_]+\b",True ) )
+euphoria.AddItem( euphoria.CreateItem(COLOR_NUMBER, "\b[A-Z_][A-Z0-9_]*\b",True ) )
 
 
 'TODO\BUG\FIX\DONE注释格式支持
@@ -65,7 +65,7 @@ Call euphoria.CommentLine("--")
 
 '代码折叠
 Call euphoria.FoldText( "^\s*(if|for|switch|while|loop|ifdef|function|procedure|type)\s", False )
-Call euphoria.UnfoldText( "^\s*end\s", False )
+Call euphoria.UnfoldText( "^\s*end\s(?!=)", False )
 
 '代码自动缩进
 Call euphoria.IndentText( "(\s(do|then)|^\s*((else|entry)|(function|procedure)\s.+))$", False )
