@@ -1,7 +1,7 @@
 ##Color defines
 When you are preparing the syntax files, you must want to distinguish the colors of each type. There are a couple of built-in colors in EverEdit.
 
-**Attention:** The value of each color should be defined in Themes.
+**Note:** The value of each color should be defined in Themes.
 
 <table>
   <tr>
