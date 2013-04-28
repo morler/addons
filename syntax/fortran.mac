@@ -1,9 +1,9 @@
 '*******************************************************************************
 ' EverEdit Syntax File
-' Language:    Fortran
-' Maintainer:  www.everedit.net  
+' Language: Fortran
+' Maintainer: www.everedit.net
 ' History:
-'   2013/04/26 Create
+' 2013/04/26 Create
 '*******************************************************************************
 Include( ".\const.mac" )
 
@@ -15,12 +15,12 @@ Set rComment2=ft.CreateRegion(COLOR_COMMENT1, "+!+", "$", False )
 Set rString1=ft.CreateStringRegion( COLOR_STRING1, "'", "", True )
 Set rString2=ft.CreateStringRegion( COLOR_STRING2, """", "", True )
 
-'Reserved words
-Set iWord1=ft.CreateWord(COLOR_WORD1, "ASSIGN BACKSPACE COMMON BLANK BLOCK DATA BN CALL CHARACTER CLOSE COMMON COMPLEX CONTINUE DATA DIMENSION DIRECT DO DOUBLE PRECISION ELSE ELSEIF END ENDFILE ENTRY EQUIVALENCE ERR EXTERNAL FORMAT FUNCTION GOTO IF IMPLICIT INQUIRE INTEGER LOGICAL OPEN PARAMETER PRINT PROGRAM READ REAL RETURN REWIND SAVE STOP SUBROUTINE THEN WHILE WRITE", False)
+'Statement Specifiers
+Set iWord1=ft.CreateWord(COLOR_WORD1, "ACCESS BLANK EXIST FILE FORM FORMATTED IOSTAT NAME NAMED NEXTREC NUMBER OPENED RECL SEQUENTIAL STATUS UNFORMATTED UNIT", False)
 iWord1.AutoCase=True
 
-'Statement Specifiers
-Set iWord2=ft.CreateWord(COLOR_WORD2, "ACCESS BLANK EXIST FILE FORM FORMATTED IOSTAT NAME NAMED NEXTREC NUMBER OPENED RECL SEQUENTIAL STATUS UNFORMATTED UNIT", False)
+'Reserved words
+Set iWord2=ft.CreateWord(COLOR_WORD2, "ASSIGN BACKSPACE COMMON BLANK BLOCK DATA BN CALL CHARACTER CLOSE COMMON COMPLEX CONTINUE DATA DIMENSION DIRECT DO ENDDO DOUBLE PRECISION ELSE ELSEIF END ENDFILE ENTRY EQUIVALENCE ERR EXTERNAL FORMAT FUNCTION GOTO IF ENDIF IMPLICIT INQUIRE INTEGER LOGICAL OPEN PARAMETER PRINT PROGRAM READ REAL RETURN REWIND SAVE STOP SUBROUTINE THEN WHILE WRITE INCLUDE MODULE USE", False)
 iWord2.AutoCase=True
 
 'Conditional Statements
@@ -39,6 +39,9 @@ ft.AddItem( iItem1 )
 ft.AddItem( ft.CreateItem(COLOR_NUMBER, "\b\d+\b", False) )
 ft.AddItem( ft.CreateItem(COLOR_OPERATOR, "[\{\}\(\)\+\-\*\\=%&\^!~\|<>?\.,:;\/\[\]]",False ) )
 
-ft.FoldingMethod="indent"
+ft.IndentText "\b((?<!end\s)do|(?<!end\s)if|then|else|case)\b", False, "\b(end|else)\b", False
+
+ft.FoldText "\b((?<!end\s)do|(?<!end\s)module|(?<!end\s)function|(?<!end\s)subroutine|(?<!end\s)program)\b", False, "\b(end\s?do|end(?!\s(do|if)))\b", False
+
 ft.SetPairs( "[]''""{}()" )
 ft.CommentLine( "!" )
