@@ -16,6 +16,7 @@
 '   2012/07/04  修复行内注释和newLISPdoc语法设置冲突的BUG
 '   2013/03/29  增加WordChars设置项
 '   2013/04/29  删除部分重复关键字
+'	2013/04/29	改进数字高亮部分
 '*******************************************************************************
 
 Include( ".\const.mac" )
@@ -52,11 +53,12 @@ Set nl_words4=newlisp.CreateWord( COLOR_WORD3, "amb bayes-query bayes-train corr
 Set nl_words5=newlisp.CreateWord( COLOR_WORD3, "array? atom? context? directory? empty? even? file? float? global? inf? integer? lambda? legal? list? macro? NaN? nil? null? odd? number? primitive? protected? quote? string? symbol? true? zero?", False, "?-" )
 
 'Numbers
-Set nl_words6=newlisp.CreateItem( COLOR_WORD2, "\b\d+\b", False )
+Set nl_words6=newlisp.CreateItem( COLOR_WORD2, "(?<!\w)[+-]?([0-9_]+\.?[0-9_]*(?!\w)", False )
 
-'变量名不高亮
+'变量
 Set nl_words7=newlisp.CreateItem( COLOR_DEFAULT, "(\')([^(\s]+)(?![a-zA-Z0-9_\-])", False )
 nl_words7.Capture 1, COLOR_WORD1
+nl_words7.Capture 2, COLOR_VAR
 
 'newLISPdoc 语法
 Set nldoc_content=newlisp.CreateItem(COLOR_COMMENT1, "^[;]{2}(\s\@(module|index|description|location|version|author|syntax|param|return|example))?(\s)?(.+)?", False)
