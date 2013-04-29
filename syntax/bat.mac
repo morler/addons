@@ -5,12 +5,15 @@
 ' History:
 '   2012/08/07 Create
 '   2012/04/10 Add label match
+'   2012/04/29 Add :: comment
 '*******************************************************************************
 Include( ".\const.mac" )
 
 Set bat=CreateParser()
 
-Set rComment=bat.CreateRegion(COLOR_COMMENT1, "\brem\b", "$", False )
+Set rComment1=bat.CreateRegion(COLOR_COMMENT1, "\brem\b", "$", False )
+Set rComment2=bat.CreateRegion(COLOR_COMMENT1, "^\s*::", "$", False )
+
 Set rString1=bat.CreateStringRegion( COLOR_STRING1, "'", "", False )
 Set rString2=bat.CreateStringRegion( COLOR_STRING1, """", "", False )
 Set wWord1=bat.CreateWord( COLOR_WORD1, "BEGIN END RETURN ASSOC AT ATTRIB BREAK CACLS CALL CD CHCP CHDIR CHKDSK CLS CMD COLOR COMP COMPACT CONVERT COPY DATE DEL DIR DISKCOMP DISKCOPY DOSKEY ECHO ENDLOCAL ERASE EXIT FC FIND FINDSTR FOR FORMAT FTYPE GOTO GRAFTABL HELP IF KEYB LABEL MD MKDIR MODE MORE MOVE PATH PAUSE POPD PRINT PROMPT RD RECOVER REN RENAME REPLACE RESTORE RMDIR SET SETLOCAL SHIFT SORT SUBST START TIME TREE TYPE VER VERIFY VOL XCOPY EXIST ON OFF", False )
@@ -21,13 +24,14 @@ wWord2.AutoCase=True
 
 Set iLabel=bat.CreateItem( COLOR_WORD2, "^\s*:[^\n]+", False )
 
-bat.AddRegion( rComment )
+bat.AddRegion( rComment1 )
+bat.AddRegion( rComment2 )
 bat.AddRegion( rString1 )
 bat.AddRegion( rString2 )
 bat.AddItem( iLabel )
 bat.AddWord( wWord1 )
 
-rComment.AddWord( wWord2 )
+rComment1.AddWord( wWord2 )
 
 bat.SetPairs( "[]{}()""""''" )
 bat.CommentLine( "REM " )

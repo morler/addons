@@ -4,7 +4,7 @@
 ' Maintainer:  lwn
 ' History:
 '   2012/12/9 Create
-'  2013/1/18 Modified some regular expression
+'   2013/1/18 Modified some regular expression
 '*******************************************************************************
 
 Include(".\const.mac")
@@ -59,6 +59,7 @@ make.AddRegion(rString1)
 Set rString2 = make.CreateStringRegion(COLOR_STRING1, """", "\", False)
 make.AddRegion(rString2)
 
-Call make.SetPairs("(){}[]""""''")
-Call make.CommentLine("#")
-Call Make.IndentText(":$", False)
+make.FoldingMethod="indent"
+make.SetPairs "(){}[]""""''"
+make.CommentLine "#"
+Make.IndentText ":$", False
