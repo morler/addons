@@ -1,0 +1,4 @@
+[Menu]
+Title=JS
+[Menu0]
+Command0=3,Beautify JS,${AppPath}\mode\js\jsBeautify.ejs

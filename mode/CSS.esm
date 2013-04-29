@@ -1,0 +1,4 @@
+[Menu]
+Title=CSS
+[Menu0]
+Command0=3,Beautify CSS,${AppPath}\mode\css\beautify-css.ejs
