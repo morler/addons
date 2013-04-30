@@ -37,7 +37,7 @@ euphoria.AddRegion( euphoria.CreateRegion(COLOR_STRING1, "[bx]""", """", True) )
 euphoria.AddItem( euphoria.CreateItem(COLOR_OPERATOR, "[\{\}\(\)\+\-\*\\=%&\^!~\|<>?\.,:;\/\[\]\$]",False ) )
 
 'function
-euphoria.AddItem( euphoria.CreateItem(COLOR_FUNCTION, "[\w_][\w\d_]+(?=\()", False) )
+euphoria.AddItem( euphoria.CreateItem(COLOR_FUNCTION, "[\w_][\w\d_]*(?=\()", False) )
 
 'Keywords
 Set eu_words2=euphoria.CreateWord( COLOR_WORD1, "and as break by case constant continue do else elsdef elsif elsifdef end entry enum exit export fallthru for function global goto if ifdef elsedef include label loop namespace not or override procedure public retry return routine switch then to type until while with without xor", False, "" )
