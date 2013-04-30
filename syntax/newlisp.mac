@@ -1,21 +1,22 @@
 '*******************************************************************************
 ' EverEdit Syntax File
-' Author:		Morler <morler@163.com>
-' Language:		newLISP v10.4.3
-' Maintainer:	moofly.net/blog  
+' Author:       Morler <morler@163.com>
+' Language:     newLISP v10.4.3
+' Maintainer:   moofly.net/blog  
 ' History:
-' 2012/06/17	Created
-'	2012/06/18	完成初步的语法高亮、代码折叠、代码缩进工作
-'	2012/06/19	解决了部分“-”符号问题（感谢EE！），添加了newLISPdoc文档生成器语法高亮支持
-'	2012/06/20	修正了newlispdoc语法着色配置的多余渲染
-'	..........	添加了{}和[text][/text]两种字符串着色
-'	2012/06/21	调整了newLISPdoc语法，使得@example后接的示例代码正常显示
-'	2012/06/27	修改了缩进语法，采用更简单更方便的正则，支持了自定义函数的缩进
-'	2012/06/28	再次修改缩进语法，现在支持更多情况下的缩进
-'	..........	调整注释语法，支持行内注释
-'	2012/07/04	修复行内注释和newLISPdoc语法设置冲突的BUG
-' 	2013/03/29  增加WordChars设置项
-'	2013/04/23	小更新
+' 2012/06/17    Created
+'   2012/06/18  完成初步的语法高亮、代码折叠、代码缩进工作
+'   2012/06/19  解决了部分“-”符号问题（感谢EE！），添加了newLISPdoc文档生成器语法高亮支持
+'   2012/06/20  修正了newlispdoc语法着色配置的多余渲染
+'   ..........  添加了{}和[text][/text]两种字符串着色
+'   2012/06/21  调整了newLISPdoc语法，使得@example后接的示例代码正常显示
+'   2012/06/27  修改了缩进语法，采用更简单更方便的正则，支持了自定义函数的缩进
+'   2012/06/28  再次修改缩进语法，现在支持更多情况下的缩进
+'   ..........  调整注释语法，支持行内注释
+'   2012/07/04  修复行内注释和newLISPdoc语法设置冲突的BUG
+'   2013/03/29  增加WordChars设置项
+'   2013/04/29  删除部分重复关键字
+'	2013/04/29	改进数字高亮部分
 '*******************************************************************************
 
 Include( ".\const.mac" )
@@ -37,25 +38,26 @@ Set regionString3=newlisp.CreateRegion( COLOR_STRING1, "+[text]+", "+[/text]+", 
 
 
 'integer arithmetic
-Set nl_words1=newlisp.CreateItem( COLOR_OPERATOR, "[\{\}\(\)\+\*\\=%&\^!~\|<>?\.,:;\[\]]|(<?![a-zA-z])-(?![a-zA-Z])", False )
+Set nl_words1=newlisp.CreateItem( COLOR_OPERATOR, "[\{\}\(\)\+\-\*\\=%&\^!~\|<>?\.,:;\[\]]", False )
 
 'List processing, flow control and integer arithmetic
 Set nl_words2=newlisp.CreateWord( COLOR_WORD1, "and append apply args assoc begin bind case catch chop clean cond cons constant count curry def-new define define-macro difference do-until do-while doargs dolist dostring dotimes dotree dup ends-with exists eval expand extend first filter find find-all flat fn for for-all if index intersect lambda lambda-macro last length let letex letn list lookup map match member not nth or pop pop-assoc push quote ref ref-all rest replace reverse rotate select self set set-ref set-ref-all setf setq silent slice sort starts-with swap unify unique union unless until when while", False, "-" )
 
 'Fuctions
-Set nl_words3=newlisp.CreateWord( COLOR_WORD2, "address append bits char chop dup ends-with encrypt eval-string explode extend find first float format get-char get-float get-int get-long get-string int join last lower-case member name nth pack parse pop push regex regex-comp replace rest reverse rotate select slice source starts-with string sym title-case trim unicode unpack upper-case utf8 utf8len abs acos acosh add array asin asinh atan atanh atan2 beta betai binomial ceil cos cosh crc32 dec div erf exp factor fft floor flt gammai gammaln gcd ifft inc log min max mod mul pow round sequence series sgn sin sinh sqrt sub tan tanh det invert mat multiply transpose append array-list det first invert last mat multiply nth rest slice transpose date date-list date-parse date-value now time time-of-day fv irr nper npv pv pmt callback catch context copy debug default delete env exit global import main-args new pretty-print read-expr reset signal sleep struct sym symbols timer throw throw-error trace trace-highlight nil null", False, "-" )
+Set nl_words3=newlisp.CreateWord( COLOR_WORD2, "address bits char encrypt eval-string explode float format get-char get-float get-int get-long get-string int join lower-case name pack parse regex regex-comp source string sym title-case trim unicode unpack upper-case utf8 utf8len abs acos acosh add array asin asinh atan atanh atan2 beta betai binomial ceil cos cosh crc32 dec div erf exp factor fft floor flt gammai gammaln gcd ifft inc log min max mod mul pow round sequence series sgn sin sinh sqrt sub tan tanh det invert mat multiply transpose array-list date date-list date-parse date-value now time time-of-day fv irr nper npv pv pmt callback context copy debug default delete env exit global import main-args new pretty-print read-expr reset signal sleep struct symbols timer throw throw-error trace trace-highlight nil null", False, "-" )
 
 'Others
-Set nl_words4=newlisp.CreateWord( COLOR_WORD3, "amb bayes-query bayes-train corr crit-chi2 crit-f crit-t crit-z normal prob-chi2 prob-f prob-t prob-z rand random randomize seed stats t-test ends-with find find-all match parse ref ref-all regex replace search starts-with unify append-file close current-line device exec load open peek print println read read-char read-key read-line read-utf8 read-file save search seek write write-char write-file write-line change-dir copy-file delete-file directory file-info make-dir real-path remove-dir rename-file ! abort destroy exec fork pipe process receive semaphore send share spawn sync wait-pid base64-enc base64-dec delete-url get-url put-url post-url xfer-event xml-error xml-parse xml-type-tags net-accept net-close net-connect net-error net-eval net-interface net-ipv net-listen net-local net-lookup net-packet net-peek net-peek net-ping net-receive net-receive-from net-receive-udp net-select net-send net-send-to net-send-udp net-service net-sessions command-event error-event last-error ostype prefix prompt-event read-expr reader-event set-locale source sys-error sys-info term address callback flt float get-char get-float get-int get-long get-string import int pack struct unpack command-event cpymem dump prompt-event read-expr reader-event", False, "-" )
+Set nl_words4=newlisp.CreateWord( COLOR_WORD3, "amb bayes-query bayes-train corr crit-chi2 crit-f crit-t crit-z normal prob-chi2 prob-f prob-t prob-z rand random randomize seed stats t-test search append-file close current-line device exec load open peek print println read read-char read-key read-line read-utf8 read-file save seek write write-char write-file write-line change-dir copy-file delete-file directory file-info make-dir real-path remove-dir rename-file ! abort destroy fork pipe process receive semaphore send share spawn sync wait-pid base64-enc base64-dec delete-url get-url put-url post-url xfer-event xml-error xml-parse xml-type-tags net-accept net-close net-connect net-error net-eval net-interface net-ipv net-listen net-local net-lookup net-packet net-peek net-ping net-receive net-receive-from net-receive-udp net-select net-send net-send-to net-send-udp net-service net-sessions command-event error-event last-error ostype prefix prompt-event reader-event set-locale sys-error sys-info term cpymem dump", False, "-" )
 
 'Predicates
 Set nl_words5=newlisp.CreateWord( COLOR_WORD3, "array? atom? context? directory? empty? even? file? float? global? inf? integer? lambda? legal? list? macro? NaN? nil? null? odd? number? primitive? protected? quote? string? symbol? true? zero?", False, "?-" )
 
 'Numbers
-Set nl_words6=newlisp.CreateItem( COLOR_WORD2, "\b\d+\b", False )
+Set nl_words6=newlisp.CreateItem( COLOR_WORD2, "(?<!\w)[+-]?([0-9_]+\.?[0-9_]*(?!\w)", False )
 
-'变量名不高亮
-Set nl_words7=newlisp.CreateItem( COLOR_DEFAULT, "(\')([^()\s]+)(?![a-zA-Z0-9_\-])", False )
+'变量
+Set nl_words7=newlisp.CreateItem( COLOR_DEFAULT, "(\')([^(\s]+)(?![a-zA-Z0-9_\-])", False )
+nl_words7.Capture 1, COLOR_WORD1
 nl_words7.Capture 2, COLOR_VAR
 
 'newLISPdoc 语法
