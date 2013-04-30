@@ -1,0 +1,15 @@
+[Menu]
+Title=C++
+[Menu0]
+Key=CS+H
+Command0=3,Open Header or Source,${AppPath}\mode\c++\header_src.mac
+[Menu1]
+Command0=3,Insert Header,${AppPath}\mode\c++\insert_header.mac
+[Menu2]
+SEP=TRUE
+[Menu3]
+Command0=2,CPLUSPLUS.com,www.cplusplus.com
+[Menu4]
+Command0=2,CodeProject.com,www.codeproject.com
+[Menu5]
+Command0=2,CodeGuru.com,www.codeguru.com

@@ -1,0 +1,79 @@
+[ToolBar]
+Image16=Markdown\markdown.bmp
+[Button0]
+Icon=6
+Key=CS+B
+Command0=0,Bold,**${SELECTED}$0**
+[Button1]
+Icon=7
+Key=C+I
+Command0=0,Italic,*${SELECTED}$0*
+[Button2]
+Icon=8
+Key=C+U
+Command0=0,Underline,<u>${SELECTED}</u>
+[Button3]
+SEP=TRUE
+[Button4]
+Icon=0
+Key=C+1
+Command0=0,Heading 1,#${SELECTED}
+[Button5]
+Icon=1
+Key=C+2
+Command0=0,Heading 2,##${SELECTED}
+[Button6]
+Icon=2
+Key=C+3
+Command0=0,Heading 3,###${SELECTED}
+[Button7]
+Icon=3
+Key=C+4
+Command0=0,Heading 4,####${SELECTED}
+[Button8]
+Icon=4
+Key=C+5
+Command0=0,Heading 5,#####${SELECTED}
+[Button9]
+Icon=5
+Key=C+6
+Command0=0,Heading 6,######${SELECTED}
+[Button10]
+SEP=TRUE
+[Button11]
+Icon=9
+Command0=0,Inline Link Text,[${SELECTED}]($0)
+Command1=0,Reference,[${SELECTED}][$0]
+[Button12]
+Icon=10
+Command0=0,Image,![${SELECTED}]($0)
+Command1=0,Image HTML,<img src="$0" width="" height="" border="0" alt="">
+[Button13]
+Icon=15
+Command0=0,Horizontal Line *,* * *
+[Button14]
+Icon=11
+Command0=0,Insert Symbol,\\
+Command1=0,`,\`
+Command2=0,*,\*
+Command3=0,_,\_
+Command4=0,{},\{\}
+Command5=0,[],\[\]
+Command6=0,(),\(\)
+Command7=0,#,\#
+Command8=0,+,\+
+Command9=0,-,\-
+Command10=0,.,\.
+Command11=0,!,\!
+[Button15]
+Icon=12
+Command0=1,Insert Color,${AppPath}\mode\html\HTMLBar.dll,HTMLColor
+[Button16]
+Icon=13
+Command0=1,Insert Table,${AppPath}\mode\html\HTMLBar.dll,HTMLTable
+[Button17]
+SEP=TRUE
+[Button18]
+Icon=14
+Key=C+B
+Command0=1,Markdown Preview,${AppPath}\mode\markdown\MarkdownBar.dll,MarkdownPreview,github.css

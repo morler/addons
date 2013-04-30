@@ -1,0 +1,59 @@
+' Swich header<->source of c/cc/cpp/cxx/h/hpp
+' Copyright@www.Everedit.net
+' 2013-04-19
+
+Set doc=App.ActiveDoc
+Set objFSO = CreateObject("Scripting.FileSystemObject")
+
+strFolderName=objFSO.GetParentFolderName(doc.PathName)
+strBaseName=objFSO.GetBaseName(doc.PathName)
+strExtName=objFSO.GetExtensionName(doc.PathName)
+strErrMsg="Can't find header or source file!"
+
+If IsHeader(strExtName) Then
+	Dim extSrc(3)
+	extSrc(0)="c"
+	extSrc(1)="cpp"
+	extSrc(2)="cc"
+	extSrc(2)="cxx"
+	If OpenFile(extSrc)=False Then
+		MsgBox strErrMsg
+	End If
+ElseIf IsSource(strExtName) Then
+	Dim extHeader(2)
+	extHeader(0)="h"
+	extHeader(1)="hpp"
+	If OpenFile(extHeader)=False Then
+		MsgBox strErrMsg
+	End If
+End If
+
+Set objFSO=Nothing
+
+Function IsHeader(ext)
+	If ext="h" Or ext="hpp" Then
+		IsHeader=True
+	Else
+		IsHeader=False
+	End if
+End Function
+
+Function IsSource(ext)
+	If ext="c" Or ext="cpp" Or ext="cxx" Or ext="cc" Then
+		IsSource=True
+	Else
+		IsSource=False
+	End if
+End Function
+
+Function OpenFile(arrExt)
+	For i=0 To UBound(arrExt)
+		strThisFile=strFolderName+"\"+strBaseName+"."+arrExt(i)
+		If objFSO.FileExists(strThisFile) Then
+			App.OpenDoc( strThisFile )
+			OpenFile=True
+			Exit Function
+		End If 
+	Next
+	OpenFile=False
+End Function
