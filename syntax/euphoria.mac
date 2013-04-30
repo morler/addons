@@ -58,7 +58,7 @@ todo.Capture 1, COLOR_WORD2
 todo.Capture 2, COLOR_WORD3
 
 '括号匹配
-Call euphoria.SetPairs("[](){}""""")
+Call euphoria.SetPairs("[](){}""""''")
 
 '快捷键行注释
 Call euphoria.CommentLine("--")
