@@ -9,53 +9,61 @@
 Helper.Include( ".\const.mac" )
 
 Set rebol=Parser.CreateParser()
+rebol.WordChars="-"
 
 'comment
 Set rLineComment=rebol.CreateRegion( COLOR_COMMENT1, "+;+", "$", True )
-
+Set rBlockComment=rebol.CreateRegion( COLOR_STRING2, "+{+", "+}+", True )
 rebol.AddRegion( rLineComment )
+rebol.AddRegion( rBlockComment )
 
 'add todo to comment
 Set iTodo=rebol.CreateItem( COLOR_HIGHLIGHT2, "\b(TODO|FIX|FIXME)\b", False )
 rLineComment.AddItem( iTodo )
 
 'double quote string
-Set rString2=rebol.CreateStringRegion( COLOR_STRING1, """", "\", False )
+Set rString2=rebol.CreateStringRegion( COLOR_STRING2, """", "\", False )
 rebol.AddRegion( rString2 )
 
-'integer arithmetic
-Set nl_words1=rebol.CreateItem( COLOR_WORD1, "\+|\-|\*|\%|\<|\>|\:|\&|\||\^|\~|\$|\=|\'|\#", False )
-rebol.AddItem(nl_words1)
-
 'Functions
-rebol.AddItem( rebol.CreateItem(COLOR_WORD1, "(?<![a-zA-Z0-9_\-])(REBOL|either|abs|append|none|absolute|add|arccosine|arcsine|arctangent|cosine|divide|exp|log\-10|log\-2|log\-e|max|maximum|min|minimum|multiply|negate|power|random|remainder|sine|square\-root|subtract|tangent|complement|and|or|xor|not|all|any|break|catch|exit|halt|reduce|return|shield|if|else|for|forall|foreach|forskip|loop|repeat|while|until|do|change|clear|copy|fifth|find|first|format|fourth|free|func|head|insert|last|match|next|parse|past|pick|remove|second|set|select|skip|sort|tail|third|trim|alias|bind|use|import|make|make\-object|delete|echo|does|form|format|import|input|load|mold|prin|print|probe|read|save|secure|send|write|help|probe|trace|unless|context|newline|end|self|yes|join|query|intersect|in|repend|attempt|has|set\-flag)(?![a-zA-Z0-9_\-])", True ) )
+rebol.AddWord( rebol.CreateWord(COLOR_WORD1, "REBOL stdcall cdecl variadic default switch either abs append absolute add arccosine arcsine arctangent cosine divide exp max maximum min minimum multiply negate power random remainder sine square-root subtract tangent complement and or xor not all any break catch exit halt reduce return shield if else for forall foreach forskip loop repeat while until do change clear copy fifth find first fourth free func head insert last match next parse past pick remove second set select skip sort tail third trim alias bind use import make delete echo does form input load mold prin print probe read save secure send write help probe trace unless newline end self yes join query intersect in repend attempt has no to throw system case zero push pop assert args-count args-list env-vars stack words frame pc comment as null with true false infix none lf cr slash tab space top function unset positive negative quit forever raise-error as-byte as-logic as-integer dialect resolve context round even odd as-float to-get-word to-set-word as-float32 as-c-string null-byte off make-c-string", False, "-") )
 
 'datatypes
-rebol.AddItem( rebol.CreateItem(COLOR_WORD1, "(?<![a-zA-Z0-9_\-])(any\-block|block|path|set\-path|lit\-path|any\-function|function|native|action|op|routine|any\-string|string|file|email|url|tag|binary|issue|any\-type|any\-word|word|set\-word|get\-word|refinement|number|integer|decimal|series|list|bitset|char|datatype|date|error|event|hash|image|logic|money|object|pair|paren|port|struct|symbol|tag|time|tuple|unset)(?![a-zA-Z0-9_\-])", True ) )
+rebol.AddWord( rebol.CreateWord(COLOR_WORD2, "str-array! typed-value! typed-float! type-logic! type-integer! type-byte! type-float32! type-float64! type-float! type-c-string! type-byte-ptr! type-int-ptr! type-function! type-struct! any-struct? get-path! get-path? lit-word! lit-word? byte-ptr! byte-ptr? int-ptr! int-ptr? c-string! c-string? any-block! any-block? set-path! set-path? lit-path! lit-path? any-function! any-function? any-type! any-type? any-word! any-word? any-string! any-string? set-word! set-word? get-word! get-word?", False, "-!?") )
+rebol.AddWord( rebol.CreateWord(COLOR_WORD2, "none! error! error? list! list? char! char? op! op? date! date? native! native? time! time? function! function? closure! closure? typeset! typeset? pointer! pointer? byte? byte! float32! float32? float64! float64? float! float? block! block? path! path? action! action? routine! routine? string? string! file! file? email! email? url! url? tag! tag? binary! binary? issue! issue? word! word? refinement! refinement? number! number? integer! integer? decimal! decimal? series! series? bitset! bitset? datatype! datatype? event! event? hash! hash? image! image? logic! logic? money! money? context! object! object? pair! pair? paren! paren? port! port? struct! struct? symbol! symbol? tag! tag? tuple! tuple? unset! unset?", False, "!?") )
 
-'single quote char
-rebol.AddItem( rebol.CreateItem(COLOR_STRING2, "'.'", False) )
+set normalStr = rebol.CreateItem(COLOR_DEFAULT, "(\')([^(\s]+)(?![a-zA-Z0-9_\-])", False)
+normalStr.Capture 1, COLOR_WORD2
+rebol.AddItem(normalStr)
+
+set typeStr = rebol.CreateItem(COLOR_WORD2, "[^\(\[\s]+!", False)
+rebol.AddItem(typeStr)
+
+set xxStr = rebol.CreateItem(COLOR_DEFAULT, "[^\(\[\s]+[a-zA-Z0-9_\-]+\-[a-zA-Z0-9_\-]*\?", False)
+rebol.AddItem(xxStr)
+
+'path string
+set pathStr = rebol.CreateItem(COLOR_STRING2, "%[^\]\s]+", False)
+rebol.AddItem(pathStr)
+
+Set queryStr = rebol.CreateItem(COLOR_WORD2, "!|\?|#", False)
+rebol.AddItem(queryStr)
+
+'Special keywords
+rebol.AddWord( rebol.CreateWord(COLOR_WORD1, "/local size?", False, "/?") )
+rebol.AddWord( rebol.CreateWord(COLOR_WORD4, "Red Red/System", True, "/"))
+
+'operators
+Set nl_words1=rebol.CreateItem( COLOR_WORD1, "\s(\/\/|\?\?|<<|>>|>>>|<>|<=|>=|==|=\?|[\+\-\*\/%&<>=])\s", False )
+rebol.AddItem(nl_words1)
 
 'macro
 rebol.AddItem( rebol.CreateItem(COLOR_MACRO, "\#\s*if\s+!?defined",False ) )
-rebol.AddItem( rebol.CreateItem(COLOR_MACRO, "\#\s*(if|pragma|else|elif|error|ifndef|define|endif|undef|ifdef)\b", False ) )
+rebol.AddItem( rebol.CreateItem(COLOR_MACRO, "\#\s*(if|pragma|else|elif|error|ifndef|define|endif|undef|ifdef|syscall|import|enum|either|switch|verbose|default)\b", False ) )
 
 Set iInclude1=rebol.CreateItem( COLOR_MACRO, "#\s*include\s*(.*?)", False )
-'iInclude1.Capture 1, COLOR_WORD1
-
+iInclude1.Capture 1, COLOR_STRING2
 rebol.AddItem( iInclude1 )
-
-'shape string
-set shapeStr = rebol.CreateItem(COLOR_WORD1, "#[^\[\s]+", False)
-rebol.AddItem(shapeStr)
-
-'path string
-set pathStr = rebol.CreateItem(COLOR_WORD1, "%\S+", False)
-rebol.AddItem(pathStr)
-
-'rebol doc
-'Set nldoc_words=rebol.CreateItem(COLOR_COMMENT1, "^\s((Title|Author|File|Rights|License|Date|Purpose|Encap|Version)\:\s*(.+)$", True)
-'rebol.AddItem(nldoc_words)
 
 'number
 rebol.AddItem( rebol.CreateItem(COLOR_NUMBER, "\b\d+\b", False) )
@@ -70,3 +78,4 @@ Call rebol.UnindentText( "^\s*\]$", False )
 Call rebol.SetPairs( "[]{}()""""''" )
 
 Call rebol.CommentLine(";")
+Call rebol.CommentBlock("{", "}")
