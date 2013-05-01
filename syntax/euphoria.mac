@@ -68,7 +68,7 @@ Call euphoria.FoldText( "^\s*(if|for|switch|while|loop|ifdef|function|procedure|
 Call euphoria.UnfoldText( "^\s*end\s(?!=)", False )
 
 '代码自动缩进
-Call euphoria.IndentText( "(\s(do|then)|^\s*((else|entry)|(function|procedure)\s.+))$", False )
+Call euphoria.IndentText( "(\s(do|then)|^\s*((else|entry)|(function|procedure|type)\s.+))$", False )
 Call euphoria.UnindentText( "^\s*(end\s|else)", False )
 
 '
