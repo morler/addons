@@ -27,7 +27,7 @@ Set regionString2=euphoria.CreateStringRegion( COLOR_STRING1, "''", "\", False )
 
 'Raw strings
 euphoria.AddRegion( euphoria.CreateRegion( COLOR_STRING1, "+`+", "+`+", False ) )
-euphoria.AddRegion( euphoria.CreateRegion( COLOR_STRING1, "[""]{3}", "[""]{3}", False ) )
+euphoria.AddRegion( euphoria.CreateRegion( COLOR_STRING1, "(?<!\\)[""]{3}", "(?<!\\)[""]{3}", False ) )
 
 
 'binary & hexadecimal strings
@@ -37,7 +37,7 @@ euphoria.AddRegion( euphoria.CreateRegion(COLOR_STRING1, "[bx]""", """", True) )
 euphoria.AddItem( euphoria.CreateItem(COLOR_OPERATOR, "[\{\}\(\)\+\-\*\\=%&\^!~\|<>?\.,:;\/\[\]\$]",False ) )
 
 'function
-euphoria.AddItem( euphoria.CreateItem(COLOR_FUNCTION, "[\w_][\w\d_]+(?=\()", False) )
+euphoria.AddItem( euphoria.CreateItem(COLOR_FUNCTION, "[\w_][\w\d_]*(?=\()", False) )
 
 'Keywords
 Set eu_words2=euphoria.CreateWord( COLOR_WORD1, "and as break by case constant continue do else elsdef elsif elsifdef end entry enum exit export fallthru for function global goto if ifdef elsedef include label loop namespace not or override procedure public retry return routine switch then to type until while with without xor", False, "" )
@@ -58,7 +58,7 @@ todo.Capture 1, COLOR_WORD2
 todo.Capture 2, COLOR_WORD3
 
 '括号匹配
-Call euphoria.SetPairs("[](){}""""")
+Call euphoria.SetPairs("[](){}""""''")
 
 '快捷键行注释
 Call euphoria.CommentLine("--")
@@ -68,7 +68,7 @@ Call euphoria.FoldText( "^\s*(if|for|switch|while|loop|ifdef|function|procedure|
 Call euphoria.UnfoldText( "^\s*end\s(?!=)", False )
 
 '代码自动缩进
-Call euphoria.IndentText( "(\s(do|then)|^\s*((else|entry)|(function|procedure)\s.+))$", False )
+Call euphoria.IndentText( "(\s(do|then)|^\s*((else|entry)|(function|procedure|type)\s.+))$", False )
 Call euphoria.UnindentText( "^\s*(end\s|else)", False )
 
 '
