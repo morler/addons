@@ -30,9 +30,11 @@ Sample:
 ```
 Key=CAS+S
 ```
-C:Control
-A:Alt
-S:Shift
+**C**:Control
+
+**A**:Alt
+
+**S**:Shift
 
 Keys list:
 ```
