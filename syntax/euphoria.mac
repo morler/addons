@@ -27,7 +27,7 @@ Set regionString2=euphoria.CreateStringRegion( COLOR_STRING1, "''", "\", False )
 
 'Raw strings
 euphoria.AddRegion( euphoria.CreateRegion( COLOR_STRING1, "+`+", "+`+", False ) )
-euphoria.AddRegion( euphoria.CreateRegion( COLOR_STRING1, "[""]{3}", "[""]{3}", False ) )
+euphoria.AddRegion( euphoria.CreateRegion( COLOR_STRING1, "(?<!\\)[""]{3}", "(?<!\\)[""]{3}", False ) )
 
 
 'binary & hexadecimal strings
