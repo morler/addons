@@ -11,9 +11,10 @@
 Include( ".\vbs.mac" )
 
 Set wWordParser=vbs.CreateWord( COLOR_WORD2, "ActiveDoc AddItem AddParser AddRegion AddSnippet AddWord AutoCase Capture CommentBlock CommentLine CreateItem CreateParser CreateRegion CreateStringRegion CreateWord FoldingMethod FoldText Include IndentText Scope SetPairs UnfoldText UnindentText WordChars", False )
-wWordFunc.AutoCase=True
+wWordParser.AutoCase=True
 
 Set wWordMacro=vbs.CreateWord( COLOR_WORD3, "AddItem close CommentBlock CommentLine CreateMenu Delete FindAll GetLineLength GetLineText GetText GetWord GetWrapCount HasSel IndentInsert Insert InsertAt InsertChar InsertSnippet MoveCaret NewDoc Offset2Pos OpenDoc OutputText Popup Pos2Offset Refresh ReplaceAll SendCommand SetCaretPos SetSel Sleep WebPreview write writeln", False)
+wWordMacro.AutoCase=True
 
 Set wWordConst=vbs.CreateWord( COLOR_WORD4, "COLOR_DEFAULT COLOR_COMMENT1 COLOR_COMMENT2 COLOR_STRING1 COLOR_STRING2 COLOR_TAG COLOR_MACRO COLOR_URL COLOR_EMAIL COLOR_NUMBER COLOR_FOUND COLOR_WORD1 COLOR_WORD2 COLOR_WORD3 COLOR_WORD4 COLOR_PAIR COLOR_FUNCTION COLOR_VAR COLOR_SUBLAN COLOR_OPERATOR COLOR_HIGHLIGHT1 COLOR_HIGHLIGHT2 COLOR_HIGHLIGHT3 COLOR_HIGHLIGHT4 COLOR_HIGHLIGHT5 COLOR_HIGHLIGHT6 COLOR_HIGHLIGHT7 COLOR_HIGHLIGHT8 COLOR_IGNORE COLOR_CONCEAL", False )
 wWordConst.AutoCase=True
