@@ -24,6 +24,177 @@ Icon=image index
 Command0=type,title,text
 ```
 
+###Bind a shortcut
+**Note**:The shortcut will overwrite the global keys.
+Sample:
+```
+Key=CAS+S
+```
+C:Control
+A:Alt
+S:Shift
+
+Keys list:
+```
+Control-break
+Backspace
+Tab
+Clear
+Enter
+Pause
+Caps Lock
+IME Kana mode
+IME Junja mode
+IME final mode
+IME Hanja mode
+Esc
+IME convert
+IME nonconvert
+IME accept
+IME mode change
+Space
+PgUp
+PgDn
+End
+Home
+Left
+Up
+Right
+Down
+Select
+Print
+Execute
+Print
+Ins
+Del
+Help
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+A
+B
+C
+D
+E
+F
+G
+H
+I
+J
+K
+L
+M
+N
+O
+P
+Q
+R
+S
+T
+U
+V
+W
+X
+Y
+Z
+Sleep
+Num0
+Num1
+Num2
+Num3
+Num4
+Num5
+Num6
+Num7
+Num8
+Num9
+Mul
+Add
+Separator
+Sub
+Decimal
+Div
+F1
+F2
+F3
+F4
+F5
+F6
+F7
+F8
+F9
+F10
+F11
+F12
+F13
+F14
+F15
+F16
+F17
+F18
+F19
+F20
+F21
+F22
+F23
+F24
+NumLock
+ScrollLock
+Left Shift
+Right Shift
+Left Control
+Right Control
+Left Alt
+Right Alt
+Browser Back
+Browser Forward
+Browser Refresh
+Browser Stop
+Browser Search
+Browser Favorites
+Browser Home
+Volume Mute
+Volume Down
+Volume Up
+Next Track
+Previous Track
+Stop Media
+Play/Pause Media
+Start Mail
+Select Media
+Start App 1
+Start App 2
+;
+=
+,
+-
+.
+/
+`
+[
+\\
+]
+'
+<
+IME Process key
+VK_PACKET
+Attn
+CrSel
+ExSel
+Erase EOF
+Play
+Zoom
+PA1
+Clear
+```
+
 ####Command Format
 There are 3 params of a command.
 <table>
