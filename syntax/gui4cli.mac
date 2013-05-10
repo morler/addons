@@ -1,0 +1,42 @@
+'*******************************************************************************
+' EverEdit Syntax File
+' Language:    Gui4Cli v19.38
+' Maintainer:  Morler	<morler@163.com> 
+' History:
+'   2012/10/15 Create
+'*******************************************************************************
+Include( ".\const.mac" )
+
+Set gui4cli=CreateParser()
+
+Set LineComment=gui4cli.CreateRegion(COLOR_COMMENT1, "//(?!@)", "$", True )
+Set BlockComment=gui4cli.CreateRegion(COLOR_COMMENT1, "+/*+", "+*/+", True )
+Set rString1=gui4cli.CreateStringRegion( COLOR_STRING1, """", "\\", False )
+Set rString2=gui4cli.CreateStringRegion( COLOR_STRING1, "'", "\\", False )
+
+'Numbers
+Set gui4cli_words4=gui4cli.CreateItem( COLOR_NUMBER, "(?<!\w)[+-]?[0-9_]+\.?[0-9_]*(?!\w)", False )
+
+'Reserved words
+Set Word1=gui4cli.CreateWord( COLOR_WORD1, "G4C WINDOW NewFile TextFile #Include #NewFile #This Break If Else EndIf While EndWhile Label Goto Return IfExists DoCase Case EndCase Stop Rr And OrIfExists AndIfExists ElseIf ElseIfExists For EndFor GoSub Branch xButton xCheckBox xBrowser xTextIn xUpDown xListView xArea xRadio xCombo xTab xImage xIcon xEdbox xTrackbar xTreeview xSpliter xProgress xTextBox xGroupBox xMenu xStatus xToolbar xRebar xSysmenu xOnLoad xOnOpen xOnClose xOnQuit xRoutine xOnrmb xOnActive xOnInactive xOnKey xOnDoubleClick xOnFail xOnReload xOnReturn xOnLvdir xOnLvClick xTimer xHotkey xOnHelp xReqFile xOnWheelUp xOnWheelDown xOnMmb xOnLmb xTbarIcon xOnDrop xOnMark xOnBrowser xAttr xEnum xOnTextIn xWait xBeforeClose xTextFile xVariable xScript xOnResize Sci.xSci Sci.xOnSci xOnListView xOnTreeView xOnDropFail xRichEdit xOnMouse xIButton xBorderButton xBuffer xCalendar xOnRichEdit xOnRDoubleClick xOnWarn xx Pan.xPan Test.xNothing Test.xCounter Test.xAnaClock G4C_Progress.xControl G4C_RProgress.xControl G4C_GProgress.xControl Id Attr Local WinAttr SetEvent MakeDir Update Image MoveEvent Browser GuiWindow Cd Say Delete System Reqfile Quit Enum Run Delay Wait File AppVar SetVar CutVar Status MsgBox Append Gui HtmlHelp SendKey Set SetWinTitle GuiLoad GuiOpen GuiClose GuiQuit SendMouse DdUse DdExec ListView Lv CreateLink Random UpDown GetColor GetFont Sleep Win AWin Launch GcWin Extract JoinFile TvSearch TvSearchVar Move Script LvAction GuiRename Rename Assign Copy MoveWindow AddCode Use LvSearch ParseVar TerminateProc Inc Dec RepVar LvRep SearchVar LvSwitch LvClip LvSum SetAttr Beep SetPointer EmptyBin LoadIcon FreeIcon LoadFont FreeFont GetClip SetClip PopMenu RegCreate RegGet RegSet RegDelete QuickMenu Combo Seticon SetWinAttr Mci EdBox Tv TreeView Address Send Command Tab Event Icon PurgeFiles DeleteFile PumpMessages LoadIni SaveIni Ini RichEdit Print TrimVar Var Buffer Res Menu Net Ftp ToolBar Cursor MnSpec Calendar Input Pixel SysDll SetStruct Call Sci.Exec Sci.Io Sci.Print Sci.PrintSetup Sci.MakeColor Sci.Set DX.Clear DX.Pan DX.Routine DX.Set DX.ShowImage DX.Stop Pan.Set Pan.Clear Pan.Add Pan.DxShow Test.List Test.Twice Pack.Zip Pack.Unzip Pack.Use Pack.Create Pack.Close Pack.Add Pack.Open Pack.GetZip Pack.UnzipItem Pack.ZuiLoad Pack.EncryptFile Pack.DecryptFile Pack.Password Dos.Launch Dos.Set Dos.Abort Dos.Input Dos.Run SQL.Open SQL.Close SQL.Exec SQL.Stop SQL.Use SQL3.Open SQL3.Close SQL3.Exec SQL3.Stop SQL3.Use SQL3.Stop SQL3.Prepare SQL3.BindStr SQL3.BindBlob SQL3.Return_Var SQL3.Return_Blob SQL3.Step SQL3.Finalize SQL3.Debug SQL3.Download_xBuf SQL3.Upload_xBuf G4C_Progress.Control G4C_RProgress.Control G4C_GProgress.Control G4C_Cmd.CpuInfo G4C_Cmd.Memory G4C_Cmd.MemoryLoad G4C_Cmd.MemoryCommit G4C_Cmd.MemoryPhysical G4C_Cmd.MemoryPaged G4C_Cmd.MemoryNonPaged Grab.Screen Grab.Pause Grab.Resume Grab.Stop Grab.Set Curl.Create Curl.Free Curl.Use Curl.Set Curl.DataFile Curl.Perform Curl.Routine Curl.Enum Curl.EnumAbort Avi.Create Avi.GetCompression Avi.Add Avi.AddWav Avi.Close Pipe.Test Pipe.Info Pipe.Open Pipe.Send Pipe.Peek Pipe.Read Pipe.Quit Pipe.Wait", False, "#.")
+Word1.AutoCase=True
+
+'Gui4CliDoc Syntax
+Set gui4clidoc=gui4cli.CreateItem(COLOR_COMMENT1, "^(//)(@(author|desc|date|name|version|syntax|param|return))\t*([^\t]+)$", False)
+gui4clidoc.Capture 2, COLOR_WORD1
+gui4clidoc.Capture 4, COLOR_WORD2
+
+gui4cli.AddRegion( LineComment )
+gui4cli.AddRegion( BlockComment )
+gui4cli.AddRegion( rString1 )
+gui4cli.AddRegion( rString2 )
+gui4cli.AddItem(gui4cli_words4)
+gui4cli.AddWord( Word1 )
+gui4cli.AddItem(gui4clidoc)
+
+'Call gui4cli.IndentText( "(Then|Do)$|(?<!(End\s+))(Sub|Function)", False )
+'Call gui4cli.UnindentText( "\b(End\s+(Sub|Function|If)|Next|Wend)$", False )
+
+Call gui4cli.SetPairs( "[]{}()""""" )
+
+Call gui4cli.CommentLine("//")
