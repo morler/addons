@@ -1,9 +1,10 @@
 '*******************************************************************************
 ' EverEdit Syntax File
-' Language:    Free Pascal
-' Maintainer:  www.everedit.net  
+' Language:    Google Go
+' Maintainer:  www.everedit.net  Morler
 ' History:
-'   2013/04/04 Update
+'   2013/04/04 Create
+'   2013/05/14 Update
 '*******************************************************************************
 Include( ".\const.mac" )
 
@@ -21,7 +22,13 @@ Set rString3=go.CreateStringRegion( COLOR_STRING1, "", "`", False )
 Set iWord1=go.CreateWord(COLOR_WORD1, "break case chan const continue default defer else fallthrough for func go goto if import interface map package range return select struct switch type var", True)
 
 'Functions
-Set iWord2=go.CreateWord(COLOR_WORD2, "append cap close closed cmplx copy imag len make new panic print println real recover", True)
+Set iWord2=go.CreateWord(COLOR_WORD2, "append cap close closed cmplx copy imag len make new panic print println real recover main", True)
+
+'Types
+Set iWord3=go.CreateWord(COLOR_WORD3, "bool byte complex complex64 complex128 float float32 float64 int int8 int16 int32 int64 string uint uint8 uint16 uint32 uint64 uintptr", True)
+
+'Constants & Zero value
+Set iWord4=go.CreateWord(COLOR_OPERATOR, "true false iota nil", True)
 
 'operators
 Set iOperator=go.CreateItem(COLOR_OPERATOR, "[\{\}\(\)\+\-\*\\=%&\^!~\|<>?\.;@\$\[\]]",False )
@@ -34,6 +41,8 @@ go.AddRegion( rString2 )
 go.AddRegion( rString3 )
 go.AddWord( iWord1 )
 go.AddWord( iWord2 )
+go.AddWord( iWord3 )
+go.AddWord( iWord4 )
 go.AddItem( iOperator )
 
 'number
