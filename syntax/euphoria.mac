@@ -1,4 +1,4 @@
-'*******************************************************************************
+﻿'*******************************************************************************
 ' EverEdit Syntax File
 ' Author:		Morler <morler@163.com>
 ' Language:		OpenEuphoria v4.0.5
@@ -9,6 +9,7 @@
 '	2013/04/24	updating (un)fold and (un)indent texts methods
 '			support more numbers formats(like '0b111 0t456 0xAB4')
 '	2013/04/27	支持更多数字格式，完善字符串格式
+'   2013/05/13  完善缩进语法
 '*******************************************************************************
 
 Include( ".\const.mac" )
@@ -64,7 +65,7 @@ Call euphoria.SetPairs("[](){}""""''")
 Call euphoria.CommentLine("--")
 
 '代码折叠
-Call euphoria.FoldText( "^\s*(if|for|switch|while|loop|ifdef|function|procedure|type)\s", False )
+Call euphoria.FoldText( "^\s*(global\s*)?(if|for|switch|while|loop|ifdef|function|procedure|type)\s", False )
 Call euphoria.UnfoldText( "^\s*end\s(?!=)", False )
 
 '代码自动缩进
