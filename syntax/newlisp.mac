@@ -58,7 +58,7 @@ Set nl_words5=newlisp.CreateWord( COLOR_WORD3, "array? atom? context? directory?
 Set nl_words6=newlisp.CreateItem( COLOR_NUMBER, "(?<!\w)([+-]?([0-9_]+\.?[0-9_]*)|[$][0-9]+)(?!\w)", False )
 
 '变量
-Set nl_words7=newlisp.CreateItem( COLOR_DEFAULT, "(\')([^(\s]+)(?![a-zA-Z0-9_\-])", False )
+Set nl_words7=newlisp.CreateItem( COLOR_DEFAULT, "(\')([^()\s]+)(?![a-zA-Z0-9_\-])", False )
 nl_words7.Capture 1, COLOR_WORD1
 nl_words7.Capture 2, COLOR_VAR
 
