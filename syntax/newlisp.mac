@@ -56,7 +56,7 @@ Set nl_words4=newlisp.CreateWord( COLOR_WORD3, "amb bayes-query bayes-train corr
 Set nl_words5=newlisp.CreateWord( COLOR_WORD3, "array? atom? context? directory? empty? even? file? float? global? inf? integer? lambda? legal? list? macro? NaN? nil? null? odd? number? primitive? protected? quote? string? symbol? true? zero? bigint?", False, "?-" )
 
 'Numbers
-Set nl_words6=newlisp.CreateItem( COLOR_NUMBER, "(?<!\w)([+-]?([0-9_]+\.?[0-9_]*)|[$][0-9]+|(?<!\.)-?[0-9]+L)(?!\w)", True )
+Set nl_words6=newlisp.CreateItem( COLOR_NUMBER, "(?<!\w)([+-]?([0-9]+\.?[0-9]*)|[$][0-9]+|(?<!\.)[+-]?[0-9]+L)(?!\w)", True )
 
 '变量
 Set nl_words7=newlisp.CreateItem( COLOR_DEFAULT, "(\')([^()\s]+)(?![a-zA-Z0-9_\-])", False )
