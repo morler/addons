@@ -47,21 +47,24 @@ Set nl_words1=newlisp.CreateItem( COLOR_OPERATOR, "[\{\}\(\)\+\-\*\\=%&\^!~\|<>?
 Set nl_words2=newlisp.CreateWord( COLOR_WORD1, "and append apply args assoc begin bind case catch chop clean cond cons constant count curry def-new define define-macro difference do-until do-while doargs dolist dostring dotimes dotree dup ends-with exists eval expand extend first filter find find-all flat fn for for-all if index intersect lambda lambda-macro last length let letex letn list lookup map match member not nth or pop pop-assoc push quote ref ref-all rest replace reverse rotate select self set set-ref set-ref-all setf setq silent slice sort starts-with swap unify unique union unless until when while", False, "-" )
 
 'Fuctions
-Set nl_words3=newlisp.CreateWord( COLOR_WORD2, "address bits char encrypt eval-string explode float format get-char get-float get-int get-long get-string int join lower-case name pack parse regex regex-comp source string sym title-case trim unicode unpack upper-case utf8 utf8len abs acos acosh add array asin asinh atan atanh atan2 beta betai binomial ceil cos cosh crc32 dec div erf exp factor fft floor flt gammai gammaln gcd ifft inc log min max mod mul pow round sequence series sgn sin sinh sqrt sub tan tanh det invert mat multiply transpose array-list date date-list date-parse date-value now time time-of-day fv irr nper npv pv pmt callback context copy debug default delete env exit global import main-args new pretty-print read-expr reset signal sleep struct symbols timer throw throw-error trace trace-highlight nil null bigint", False, "-" )
+Set nl_words3=newlisp.CreateWord( COLOR_WORD2, "address bits char encrypt eval-string explode float format get-char get-float get-int get-long get-string int join lower-case name pack parse regex regex-comp source string sym title-case trim unicode unpack upper-case utf8 utf8len abs acos acosh add array asin asinh atan atanh atan2 beta betai binomial ceil cos cosh crc32 dec div erf exp factor fft floor flt gammai gammaln gcd ifft inc log min max mod mul pow round sequence series sgn sin sinh sqrt sub tan tanh det invert mat multiply transpose array-list date date-list date-parse date-value now time time-of-day fv irr nper npv pv pmt callback context copy debug default delete env exit global import main-args new pretty-print read-expr reset signal sleep struct symbols timer throw throw-error trace trace-highlight true nil null bigint", False, "-" )
 
 'Others
 Set nl_words4=newlisp.CreateWord( COLOR_WORD3, "amb bayes-query bayes-train corr crit-chi2 crit-f crit-t crit-z normal prob-chi2 prob-f prob-t prob-z rand random randomize seed stats t-test search append-file close current-line device exec load open peek print println read read-char read-key read-line read-utf8 read-file save seek write write-char write-file write-line change-dir copy-file delete-file directory file-info make-dir real-path remove-dir rename-file ! abort destroy fork pipe process receive semaphore send share spawn sync wait-pid base64-enc base64-dec delete-url get-url put-url post-url xfer-event xml-error xml-parse xml-type-tags net-accept net-close net-connect net-error net-eval net-interface net-ipv net-listen net-local net-lookup net-packet net-peek net-ping net-receive net-receive-from net-receive-udp net-select net-send net-send-to net-send-udp net-service net-sessions command-event error-event last-error ostype prefix prompt-event reader-event set-locale sys-error sys-info term cpymem dump", False, "-" )
 
+'True & Nil
+Set nl_words5=newlisp.CreateWord( COLOR_NUMBER, "true nil null", False )
+
 'Predicates
-Set nl_words5=newlisp.CreateWord( COLOR_WORD3, "array? atom? context? directory? empty? even? file? float? global? inf? integer? lambda? legal? list? macro? NaN? nil? null? odd? number? primitive? protected? quote? string? symbol? true? zero? bigint?", False, "?-" )
+Set nl_words6=newlisp.CreateWord( COLOR_WORD3, "array? atom? context? directory? empty? even? file? float? global? inf? integer? lambda? legal? list? macro? NaN? nil? null? odd? number? primitive? protected? quote? string? symbol? true? zero? bigint?", False, "?-" )
 
 'Numbers
-Set nl_words6=newlisp.CreateItem( COLOR_NUMBER, "(?<!\w)([+-]?([0-9]+\.?[0-9]*)|[$][0-9]+|(?<!\.)[+-]?[0-9]+L)(?!\w)", True )
+Set nl_words7=newlisp.CreateItem( COLOR_NUMBER, "(?<!\w)([+-]?([0-9]+\.?[0-9]*)|[$][0-9]+|(?<!\.)[+-]?[0-9]+L)(?!\w)", True )
 
 '变量
-Set nl_words7=newlisp.CreateItem( COLOR_DEFAULT, "(\')([^()\s]+)(?![a-zA-Z0-9_\-])", False )
-nl_words7.Capture 1, COLOR_WORD1
-nl_words7.Capture 2, COLOR_VAR
+Set nl_words8=newlisp.CreateItem( COLOR_DEFAULT, "(\')([^()\s]+)(?![a-zA-Z0-9_\-])", False )
+nl_words8.Capture 1, COLOR_WORD1
+nl_words8.Capture 2, COLOR_VAR
 
 'newLISPdoc 语法
 Set nldoc_content=newlisp.CreateItem(COLOR_COMMENT1, "^[;]{2}(\s\@(module|index|description|location|version|author|syntax|param|return|example))?(\s)?(.+)?", False)
@@ -100,7 +103,8 @@ newlisp.AddWord(nl_words2)
 newlisp.AddWord(nl_words3)
 newlisp.AddWord(nl_words4)
 newlisp.AddWord(nl_words5)
-newlisp.AddItem(nl_words6)
+newlisp.AddWord(nl_words6)
 newlisp.AddItem(nl_words7)
+newlisp.AddItem(nl_words8)
 newlisp.AddItem(nldoc_content)
 regionLine1.AddItem(todo)
