@@ -22,3 +22,5 @@ ini.AddItem( iSection )
 ini.SetPairs( "[]''""{}()" )
 
 ini.CommentLine ";"
+ini.FoldingMethod="anytext"
+ini.FoldAnyText 0, "^\s*\[.*?\]$"
