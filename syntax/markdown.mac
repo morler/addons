@@ -105,5 +105,6 @@ mk.AddRegion( r_mdcodeline )
 
 'this is a hack, if r_tag will return a same state, your can add it to other parents without re-creating.
 mk.AddRegion( r_tag )
-
 mk.SetPairs( "<>[](){}""""''" )
+mk.FoldingMethod="anytext"
+mk.FoldAnyText 0, "^#.*"
