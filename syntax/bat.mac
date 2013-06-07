@@ -22,7 +22,7 @@ wWord1.AutoCase=True
 Set wWord2=bat.CreateWord( COLOR_COMMENT1, "REM", False )
 wWord2.AutoCase=True
 
-Set iLabel=bat.CreateItem( COLOR_WORD2, "^\s*:[^\n]+", False )
+Set iLabel=bat.CreateItem( COLOR_WORD2, "^\s*:[^:\n]+", False )
 
 bat.AddRegion( rComment1 )
 bat.AddRegion( rComment2 )
