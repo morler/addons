@@ -1,0 +1,87 @@
+ToDo Mode for EverEdit:
+  A paper-like to-do-list/gtd tool. 
+    Written by Kaffa (kaffacoffee@outlook.com)
+    
+  - Idea from
+    TaskPaper http://www.hogbaysoftware.com/products/taskpaper
+    TodoPaper http://widefido.com/products/todopaper/
+    PlainTasks https://github.com/aziz/PlainTasks
+  - Rules
+    1. Lines ending with a colon are projects.
+    2. Lines starting with a hyphen(-+*) followed by a space are to-dos.
+    3. All other lines are notes.
+    4. Tags can be added to any line by typing @tagname.
+  - FileType Support
+    Todo Mode for EverEdit support these file types
+    - *.todo
+    - *.todolist
+    - *.taskpaper
+    - *.tasks
+  - More
+    - readme.todo (this file)
+    - Home Page:
+      http://forum.everedit.net/
+    - Who has seen the wind? | Waiting for you to discover.   
+
+�ߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣ�
+Line Types:
+  - Project:
+    Lines ending with a colon are projects.
+    You can nest projects inside each other @work
+    You can fold projects (a built-in editor feature)
+  - Task 
+    New:
+      CTRL+I to add a new task.
+      - On a project or task line, a new task will be created after it.
+      - On a empty or note line, it will be converted to a task.
+      New tasks will be nested as much as the task on the previous line.
+    Done:
+      CTRL+D marks a task as done.
+      CTRL+D again will put it back in pending mode.
+      CTRL+M will mark the task as cancelled.
+    Navigating & Folding:
+      See Menu View Folding (a built-in editor feature)
+    Moving:
+      Use CTRL+SHIFT+UP/DOWN to move tasks up and down.
+      Use CTRL+R to see a list of projects and quickly jump between them.
+    Archiving:
+      CTRL+SHIFT+A will archive the done task.
+      By removing them from your list and appending them to the bottom of the file under Archive project.
+      The archive project is separated from the other list of projects with a line. See bottom of this file.
+    Tagging:
+      You can add tags using @ sign, like this @tagname
+      You can search tags using CTIL+F (a built-in editor feature)
+  - Note
+    You can write plain text as notes or descriptions wherever you want; 
+    it's totally fine!
+    You can use separator snippet to separate your todo lists. type "kkk" and press enter
+  
+�ߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣ�
+Wisdom:
+  - Small > Big
+    Aim to be small. Small is beautiful, and by being small, I am forced to focus on what matters most. 
+    Small has a lot of advantages too, such as, 
+    - Speed and Flexibility
+      The smaller you are in business, the faster you can make decisions and change direction.
+    - Better communication with customers
+      I believe businesses can create stronger relationships with their customers by being small. 
+      I love hearing from my customers. This allows me to understand their problems, to which I can develop solutions.
+      I think Josh Clark from Global Moxie says this best, 
+        ��Dealing directly with the artisan means knowledgable service from someone who cares about his/her product.��
+        ��Josh Clark (Global Moxie)
+
+Philosophy:
+  - 1.Software should be simple and easy to use.
+    Complex software causes frustrations, and as far as I know, we all have enough frustrations to deal with. 
+    Widefido believes that software should never cause a customer pain.
+  - 2.Software should be focused
+    Focused software helps create an enjoyable experience for the customer. 
+    Widefido develops software that is ��focused and feature-thin��, 
+      meaning that you will not find products bloated with ��one-off�� features.
+  - 3.Software should provide value
+    Software should provide value to the customer by targeting and solving a specific problem set. 
+    Software which solves a problem can be valuable and can make a difference in the life of a customer.
+
+�ߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣ�
+Archive:
+  - Learn how to use Todo Mode for EverEdit @done (2013-06-02 07:30:30)

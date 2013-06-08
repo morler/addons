@@ -1,0 +1,28 @@
+[Menu]
+Title=TODO
+[Menu0]
+Key=C+I
+Command0=3,Task New,${AppPath}\mode\todo\task_new.ejs
+[Menu1]
+Key=C+D
+Command0=3,Task Done,${AppPath}\mode\todo\task_done.ejs
+[Menu2]
+Key=C+M
+Command0=3,Task Cancel,${AppPath}\mode\todo\task_cancel.ejs
+[Menu3]
+Key=CS+A
+Command0=3,Task Archive,${AppPath}\mode\todo\task_archive.ejs
+[Menu4]
+SEP=Y
+[Menu5]
+Key=SA+F
+Command0=3,Fold Current Level,${AppPath}\mode\todo\fold_current_level.ejs
+[Menu6]
+Key=SA+E
+Command0=3,Expand Current Level,${AppPath}\mode\todo\expand_current_level.ejs
+[Menu7]
+Key=CSA+F
+Command0=3,Fold All,${AppPath}\mode\todo\fold_all.ejs
+[Menu8]
+Key=CSA+E
+Command0=3,Expand All,${AppPath}\mode\todo\expand_all.ejs

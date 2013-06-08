@@ -1,0 +1,161 @@
+/*
+  The MIT License (MIT)
+  Copyright (c) 2007-2013 Einar Lielmanis and contributors.
+  Permission is hereby granted, free of charge, to any person
+  obtaining a copy of this software and associated documentation files
+  (the "Software"), to deal in the Software without restriction,
+  including without limitation the rights to use, copy, modify, merge,
+  publish, distribute, sublicense, and/or sell copies of the Software,
+  and to permit persons to whom the Software is furnished to do so,
+  subject to the following conditions:
+  The above copyright notice and this permission notice shall be
+  included in all copies or substantial portions of the Software.
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+  EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+  MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+  NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
+  BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
+  ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+  CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  SOFTWARE.
+  
+  ToDo Mode for EverEdit
+  ----------------------
+    Written by Kaffa (kaffacoffee@outlook.com)
+    Homepage: http://forum.everedit.net/
+*/
+Include(App.AppPath + "\\mode\\todo\\common.ejs");
+
+var LINE_TYPE = {
+	"EMPTY": 0,
+	"PROJECT": 1,
+	"TASK": 2,
+	"NOTE": 3
+};
+var PROJECT_END = {
+	"EN": ':',
+	"CH": '��'
+};
+var PROJECT_ARCHIVE_LINE = "Archive:";
+var PROJECT_SEP = "�ߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣߣ�\n";
+var TASK_BULLET = {
+	"OPEN": '-',
+	"DONE": '+',
+	"CANCELLED": '*'
+};
+var TAG = {
+	"DONE": '@done',
+	"CANCELLED": '@cancelled'
+};
+
+var MI_DELETE = 26;
+var MI_DELETE_LINE = 30;
+var MI_DELETE_TO_HEAD_OF_LINE = 79;
+var MI_DELETE_TO_END_OF_LINE = 80;
+var MI_FOLD_CURRENT_LEVEL = 62;
+var MI_EXPAND_CURRENT_LEVEL = 52;
+var MI_FOLD_ALL = 1339;
+var MI_EXPAND_ALL = 1400;
+
+var d = ActiveDoc;
+var caretLine = d.GetLineText(d.CaretLine);
+var caretStruct = getStruct(caretLine);
+var caretLineType = getLineType(caretLine);
+var lastLine = d.GetLineText(d.CaretLine - 1);
+var lastStruct = getStruct(lastLine);
+var lastLineType = getLineType(lastLine);
+
+function getLineType(line) {
+	line = line.replace(/^\s*/g, "");
+	if (!line || line.length == 0) {
+		return LINE_TYPE.EMPTY;
+	}
+	var bullet = line.charAt(0);
+	if (bullet == TASK_BULLET.OPEN || bullet == TASK_BULLET.DONE || bullet == TASK_BULLET.CANCELLED) {
+		return LINE_TYPE.TASK;
+	}
+	if (line.charAt(line.length - 1) == PROJECT_END.EN || line.charAt(line.length - 1) == PROJECT_END.CH) {
+		return LINE_TYPE.PROJECT;
+	}
+	return LINE_TYPE.NOTE;
+}
+
+function getStruct(line) {
+	var taskBullet = TASK_BULLET.OPEN + TASK_BULLET.DONE + TASK_BULLET.CANCELLED;
+	var regex = "^([\\s]*)" 
+		+ "([" + taskBullet + "] )?" 
+		+ "(.*?)" 
+		+ "([��:])?$";
+	var re = new RegExp(regex, "i");
+	var struct = re.exec(line);
+	return struct;
+}
+
+function taskNew() {
+	var content = "";
+	switch (caretLineType) {
+	case LINE_TYPE.EMPTY:
+		d.SetCaretPos(d.CaretLine, lastStruct[1].length, false);
+		SendCommand(MI_DELETE_TO_END_OF_LINE);
+		content = TASK_BULLET.OPEN + ' ';
+		if (lastLineType == LINE_TYPE.PROJECT) {
+			content = "  " + content;
+		}
+		break;
+	case LINE_TYPE.NOTE:
+		d.SetCaretPos(d.CaretLine, lastStruct[1].length, false);
+		SendCommand(MI_DELETE_TO_END_OF_LINE);
+		content = TASK_BULLET.OPEN + ' ' + caretStruct[3] + caretStruct[4];
+		if (lastLineType == LINE_TYPE.PROJECT) {
+			content = "  " + content;
+		}
+		break;
+	case LINE_TYPE.PROJECT:
+		content = "\n  " + caretStruct[1] + TASK_BULLET.OPEN + ' ';
+		break;
+	case LINE_TYPE.TASK:
+		content = "\n" + caretStruct[1] + TASK_BULLET.OPEN + ' ';
+		break;
+	}
+	d.Insert(content);
+}
+
+function taskTaggle(tag) {
+	if (caretLineType != LINE_TYPE.TASK) {
+		return;
+	}
+	var taskBullet = TASK_BULLET.OPEN + TASK_BULLET.DONE + TASK_BULLET.CANCELLED;
+	var regex = " " + tag + " \\(\\d{4}-\\d{1,2}-\\d{1,2} \\d{1,2}:\\d{1,2}:\\d{1,2}\\)";
+	var re = new RegExp(regex, "i");
+	if (re.test(caretLine)) {
+		line = caretLine.replace(re, "");
+		SendCommand(MI_DELETE_TO_END_OF_LINE);
+		SendCommand(MI_DELETE_TO_HEAD_OF_LINE);
+		d.Insert(line);
+	}
+	else {
+		d.InsertAt(d.CaretLine, caretLine.length, " " + tag + " (" + now() + ")");
+	}
+}
+
+function taskArchive() {
+	d.SetCaretPos(d.LineCount, d.GetLineText(d.LineCount).length, true);
+	var regex = "[\\s]*" + PROJECT_ARCHIVE_LINE + "[\\s]*";
+	var re = new RegExp(regex, "i");
+	if (!re.test(d.Text)) {
+		d.Insert("\n" + PROJECT_SEP + PROJECT_ARCHIVE_LINE + "\n");
+	}
+	var regex = "^.* (" + TAG.DONE + "|" + TAG.CANCELLED + ") \\(\\d{4}-\\d{1,2}-\\d{1,2} \\d{1,2}:\\d{1,2}:\\d{1,2}\\) .*$";
+	regex = "^.* (" + TAG.DONE + "|" + TAG.CANCELLED + ") .*$\\n";
+	var re = new RegExp(regex, "igm");
+	var arr = d.Text.match(re);
+	if (arr == null) {
+		return;
+	}
+	d.ReplaceAll(regex, "", false, true, false);
+	d.SetCaretPos(d.LineCount, d.GetLineText(d.LineCount).length, true);
+	var i = 0;
+	for (; i< arr.length; i++) {
+		d.Insert(arr[i]);
+	}
+}
