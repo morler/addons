@@ -46,7 +46,7 @@ go.AddWord( iWord4 )
 go.AddItem( iOperator )
 
 'number
-go.AddItem( go.CreateItem(COLOR_NUMBER, "(?<!\w)[+-]?([1-9][0-9]*\.?[0-9]*[e]?[-]?[0-9]*\.?[0-9]*|0([0-7]+|x[0-9A-Fa-f]+)|0(?!\.)|0\.[0-9]*[e]?[-]?[1-9][0-9]*)(?!\w)", False) )
+go.AddItem( go.CreateItem(COLOR_NUMBER, "(?<!\w)[+-]?([1-9][0-9]*\.?[0-9]*[e]?[-]?[0-9]*\.?[0-9]*|0([0-7]+|x[0-9A-Fa-f]+)|(?<!-)0(?!\.)|0\.[0-9]*[e]?[-]?[1-9][0-9]*)(?!\w)", False) )
 
 go.IndentText "\{\s*$", False,  "}\s*$", False
 go.FoldText "\{", False, "\}", False
