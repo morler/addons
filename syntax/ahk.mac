@@ -49,5 +49,5 @@ ahk.AddItem( ahk.CreateItem(COLOR_NUMBER, "\b\d+\b", False) )
 ahk.IndentText "\{\s*$", False, "}\s*$", False
 ahk.FoldText "\{", False, "\}", False
 ahk.SetPairs( "[]''""{}()" )
-ahk.CommentLine( "^" )
+ahk.CommentLine( ";" )
 ahk.CommentBlock "/*", "*/"
