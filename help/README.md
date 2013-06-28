@@ -1,5 +1,5 @@
 #EverEdit Help File
-* [Script](https://github.com/everedit/addons/blob/master/help/1033/script.md)
+* [Syntax](https://github.com/everedit/addons/blob/master/help/1033/syntax.md)
 * [Snippet](https://github.com/everedit/addons/blob/master/help/1033/snippet.md)
 * [Mode](https://github.com/everedit/addons/blob/master/help/1033/mode.md)
 
