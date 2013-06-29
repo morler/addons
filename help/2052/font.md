@@ -5,6 +5,7 @@ EverEdit提供了默认+5个用户自定义字体，供用户进行切换。您�
 
 ##字体设定
 如下图：
+![config_font](./image/config_font.png)
 
 支持CJK字符设定的字体有：
 
