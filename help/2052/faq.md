@@ -97,3 +97,15 @@ EverEdit完美支持markdown的书写和预览，并且能够完美同步上次滚动的位置。
 ##EverEdit如何把当前文件放在另一个分组中
 在标签上点击右键，选择`移动到垂直或者水平分组`即可。在`窗口`菜单中也有相同的命令。
 
+##EverEdit的Markdown预览能指定CSS样式吗
+可以。markdown预览支持外挂css样式。打开`mode\markdown.esm`，找到下面这一行：
+
+```
+Command0=1,Markdown Preview,${AppPath}\mode\markdown\MarkdownBar.dll,MarkdownPreview,github.css
+```
+
+后面的*.css改为您需要的css即可，css文件应该房子和在`mode\markdown`目录下。
+
+##如何让保存图标在文件没有被修改时变为灰色
+主菜单→工具→通常→文件→文件未被修改时也可以保存，去掉这个勾即可。
+

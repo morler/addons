@@ -206,8 +206,7 @@ regionBlock.AddItem( itemTodo )
 这样我们就可以仅仅在注释中显示高亮为COLOR_HIGHLIGHT1颜色的TODO文字了！EE同样为代码折叠提供了简单方便的调用接口。比如当遇到{时折叠一次，遇到}时反折叠一次，那么可以简单的像下面书写：
 
 ```
-cpp.FoldText "\{", False
-cpp.UnfoldText "\}", False
+cpp.FoldText "\{", False, "\}", False
 ```
 
 **自动缩进**：假设在mycpp中有这样一种缩进：当您在行尾是EEA的时候，输入回车时，自动缩进一次；输入的行满足含有EverEdit时，自动反缩进一次
