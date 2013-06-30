@@ -104,7 +104,7 @@ EverEdit完美支持markdown的书写和预览，并且能够完美同步上次滚动的位置。
 Command0=1,Markdown Preview,${AppPath}\mode\markdown\MarkdownBar.dll,MarkdownPreview,github.css
 ```
 
-后面的*.css改为您需要的css即可，css文件应该房子和在`mode\markdown`目录下。
+后面的*.css改为您需要的css即可，css文件应该放在`mode\markdown`目录下。
 
 ##如何让保存图标在文件没有被修改时变为灰色
 主菜单→工具→通常→文件→文件未被修改时也可以保存，去掉这个勾即可。

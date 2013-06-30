@@ -37,26 +37,36 @@ Key=CAS+S
 **S**:Shift
 
 Keys list:
+
 ```
-Control-break
+LeftMouseButton
+RightMouseButton
+Control-Break
+MiddleMouseButton
+X1MouseButton
+X2MouseButton
+Undefined
 Backspace
 Tab
 Clear
 Enter
+Shift
+Control
+Alt
 Pause
-Caps Lock
-IME Kana mode
-IME Junja mode
-IME final mode
-IME Hanja mode
+CapsLock
+IMEKanaMode
+IMEJunjaMode
+IMEFinalMode
+IMEHanjaMode
 Esc
-IME convert
-IME nonconvert
-IME accept
-IME mode change
+IMEConvert
+IMENonconvert
+IMEAccept
+IMEModeChange
 Space
-PgUp
-PgDn
+PageUp
+PageDown
 End
 Home
 Left
@@ -66,7 +76,7 @@ Down
 Select
 Print
 Execute
-Print
+PrintScreen
 Ins
 Del
 Help
@@ -106,6 +116,9 @@ W
 X
 Y
 Z
+LeftWin
+RightWin
+App
 Sleep
 Num0
 Num1
@@ -149,33 +162,33 @@ F23
 F24
 NumLock
 ScrollLock
-Left Shift
-Right Shift
-Left Control
-Right Control
-Left Alt
-Right Alt
-Browser Back
-Browser Forward
-Browser Refresh
-Browser Stop
-Browser Search
-Browser Favorites
-Browser Home
-Volume Mute
-Volume Down
-Volume Up
-Next Track
-Previous Track
-Stop Media
-Play/Pause Media
-Start Mail
-Select Media
-Start App 1
-Start App 2
+LeftShift
+RightShift
+LeftControl
+RightControl
+LeftAlt
+RightAlt
+BrowserBack
+BrowserForward
+BrowserRefresh
+BrowserStop
+BrowserSearch
+BrowserFavorites
+BrowserHome
+VolumeMute
+VolumeDown
+VolumeUp
+NextTrack
+PreviousTrack
+StopMedia
+Play/PauseMedia
+StartMail
+SelectMedia
+StartApp1
+StartApp2
 ;
-=
-,
+Equal
+Comma
 -
 .
 /
@@ -184,13 +197,12 @@ Start App 2
 \\
 ]
 '
-<
-IME Process key
+IMEProcessKey
 VK_PACKET
 Attn
 CrSel
 ExSel
-Erase EOF
+EraseEOF
 Play
 Zoom
 PA1
