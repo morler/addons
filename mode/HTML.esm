@@ -100,3 +100,62 @@ Command0=3,Beautify HTML,${AppPath}\mode\html\beautify-html.ejs
 Command0=3,Beautify JS(Selection),${AppPath}\mode\js\jsBeautify.ejs
 [Menu2]
 Command0=3,Beautify CSS(Selection),${AppPath}\mode\css\beautify-css.ejs
+[Menu3]
+Command0=2,====Emmet====,http://docs.emmet.io
+[Menu4]
+Key=C+E
+Command0=3,Abbreviation,${AppPath}\mode\html\abbrev.ejs
+[Menu5]
+Command0=3,Match Pair Inward,${AppPath}\mode\html\match_pair_inward.ejs
+[Menu6]
+Command0=3,Match Pair Outward,${AppPath}\mode\html\match_pair_outward.ejs
+[Menu7]
+SEP=Y
+[Menu8]
+Command0=3,Remove Tag,${AppPath}\mode\html\remove_tag.ejs
+[Menu9]
+Command0=3,Split Join Tag,${AppPath}\mode\html\split_join_tag.ejs
+[Menu10]
+Command0=3,Wrap With Abbrev,${AppPath}\mode\html\wrap_with_abbrev.ejs
+[Menu11]
+Command0=3,Toggle Comment,${AppPath}\mode\html\toggle_comment.ejs
+[Menu12]
+Command0=3,Merge Lines,${AppPath}\mode\html\merge_lines.ejs
+[Menu13]
+Command0=3,Insert Formatted Line Break,${AppPath}\mode\html\insert_formatted_line_break.ejs
+[Menu14]
+SEP=Y
+[Menu15]
+Command0=3,Prev Edit Point,${AppPath}\mode\html\prev_edit_point.ejs
+[Menu16]
+Command0=3,Next Edit Point,${AppPath}\mode\html\next_edit_point.ejs
+[Menu17]
+Command0=3,Select Previous Item,${AppPath}\mode\html\select_previous_item.ejs
+[Menu18]
+Command0=3,Select Next Item,${AppPath}\mode\html\select_next_item.ejs
+[Menu19]
+SEP=Y
+[Menu20]
+Command0=3,Decrement Number By 10,${AppPath}\mode\html\decrement_number_by_10.ejs
+[Menu21]
+Command0=3,Increment Number By 10,${AppPath}\mode\html\increment_number_by_10.ejs
+[Menu22]
+Command0=3,Decrement Number By 01,${AppPath}\mode\html\decrement_number_by_01.ejs
+[Menu23]
+Command0=3,Increment Number By 01,${AppPath}\mode\html\increment_number_by_01.ejs
+[Menu24]
+Command0=3,Decrement Number By 1,${AppPath}\mode\html\decrement_number_by_1.ejs
+[Menu25]
+Command0=3,Increment Number By 1,${AppPath}\mode\html\increment_number_by_1.ejs
+[Menu26]
+SEP=Y
+[Menu27]
+Command0=3,Reflect Css Value,${AppPath}\mode\html\reflect_css_value.ejs
+[Menu28]
+Command0=3,Evaluate Math Expression,${AppPath}\mode\html\evaluate_math_expression.ejs
+[Menu29]
+SEP=Y
+[Menu30]
+Command0=2,Emmet Help,http://docs.emmet.io
+[Menu31]
+Command0=3,Update Image Size,${AppPath}\mode\html\update_image_size.ejs

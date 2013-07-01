@@ -1,3 +1,0 @@
-#How to write a plug-in for EverEdit
-
-##to be continue...

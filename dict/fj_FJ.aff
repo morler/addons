@@ -1,0 +1,643 @@
+SET ISO8859-1
+TRY aiukvotelrsnmbdcwygqpjfhSLMKTANVJBWRICEPYDFOQUG
+
+PFX A Y 12
+PFX A 0 ca [bq][eou]
+PFX A 0 ca [ct]a
+PFX A 0 ca dr
+PFX A 0 ca g[au]
+PFX A 0 ca i[dt]
+PFX A 0 ca k[aiu]
+PFX A 0 ca l[aio]
+PFX A 0 ca m[ae]
+PFX A 0 ca r[aiou]
+PFX A 0 ca u[dlt]
+PFX A 0 ca v[aeiu]
+PFX A 0 ca w[aei]
+
+PFX B Y 7
+PFX B 0 ce [bl][eu]
+PFX B 0 ce [cr]e
+PFX B 0 ce dr
+PFX B 0 ce gu
+PFX B 0 ce [kv][au]
+PFX B 0 ce m[ou]
+PFX B 0 ce ul
+
+PFX C Y 12
+PFX C 0 co [bv][aiou]
+PFX C 0 co co
+PFX C 0 co d[eru]
+PFX C 0 co ga
+PFX C 0 co ir
+PFX C 0 co k[aio]
+PFX C 0 co l[aeou]
+PFX C 0 co m[ao]
+PFX C 0 co ni
+PFX C 0 co [qw][ai]
+PFX C 0 co r[io]
+PFX C 0 co se
+
+PFX D Y 12
+PFX D 0 da [bl][aeiou]
+PFX D 0 da d[aor]
+PFX D 0 da [gr][aeo]
+PFX D 0 da i[lnr]
+PFX D 0 da k[aiou]
+PFX D 0 da [mv][aeou]
+PFX D 0 da n[iu]
+PFX D 0 da [qy]a
+PFX D 0 da s[ei]
+PFX D 0 da t[ou]
+PFX D 0 da u[crt]
+PFX D 0 da w[ae]
+
+PFX E N 11
+PFX E 0 dau b[aiou]
+PFX E 0 dau [ct][aeu]
+PFX E 0 dau d[aor]
+PFX E 0 dau k[aeoiu]
+PFX E 0 dau [lr][ao]
+PFX E 0 dau m[ae]
+PFX E 0 dau n[au]
+PFX E 0 dau q[io]
+PFX E 0 dau s[aeio]
+PFX E 0 dau v[aeou]
+PFX E 0 dau [wy]a
+
+PFX F Y 10
+PFX F 0 i a[gpuv]
+PFX F 0 i [bcklmnqrstv][aeiou]
+PFX F 0 i d[aeioru]
+PFX F 0 i e[iku]
+PFX F 0 i [fy]a
+PFX F 0 i i[ls]
+PFX F 0 i o[bklnrstuv]
+PFX F 0 i p[au]
+PFX F 0 i u[abcdiklmnrstv]
+PFX F 0 i w[aei]
+
+PFX G Y 8
+PFX G 0 ka [bklmstv][aeiou]
+PFX G 0 ka c[aiu]
+PFX G 0 ka d[aioru]
+PFX G 0 ka i[bdklmnoqstvy]
+PFX G 0 ka [nj]i
+PFX G 0 ka [pqw]a
+PFX G 0 ka r[aiou]
+PFX G 0 ka u[aknt]
+
+PFX H N 9
+PFX H 0 kaka b[aeou]
+PFX H 0 kaka d[aior]
+PFX H 0 kaka i[sv]
+PFX H 0 kaka l[aou]
+PFX H 0 kaka m[eu]
+PFX H 0 kaka ra
+PFX H 0 kaka s[eo]
+PFX H 0 kaka t[eiu]
+PFX H 0 kaka v[aiou]
+
+PFX I Y 9
+PFX I 0 ke [ckt]e
+PFX I 0 ke d[ar]
+PFX I 0 ke [fn]i
+PFX I 0 ke i[mort]
+PFX I 0 ke l[ei]
+PFX I 0 ke m[aeiu]
+PFX I 0 ke [qs][au]
+PFX I 0 ke r[eiu]
+PFX I 0 ke v[ae]
+
+PFX J N 12
+PFX J 0 lau al
+PFX J 0 lau [bckqv][aiou]
+PFX J 0 lau d[ioru]
+PFX J 0 lau g[au]
+PFX J 0 lau l[ae]
+PFX J 0 lau m[io]
+PFX J 0 lau [nwy]a
+PFX J 0 lau pu
+PFX J 0 lau r[aeou]
+PFX J 0 lau s[aeu]
+PFX J 0 lau t[aeiou]
+PFX J 0 lau u[al]
+
+PFX K Y 12
+PFX K 0 ma [bj]i
+PFX K 0 ma c[aeo]
+PFX K 0 ma d[aeioru]
+PFX K 0 ma i[cklmnrstv]
+PFX K 0 ma [klnrs][aeiou]
+PFX K 0 ma [mv][aou]
+PFX K 0 ma o[qu]
+PFX K 0 ma po
+PFX K 0 ma q[eu]
+PFX K 0 ma t[aeou]
+PFX K 0 ma u[aelstvw]
+PFX K 0 ma [wy]a
+
+PFX L N 7
+PFX L 0 mala d[ar]
+PFX L 0 mala iv
+PFX L 0 mala [mtw]a
+PFX L 0 mala nu
+PFX L 0 mala ri
+PFX L 0 mala s[eo]
+PFX L 0 mala v[io]
+
+PFX M Y 9
+PFX M 0 no be
+PFX M 0 no [ckv][ai]
+PFX M 0 no d[aor]
+PFX M 0 no [gnpy]a
+PFX M 0 no i[ctv]
+PFX M 0 no l[aeo]
+PFX M 0 no [ms][aeu]
+PFX M 0 no q[au]
+PFX M 0 no t[aio]
+
+PFX N Y 12
+PFX N 0 ra b[eou]
+PFX N 0 ra [cqw]a
+PFX N 0 ra g[ou]
+PFX N 0 ra i[cklmstvy]
+PFX N 0 ra [kmr][au]
+PFX N 0 ra l[aeu]
+PFX N 0 ra on
+PFX N 0 ra p[aiu]
+PFX N 0 ra s[ei]
+PFX N 0 ra t[aio]
+PFX N 0 ra u[ckmt]
+PFX N 0 ra v[aiou]
+
+PFX O Y 12
+PFX O 0 sa [bk][aeiou]
+PFX O 0 sa [gs]a
+PFX O 0 sa i[sv]
+PFX O 0 sa [jt]i
+PFX O 0 sa l[aiou]
+PFX O 0 sa [mq][aio]
+PFX O 0 sa n[iou]
+PFX O 0 sa po
+PFX O 0 sa r[aeo]
+PFX O 0 sa u[cklmnt]
+PFX O 0 sa v[aeu]
+PFX O 0 sa w[ae]
+
+PFX P Y 10
+PFX P 0 sau bu
+PFX P 0 sau c[ai]
+PFX P 0 sau d[air]
+PFX P 0 sau go
+PFX P 0 sau [km][aou]
+PFX P 0 sau l[aeio]
+PFX P 0 sau [qw][ae]
+PFX P 0 sau r[aiu]
+PFX P 0 sau [sty]a
+PFX P 0 sau v[aiou]
+
+PFX Q Y 15
+PFX Q 0 so a[in]
+PFX Q 0 so b[eu]
+PFX Q 0 so [cq]o
+PFX Q 0 so dr
+PFX Q 0 so ga
+PFX Q 0 so is
+PFX Q 0 so [jn]i
+PFX Q 0 so [km][aiou]
+PFX Q 0 so l[aeio]
+PFX Q 0 so pu
+PFX Q 0 so r[aou]
+PFX Q 0 so s[eio]
+PFX Q 0 so [tw][ai]
+PFX Q 0 so ur
+PFX Q 0 so v[aeiu]
+
+PFX R Y 12
+PFX R 0 ta [bcklqrtv][aeiou]
+PFX R 0 ta d[aeior]
+PFX R 0 ta [ey]a
+PFX R 0 ta [gm][aeou]
+PFX R 0 ta i[eklnrsvy]
+PFX R 0 ta ji
+PFX R 0 ta n[eio]
+PFX R 0 ta o[kn]
+PFX R 0 ta p[iu]
+PFX R 0 ta s[aeio]
+PFX R 0 ta u[abclmnrsv]
+PFX R 0 ta w[ai]
+
+PFX S N 12
+PFX S 0 tabu c[aeu]
+PFX S 0 tabu d[ar]
+PFX S 0 tabu gu
+PFX S 0 tabu is
+PFX S 0 tabu k[aeo]
+PFX S 0 tabu [lv][aou]
+PFX S 0 tabu m[ou]
+PFX S 0 tabu qi
+PFX S 0 tabu r[ai]
+PFX S 0 tabu s[aeio]
+PFX S 0 tabu t[aeou]
+PFX S 0 tabu [wy]a
+
+PFX T Y 8
+PFX T 0 tala bi
+PFX T 0 tala dr
+PFX T 0 tala id
+PFX T 0 tala le
+PFX T 0 tala [mn]o
+PFX T 0 tala [rtwy]a
+PFX T 0 tala s[ei]
+PFX T 0 tala vu
+
+PFX U Y 13
+PFX U 0 tata b[aeiou]
+PFX U 0 tata c[aeio]
+PFX U 0 tata d[ior]
+PFX U 0 tata g[eu]
+PFX U 0 tata iy
+PFX U 0 tata [kt][aiu]
+PFX U 0 tata l[aiou]
+PFX U 0 tata [mv][aeou]
+PFX U 0 tata pi
+PFX U 0 tata q[aeiu]
+PFX U 0 tata s[eio]
+PFX U 0 tata u[crt]
+PFX U 0 tata [wy]a
+
+PFX V Y 13
+PFX V 0 tau ak
+PFX V 0 tau b[aei]
+PFX V 0 tau c[aio]
+PFX V 0 tau d[aou]
+PFX V 0 tau ge
+PFX V 0 tau i[ltv]
+PFX V 0 tau k[eu]
+PFX V 0 tau [ltv][aiou]
+PFX V 0 tau m[aeu]
+PFX V 0 tau [nwy]a
+PFX V 0 tau on
+PFX V 0 tau r[au]
+PFX V 0 tau s[ou]
+
+PFX W N 11
+PFX W 0 tawa [bgn]u
+PFX W 0 tawa c[ai]
+PFX W 0 tawa d[ou]
+PFX W 0 tawa i[kst]
+PFX W 0 tawa ki
+PFX W 0 tawa l[ao]
+PFX W 0 tawa m[au]
+PFX W 0 tawa [ry]a
+PFX W 0 tawa s[aei]
+PFX W 0 tawa t[au]
+PFX W 0 tawa v[aeu]
+
+PFX X Y 15
+PFX X 0 va b[iu]
+PFX X 0 va [cs][aeiu]
+PFX X 0 va d[aru]
+PFX X 0 va ev
+PFX X 0 va g[aeou]
+PFX X 0 va i[abcdklstv]
+PFX X 0 va [kq][aeiou]
+PFX X 0 va l[aeu]
+PFX X 0 va m[ae]
+PFX X 0 va n[ai]
+PFX X 0 va o[lns]
+PFX X 0 va [rv][aei]
+PFX X 0 va t[aeu]
+PFX X 0 va uc
+PFX X 0 va we
+
+PFX Y Y 10
+PFX Y 0 vaka am
+PFX Y 0 vaka [bclmnrstv][aeiou]
+PFX Y 0 vaka d[aeioru]
+PFX Y 0 vaka [fj]i
+PFX Y 0 vaka i[bcdkloprstuvy]
+PFX Y 0 vaka p[aio]
+PFX Y 0 vaka o[cginpqrstvy]
+PFX Y 0 vaka u[acdgkmnrst]
+PFX Y 0 vaka w[aei]
+PFX Y 0 vaka ya
+
+PFX Z Y 9
+PFX Z 0 vakata bu
+PFX Z 0 vakata [cqw]a
+PFX Z 0 vakata d[ior]
+PFX Z 0 vakata k[aeio]
+PFX Z 0 vakata [lmv][aeu]
+PFX Z 0 vakata r[io]
+PFX Z 0 vakata s[iou]
+PFX Z 0 vakata t[aiou]
+PFX Z 0 vakata uc
+
+PFX 0 Y 10
+PFX 0 0 vei au
+PFX 0 0 vei [bcklmnqstv][aeiou]
+PFX 0 0 vei d[aeioru]
+PFX 0 0 vei fe
+PFX 0 0 vei [gjpy]a
+PFX 0 0 vei i[klr]
+PFX 0 0 vei o[kps]
+PFX 0 0 vei r[aiou]
+PFX 0 0 vei u[abklst]
+PFX 0 0 vei w[ae]
+
+PFX 1 Y 10
+PFX 1 0 wa [blsv][aeiou]
+PFX 1 0 wa [cm][aeio]
+PFX 1 0 wa d[aeru]
+PFX 1 0 wa [gwy]a
+PFX 1 0 wa i[abcgklmnstv]
+PFX 1 0 wa [kr][aiou]
+PFX 1 0 wa no
+PFX 1 0 wa ov
+PFX 1 0 wa q[aio]
+PFX 1 0 wa u[lv]
+
+PFX 2 Y 13
+PFX 2 0 ya b[aei]
+PFX 2 0 ya c[aeio]
+PFX 2 0 ya d[ru]
+PFX 2 0 ya g[aio]
+PFX 2 0 ya is
+PFX 2 0 ya [krv][aiou]
+PFX 2 0 ya [lt][aeiou]
+PFX 2 0 ya m[aeou]
+PFX 2 0 ya n[ai]
+PFX 2 0 ya on
+PFX 2 0 ya po
+PFX 2 0 ya [qswy]a
+PFX 2 0 ya u[aeknt]
+
+SFX a Y 5
+SFX a 0 ca [bcdgiklmnqrstuvwy]a
+SFX a 0 ca [blmnrtvw]e
+SFX a 0 ca [abdgklmnoqrtuv]i
+SFX a 0 ca [abcgklmnrtv]o
+SFX a 0 ca [abcegklmnopqrstv]u
+
+SFX b Y 5
+SFX b 0 ci [bdiklruvw]a
+SFX b 0 ci [blrv]e
+SFX b 0 ci [abcgklmnorsv]i
+SFX b 0 ci [bgklmnrtv]o
+SFX b 0 ci [abgklorv]u
+
+SFX c Y 5
+SFX c 0 dra [cgklmnrtvw]a
+SFX c 0 dra [klrtv]e
+SFX c 0 dra [aklot]i
+SFX c 0 dra [lmt]o
+SFX c 0 dra [abklnrstv]u
+
+SFX d Y 5
+SFX d 0 drau [bcklmnqt]a
+SFX d 0 drau [tv]e
+SFX d 0 drau [gk]i
+SFX d 0 drau [eik]o
+SFX d 0 drau [acm]u
+
+SFX e Y 5
+SFX e 0 ga [dgklrstu]a
+SFX e 0 ga [clrw]e
+SFX e 0 ga [bcdflnrsv]i
+SFX e 0 ga [acklrstv]o
+SFX e 0 ga [aelrstv]u
+
+SFX f Y 4
+SFX f 0 gi [dklt]a
+SFX f 0 gi [cdlorst]i
+SFX f 0 gi [blrst]o
+SFX f 0 gi [rs]u
+
+SFX g Y 5
+SFX g 0 ka [bcdiklmnrstuvwy]a
+SFX g 0 ka [bdklnrstv]e
+SFX g 0 ka [abcdeiklmnprstv]i
+SFX g 0 ka [abcdklmnqrst]o
+SFX g 0 ka [acdeklmnrstv]u
+
+SFX h Y 4
+SFX h 0 kaka [lrt]a
+SFX h 0 kaka li
+SFX h 0 kaka [lr]o
+SFX h 0 kaka ru
+
+SFX i Y 3
+SFX i 0 kaki ka
+SFX i 0 kaki li
+SFX i 0 kaki [rv]u
+
+SFX j Y 5
+SFX j 0 ki [bcdklmnrstuvw]a
+SFX j 0 ki [blmr]e
+SFX j 0 ki [abklmnrst]i
+SFX j 0 ki [bdlnrst]o
+SFX j 0 ki [bcdilmnprstv]u
+
+SFX k Y 5
+SFX k 0 laka [bcgiklmnqrstuv]a
+SFX k 0 laka [bdlqrs]e
+SFX k 0 laka [abcdgklnqrstuv]i
+SFX k 0 laka [bgklmnrst]o
+SFX k 0 laka [acdegkmnorstv]u
+
+SFX l Y 5
+SFX l 0 laki [biknqrtuv]a
+SFX l 0 laki [blqr]e
+SFX l 0 laki [abcgknqrstuv]i
+SFX l 0 laki [bgklnrst]o
+SFX l 0 laki [acdegkmnorstv]u
+
+SFX m Y 5
+SFX m 0 ma [cklmrst]a
+SFX m 0 ma [lqrs]e
+SFX m 0 ma [alrst]i
+SFX m 0 ma [dlqrst]o
+SFX m 0 ma [acklnorst]u
+
+SFX n Y 4
+SFX n 0 maka [kr]a
+SFX n 0 maka [lnqs]i
+SFX n 0 maka [dlst]o
+SFX n 0 maka [alnrs]u
+
+SFX o Y 4
+SFX o 0 maki [nrs]a
+SFX o 0 maki [knqs]i
+SFX o 0 maki [cds]o
+SFX o 0 maki [alns]u
+
+SFX p Y 4
+SFX p 0 mi [rs]a
+SFX p 0 mi [abcklmnr]i
+SFX p 0 mi [glqst]o
+SFX p 0 mi [acklnqrt]u
+
+SFX q Y 5
+SFX q 0 na [bcgiklmnqstuvwy]a
+SFX q 0 na [bdklmqrstvw]e
+SFX q 0 na [abcdgklmoqrstu]i
+SFX q 0 na [bcgklmpqrt]o
+SFX q 0 na [abcklmqrstv]u
+
+SFX r Y 5
+SFX r 0 ni [bcdgklmnrstuvwy]a
+SFX r 0 ni [bklmrstv]e
+SFX r 0 ni [abcdjklmnoqrstuv]i
+SFX r 0 ni [abcegiklmqrst]o
+SFX r 0 ni [aeklmstv]u
+
+SFX s Y 5
+SFX s 0 ra [bcdjklnpqrstuvwy]a
+SFX s 0 ra [bcqs]e
+SFX s 0 ra [abekoqs]i
+SFX s 0 ra [abdkstv]o
+SFX s 0 ra [abotv]u
+
+SFX t Y 5
+SFX t 0 raka [bcgklnqsuvy]a
+SFX t 0 raka [bdlqv]e
+SFX t 0 raka [bcgklnstuv]i
+SFX t 0 raka [bglmsv]o
+SFX t 0 raka [abegkmqstv]u
+
+SFX u Y 5
+SFX u 0 raki [cklnstuv]a
+SFX u 0 raki [bq]e
+SFX u 0 raki [bcgklnsuv]i
+SFX u 0 raki [bgklmsv]o
+SFX u 0 raki [abegkmqstv]u
+
+SFX v Y 5
+SFX v 0 ri [bijklmnqstv]a
+SFX v 0 ri [bckl]e
+SFX v 0 ri [abdeknoqrstvw]i
+SFX v 0 ri [bcikqstv]o
+SFX v 0 ri [abjmt]u
+
+SFX w Y 5
+SFX w 0 ta [bcegiklmnqrstuvw]a
+SFX w 0 ta [bklnqrstuvw]e
+SFX w 0 ta [abegklmnorstuv]i
+SFX w 0 ta [bgiklmnpqrsv]o
+SFX w 0 ta [abegiklmoqrsv]u
+
+SFX x Y 5
+SFX x 0 taka [bcdegijklmnoqrstuvwy]a
+SFX x 0 taka [bcdklnqrstvw]e
+SFX x 0 taka [abcdefgjklmnopqrstuv]i
+SFX x 0 taka [abcdgiklmnqrstuv]o
+SFX x 0 taka [abcegiklmnoprstuv]u
+
+SFX y Y 5
+SFX y 0 taki [bcdegiklmnoqrstuvw]a
+SFX y 0 taki [bcklnrstuv]e
+SFX y 0 taki [abdegklmnorstuv]i
+SFX y 0 taki [bcdgiklmnrstv]o
+SFX y 0 taki [abegiklmnorstuv]u
+
+SFX z Y 5
+SFX z 0 ti [bgiklmnpqrstuvw]a
+SFX z 0 ti [bklnqrsuv]e
+SFX z 0 ti [abgklnprsuv]i
+SFX z 0 ti [abkmnqs]o
+SFX z 0 ti [abeikmnrsv]u
+
+SFX 9 Y 5
+SFX 9 0 va [bcdgiklnqrstvwy]a
+SFX 9 0 va [cdklrst]e
+SFX 9 0 va [acdegklnoqrstu]i
+SFX 9 0 va [acdgiklmnqrst]o
+SFX 9 0 va [acdgiklnorst]u
+
+SFX 8 Y 5
+SFX 8 0 vaka [cdgklqrswy]a
+SFX 8 0 vaka [dlnr]e
+SFX 8 0 vaka [acdegklnors]i
+SFX 8 0 vaka [bklrs]o
+SFX 8 0 vaka [glnortu]u
+
+SFX 7 Y 5
+SFX 7 0 vaki [dklqrstvw]a
+SFX 7 0 vaki [dlr]e
+SFX 7 0 vaki [cdeklos]i
+SFX 7 0 vaki [gklrs]o
+SFX 7 0 vaki [lnortu]u
+
+SFX 6 Y 5
+SFX 6 0 vi [cdgiklnqrstvw]a
+SFX 6 0 vi [cdklrt]e
+SFX 6 0 vi [acdeklorstuv]i
+SFX 6 0 vi [cdiklqrs]o
+SFX 6 0 vi [acgklnorst]u
+
+SFX 5 Y 5
+SFX 5 0 ya [blmqrsuvwy]a
+SFX 5 0 ya [bkl]e
+SFX 5 0 ya [uv]i
+SFX 5 0 ya [acdgklrsv]o
+SFX 5 0 ya [abcdgklmnrtv]u
+
+SFX 4 Y 5
+SFX 4 0 yaka [biklmnqrstu]a
+SFX 4 0 yaka [blnqrv]e
+SFX 4 0 yaka [bdegklnorstuv]i
+SFX 4 0 yaka [bcklmnqrs]o
+SFX 4 0 yaka [acegiklmrstv]u
+
+SFX 3 Y 4
+SFX 3 0 yaki [bklnu]a
+SFX 3 0 yaki [blqr]e
+SFX 3 0 yaki [abdegklnorstv]i
+SFX 3 0 yaki [bckmnr]o
+
+REP 43
+REP a i
+REP i a
+REP ng g
+REP mb b
+REP ka ki
+REP ki ka
+REP q g
+REP g q
+REP au ou
+REP ou au
+REP ui iu
+REP iu ui
+REP io oi
+REP oi io
+REP au ua
+REP ua au
+REP vula vua
+REP vua vula
+REP ua oa
+REP oa ua
+REP eu a
+REP nd d
+REP e ie
+REP ie e
+REP e ei
+REP ei e
+REP a ai
+REP ai a
+REP a ia
+REP ia a
+REP oi e
+REP e oi
+REP o i
+REP i o
+REP eu ea
+REP ea eu
+REP ai ei
+REP ei ai
+REP ie i
+REP ui u
+REP u ui
+REP u iu
+REP iu u

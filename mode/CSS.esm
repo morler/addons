@@ -2,3 +2,8 @@
 Title=CSS
 [Menu0]
 Command0=3,Beautify CSS,${AppPath}\mode\css\beautify-css.ejs
+[Menu1]
+SEP=Y
+[Menu2]
+Key=C+E
+Command0=3,Abbreviation,${AppPath}\mode\html\abbrev.ejs

@@ -1,0 +1,1506 @@
+[MENU128]
+P57601=&File
+P57600=&New
+57600=&Normal Text
+1233=&Binary
+1230=&Configure Templates...
+57601=&Open...
+1206=&Close
+1203=&Close Others
+1237=&Reload
+1658=&Reload with Encoding
+57603=&Save
+1234=&Save All
+57604=Save &As...
+57609=&Print Preview
+57607=&Print...
+1236=Clear Recent &History
+P35001=&Recent Files
+35001=Empty
+57665=E&xit
+P57643=&Edit
+57643=&Undo
+57644=&Redo
+57635=Cu&t
+57634=&Copy
+57637=&Paste
+P87=&Clipboard
+87=Cut &Append
+88=&Copy Append
+90=Cut &Marked Lines
+89=Copy Marked &Lines
+91=&Paste as Cloumn
+94=&Paste at Line Tail
+61=&Paste and Indent
+1429=&Erase Clipboard
+1338=&Column Mode
+P26=&Delete
+26=&Delete
+27=Delete &Next
+85=Delete &Word
+28=Delete &Prev Word
+29=Delete &Next Word
+30=Delete &Line
+79=Delete to &Head of Line
+80=Delete to &End of Line
+1428=Delete Blank Lines
+1409=Delete Duplicated Lines
+63=Trim &Leading Space
+64=Trim &Tailing Space
+P57642=&Select
+57642=Select &All
+46=Select &Word
+86=Select &Line
+67=Select to &Pair
+55=Select Line to &Up
+56=Select Line to &Down
+1410=&Quick Select
+1422=Add All &Occurrences
+P57=&Conversion
+57=&Upper Case
+58=&Lower Case
+82=&Invert Case
+102=&Capitalize
+97=To &Full Width
+98=To &Half Width
+69=&Tabs to Spaces
+70=&Spaces to Tabs
+83=&Leading Tabs to Spaces
+84=&Leading Spaces to Tabs
+P72=&Format
+72=&Join Lines
+47=&Increase Indent
+48=&Decrease Indent
+1413=Line &Comment
+1414=Line &Uncomment
+1415=&Block Comment
+1416=&Block Uncomment
+P1417=&Insert
+1417=&Date
+1418=&Time
+1419=&Customize Date/Time
+P1330=&Code Folding
+1330=&Cancel Folding
+1331=&Syntax
+1332=&Indent
+1333=&Manual
+62=Fold Current Level
+52=Expand Current Level
+1622=Fold Level 2
+1623=Fold Level 3
+1624=Fold Level 4
+1625=Fold Level 5
+1626=Fold Level 6
+1627=Fold Level 7
+1628=Fold Level 8
+1629=Fold Level 9
+P81=&Others
+81=&Transpose
+54=&Duplicate Line
+68=Copy Line
+36=Toggle Overwrite Mode
+71=Last &Edit Point
+1423=&Partially Edit
+1412=Hex &Mode
+P1318=&View
+P1430=&Fonts
+1430=&Default
+1431=Custom 1
+1432=Custom 2
+1433=Custom 3
+1434=Custom 4
+1435=Custom 5
+1424=&Larger Font Size
+1425=&Smaller Font Size
+1321=Set &Font
+P1324=&ToolBars
+1324=&TabBar
+59392=&ToolBar
+59393=&Status Bar
+1314=&Mode ToolBar
+1312=&Outline Window
+1318=&Custom Marker
+1292=&Directory View
+1291=&Open Files
+1329=&Snippet
+1325=&Output Window
+1322=&Command Window
+1300=&Line Number
+1301=&Ruler
+1671=&Use Soft Tab
+1326=&Brace Highlight
+1327=&Highlight URL and Email
+1313=&Selection Highlight
+P1305=&Show Symbols
+1305=Active Line
+1307=Indent Line
+1308=Active Arrow
+1311=Boundary Line
+1337=Column Marker
+1672=Icon Area
+1302=WhiteSpace
+1303=End of Line
+1304=End of Document
+1306=Control Chars
+1310=Invisible Chars in Selection
+1309=Folding Tail
+1673=Extend Active Line
+1339=&Fold All
+1400=&Expand All
+1323=&Line Spacing
+1289=Web &Output
+1290=Web &Preview
+1328=&Full Screen
+P57636=&Search
+57636=&Find...
+1401=Find &Next
+1402=Find &Previous
+1406=Find Next &Word
+1407=Find Prev W&ord
+1403=Find &All
+1408=Find &in Files...
+57641=&Replace...
+1420=&Batch Replace...
+1663=Jump out of Pair
+1426=&Goto...
+P1276=&Markers
+1276=&Toggler Marker
+1279=&Next Marker
+1278=&Prev Marker
+1277=&Delete All Markers
+60=&Match Brace
+P1662=&Document
+P1294=&Word Wrap
+1294=&Cancel Wrap
+1297=&Smart Wrap
+1296=&Wrap by Window
+1295=&Fixed Column
+1293=&Fixed Column with Tabs
+1662=Change &Type...
+1665=&Disable to Edit
+1661=&Browser Mode
+1664=&Focus Mode
+1658=&Reload with Encoding
+1659=&Convert Encoding
+1654=Auto &Indent
+1657=Auto &Pair
+1427=Auto &Complete
+1650=Copy &Path
+1651=&Monitor Clipboard
+1655=&Open Containing Folder
+P1653=&Advanced
+1653=&Update Syntax
+1660=&View Scope
+P1683=&Tools
+1683=&Check Spelling
+1684=&Instant Check
+P336=&Settings
+1336=&General
+1298=&Theme
+1460=&Shortcut
+1459=Syntax &Highlight
+1652=&Sort
+1612=Se&quence
+1614=S&um Selection
+1615=&Diff
+1580=&External Tools
+P1591=&Tools Group
+1591=Group 1
+1592=Group 2
+1593=Group 3
+1594=Group 4
+1595=Group 5
+1596=Group 6
+1597=Group 7
+1598=Group 8
+1599=Group 9
+P1574=&Addons
+P1314=&Mode
+1314=&Mode ToolBar
+P1575=&Plugin
+P1570=&Macro
+1570=&Record
+1571=&Playback
+1573=&Repeat
+1572=&Save As...
+1574=Reload &Macros...
+1576=&Load
+1577=&View Current
+P1222=&Window
+1222=&Show or Hide Panels
+1200=&Next Window
+1201=&Prev Window
+1212=&Next Window(Focus Order)
+1213=&Prev Window(Focus Order)
+1221=&Last Visited
+1204=&Vertical Split
+1205=&Horizontal Split
+1208=S&ynchronize Scroll
+1206=&Close
+1203=&Close Others
+1209=Move to &Vertical Tab Group
+1211=Move to &Horizontal Tab Group
+1214=&Always on Top
+P1220=&Transparency
+1220=&Opaque
+1207=&Window List...
+P2005=&Help
+2005=&Keyboard Map
+1613=&Get More Addons...
+2004=&Report Bug
+2003=&Check Latest Version
+57664=&About EverEdit...
+
+[MENU303]
+1412=Hex &Mode
+57643=&Undo
+57644=&Redo
+57635=Cu&t
+57634=&Copy
+57637=&Paste
+57642=Select &All
+1426=&Goto...
+1708=&Inspector
+P1700=Display
+1700=&Hexadecimal
+1701=&Decimal
+1702=&Octal
+1703=&Binary
+P1704=Bit Width
+1704=&8 Bit Byte
+1705=&16 Bit Word
+1706=&32 Bit Dword
+
+[MENU304]
+P91=&Other Paste
+P1461=&Custom Marker
+1461=Use Marker 1
+1462=Use Marker 2
+1463=Use Marker 3
+1464=Use Marker 4
+1465=Use Marker 5
+1466=Use Marker 6
+1467=Use Marker 7
+1468=Use Marker 8
+P62=&Code Folding
+
+[MENU305]
+936=Chinese Simplified(GB2312)
+950=Chinese Traditional(Big5)
+932=Japanese(Shift-JIS)
+949=Korean (949)
+3=BOM(BOM)
+1=More...
+
+[MENU307]
+P201=More...
+201=\c	Chinese
+202=\j	Hiragana
+203=\J	Katakana
+204=\P	CJK Symbols and Punctuation
+230=[:alnum:]	Any alphanumeric character
+231=[:alpha:]	Any alphabetical character a-z, A-Z, and other character
+232=[:ascii:]	Any ascii character (0x00~0x7F)
+233=[:cntrl:]	Any control character
+234=[:digit:]	Any digit 0-9
+235=[:print:]	Any printable character
+236=[:space:]	Any whitespace character
+237=[:graph:]	Any graphical character
+238=[:lower:]	Any lowercase character a-z, and other lowercase character
+239=[:punct:]	Any punctuation character
+240=[:upper:]	Any uppercase character A-Z, and other uppercase character
+241=[:blank:]	Any blank character, either a space or a tab
+245=[:xdigit:]	Any hexadecimal digit character, 0-9, a-f and A-F
+1=\n	New Line
+2=\t	Tab
+4=^	Beginning of Line
+5=$	End of Line
+6=.	Any Character
+7=\b	Word boundary
+8=\x00	Char(2 byte hex)
+9=\u0000	Char(4 byte hex)
+10=\w	Words(A-Z, a-z, 0-9, _)
+11=\W	None words
+12=\s	White spaces
+13=\S	None white spaces
+14=\d	Digit(0-9)
+15=\D	None digit
+17=[]	Character in Range
+18=[^]	Character not in Range
+19=()	Group
+20=|	Or
+21={n}	n times
+22={n,}	More than n times
+23={n,m}	n~m times
+24=*	0 or More Matches
+25=+	1 or More Matches
+26=?	0 or 1 Matches
+28=(?=exp)	Match after
+29=(?!exp)	Not match after
+30=(?<=exp)	Match before
+31=(?<!exp)	Not match before
+
+[MENU309]
+1=$0	Whole Match
+2=$1	Backref 1
+3=$2	Backref 2
+4=$3	Backref 3
+5=$4	Backref 4
+6=$5	Backref 5
+7=$6	Backref 6
+8=$7	Backref 7
+9=$8	Backref 8
+10=$9	Backref 9
+12=\n	New Line
+13=\t	Tab
+14=$$	Dollar
+
+[MENU310]
+1=File Full Path
+2=File Directory
+3=File Name
+4=File Name Without Externsion
+10=Application Directory
+5=Current Line Number
+9=Current Line Text
+6=Current Column Number
+7=Current Selection Text
+8=Current Word
+
+[MENU311]
+2=File Directory
+
+[MENU312]
+1280=&Clear
+1282=&Terminate
+1285=Clear Highlight
+1281=&Show Line Number
+1321=Set &Font
+1320=&Word Wrap
+1284=C&lose
+
+[MENU313]
+57603=&Save
+1206=&Close
+1203=&Close Others
+1204=&Vertical Split
+1205=&Horizontal Split
+1209=Move to &Vertical Tab Group
+1211=Move to &Horizontal Tab Group
+1650=Copy &Path
+1655=Open &Containing Folder
+1335=&Settings
+
+[MENU314]
+10=Other...
+11=Soft Tab
+12=Show WhiteSpace
+
+[MENU315]
+1=EverEdit Default
+2=Flat
+3=Gradient Fill
+4=Bitmap Fill
+
+[MENU317]
+1=None
+2=Capture Output
+8=Capture to Web Preview
+3=Insert
+4=Insert as New Line
+5=Replace Line
+6=Replace Document
+7=Run hidden
+
+[MENU318]
+1=None
+2=Save Current Doument
+3=Save All Documents
+
+[MENU319]
+1209=Move to &Vertical Tab Group
+1211=Move to &Horizontal Tab Group
+
+[MENU320]
+1214=Insert	Enter
+1210=Edit	F2
+1211=Delete	Delete
+1212=New Snippet	Ctrl+N
+1213=New Group	Ctrl+Shift+N
+	
+[MENU321]
+1200=Edit	Enter
+1206=Refresh	F5
+1208=Find in Files...	Ctrl+F
+1210=Monitor Active File
+1211=Add Folder
+1205=Create Folder
+1212=Open Containing Folder	Ctrl+O
+1209=Set as Top Folder
+1216=Move Up	Shift+Up
+1216=Move Down	Shift+Down
+1214=Copy Path	Ctrl+C
+1213=Copy Name	Ctrl+Shift+C
+1203=Rename	F2
+1204=New File	Ctrl+N
+1201=Permanent Delete	Shift+Delete
+1202=Remove	Delete
+1207=Properties
+
+[MENU324]
+13=Return
+32=Space
+9=Tab
+27=Escape
+
+[MENU325]
+1=Beep
+2=Prompt for Modifying
+3=Prompt for Saving
+4=Don't prompt
+
+[MENU326]
+219=General
+206=Fonts
+246=Session
+215=Language
+231=Spell Checking
+P224=Editor
+224=File
+238=Editor
+254=Auto Complete
+223=Syntax
+252=Performance
+247=Print
+P217=Advanced
+217=Tabs
+207=ToolBar
+248=File Association
+P244=Others
+244=Hex
+
+[MENU327]
+57634=Copy
+
+[MENU328]
+1=Every Day
+2=Every Week
+3=Every Month
+4=Never Check
+
+[MENU329]
+1221=Filter Match
+1233=Filter Lines
+1224=Count Found
+1225=Set Marker
+
+[MENU330]
+1200=Force Refresh
+1201=Use CTags
+1202=CTags Settings
+
+[MENU331]
+1=Simple
+2=Box
+3=Arrow
+4=Box&Line
+5=Pentagon
+
+[MENU332]
+1200=Hide
+1202=Small Icon(16*16)
+1203=Big Icon(32*32)
+1204=Combine Toolbars
+1201=Customize...
+
+[MENU333]
+1300=Copy Color
+1301=Paste Color
+
+[MENU334]
+57643=&Undo
+57644=&Redo
+57635=Cu&t
+57634=&Copy
+57637=&Paste
+26=&Delete
+57642=Select &All
+
+[MENU335]
+1220=Year(0000)
+1221=Year(00)
+1222=Month(00)
+1223=Month(0)
+1224=Day(00)
+1225=Day(0)
+1226=Hour(00)
+1227=Hour(0)
+1228=Hour 24(00)
+1229=Hour 24(0)
+1236=AM/PM
+1230=Minute(00)
+1231=Minute(0)
+1232=Second(00)
+1233=Second(0)
+1234=Week(Full name)
+1235=Week(Short name)
+1237=Day of year
+1238=Week of year
+
+[MENU337]
+1204=New
+1203=Delete
+1205=Select All
+1217=Case sensitive
+1216=Regular Expression
+1218=Whole word
+1219=Extended(\n,\r,\t)
+
+[MENU338]
+1206=Remove Panel
+1201=Left
+1202=Right
+1203=Bottom
+1205=Top
+1200=Hide Panel
+
+[DLG202]
+0=Encoding
+1=OK
+2=&Cancel
+3000=Select Code Page:
+3001=System Code Pages:
+
+[DLG203]
+0=External Tools
+1=OK
+2=Cancel
+1200=Add
+1201=Delete
+1205=Prompt for arguments
+1216=Advanced
+1227=Group Name
+1229=Icon
+1230=Accept Input
+3000=Title:
+3001=Command:
+3002=Arguments:
+3003=Initial directory:
+3004=Action Pattern:
+
+[DLG204]
+0=Window List
+2=&Close
+3000=&Find:
+
+[DLG205]
+0=Find
+1201=Find &Next
+1202=&Previous
+1204=Case &sensitive
+1205=&Whole word
+1206=Regular &expression
+1207=Wrap at end &of file
+1208=Close if foun&d
+1209=&Highlight result
+1212=Find &All
+1218=&Incremental Search
+1219=&Replace>>
+1226=Ad&vanced
+1234=E&xtended(\n,\r,\t)
+1235=Con&tinue to next file
+3000=&Find:
+
+[DLG206]
+0=Config Font
+1=OK
+2=Cancel
+1207=CJK characters use second font
+1208=Apply
+
+[DLG208]
+0=Batch Replace
+1201=&Up
+1202=&Down
+1206=&Export
+1207=&Import
+1211=Replace &All
+1212=&Replace Selected
+1221=Statistics
+
+[DLG209]
+0=Input
+1=OK
+2=Cancel
+3000=Input:
+
+[DLG210]
+0=Shortcut Manager
+1202=Bind Script
+1203=&Assign
+1207=Remove
+3000=Current Keys:
+3001=New Keys:
+3002=*Drop a script file here to bind a shortcut to it!
+
+[DLG211]
+0=Replace
+1201=Find &Next
+1204=Case &sensitive
+1205=&Whole word
+1206=Regular &expression
+1207=Wrap at end &of file
+1209=&Highlight result
+1213=&Replace
+1214=Replace &All
+1220=<<F&ind
+1227=Fast ReplaceAll &mode
+1229=&Current File
+1230=Se&lection
+1231=All Opene&d Files
+1234=E&xtended(\n,\r,\t)
+1235=Con&tinue to next file
+3000=&Find:
+3001=Repla&ce:
+3002=Scope
+
+[DLG212]
+0=Menu Command
+
+[DLG214]
+0=About EverEdit
+1=OK
+3000=---Credits---
+
+[DLG215]
+1201=Get More
+3000=Select your language:
+
+[DLG216]
+1202=&Add Bom
+1204=Open as &Binary File
+1205=&Encoding:
+1206=File format:
+
+[DLG217]
+1200=Show tab on the Bottom
+1202=Show icon on Tab
+1203=Mark (*) when document is dirty
+1204=Fixed tab width
+1205=Hide tab when only one item
+3000=Document's Tab Style:
+3001=Docking Window's Tab Style:
+
+[DLG219]
+1205=Allow multiple instances
+1206=Add EverEdit to right mouse button
+1213=Show toolbar buttons in multiple rows
+1214=Use current file's path in Find in Files
+1215=Version Check
+1216=UI uses background image(need restart)
+1217=Merge mode toolbar into right side of main toolbar
+3000=Recent Files Count:
+3002=ToolBar
+
+[DLG220]
+0=Find in Files
+1=&Find...
+2=&Close
+1205=Regular &expression
+1206=Case sensitive
+1207=&Include sub folders
+1209=&Use Output Window
+1210=Find &none matched lines
+1212=S&how file PathName only
+1213=&Lock main window(Recommended)
+1214=&Whole word
+3000=Find wha&t:
+3001=Folde&r:
+3002=File ty&pe:
+3003=Enco&ding:
+
+[DLG222]
+0=Greping
+1=Stop
+
+[DLG223]
+0=Syntax Highlight
+1=OK
+2=Cancel
+1201=Add
+1202=&Delete
+1227=Col Markers
+1240=Edit
+1243=Advanced
+1249=Get More
+1252=Use spaces to replace tab
+3001=Title:
+3002=Syntax File:
+3003=Extensions:
+3005=Template:
+3006=Tab size:
+
+[DLG224]
+1207=Monitor file changes
+1212=Create a new file on startup
+1216=Encoding detector
+1217=Enable save function if document is not modified
+3000=New File or 0byte File
+3001=Format:
+3002=Encoding:
+3003=Others
+3004=Change a read-only file:
+
+[DLG227]
+3000=Please wait a while....
+
+[DLG228]
+0=FileList
+1=OK
+2=Cancel
+
+[DLG229]
+0=Sort
+2=Cancel
+1200=Ascending
+1201=Descending
+1202=&Sort
+1204=Case sensitive
+1205=Remove duplicates
+1206=Sorted lines to new document (*fast)
+1208=Remove blank lines
+1211=Selection
+1212=Document
+1220=Sort by alphabet
+1221=Numeric sort(01,02...09,10...)
+1222=Sort by length of line
+3000=Order
+3001=Text
+3002=Sort Method
+
+[DLG230]
+0=Spell Checker
+3000=Suggestions:
+3001=Word:
+1202=&Replace
+1203=&Ignore Once
+1204=Ignore &All
+1205=&Learn
+1206=&Config
+
+[DLG231]
+1203=Comment
+1204=String
+1205=Normal Text
+1206=More
+3000=Dictionary:
+3001=Instant Check will check the below text in syntax file only:
+
+[DLG232]
+0=Column Marker
+1=OK
+2=Cancel
+
+[DLG234]
+0=Theme
+1=&Save
+2=&Close
+1211=&Apply
+1213=Get More
+
+[DLG235]
+0=Advanced
+1=OK
+2=Cancel
+1217=Use output location pattern
+1222=Capture
+3000=Regular expression:
+3001=File Path:
+3002=Line:
+3003=Column:
+3004=Save Pattern:
+3005=Output Encoding:
+
+[DLG236]
+0=Advanced
+1=OK
+2=Cancel
+3000=Tools Group:
+3001=Mode:
+
+[DLG238]
+1202=Keep syntax forground color of selection
+1203=Selection's background extends to right edge of window
+1208=Limit highlighted Selected text to word edge.
+1209=Keep selection/find highlight on moving caret
+1211=Use manual folding as default for new file
+3000=Forbidden Chars
+3001=Heading of Line:
+3002=Tailing of Line:
+3003=Selection
+3004=Folding Style:
+
+[DLG239]
+0=Sequence
+1=OK
+2=&Cancel
+1209=Digit
+1210=HEX
+3000=Start:
+3001=Step:
+3002=Count:
+3003=Alignment:
+3004=Format
+3005=Preview:
+
+[DLG241]
+0=Color
+1=OK
+2=Cancel
+3000=Second line:
+3001=Active line:
+
+[DLG242]
+0=Group
+1=OK
+2=Cancel
+3000=File name without extension:
+3001=Title:
+
+[DLG243]
+0=Clear Recent History
+1=OK
+2=Cancel
+1200=Clear history of recent files
+1201=Clear history of Find/Replace/Grep
+1202=Clear layout of docking windows
+1203=All history
+
+[DLG244]
+3000=Open these file with HEX mode:
+
+[DLG245]
+3000=Inspector
+
+[DLG246]
+1200=Reload closed files on startup
+1201=Restore cursor position
+1202=Restore bookmark
+1203=Save/Restore modified files
+3000=*These settings will slow down the start-up speed
+
+[DLG247]
+1204=Mirror the font of current view
+3000=Margins (mm)
+3001=Bottom
+3002=Left
+3003=Top
+3004=Right
+
+[DLG248]
+1203=Assoc Selected
+
+[DLG249]
+1204=Bold
+3000=Font Name:
+3001=Size:
+3002=Font smooth:
+
+[DLG249]
+0=All
+1=&OK
+1201=&Remove selected
+
+[DLG250]
+0=Preferences
+1202=Apply
+1203=Help
+1204=Cancel
+1205=OK
+3000=Category:
+
+[DLG251]
+0=Custom Marker
+1=C&lose
+1200=&Regular expression
+1201=Case sensitive
+1202=&Whole word
+1203=Add
+1204=&Delete
+1210=&Enable
+
+[DLG252]
+1208=Use memory as buffer to load file(Fast but eats more memories)
+3000=Word-Wrap automatically if line count <:
+3001=(Line)
+3002=Open file exclusively if size >:
+3004=Encoding auto detecting's Buffer size:
+3006=Max characters in a single line to be parsed:
+3007=Max lines to be parsed in Outline Window:
+3008=(Line)
+
+[DLG253]
+0=Encoding detector setting
+1=OK
+2=Cancel
+3000=Automatic detect these encodings:
+
+[DLG254]
+3000=Trigger key:
+3001=Delay:
+3002=(MS, Recommend 150ms)
+
+[DLG255]
+0=Change Type
+1=OK
+2=Cancel
+1201=Config
+
+[DLG259]
+0=Customize format of Date/Time
+1=OK
+2=Cancel
+3000=Preview:
+
+[DLG260]
+0=Find
+1=&Find...
+2=Cancel
+1207=&Replace...
+1208=Replace &All
+
+[DLG261]
+0=HEX
+3000=Find wha&t:
+
+[DLG262]
+0=Text
+1206=&Match Case
+1211=&Big Endian
+3000=Find wha&t:
+3001=&Data type:
+
+[DLG263]
+0=Numbers
+1200=&Restrict to Data Type Boundary
+1211=&Big Endian
+3000=Find wha&t:
+3001=&Data type:
+
+[DLG264]
+0=Replace
+1206=&Match Case
+1211=&Big Endian
+3000=Find wha&t:
+3001=Replace t&o:
+3002=&Data type:
+
+[DLG265]
+0=Goto
+1=&Goto...
+2=Cancel
+1201=&Beginning of File
+1202=&End of File
+1203=&Hex Offset
+1206=&Cursor Position
+3000=&Offset:
+3001=Relative to
+
+[DLG270]
+0=Diff
+1=Diff
+2=Close
+1208=Preconfigured
+1203=Config...
+3000=Left:
+3001=Right:
+
+[DLG271]
+0=Config Diff
+1=OK
+2=Cancel
+3000=Exe path of diff tool:
+3001=Parameters:
+
+[STRING]
+1=Move caret to left\nMove Left
+2=Move caret to right\nMove Right
+3=Move caret to up line\nMove Up
+4=Move caret to next line\nMove Down
+5=Move to head of Line\nMove to Head of Line
+6=Move to end of Line\nMove to End of Line
+7=Move to head of file\nMove to Beginning
+8=Move to end of file\nMove to End
+9=Move caret to previous page\nPrevious Down
+10=Move caret to next page\nPage Down
+11=Move caret to next word\nNext Word
+12=Move caret to previous word\nPrevious Word
+13=Select to previous char\nSelect to Prev Char
+14=Select to next char\nSelect to Next Char
+15=Select to previous line\nSelect to Next Line
+16=Select to next line\nSelect to Next Line
+17=Select to head of line\nSelect to Head of Line
+18=Select to end of line\nSelect to End of Line
+19=Select to head of file\nSelect to Head of File
+20=Select to end of file\nSelect to End of File
+21=Select to previous page\nSelect to Prev Page
+22=Select to next page\nSelect to Next Page
+23=Select to next word\nSelect to Next Word
+24=Select to previous word\nSelect to PrevWord
+26=Delete previous char or selection\nDelete
+27=Delete next char or selection\nDelete Next
+28=Delete to the left edge of current word\nDelete Prev Word
+29=Delete to the right edge of current word\nDelete Next Word
+30=Delete the current line\nDelete Line
+36=Toggle insert/edit mode\nToggle insert/edit mode
+38=Scroll up the edit area and don't move caret\nScroll Up
+39=Scroll down the edit area and don't move caret\nScroll Down
+40=Move caret to center of screen\nMiddle Caret
+44=Insert a new line after the current\nNew Line After
+45=Insert a new line before the current\nNew Line Before
+46=Select current word\nSelect Word
+47=Indent selection or current line\nIndent
+48=Unindent selection or current line\nUnindent
+49=Move current line to up\nLine Up
+50=Move current line to down\nLine Down
+52=Unfold current block\nUnfold
+54=Duplicate current line\nDuplicate Line
+55=select to previous line\nSelect Line to Up
+56=select to next line\nSelect Line to Down
+57=Convert the selection to upper case\nUpper Case
+58=Convert the selection to lower case\nLower Case
+59=Move caret to center of screen\nMiddle Line
+60=Move to the matching brace\nMatch Brace
+61=Indent all lines with the indentation of first line\nIndent Paste
+62=Fold current block\nFold
+63=Trim leading space of selected line\nTrim leading space
+64=Trim tailing space of selected line\nTrim tailing space
+66=Insert a line brake\nInsert Line
+67=Select to the matched pair\nSelect to Pair
+68=Copy current line to clipboard\nCopy Line
+69=Convert tabs to spaces\nTabs to Spaces
+70=Convert spaces to tabs\nSpaces to Tabs
+71=Move caret to the last edited position\nLast Edit Point
+72=Merge up&down lines as one line\nJoin Lines
+73=Move to head of sub line\nMove to Head of sub line
+74=Move to end of sub line\nMove to End of sub line
+75=Select to head of sub line\nSelect to head of Sub Line
+76=Select to end of sub line\nSelect to end of Sub Line
+79=Delete to the head of current line\nDelete to Head of Line
+80=Delete to the end of current line\nDelete to End of Line
+81=Transpose the chars at left and right of caret\nTranspose
+82=Invert the case of selection\nInvert Case
+83=Convert the leading tabs to spaces\nLeading Tabs to Spaces
+84=Convert the leading spaces to tabs\nLeading Spaces to Tabs
+85=Delete current word\nDelete Word
+86=Select current line\nSelect Line
+87=Cut the selection and append it to clipboard\nCut Append
+88=Copy the selection and append it to clipboard\nCopy Append
+89=Copy all marked lines and append them to clipboard\nCopy Marked Lines
+90=Cut all marked lines and append them to clipboard\nCut Marked Lines
+91=Paste the clipboard as column mode\nPaste as Cloumn
+94=Paste text of clipboard to each line\nPaste at Line Tail
+95=Move caret to next paragraph\nNext Paragraph
+96=Move caret to previous paragraph\nPrevious Paragraph
+97=Make selected text as full width\nTo Full Width
+98=Make selected text as half width\nTo Half Width
+102=Capitalize the selected text\nCapitalize
+149=Print Preview
+1200=Go to next document\nNext Window
+1201=Go to previous document\nPrev Window
+1202=Close all documents\nClose All
+1203=Close all other documents\nClose Others
+1204=Vertical split current view\nVertical split
+1205=Horizontal split current view\nHorizontal split
+1206=Close the active document\nClose
+1207=Show list of all document\nWindow List
+1208=Scroll splitted windows at the sametime\nSynchronize Scroll
+1209=Move active view to vertical tab group, if not exist then create\nVertical Group
+1211=Move active view to horizontal tab group, if not exist then create\nHorizontal Group
+1212=Go to next document with focus order\nNext Window
+1213=Go to previous document with focus order\nPrev Window
+1214=Make the main window stay on top\nAlways on Top
+1220=Make main window opaque\nOpaque
+1221=Activate the latest visited window\nLast Visited
+1222=Show or hide valid panels\nShow or Hide Panels
+1230=Configure file template
+1231=Create a new document with template\nNew Template
+1233=Create a new binary document\nNew Binary
+1234=Save all documents\nSave All
+1236=Clear recent histories such as mru,find,replace\nClear Recent History
+1237=Discard unsaved content and Reopen current file\nReload
+1276=Set or clear the marker at current line\nToggle Marker
+1277=Delete all the markers\nDelete Markrs
+1278=Go to previous marker\nPrev Marker
+1279=Go to next marker\nNext Marker
+1289=Output current file to web view window\nWeb Output
+1290=View current document with built-in browser\nWeb Preview
+1291=Show or hide open files\nOpen Files
+1292=Show or hide directory view\nDirectory View
+1293=Toggle the wrap at fixed column and expand the tabs\nFixed Column with Tabs
+1294=Cancel wrap if wrapper does exist\nCancel Wrap
+1295=Toggle the wrap at fixed column\nFixed Column
+1296=Toggle the wrap at the edge of window\nWrap by Window
+1297=Toggle the wrap with smart mode\nSmart Wrap
+1298=Manage your installed themes\nTheme
+1300=Show or hide the line number\nLine Number
+1301=Show or hide ruler\nRuler
+1302=Show or hide tab&space\nWhite space
+1303=Show or hide end of line\nEnd of Line
+1304=Show or hide end of file\nEnd of File
+1305=Show or hide active line\nActive Line
+1306=Show or hide control chars\nControl Chars
+1307=Show or hide indent line\nIndent Line
+1308=Show a arrow symbol on the line number area\nShow Active Arrow
+1309=Show the folded text at EOL\nFolding Tail
+1310=Show all invisble chars on selecting\nInvisible Chars in Selection
+1311=Show boundary line between line number and editor area\nBoundary Line
+1312=Show or hide outline window\nOutline Window
+1313=Highlight the current single line selection\nHighlight Selection
+1314=Show or hide the mode toolbar\nMode ToolBar
+1318=Manage custome marker list\nCustom Marker
+1320=Auto word wrap\nWord Wrap
+1321=Configure font settings\nSet Font
+1322=Show or hide command window(Focus on command window if it have not take focus yet)\nCommand Window
+1323=Configure line spacing of the active document\nLine Spacing
+1324=Show or hide tab bar\nTabBar
+1325=Show or hides output window\nOutput Window
+1326=Highlight matching braces\nHighlight Brace
+1327=Highlight web url and E-mail of current document\nHighlight URL and Email
+1328=Toggle full screen mode on and off\nFull Screen
+1329=Show or hide snippet window\nSnippet
+1330=Cancel folding and hide folding area\nCancle Folding
+1331=Folding by syntax\nSyntax Folding
+1332=Folding by indent\nIndent Folding
+1333=Folding your selection\nManual Folding
+1336=Show the preferences dialog\nPreferences
+1337=Show or hide Column Marker\nColumn Marker
+1338=Enable or disable the column mode\nColumn Mode
+1339=Fold first level of document\nFold All
+1400=Expand first level of document\nUnfold All
+1401=Find the next matched text\nFind Next
+1402=Find the previous matched text\nFind Prev
+1403=Find all occurrences of current selection, if selection doesn't exist then find the current word\nFind All
+1406=Find the next occurrence of current word or selected text\nFind Next Word
+1407=Find the prev occurrence of current word or selected text\nFind Prev Word
+1408=Search a string in multiple files\nFind in Fils
+1409=Delete duplicated lines from selection or document\nDelete Duplicated Lines
+1410=Select the same word downward and enter multiple point edit mode\nQuick Select
+1412=Display and Edit current file with Hex mode\nHex Viewer
+1413=Insert line comment chars at the beginning of current or selected lines\nLine Comment
+1414=Remove line comment chars at the beginning of current or selected lines\nLine Uncomment
+1415=Insert block comment chars on selection\nBlock Comment
+1416=Remove block comment chars on selection\nBlock Uncomment
+1417=Insert current date
+1418=Insert current time
+1419=Customize the format of Date/Time\nCustomize Date/Time
+1420=Execute multiple replacements with one click\nBatch Replace
+1422=Select all occurrences with current selection or word\nAdd All Occurrences
+1423=Make none-selection area inaccessible\nPartially Edit
+1424=Select larger font size\nLarger Font
+1425=Select smaller font size\nSmaller Font
+1426=Go to specified line in the active document\nGoto
+1427=Auto complete this word from the active document\nAuto Complete Word
+1428=Delete blank lines from selection or document\nDelete Balnk Lines
+1429=Erase the clipboard and make it empty\nErase Clipboard
+1430=Apply this font for current edit
+1436=Output Window
+1437=Command Window
+1438=Print Font
+1439=Hex Font
+1459=Manage your syntax highlights\nSyntax Highlight
+1460=Manage your shortcuts\nShortcut
+1461=Add selection to custom marker list\nAdd to Custom Marker
+1570=Start or stop macro recording\nRecord
+1571=Run current macro once\nPlayback
+1572=Save current macro as file\nSave Macro
+1573=Repeat current macro\nRepeat
+1574=Reload all macro files and refresh the macro menu\nRefresh Macro Menu
+1576=Load a macro into buffer and you could play it\nLoad Buffer
+1577=View current macro as plain text\nView Current
+1580=Add or remove user tools\nUser Tools
+1590=Use this tool group\nUse Group
+1612=Generate sequence text\nSequence
+1613=View github to get more addons\nGet More
+1614=Calculate the sum of selection, numbers should be separated by spaces or line breaks\nSum
+1615=Select 2 files and compare them with external tools\nDiff
+1650=Copy path and name of the active document\nCopy PathName
+1651=Paste the text that was copied or cut to the clipboard\nMonitor Clipboard
+1652=Sort active document\nSort
+1653=Reload the syntax files\nUpdate Syntax
+1654=Enable or disable auto-indent on active document\nAuto Indent
+1655=Locate current document at file explorer\nOpen Containing Folder
+1656=Config Syntax
+1657=Auto insert matched bracket\nAuto Pair
+1658=Change the display encoding of current document\nEncoding
+1659=Convert the encoding of current document\nConvert Encoding
+1660=View current scope with text format\nView Scope
+1661=View current file with browser mode and disable edit functions\nBrowser Mode
+1662=Change file type of active document\nChange Type
+1663=The caret will jump out of current pair\nJump out of Pair
+1664=Enter full screen mode, then edit current file with focus mode\nFocus Mode
+1665=Disable edit function for current file\nDisable to Edit
+1671=Use spaces to replace tab in current document\nSoft Tab
+1672=Show icon area along with line number\nIcon Area
+1673=Extend background of active line to left edge of window\nExtend Active Line
+1683=Prompt a modal dialog and check the spellings in this document\nCheck Spelling
+1684=Enable instant spelling check in this document, incorrect word will be painted with wavy line\nInstant Check
+1690=Ignore this word until exist EverEidt\nIgnore All
+1691=Add this word to user dictionary\nAdd to Dictionary
+1692=Config current spell checking\nConfig Spell Checking
+2003=View www.everedit.net to get the latest version\nCheck Update
+2004=Report bugs to www.everedit.net\nReport Bug
+2005=Show all the defined shortcuts in a new document\nKeyboard map
+2200=Next Page\nNext Page
+2201=Previous Page\nPrev Page
+2202=Zoom In\nZoom In
+2203=Zoom Out\nZoom Out
+2204=Close the print preview window\nClose
+2205=Print this document with colors\nHighlight
+2206=Wrap long lines\nWrap
+2207=Print this document with line numbers\nLine Number
+2208=Page %d of %d
+15001=%s has changed, save?\n\n*Holding shift key to close documents without any warning!
+15002=You changed the encoding, reload this file?
+15003=Enter line (%d ~ %d):
+15004=Enter line spacing(0~200):
+15005=%d files were found!
+15007=Do you want to clear this shortcut?
+15008=[%s] is not a command!
+15009=Args
+15010=Please input the arguments:
+15011=This key is a trigger of multiple keys, you can't assign it!
+15012=<New Tool>
+15013=Repeat Macro
+15014=Loop Count:
+15015=Please input the size of tab(2~64):
+15016=Goto
+15017=LineSpacing
+15019=Auto Detect
+15020=All Files
+15021=Noname
+15022=This key was already assigned to:\n\n[ %s ]\n\nDo you want to remove it?
+15023=Waiting for the next key of chord...
+15024=Grep:[%s] in [%s]
+15025=Lines:%d
+15026=My Syntax File
+15027=Sort%d
+15028=You are trying to sort many lines, do you want to sort as a new document?
+15029=You didn't select any text of single line!
+15030=Default
+15031=%s was set as the default syntax!
+15032=Do you want to reload and update all syntax?
+15033=%s\n\nThis File was modified by other applications, do you want to reload it?
+15034=%d chars, %d lines
+15035=Configure the size of Tab&&Indent:
+15036=Soft Tab
+15037=Tab
+15038=Insert
+15039=OVR
+15040=COL
+15041=BOM
+15042=No BOM
+15043=The file donesn't exist or was modified, you should save it first!
+15044=Input the delimiters that can be treated as WORD such as(#-_):
+15045=Default syntax was Removed!
+15046=None
+15047=Enter offset (%d ~ %d):
+15048=Please input the name of this group:
+15049=%d lines were found in %s
+15050=%d lines were found in %s (%.2lf seconds)
+15051=%d occurrences were found!
+15052=Start Page
+15053=Please enter a specified column of auto word-wrap:
+15054=A new version of EverEdit is available, download now?
+15055=<COMMAND>: command process ended!
+15056=Alert
+15057=Auto Reload
+15058=Reload and Scroll to EOF
+15059=Drop some folders or files here!
+15060=Get More
+15061=Do you want to delete this item?
+15063=Please close all snippet windows before selecting group!
+15064=Bad format of snippet!
+15065=Please input the tab-trigger:
+15066=Trigger
+15067=Snippet:Input content from next line!
+15068=Title
+15069=Empty
+15070=Text Files
+15071=There does not exist defined scope!
+15072=Replace:[%s] to [%s]
+15073=Running:%s\n
+15074=Output completed, Return value is [%d].
+15075=Current output was terminated!
+15076=User Tools
+15077=%d lines were marked!
+15078=Parsing...
+15079=No list!
+15080=%s\n\nDo you want to reload this file?
+15081=Please input the unique name of this theme:
+15082=Area
+15083=BG
+15084=FG
+15085=Bold
+15086=Italic
+15087=You should restart EverEdit to apply this setting!
+15088=Rect
+15089=UnderLine
+15090=DelLine
+15091=BoldLine
+15092=DotLine
+15093=WaveLine
+15095=SEL: %d
+15094=Spell checking completed!
+15096=OFFSET: %08X
+15097=SIZE: %d
+15098=This file donesn't exist!\n%s
+15099=%d lines were found
+15100=Can't load file %s!\n\n%s
+15102=%s:Can't execute thie command!%s
+15103=Can't tear off this menu!
+15104=An error occured while parsing the script:\nFile: %ws\nSource: %ws\nError: %08X\nDescription: %ws\nLine: %d\n
+15105=Can't create script engine!
+15108=Failed to initialize printing, please ensure that you have installed a printer!
+15109=EverEdit can't load a file which goes beyond 2GB!
+15110=The theme was already exist, please input a new name!
+15111=<Error>: The redir thread is dead!
+15112=<Error>: Read stdout pipe error!
+15113=<Error>: Redirect console error: %x
+15114=You can only delete top-level items!
+15115=The file was already exist, please choose another name!
+15116=%s\n\nThis file doesn't exist!
+15117=There are some error occured while executing functions!\n\n%s::%s
+15118=Failed to execute your operation, please try to run as administrator!\n\n%s
+15119=Unable to establish connection with existing instance of EverEidt!\nCheck your UAC settings please!
+15120=Unable to create spell enginge with selected dictionary!\nDictionary:%s\nRequired files:libhunspell.dll\n\nGoto http://www.everedit.nt/download to download latest dictionaries!
+15121=This command can be only executed in menu!
+15200=%d occurrences were replaced!
+15204=Can't find this string below the current position:%s
+15205=Can't find this string above the current position:%s
+15206=Can't save to this file, please ensure that you have the right access and the file is not locked or read-only!\n%s\n%s
+15207=Can't load this theme!
+15208=Can't save theme to %s!
+15209=You are trying to modify a read-only file!
+15210=You are trying to save a read-only file, save it?
+15211=Can't find string:%s
+15212=Passed the end of file!
+15214=Everedit doesn't support look around on replacing!
+15215=Your selected files was modified or does not exist!\n\nWould you like to diff them as temp files?
+15216=You should select 2 files first!
+15217=You selected same file!
+15218=Diff tool does not exist!\n%s
+15240=Find
+15241=Replace To
+15242=Options
+15243=Replaced
+15244=Total:%d\n\nChecked:%d\n\nSelected:%d
+15245=Removed blank lines:%d
+15246=Removed duplicated lines:%d
+15247=MUL
+15248=Now loading, please wait a while....
+15249=Current group of user tools was modified, Save?
+15250=Shortcut
+15251=Command
+15252=Description
+15253=Script
+15255=File associations were successfully set!
+15256=%d Occurrences were selected!
+15300=Default Text
+15301=Selection
+15302=Line Number
+15303=Ruler
+15305=Control Chars
+15306=BookMarker
+15307=Folding Area
+15308=Icon Area(Debug info...)
+15309=Active Line
+15310=Selection Indicator
+15311=Active Line Indicator
+15312=Brace/Pair
+15313=Wave Line(Spell error...)
+15314=Indent Line
+15315=Empty Rect(Bottom of Editor)
+15316=Comment 1(Single Line Comment)
+15317=Comment 2(Multiple Line Comment)
+15318=String 1(Single Quoted String)
+15319=String 2(Double Quoted String)
+15320=Tag
+15321=URL
+15322=Email
+15323=Numbers
+15324=Macro
+15325=Boundary Line
+15326=Function
+15327=KeyWord 1
+15328=KeyWord 2
+15329=KeyWord 3
+15330=KeyWord 4
+15331=User Define Highlight 1
+15332=User Define Highlight 2
+15333=User Define Highlight 3
+15334=User Define Highlight 4
+15335=Search Highlight
+15337=Variable
+15339=Sub language hint
+15441=Operator
+15443=Auto Complete
+15444=User Define Highlight 5
+15445=User Define Highlight 6
+15446=User Define Highlight 7
+15447=User Define Highlight 8
+16000=Check all items
+16001=Uncheck all items
+16002=Select all items
+16003=Delete selected items
+16004=Add a new item
+16005=Replace current file with selected items
+16006=Copy and create a new theme
+16007=Delete selected theme
+16010=Double click to apply selected theme
+16011=Write replaced content into a new file!\nYou can replace multiple lines!
+16012=Set the selected syntax as the default type!\nThe new file will use this syntax mode!
+16013=Empty default syntax!
+29500=Run this tool\nRun Tool
+34000=Run this macro\nRun Macro
+35080=Create a new file with this template
+57345=Ready
+57600=Create a new document\nNew
+57601=Open an existing document\nOpen
+57602=Close the active document\nClose
+57603=Save the active document\nSave
+57604=Save the active document with a new name\nSave As
+57605=Change the printing options\nPage Setup
+57606=Change the printer and printing options\nPrint Setup
+57607=Print the active document\nPrint
+57609=Display the active document on screen as it would appear printed\nPrint Preview
+57632=Erase the selection\nErase
+57633=Erase everything\nErase All
+57634=Copy the selection and put it on the Clipboard\nCopy
+57635=Cut the selection and put it on the Clipboard\nCut
+57636=Find the specified text\nFind
+57637=Insert Clipboard contents\nPaste
+57640=Repeat the last action\nRepeat
+57641=Replace specific text with different text\nReplace
+57642=Select the entire document\nSelect All
+57643=Undo the last action\nUndo
+57644=Redo the previously undone action\nRedo
+57653=Split the active window into panes\nSplit
+57664=Display program information, version number and copyright\nAbout
+57665=Quit the application; prompts to save documents\nExit
+57680=Switch to the next window pane\nNext Pane
+57681=Switch back to the previous window pane\nPrevious Pane
+59392=Show or hide the toolbar\nToggle ToolBar
+59393=Show or hide the status bar\nToggle StatusBar
+61184=Change the window size
+61185=Change the window position
+61186=Reduce the window to an icon
+61187=Enlarge the window to full size
+61188=Switch to the next document window
+61189=Switch to the previous document window
+61190=Close the active window and prompts to save the documents
+61202=Restore the window to normal size
+61203=Activate Task List
+61215=Activate this window
+61402=Open this document
+65534=Tear off this menu\nTearoff

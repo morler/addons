@@ -17,27 +17,27 @@ SEP=TRUE
 [Button4]
 Icon=0
 Key=C+1
-Command0=0,Heading 1,#${SELECTED}
+Command0=3,Heading 1,${AppPath}\mode\markdown\h1.mac
 [Button5]
 Icon=1
 Key=C+2
-Command0=0,Heading 2,##${SELECTED}
+Command0=3,Heading 2,${AppPath}\mode\markdown\h2.mac
 [Button6]
 Icon=2
 Key=C+3
-Command0=0,Heading 3,###${SELECTED}
+Command0=3,Heading 3,${AppPath}\mode\markdown\h3.mac
 [Button7]
 Icon=3
 Key=C+4
-Command0=0,Heading 4,####${SELECTED}
+Command0=3,Heading 4,${AppPath}\mode\markdown\h4.mac
 [Button8]
 Icon=4
 Key=C+5
-Command0=0,Heading 5,#####${SELECTED}
+Command0=3,Heading 5,${AppPath}\mode\markdown\h5.mac
 [Button9]
 Icon=5
 Key=C+6
-Command0=0,Heading 6,######${SELECTED}
+Command0=3,Heading 6,${AppPath}\mode\markdown\h6.mac
 [Button10]
 SEP=TRUE
 [Button11]
@@ -66,14 +66,22 @@ Command9=0,-,\-
 Command10=0,.,\.
 Command11=0,!,\!
 [Button15]
+Key=C+K,U
+Icon=16
+Command0=3,Unordered List,${AppPath}\mode\markdown\list1.mac
+[Button16]
+Key=C+K,O
+Icon=17
+Command0=3,Ordered List,${AppPath}\mode\markdown\list2.mac
+[Button17]
 Icon=12
 Command0=1,Insert Color,${AppPath}\mode\html\HTMLBar.dll,HTMLColor
-[Button16]
+[Button18]
 Icon=13
 Command0=1,Insert Table,${AppPath}\mode\html\HTMLBar.dll,HTMLTable
-[Button17]
+[Button19]
 SEP=TRUE
-[Button18]
+[Button20]
 Icon=14
 Key=C+B
 Command0=1,Markdown Preview,${AppPath}\mode\markdown\MarkdownBar.dll,MarkdownPreview,github.css
