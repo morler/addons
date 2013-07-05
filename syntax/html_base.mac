@@ -6,7 +6,8 @@
 '   2012/02/15 Create
 '   2012/06/05 Improved for EE 2.0
 '   2012/10/29 Improved for EE 2.50
-'  2012/04/11 Move css to css_base, js to js_base
+'   2013/04/11 Move css to css_base, js to js_base
+'   2013/07/03 Update string of script/style tag
 '*******************************************************************************
 Include( ".\const.mac" )
 
@@ -42,6 +43,11 @@ Set rScriptOneLine=html.CreateRegion( COLOR_SUBLAN, "\Q<script\E\b.*?/>", "", Fa
 html.AddRegion( rScriptOneLine )
 
 Set rScript=html.CreateRegion( COLOR_SUBLAN, "+<script+", "+>+", False )
+Set rScriptTagString2=html.CreateStringRegion( COLOR_STRING2, """", "", True )
+Set rScriptTagString1=html.CreateStringRegion( COLOR_STRING1, "'", "", True )
+rScript.AddRegion rScriptTagString1
+rScript.AddRegion rScriptTagString2
+
 Set rJsScript=html.CreateRegion(COLOR_DEFAULT, "", strDummyEnd, True)
 rScript.TransRegion=rJsScript
 
@@ -56,6 +62,11 @@ Include( ".\js_base.mac" )
 '---------------------------------------------------------------------
 'css tag
 Set rCss=html.CreateRegion( COLOR_SUBLAN, "+<style+", "(?<!/)>", False )
+Set rCssTagString2=html.CreateStringRegion( COLOR_STRING2, """", "", True )
+Set rCssTagString1=html.CreateStringRegion( COLOR_STRING1, "'", "", True )
+rCss.AddRegion rCssTagString1
+rCss.AddRegion rCssTagString2
+
 Set rCssScript=html.CreateRegion( COLOR_DEFAULT, "", strDummyEnd, True )
 rCssScript.Name="source.css"
 rCss.TransRegion=rCssScript
