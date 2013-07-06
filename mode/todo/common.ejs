@@ -41,7 +41,13 @@ function now() {
     var date = now.getDate().toString();
     var hour = now.getHours().toString();
     var minute = now.getMinutes().toString();
+    if (minute == "0") {
+        minute = "00";
+    }
     var second = now.getSeconds().toString();
+    if (second == "0") {
+        second = "00";
+    }
     var result = year + "-" + month + "-" + date + " " + hour + ":" + minute + ":" + second;
     return result;
 }
