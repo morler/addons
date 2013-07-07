@@ -43,6 +43,10 @@ Set i_mdlink2=mk.CreateItem(COLOR_DEFAULT, "\[(.+?)\]\((#.*?)\)", False)
 i_mdlink2.Capture 1, COLOR_WORD1
 i_mdlink2.Capture 2, COLOR_URL
 
+Set i_mdlink3=mk.CreateItem(COLOR_DEFAULT, "\[(.+?)\]\[(.+)\]", False)
+i_mdlink3.Capture 1, COLOR_WORD1
+i_mdlink3.Capture 2, COLOR_URL
+
 
 Set r_mdline1=mk.CreateRegion(COLOR_HIGHLIGHT2, "\*\x20\*\x20\*", "$", False, True)
 r_mdline1.Name="line.markdown"
@@ -83,6 +87,7 @@ mk.AddItem( i_mditem )
 mk.AddItem( i_mdno )
 mk.AddItem( i_mdlink )
 mk.AddItem( i_mdlink2 )
+mk.AddItem( i_mdlink3 )
 
 mk.AddItem( i_mditalic2 )
 mk.AddItem( i_mdstrong2 )
