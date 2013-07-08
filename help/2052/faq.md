@@ -117,3 +117,12 @@ Command0=1,Markdown Preview,${AppPath}\mode\markdown\MarkdownBar.dll,MarkdownPre
 ```
 cpp.AddSnippet "c.snippet"
 ```
+##为什么EverEdit的内置浏览器不是安装的最新版浏览器呢
+Windows对使用内置IE进行显示文件进行了一些控制，按照如下设置修改默认注册表设置即可：
+
+打开如下的key：
+```
+Key=HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main\FeatureControl\FEATURE_BROWSER_EMULATION
+```
+
+新建一个Type为`REG_DWORD`的值，输入9000(十进制)，保存即可。
