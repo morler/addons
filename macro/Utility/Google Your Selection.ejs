@@ -1,0 +1,21 @@
+var pSelText = "";
+
+var doc = App.ActiveDoc;
+var bSel = doc.HasSel();
+if (bSel) {
+	pSelText = doc.SelText;
+} else pSelText = doc.Text;
+
+pSelText = pSelText.replace(/\n/g, " ");
+
+pSelText = pSelText.replace(/\s{2+}/g, " ");
+if (pSelText.length > 64) {
+	pSelText = pSelText.substr(0, 64);
+	// your words are too long...
+}
+
+pSelText = encodeURIComponent(pSelText);
+var url="http://www.google.com/search?q=" + pSelText;
+
+var WshShell = new ActiveXObject("WScript.Shell");
+WshShell.Run( url );
