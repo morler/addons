@@ -2,6 +2,7 @@
 * [Syntax](https://github.com/everedit/addons/blob/master/help/1033/syntax.md)
 * [Snippet](https://github.com/everedit/addons/blob/master/help/1033/snippet.md)
 * [Mode](https://github.com/everedit/addons/blob/master/help/1033/mode.md)
+* [Integrate Cmpilers](https://github.com/everedit/addons/blob/master/help/1033/compiler.md)
 
 *Help us to translate the docuements of EverEdit!*
 
@@ -14,6 +15,7 @@
 * [字体设置](https://github.com/everedit/addons/blob/master/help/2052/font.md)
 * [快捷键配置](https://github.com/everedit/addons/blob/master/help/2052/shortcut.md)
 * [外部工具](https://github.com/everedit/addons/blob/master/help/2052/tool.md)
+* [集成编译器](https://github.com/everedit/addons/blob/master/help/2052/compiler.md)
 * [常见问题列表](https://github.com/everedit/addons/blob/master/help/2052/faq.md)
 
 *欢迎您贡献自己的翻译!*
