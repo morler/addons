@@ -1,0 +1,13 @@
+/*
+  Base64 Encode for EverEdit
+  --------------------------
+    Written by Kaffa (kaffacoffee@outlook.com)
+    Homepage: http://forum.everedit.net/
+    20130717233031
+*/
+Include(App.AppPath + "\\macro\\common\\L.js");
+Include(App.AppPath + "\\macro\\Base64\\base64.js");
+
+var s = getSelText();
+s = Base64.encode(s);
+setSelText(s);

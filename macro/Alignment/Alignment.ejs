@@ -1,80 +1,13 @@
 /*
-  The MIT License (MIT)
-  Copyright (c) 2007-2013 Einar Lielmanis and contributors.
-  Permission is hereby granted, free of charge, to any person
-  obtaining a copy of this software and associated documentation files
-  (the "Software"), to deal in the Software without restriction,
-  including without limitation the rights to use, copy, modify, merge,
-  publish, distribute, sublicense, and/or sell copies of the Software,
-  and to permit persons to whom the Software is furnished to do so,
-  subject to the following conditions:
-  The above copyright notice and this permission notice shall be
-  included in all copies or substantial portions of the Software.
-  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-  EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-  MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-  NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
-  BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
-  ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
-  CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-  SOFTWARE.
-  
   Alignment for EverEdit
   ----------------------
     Written by Kaffa (kaffacoffee@outlook.com)
     Homepage: http://forum.everedit.net/
+    20130717233031
 */
-Include(App.AppPath + "\\macro\\Alignment\\wrapper.js");
-Include(App.AppPath + "\\macro\\Alignment\\common.js");
+Include(App.AppPath + "\\macro\\Alignment\\alignment.js");
 
-function alignment(sep) {
-    if (!hasSel()) {
-        return;
-    }
-	
-    var startLine = getSelStartPos().Line;
-    var startCol = 0;
-    var endLine = getSelEndPos().Line;
-    var endCol = getLineText(endLine).length;
-    setSel(startLine, startCol, endLine, endCol);
-	
-    var sel = getSel();
-    sep = regexEscape(sep);
-    var regex = "^([\\s]*)(.*?)([\\s]*)" + sep + "([\\s]*)(.*?)([\\s]*)$";
-    var re = new RegExp(regex, "gm");
-    if (re.exec(sel) == null) {
-        return;
-    }
-
-    re = new RegExp(regex, "gm");
-    var maxlen = 0;
-    var arr = [];
-    while ((arr = re.exec(sel)) != null) {
-        var len = getDisplayLength(arr[2]);
-        if (maxlen < len) {
-            maxlen = len;
-        }
-    }
-    re = new RegExp(regex, "gm");
-    var firstMatch = re.exec(sel);
-    var linesep = getLinesep(sel);
-    var indent = firstMatch[1].replace(/(\r\n)|(\r)|(\n)/g, "");
-
-    var list = [];
-    var selLines = sel.split(linesep);
-    var i = 0;
-    for (; i < selLines.length; i++) {
-	    var line = selLines[i];
-	    re = new RegExp(regex, "g");
-	    arr = re.exec(line);
-	    if (arr != null) {
-        	list.push(indent + arr[2] + space(maxlen - getDisplayLength(arr[2])) + " " + sep + " " + arr[5]);
-	    }
-	    else {
-		    list.push(indent + trim(line).replace(/(\r\n)|(\r)|(\n)/g, ""));
-	    }
-    }
-    setSelText(list.join(linesep));
-}
-
-alignment("=");
+(function() {
+    var sep = "=";
+    alignment(sep);
+})();
