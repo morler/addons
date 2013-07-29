@@ -5,6 +5,7 @@
 ' Maintainer:	moofly.net/blog  
 ' History:
 '   2013/07/28	Created
+'   2013/07/29  First Version
 
 '*******************************************************************************
 
@@ -67,8 +68,8 @@ Call purebasic.FoldText( "^\s*(DataSection|Enumeration|Import|ImportC|Interface|
 Call purebasic.UnfoldText( "^\s*(EndDataSection|EndEnumeration|EndImport|EndInterface|EndMacro|EndProcedure|EndStructure)$", False )
 
 '代码自动缩进
-Call purebasic.IndentText( "^\s*(DataSection|Enumeration|Import|ImportC|Interface|Macro|Procedure|ProcedureC|ProcedureCDLL|ProcedureDLL|Structure)", False )
-Call purebasic.UnindentText( "^\s*(EndDataSection|EndEnumeration|EndImport|EndInterface|EndMacro|EndProcedure|EndStructure)$", False )
+Call purebasic.IndentText( "^\s*(Break|For|ForEach|Gosub|If|Else|Repeat|Select|While|DataSection|Enumeration|Import|ImportC|Interface|Macro|Procedure|ProcedureC|ProcedureCDLL|ProcedureDLL|Structure)\s", False )
+Call purebasic.UnindentText( "^\s*(Continue|Next|Return|Endif|Until|EndSelect|Wend|EndDataSection|EndEnumeration|EndImport|EndInterface|EndMacro|EndProcedure|EndStructure)$", False )
 
 '
 '创建的匹配加入主区域
