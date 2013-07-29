@@ -1,0 +1,15 @@
+var text = ActiveDoc.Text,
+	eol = "\r\n";
+
+if (text.indexOf(eol) < 0) {
+	eol = text.indexOf("\n") < 0 ? "\r" : "\n";
+}
+
+var lines = text.split(eol);
+text = null;
+
+for (var i = 0, len = lines.length; i < len; i++) {
+	lines[i] = (i + 1).toString() + "\t: " + lines[i];
+}
+
+ActiveDoc.Text = lines.join(eol) + eol;

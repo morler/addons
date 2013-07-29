@@ -1,0 +1,26 @@
+/*
+  TextFX Insert for EverEdit
+  --------------------------
+    Written by Kaffa (kaffacoffee@outlook.com)
+    Homepage: http://forum.everedit.net/
+    20130713022754
+*/
+Include(App.AppPath + "\\macro\\common\\L.js");
+Include(App.AppPath + "\\macro\\TextFX\\textfx.js");
+
+(function() {
+    var items = [
+        {text: "Current full path",            fn: insertFullPath},
+        {text: "Current file name",            fn: insertFileName},
+        {text: "Current file name non ext",    fn: insertFileNameNonExt},
+        {text: "Current Directory",            fn: insertDirectory},
+        {text: "--------------------",         fn: function(){} },
+        {text: "Date yyyy-M-d",                fn: insertDateShortFormat},
+        {text: "Date yyyy-MM-dd",              fn: insertDate},
+        {text: "Date yyyyMMdd",                fn: insertDateKaffa},
+        {text: "DateTime yyyy-M-d H:m:s",      fn: insertDateTimeShortFormat},
+        {text: "DateTime yyyy-MM-dd HH:mm:ss", fn: insertDateTime},
+        {text: "DateTime yyyyMMddHHmmss",      fn: insertDateTimeKaffa},
+    ];
+    setSelText((getPopupFn(items))(getSelText()));
+})();

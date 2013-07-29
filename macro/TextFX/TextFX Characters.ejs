@@ -1,0 +1,40 @@
+/*
+  TextFX Characters for EverEdit
+  ------------------------------
+    Written by Kaffa (kaffacoffee@outlook.com)
+    Homepage: http://forum.everedit.net/
+    20130713022754
+*/
+Include(App.AppPath + "\\macro\\common\\L.js");
+Include(App.AppPath + "\\macro\\TextFX\\textfx.js");
+
+(function() {
+    var items = [
+        {text: "Convert Quotes to \"",                  fn: convertQuotesToDoubleQuotes},
+        {text: "Convert Quotes to '",                   fn: convertQuotesToSingleQuotes},
+        {text: "Swap Quotes",                           fn: swapQuotes},
+        {text: "Drop Quotes",                           fn: dropQuotes},
+        {text: "--------------------",                  fn: function(){} },
+        {text: 'Escape " to \\"',                       fn: escapeDoubleQuotes},
+        {text: "Escape ' to \\'",                       fn: escapeSingleQuotes},
+        {text: "Escape ' to \\\"",                      fn: escapeSingleQuotesToDoubleQuotes},
+        {text: "Escape Quotes",                         fn: escapeQuotes},
+        {text: 'unEscape \\" to "',                     fn: unEscapeDoubleQuotes},
+        {text: "unEscape \\' to '",                     fn: unEscapeSingleQuotes},
+        {text: "unEscape \\\" to '",                    fn: unEscapeDoubleQuotesToSingleQuotes},
+        {text: "unEscape Quotes",                       fn: unEscapeQuotes},
+        {text: 'Escape " to ""',                        fn: escapeDoubleQuotesToTwo},
+        {text: 'Escape \' to ""',                       fn: escapeSingleQuotesToTwoDoubleQuotes},
+        {text: 'unEscape "" to "',                      fn: unEscapeTwoDoubleQuotesToOne},
+        {text: 'unEscape "" to \'',                     fn: unEscapeTwoDoubleQuotesToSingleQuote},
+        {text: "--------------------",                  fn: function(){} },
+        {text: 'Upper Case',                            fn: upperCase},
+        {text: 'Lower Case',                            fn: lowerCase},
+        {text: 'Proper Case',                           fn: properCase},
+        {text: 'Sentence Case',                         fn: sentenceCase},
+        {text: 'Invert Case',                           fn: invertCase},
+        {text: 'Zap all characters to space',           fn: zapCharsToSpace},
+        {text: 'Zap all non printable characters to #', fn: zapNonPrintableCharsToSharp}
+    ];
+    setSelText((getPopupFn(items))(getSelText()));
+})();
