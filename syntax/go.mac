@@ -25,13 +25,13 @@ Set iWord1=go.CreateWord(COLOR_WORD1, "break case chan const continue default de
 Set iWord2=go.CreateWord(COLOR_WORD2, "append cap close closed cmplx copy imag len make new panic print println real recover main", True)
 
 'Types
-Set iWord3=go.CreateWord(COLOR_WORD3, "bool byte complex complex64 complex128 float float32 float64 int int8 int16 int32 int64 string uint uint8 uint16 uint32 uint64 uintptr", True)
+Set iWord3=go.CreateWord(COLOR_WORD3, "bool byte complex complex64 complex128 float float32 float64 int int8 int16 int32 int64 string uint uint8 uint16 uint32 uint64 uintptr _", True)
 
 'Constants & Zero value
 Set iWord4=go.CreateWord(COLOR_OPERATOR, "true false iota nil", True)
 
 'operators
-Set iOperator=go.CreateItem(COLOR_OPERATOR, "[\{\}\(\)\+\-\*\\=%&\^!~\|<>?\.;@\$\[\]]",False )
+Set iOperator=go.CreateItem(COLOR_OPERATOR, "[\{\}\(\)\+\-\*\\=%&\^!~\|<>?\.,:;@\$\[\]]",False )
 
 
 go.AddRegion( rComment1 )
@@ -46,7 +46,7 @@ go.AddWord( iWord4 )
 go.AddItem( iOperator )
 
 'number
-go.AddItem( go.CreateItem(COLOR_NUMBER, "\b\d+\b", False) )
+go.AddItem( go.CreateItem(COLOR_NUMBER, "(?<!\w)[+-]?([1-9][0-9]*\.?[0-9]*[e]?[-]?[0-9]*\.?[0-9]*|0([0-7]+|x[0-9A-Fa-f]+)|(?<!-)0(?!\.)|0\.[0-9]*[e]?[-]?[1-9][0-9]*)(?!\w)", False) )
 
 go.IndentText "\{\s*$", False,  "}\s*$", False
 go.FoldText "\{", False, "\}", False
