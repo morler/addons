@@ -35,6 +35,18 @@ OutputWindow OutputWindow;
 string AppPath;
 ```
 
+###函数说明
+
+```
+void SendCommand(int nCmd);
+发送整数形式的命令到主窗口，nCmd是整数值，对应着菜单中的某个菜单项的ID。
+```
+
+```
+void SendCommandEx(string strText);
+发送字符串形式的命令到主窗口，具体命令可参考快捷键中显示的文本。
+```
+
 ##Document
 
 ```
@@ -58,7 +70,7 @@ void SetSel(Pos pos1, Pos pos2);
 int AddSel(Pos pos1, Pos pos2);
 Pos Offset2Pos(int nOffset);
 int Pos2Offset(Pos pos);
-int ReplaceAll(string strFind, string strReplace, bool bCase=true, bool bRegex=false, bool bWor=false);
+int ReplaceAll(string strFind, string strReplace, bool bCase=true, bool bRegex=false, bool bWord=false);
 int FindAll(string strFind, bool bCase=true, bool bRegex=false, bool bWord=false);
 string GetWord(int flag);
 string GetLineText(int);
