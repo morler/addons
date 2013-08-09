@@ -4,7 +4,7 @@ EverEdit uses hunspell as the spell engine, so EverEdit can use any dictionary o
 [http://wiki.openoffice.org/wiki/Dictionaries](http://wiki.openoffice.org/wiki/Dictionaries)
 
 ##如何下载词典
-EverEdit使用hunspell作为拼写检查引起，所以任何可以用于hunspell的词典，EverEdit均可使用。
+EverEdit使用hunspell作为拼写检查引擎，所以任何可以用于hunspell的词典，EverEdit均可使用。
 
 到这儿看看有没有合适您的词典?
 
