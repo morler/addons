@@ -3,8 +3,7 @@
 ' Language:    Free Pascal
 ' Maintainer:  www.everedit.net  
 ' History:
-'   2012/08/16 Create
-'   2013/04/04 Update
+'   2012/08/16 First Version
 '*******************************************************************************
 Include( ".\const.mac" )
 

@@ -98,7 +98,6 @@ P81=&Others
 54=&Duplicate Line
 68=Copy Line
 36=Toggle Overwrite Mode
-71=Last &Edit Point
 1423=&Partially Edit
 1412=Hex &Mode
 P1318=&View
@@ -148,18 +147,21 @@ P1305=&Show Symbols
 1323=&Line Spacing
 1289=Web &Output
 1290=Web &Preview
+1288=External Browser
 1328=&Full Screen
-P57636=&Search
+P1775=&Search
+1775=&Find Tags
+1771=&Refresh Tags
 57636=&Find...
 1401=Find &Next
 1402=Find &Previous
 1406=Find Next &Word
 1407=Find Prev W&ord
 1403=Find &All
-1408=Find &in Files...
+1408=Find/Replace &in Files...
 57641=&Replace...
 1420=&Batch Replace...
-1663=Jump out of Pair
+1663=Move to Next Pair
 1426=&Goto...
 P1276=&Markers
 1276=&Toggler Marker
@@ -167,6 +169,8 @@ P1276=&Markers
 1278=&Prev Marker
 1277=&Delete All Markers
 60=&Match Brace
+104=&Next Edit Position
+105=&Previous Edit Position
 P1662=&Document
 P1294=&Word Wrap
 1294=&Cancel Wrap
@@ -175,9 +179,9 @@ P1294=&Word Wrap
 1295=&Fixed Column
 1293=&Fixed Column with Tabs
 1662=Change &Type...
-1665=&Disable to Edit
+1665=&Don't Allow Edit
 1661=&Browser Mode
-1664=&Focus Mode
+1664=&Distraction Free Mode
 1658=&Reload with Encoding
 1659=&Convert Encoding
 1654=Auto &Indent
@@ -189,6 +193,11 @@ P1294=&Word Wrap
 P1653=&Advanced
 1653=&Update Syntax
 1660=&View Scope
+P1770=&Project
+1770=&Project Window
+1772=&Manage Projects
+1774=Add &Current File
+1776=F&ind/Replace in Project
 P1683=&Tools
 1683=&Check Spelling
 1684=&Instant Check
@@ -242,7 +251,9 @@ P1222=&Window
 P1220=&Transparency
 1220=&Opaque
 1207=&Window List...
-P2005=&Help
+P2009=&Help
+2009=&Context help
+2010=&Help
 2005=&Keyboard Map
 1613=&Get More Addons...
 2004=&Report Bug
@@ -369,13 +380,16 @@ P201=More...
 2=File Directory
 
 [MENU312]
-1280=&Clear
-1282=&Terminate
+1280=Clear
+1282=Terminate
 1285=Clear Highlight
-1281=&Show Line Number
-1321=Set &Font
-1320=&Word Wrap
-1284=C&lose
+1281=Show Line Number
+1321=Set Font
+1320=Word Wrap
+1284=Close
+25=Select All
+86=Select Line
+33=Copy
 
 [MENU313]
 57603=&Save
@@ -400,6 +414,11 @@ P201=More...
 3=Gradient Fill
 4=Bitmap Fill
 
+[MENU316]
+1=Snippet
+2=Context Word
+3=KeyWord
+
 [MENU317]
 1=None
 2=Capture Output
@@ -422,14 +441,14 @@ P201=More...
 [MENU320]
 1214=Insert	Enter
 1210=Edit	F2
-1211=Delete	Delete
+1211=Delete	Del
 1212=New Snippet	Ctrl+N
 1213=New Group	Ctrl+Shift+N
 	
 [MENU321]
 1200=Edit	Enter
 1206=Refresh	F5
-1208=Find in Files...	Ctrl+F
+1208=Find/Replace in Files...	Ctrl+F
 1210=Monitor Active File
 1211=Add Folder
 1205=Create Folder
@@ -441,12 +460,12 @@ P201=More...
 1213=Copy Name	Ctrl+Shift+C
 1203=Rename	F2
 1204=New File	Ctrl+N
-1201=Permanent Delete	Shift+Delete
-1202=Remove	Delete
+1201=Permanent Delete	Shift+Del
+1202=Remove	Del
 1207=Properties
 
 [MENU324]
-13=Return
+13=Enter
 32=Space
 9=Tab
 27=Escape
@@ -465,7 +484,7 @@ P201=More...
 231=Spell Checking
 P224=Editor
 224=File
-238=Editor
+238=Edit
 254=Auto Complete
 223=Syntax
 252=Performance
@@ -474,6 +493,7 @@ P217=Advanced
 217=Tabs
 207=ToolBar
 248=File Association
+272=Web Preview
 P244=Others
 244=Hex
 
@@ -561,6 +581,33 @@ P244=Others
 1203=Bottom
 1205=Top
 1200=Hide Panel
+
+[MENU341]
+1=System Default Browser
+2=Internet Explorer
+3=Firefox
+4=Chrome
+5=Opera
+100=Other Browser
+
+[MENU342]
+1200=Edit	Enter
+1201=Hex Edit	C+H
+1215=Refresh Tags	F5
+1216=Find Symbols	C+F
+1202=Manage Projects	C+M
+1203=New Project	F3
+1204=Add File	C+N
+1205=Add Active File	C+A
+1206=Add Folder	C+D
+1207=Rename	F2
+1208=Remove from Project	Del
+1209=Up	C+Up
+1210=Down	C+Down
+1211=Copy Full Path	C+C
+1212=Reload	C+F5
+1213=Force Save	C+S
+1214=Property	C+P
 
 [DLG202]
 0=Encoding
@@ -668,7 +715,9 @@ P244=Others
 [DLG214]
 0=About EverEdit
 1=OK
-3000=---Credits---
+1210=Enter Your License
+1211=This copy is licensed to:
+1215=Buy License
 
 [DLG215]
 1201=Get More
@@ -693,15 +742,14 @@ P244=Others
 1205=Allow multiple instances
 1206=Add EverEdit to right mouse button
 1213=Show toolbar buttons in multiple rows
-1214=Use current file's path in Find in Files
+1214=Use current file's path in Find/Replace in Files
 1215=Version Check
-1216=UI uses background image(need restart)
 1217=Merge mode toolbar into right side of main toolbar
 3000=Recent Files Count:
 3002=ToolBar
 
 [DLG220]
-0=Find in Files
+0=Find/Replace in Files
 1=&Find...
 2=&Close
 1205=Regular &expression
@@ -712,10 +760,14 @@ P244=Others
 1212=S&how file PathName only
 1213=&Lock main window(Recommended)
 1214=&Whole word
+1215=Find in current project files
+1216=Replace
+1219=&Backup replaced files
 3000=Find wha&t:
 3001=Folde&r:
 3002=File ty&pe:
 3003=Enco&ding:
+3004=Repl&ace:
 
 [DLG222]
 0=Greping
@@ -799,12 +851,19 @@ P244=Others
 1=OK
 2=Cancel
 
+[DLG233]
+0=License
+1=OK
+3000=Enter your license:
+1201=Buy
+
 [DLG234]
 0=Theme
 1=&Save
 2=&Close
 1211=&Apply
 1213=Get More
+1214=App Theme
 
 [DLG235]
 0=Advanced
@@ -825,18 +884,19 @@ P244=Others
 2=Cancel
 3000=Tools Group:
 3001=Mode:
+3002=Help File:
 
 [DLG238]
 1202=Keep syntax forground color of selection
 1203=Selection's background extends to right edge of window
 1208=Limit highlighted Selected text to word edge.
 1209=Keep selection/find highlight on moving caret
-1211=Use manual folding as default for new file
+1211=Jump out from brackets with Tab key
 3000=Forbidden Chars
 3001=Heading of Line:
 3002=Tailing of Line:
 3003=Selection
-3004=Folding Style:
+3004=Folding Style
 
 [DLG239]
 0=Sequence
@@ -944,9 +1004,11 @@ P244=Others
 3000=Automatic detect these encodings:
 
 [DLG254]
+1202=Use fuzzy match
 3000=Trigger key:
 3001=Delay:
 3002=(MS, Recommend 150ms)
+3003=Order:
 
 [DLG255]
 0=Change Type
@@ -1020,6 +1082,72 @@ P244=Others
 3000=Exe path of diff tool:
 3001=Parameters:
 
+[DLG272]
+1200=Add
+1201=Modify
+1202=Delete
+3000=Host/Directory Settings:
+3001=External browser:
+3002=Other browser:
+
+[DLG273]
+0=Host/Directory Mapping
+1=OK
+2=Cancel
+3000=Host:(e.g., http://localhost:8080/myproject)
+3001=Directory:(e.g., c:\iisroot\myproject)
+
+[DLG274]
+0=New Project
+1=OK
+2=Cancel
+3000=File name without extension:
+3001=Project Title:
+
+[DLG275]
+0=Find Tags
+1203=&Refresh
+
+[DLG276]
+0=Project Files
+1=Open
+2=Close
+1200=New
+1201=Delete
+
+[DLG277]
+0=Upgrade EverEdit
+1=OK
+2=Cancel
+1203=Go
+1206=What's new
+1207=A new version of EverEdit has beed released!
+1208=Would you lile to upgrade to it?
+1209=Check All
+1210=Uncheck All
+1400=Can't create [update] directory!
+1401=Downloading...
+1402=There is an error occurred, code is [%d]!
+1403=Downloading completed!
+1404=Unzipping...
+1405=EverEdit is running, please close it first!
+1406=Do you want to cancel the current operation?
+1407=%d files require your confirmation!
+1408=Congratulations you have successfully update your EverEdit!
+1409=Can't copy file from %s to %s!\n\nTry again?
+
+[DLG278]
+0=Help
+
+[DLG279]
+0=App Theme
+1=OK
+2=Cancel
+1200=Enable custom app theme
+3000=Gradient
+3001=Begin color:
+3002=End color:
+
 [STRING]
 1=Move caret to left\nMove Left
 2=Move caret to right\nMove Right
@@ -1078,12 +1206,12 @@ P244=Others
 68=Copy current line to clipboard\nCopy Line
 69=Convert tabs to spaces\nTabs to Spaces
 70=Convert spaces to tabs\nSpaces to Tabs
-71=Move caret to the last edited position\nLast Edit Point
 72=Merge up&down lines as one line\nJoin Lines
 73=Move to head of sub line\nMove to Head of sub line
 74=Move to end of sub line\nMove to End of sub line
 75=Select to head of sub line\nSelect to head of Sub Line
 76=Select to end of sub line\nSelect to end of Sub Line
+77=Select to the matched pair(include pairs)\nSelect to Pair(Include Pairs)
 79=Delete to the head of current line\nDelete to Head of Line
 80=Delete to the end of current line\nDelete to End of Line
 81=Transpose the chars at left and right of caret\nTranspose
@@ -1103,6 +1231,8 @@ P244=Others
 97=Make selected text as full width\nTo Full Width
 98=Make selected text as half width\nTo Half Width
 102=Capitalize the selected text\nCapitalize
+104=Move caret to next history edit position\nNext Edit Position
+105=Move caret to previous history edit position\nPrevious Edit Position
 149=Print Preview
 1200=Go to next document\nNext Window
 1201=Go to previous document\nPrev Window
@@ -1131,6 +1261,7 @@ P244=Others
 1277=Delete all the markers\nDelete Markrs
 1278=Go to previous marker\nPrev Marker
 1279=Go to next marker\nNext Marker
+1288=View current document with external browser\nExternal Browser
 1289=Output current file to web view window\nWeb Output
 1290=View current document with built-in browser\nWeb Preview
 1291=Show or hide open files\nOpen Files
@@ -1179,7 +1310,7 @@ P244=Others
 1403=Find all occurrences of current selection, if selection doesn't exist then find the current word\nFind All
 1406=Find the next occurrence of current word or selected text\nFind Next Word
 1407=Find the prev occurrence of current word or selected text\nFind Prev Word
-1408=Search a string in multiple files\nFind in Fils
+1408=Search or replace a string in multiple files\nFind/Replace in Fils
 1409=Delete duplicated lines from selection or document\nDelete Duplicated Lines
 1410=Select the same word downward and enter multiple point edit mode\nQuick Select
 1412=Display and Edit current file with Hex mode\nHex Viewer
@@ -1204,6 +1335,7 @@ P244=Others
 1437=Command Window
 1438=Print Font
 1439=Hex Font
+1440=CallTip Window
 1459=Manage your syntax highlights\nSyntax Highlight
 1460=Manage your shortcuts\nShortcut
 1461=Add selection to custom marker list\nAdd to Custom Marker
@@ -1233,9 +1365,9 @@ P244=Others
 1660=View current scope with text format\nView Scope
 1661=View current file with browser mode and disable edit functions\nBrowser Mode
 1662=Change file type of active document\nChange Type
-1663=The caret will jump out of current pair\nJump out of Pair
-1664=Enter full screen mode, then edit current file with focus mode\nFocus Mode
-1665=Disable edit function for current file\nDisable to Edit
+1663=The caret will move to next pair\nMove to Next Pair
+1664=Enter full screen mode, then edit current file with focus mode\nDistraction Free Mode
+1665=Disable edit function for current file\nDon't Allow Edit
 1671=Use spaces to replace tab in current document\nSoft Tab
 1672=Show icon area along with line number\nIcon Area
 1673=Extend background of active line to left edge of window\nExtend Active Line
@@ -1244,6 +1376,12 @@ P244=Others
 1690=Ignore this word until exist EverEidt\nIgnore All
 1691=Add this word to user dictionary\nAdd to Dictionary
 1692=Config current spell checking\nConfig Spell Checking
+1770=View project window\nProject Window
+1771=Update tags from current project and all opend files\nRefresh Tags
+1772=Create or delete projects\nManage Projects
+1774=Add active file to current project\nAdd Current File
+1775=Find tags in current project and all opend files\nFind Tags
+1776=Search or replace a string in project files\nFind/Replace in Project
 2003=View www.everedit.net to get the latest version\nCheck Update
 2004=Report bugs to www.everedit.net\nReport Bug
 2005=Show all the defined shortcuts in a new document\nKeyboard map
@@ -1369,8 +1507,9 @@ P244=Others
 15117=There are some error occured while executing functions!\n\n%s::%s
 15118=Failed to execute your operation, please try to run as administrator!\n\n%s
 15119=Unable to establish connection with existing instance of EverEidt!
-15120=Unable to create spell enginge with selected dictionary!\nDictionary:%s\nRequired files:libhunspell.dll\n\nGoto http://www.everedit.nt/download to download latest dictionaries!
+15120=Unable to create spell enginge with selected dictionary!\nDictionary:%s\nRequired files:spell.dll\n\nGoto http://www.everedit.net/download to download latest dictionaries!
 15121=This command can be only executed in menu!
+15122=There is no help file which was associated to this file type!
 15200=%d occurrences were replaced!
 15204=Can't find this string below the current position:%s
 15205=Can't find this string above the current position:%s
@@ -1381,11 +1520,13 @@ P244=Others
 15210=You are trying to save a read-only file, save it?
 15211=Can't find string:%s
 15212=Passed the end of file!
+15213=You didn't select backup replaced files, continue?
 15214=Everedit doesn't support look around on replacing!
 15215=Your selected files was modified or does not exist!\n\nWould you like to diff them as temp files?
 15216=You should select 2 files first!
 15217=You selected same file!
 15218=Diff tool does not exist!\n%s
+15219=You are trying to replace multiple files, continue?
 15240=Find
 15241=Replace To
 15242=Options
@@ -1402,16 +1543,33 @@ P244=Others
 15253=Script
 15255=File associations were successfully set!
 15256=%d Occurrences were selected!
+15257=This license is not valid!
+15258=Thank you for buying license of EverEdit!\n\nWe will continue to supply the best software and service to you!
+15259=Personal
+15260=Team
+15261=Host
+15262=Directory
+15263=You are using the latest version!
+15264=%d files and %d positions were replaced in %s\n
+15265=Project tags were updated!
+15266=Input folder name:
+15267=Do you want to remove this item and the sub items?
+15268=Current file is a temp file or doesn't exist!
+15269=Parsing tags of project...
+15270=@Untitled Project
+15271=Delete this project?
+15272=Found %d items!
 15300=Default Text
 15301=Selection
 15302=Line Number
 15303=Ruler
-15305=White Spaces/EOL/EOF/Control Chars
+15305=White Spaces/EOL/EOF
 15306=BookMarker
 15307=Folding Area
 15308=Icon Area(Debug info...)
 15309=Active Line
 15310=Selection Indicator
+15311=Control Chars
 15312=Brace/Pair
 15313=Wave Line(Spell error...)
 15314=Indent Line
@@ -1444,6 +1602,7 @@ P244=Others
 15445=User Define Highlight 6
 15446=User Define Highlight 7
 15447=User Define Highlight 8
+15448=CallTip
 16000=Check all items
 16001=Uncheck all items
 16002=Select all items

@@ -3,7 +3,7 @@
 ' Language:    AutoHotKey_L v1.1.09.04
 ' Maintainer:  www.everedit.net Morler  
 ' History:
-'   2013/04/06 Create
+'   2013/04/06 First Version
 '	2013/05/08 Support Autohotkey_L syntax
 '*******************************************************************************
 Include( ".\const.mac" )

@@ -1,9 +1,9 @@
 '*******************************************************************************
 ' EverEdit Syntax File
-' Language:    ASP.Net
-' Maintainer:  www.everedit.net  
+' Language:     ASP.Net
+' Maintainer:   www.everedit.net  
 ' History:
-'   2012/07/24 Created
+'   2012/07/24  First Version
 '*******************************************************************************
 Include( ".\html_base.mac" )
 

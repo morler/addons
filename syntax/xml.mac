@@ -8,11 +8,11 @@
 Helper.Include( ".\const.mac" )
 
 Set xml=Parser.CreateParser()
-
+xml.Name="source.xml"
 'comment
 Set rXmlBlockComment=xml.CreateRegion( COLOR_COMMENT1, "+<!--+", "+-->+", False )
 '<>tags
-Set rXmlTag=xml.CreateRegion( COLOR_TAG, "<\w+|</+", "/?>", False )
+Set rXmlTag=xml.CreateRegion( COLOR_TAG, "<\w+|</[^>]", "/?>", False )
 'string in tag
 Set rXmlString2	=xml.CreateStringRegion( COLOR_STRING1, """", "", True )
 Set rXmlString1	=xml.CreateStringRegion( COLOR_STRING1, "'", "", True )

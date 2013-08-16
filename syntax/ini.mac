@@ -3,8 +3,8 @@
 ' Language:    Ini
 ' Maintainer:  www.everedit.net  Morler
 ' History:
-'   2012/02/15 Create
-'   2013/04/24	little update
+'   2012/02/15 First Version
+'   2013/04/24 little update
 '*******************************************************************************
 Include( ".\const.mac" )
 

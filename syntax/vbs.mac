@@ -5,12 +5,14 @@
 ' History:
 '   2012/02/15 Create
 '   2012/04/04 Update
+'   2012/07/17 add line comment with 'rem'
 '*******************************************************************************
 Include( ".\const.mac" )
 
 Set vbs=CreateParser()
 
 Set rLineComment=vbs.CreateRegion(COLOR_COMMENT1, "'", "$", True )
+vbs.AddRegion( vbs.CreateRegion(COLOR_COMMENT1, "\brem\b", "$", False ) )
 Set rString2=vbs.CreateStringRegion( COLOR_STRING1, """", "", False )
 
 'Reserved words

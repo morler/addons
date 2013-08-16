@@ -3,7 +3,7 @@
 ' Language:    Less
 ' Maintainer:  yulanggong  
 ' History:
-'   2012/07/01 Create
+'   2012/07/01 First Version
 '*******************************************************************************
 Include( ".\const.mac" )
 

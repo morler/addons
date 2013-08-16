@@ -1,9 +1,9 @@
 '*******************************************************************************
 ' EverEdit Syntax File
-' Language:    Erlang
-' Maintainer:  yoastg@gmail.com  
+' Language:   Erlang
+' Maintainer: yoastg@gmail.com  
 ' History:
-'   2013/03/6 Created
+'   2013/03/6 First Version
 '*******************************************************************************
 
 Include( ".\const.mac" )

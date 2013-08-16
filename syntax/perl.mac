@@ -3,7 +3,7 @@
 ' Language: Perl
 ' Maintainer: www.everedit.net
 ' History:
-'   2012/09/22 Create
+'   2012/09/22 First Version
 '*******************************************************************************
 
 Include(".\const.mac")

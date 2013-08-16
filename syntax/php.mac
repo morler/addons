@@ -3,7 +3,7 @@
 ' Language:    PHP
 ' Maintainer:  www.everedit.net	Morler
 ' History:
-'   2012/02/15	Create
+'   2012/02/15	First Version
 '	2012/06/21	添加完整的PHP5.3语法
 '*******************************************************************************
 Include( ".\html_base.mac" )

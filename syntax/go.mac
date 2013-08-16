@@ -3,8 +3,8 @@
 ' Language:    Google Go
 ' Maintainer:  www.everedit.net  Morler
 ' History:
-'   2013/04/04 Create
-'   2013/05/14 Update
+'   2013/04/04 First Version
+'   2013/05/14 Updated
 '*******************************************************************************
 Include( ".\const.mac" )
 

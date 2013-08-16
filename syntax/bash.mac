@@ -3,7 +3,7 @@
 ' Language:    Bash
 ' Maintainer:  www.everedit.net  
 ' History:
-'   2013/04/04 Update
+'   2013/04/04 First Version
 '*******************************************************************************
 Include( ".\const.mac" )
 

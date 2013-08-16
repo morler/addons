@@ -3,7 +3,7 @@
 ' Language:    C51
 ' Maintainer:  Morler (based on C99 syntax file) ZLiang
 ' History:
-'   2013/05/24 Created
+'   2013/05/24 First Version
 '	2013/05/25 Modified by ZLiang
 '*******************************************************************************
 Include( ".\const.mac" )

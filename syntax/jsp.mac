@@ -3,7 +3,7 @@
 ' Language:    JSP
 ' Maintainer:  www.everedit.net  
 ' History:
-'   2013/04/19 Create
+'   2013/04/19 First Version
 '*******************************************************************************
 Include( ".\html_base.mac" )
 

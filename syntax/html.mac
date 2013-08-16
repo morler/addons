@@ -3,7 +3,7 @@
 ' Language:    HTML
 ' Maintainer:  www.everedit.net  
 ' History:
-'   2012/02/15 Create
+'   2012/02/15 First Version
 '*******************************************************************************
 Include( ".\html_base.mac" )
 

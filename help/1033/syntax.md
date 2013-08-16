@@ -127,7 +127,7 @@ SyntaxRegion
 
 ```
 //Functions
-bool AddSnippet(string strPathName )
+bool AddSnippet(string strPathName, bool bCase)
 void AddItem(SyntaxItem item );
 void AddWord(WordItem item );
 void AddRegion(SyntaxRegion child );

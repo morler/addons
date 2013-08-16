@@ -3,10 +3,9 @@
 ' Language:    CSS Base
 ' Maintainer:  www.everedit.net Morler 
 ' History:
-'   2012/02/15 Create
-'   2012/04/06 Modifed from Zubkov Andrey (zubkov.and@ya.ru), 30.10.2012 at Editplus.com
-'   2012/04/11 Separate from main parser
-'	2013/04/24	updating some keywords
+'   2012/02/15 First Version
+'   2012/04/11 Separated from main parser
+'	2013/04/24 Updated some keywords
 '*******************************************************************************
 
 'css string

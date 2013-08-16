@@ -1,9 +1,9 @@
 '*******************************************************************************
 ' EverEdit Syntax File
-' Language:   JScript
-' Maintainer:  www.everedit.net  
+' Language:   	JScript
+' Maintainer:  	www.everedit.net  
 ' History:
-'   2012/04/11 Create
+'   2012/04/11	First Version
 '  **Don't modify this file!**
 '*******************************************************************************
 Include( ".\const.mac" )

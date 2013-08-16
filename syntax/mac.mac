@@ -3,10 +3,8 @@
 ' Language:    EverEdit Macro
 ' Maintainer:  www.everedit.net  
 ' History:
-'   2012/02/15 Create
-'   2012/06/24 Update
-'   2013/04/04 Update
-'   2013/05/01 Add some new words
+'   2012/02/15 First Version
+'   2013/05/01 Added some new words
 '*******************************************************************************
 Include( ".\vbs.mac" )
 

@@ -1,9 +1,9 @@
 '*******************************************************************************
 ' EverEdit Syntax File
-' Language:    AcuCobol
-' Maintainer:  Nolan Shang  
+' Language:     AcuCobol
+' Maintainer:   Nolan Shang  
 ' History:
-'   2013/04/12 Created
+'   2013/04/12  First Version
 '*******************************************************************************
 Include( ".\const.mac" )
 

@@ -4,7 +4,7 @@
 ' Language:		OpenEuphoria v4.0.5
 ' Maintainer:	moofly.net/blog  
 ' History:
-'   2012/07/19	Created
+'   2012/07/19	First Version
 '	2013/04/20	updated
 '	2013/04/24	updating (un)fold and (un)indent texts methods
 '			support more numbers formats(like '0b111 0t456 0xAB4')

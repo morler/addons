@@ -1,9 +1,9 @@
 '*******************************************************************************
 ' EverEdit Syntax File
-' Language: Fortran
-' Maintainer: www.everedit.net
+' Language: 	Fortran
+' Maintainer:	www.everedit.net
 ' History:
-' 2013/04/26 Create
+' 2013/04/26 	First Version
 '*******************************************************************************
 Include( ".\const.mac" )
 

@@ -65,7 +65,7 @@ SyntaxRegion
 
 ```
 //函数
-bool AddSnippet(string strPathName )
+bool AddSnippet(string strPathName, bool bCase=true)
 void AddItem(SyntaxItem item );
 void AddWord(WordItem item );
 void AddRegion(SyntaxRegion child );

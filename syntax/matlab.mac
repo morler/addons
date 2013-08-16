@@ -3,8 +3,7 @@
 ' Language:    Matlab
 ' Maintainer:  www.everedit.net  
 ' History:
-'   2012/03/31 Import from editplus
-'   2012/04/04 Update
+'   2012/03/31 Imported from editplus
 '*******************************************************************************
 Include( ".\const.mac" )
 

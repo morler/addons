@@ -3,7 +3,7 @@
 ' Language:    Gui4Cli v19.38
 ' Maintainer:  Morler	<morler@163.com> 
 ' History:
-'   2012/10/15 Create
+'   2012/10/15 First Version
 '   2013/05/14 New syntax from Editra
 '*******************************************************************************
 Include( ".\const.mac" )

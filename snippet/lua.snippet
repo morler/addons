@@ -1,0 +1,35 @@
+[Snippet]
+Title=Lua
+Count=8
+[Item0]
+Trigger=for
+Title=for     for ... then
+Snippet=#for $1 do\r\n\t$0\r\nend
+[Item1]
+Trigger=fori
+Title=fori    for i, v in ipairs()
+Snippet=#for ${1:i},${2:v} in ipairs(${3:table_name})\r\n\t$0\r\nend
+[Item2]
+Trigger=forp
+Title=forp    for i, v in pairs()
+Snippet=#for ${1:i},${2:v} in pairs(${3:table_name})\r\n\t$0\r\nend
+[Item3]
+Trigger=repeat
+Title=repeat
+Snippet=#repeat\r\n\t$1\r\nuntil $0
+[Item4]
+Trigger=while
+Title=while
+Snippet=#while $1 do\r\n\t$0\r\nend
+[Item5]
+Trigger=if
+Title=if
+Snippet=#if $1 then\r\n\t$0\r\nend
+[Item6]
+Trigger=function
+Title=function
+Snippet=#function ${1:function_name}(${2:})\r\n\t$0\r\nend
+[Item7]
+Trigger=table.sort
+Title=table.sort
+Snippet=#table.sort(${1:tablename}${2:, sortfunction})

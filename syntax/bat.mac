@@ -3,7 +3,7 @@
 ' Language:    Windows Batch
 ' Maintainer:  www.everedit.net  
 ' History:
-'   2012/08/07 Create
+'   2012/08/07 First Version
 '   2012/04/10 Add label match
 '   2012/04/29 Add :: comment
 '*******************************************************************************
@@ -22,7 +22,7 @@ wWord1.AutoCase=True
 Set wWord2=bat.CreateWord( COLOR_COMMENT1, "REM", False )
 wWord2.AutoCase=True
 
-Set iLabel=bat.CreateItem( COLOR_WORD2, "^\s*:[^:\n]+", False )
+Set iLabel=bat.CreateItem( COLOR_WORD2, "^\s*:[^\n]+", False )
 
 bat.AddRegion( rComment1 )
 bat.AddRegion( rComment2 )

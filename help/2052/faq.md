@@ -139,3 +139,23 @@ EverEdit会自动显示所有已设置模板的语法文件。一次你只要到
 ##我的EverEdit在编辑某些文件时突然变的特别慢
 主菜单→工具→常规→性能，检查一下[语法高亮的字符个数上限]是否设置的过大，典型的值应该小于1000.
 
+##Emmet的展开快捷键是Ctrl+E，可以更改为其它的吗？
+当然可以，EverEdit的模式支持单级或者多级快捷键。打开mode\html.esm，找到如下的代码：
+
+```
+[Menu4]
+Key=C+E
+Command0=3,Abbreviation,${AppPath}\mode\html\abbrev.ejs
+```
+
+把上面的Key改为您喜欢的快捷键即可。比如改为Tab上方的`符号。
+
+```
+[Menu4]
+Key=`
+Command0=3,Abbreviation,${AppPath}\mode\html\abbrev.ejs
+```
+
+##EverEdit有文件收藏夹功能吗
+EverEdit没有为开发专门的收藏夹功能，不过可以通过快捷目录或者工程来模拟。使用工程的话，可以自定义目录名称，非常方便。推荐使用工程来模拟收藏夹。
+

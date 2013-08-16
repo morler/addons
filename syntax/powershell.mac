@@ -1,9 +1,9 @@
 '*******************************************************************************
 ' EverEdit Syntax File
-' Language:    Free Pascal
+' Language:    Power Shell
 ' Maintainer:  www.everedit.net  
 ' History:
-'   2013/04/04 Create
+'   2013/04/04 First Version
 '*******************************************************************************
 Include( ".\const.mac" )
 

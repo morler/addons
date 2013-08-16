@@ -3,7 +3,7 @@
 ' Language:    HTML Base for HTML/PHP/ASP/JSP etc.
 ' Maintainer:  www.everedit.net  
 ' History:
-'   2012/02/15 Create
+'   2012/02/15 First Version
 '   2012/06/05 Improved for EE 2.0
 '   2012/10/29 Improved for EE 2.50
 '   2013/04/11 Move css to css_base, js to js_base
@@ -15,7 +15,7 @@ Set html=CreateParser()
 html.Name="source.html"
 
 Set rHtmlBlockComment=html.CreateRegion( COLOR_COMMENT1, "+<!--+", "+-->+", False )
-Set rHtmlTag=html.CreateRegion( COLOR_TAG, "<\w+|</+|<!+", "/?>", False )
+Set rHtmlTag=html.CreateRegion( COLOR_TAG, "<\w+|</[^>]|<![^>]", "/?>", False )
 Set rTagString2=html.CreateStringRegion( COLOR_STRING2, """", "", True )
 Set rTagString1=html.CreateStringRegion( COLOR_STRING1, "'", "", True )
 Set rTagStyle=html.CreateRegion( COLOR_SUBLAN, "\bstyle\s*=\s*""", """", False )
@@ -84,5 +84,6 @@ html.UnfoldText "</(html|body|table|tbody|tr|div|blockquote|pre|code|p|form|ul|o
 html.CommentBlock "<!--", "-->"
 html.SetPairs( "<>()[]{}""""''" )
 html.AddSnippet( "html.snippet" )
+html.IndentText "<\w[^>]+>\s*$", False, "</[^>]+>\s*$", False
 
 rTagStyle.AddSnippet "css.snippet"

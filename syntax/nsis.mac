@@ -3,7 +3,7 @@
 ' Language:  	NSIS
 ' Maintainer:	gfm688  
 ' History:
-' 	2012/10/28 Create
+' 	2012/10/28 First Version
 '   2013/02/26 Modify: FoldText/IndentText add IfNot
 '*******************************************************************************
 Include(".\const.mac")
