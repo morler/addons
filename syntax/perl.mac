@@ -44,3 +44,4 @@ perl.SetPairs "[]{}()""""''"
 perl.CommentLine "#"
 
 perl.AddSnippet "perl.snippet"
+perl.AddCallTip "perl.ecp", True

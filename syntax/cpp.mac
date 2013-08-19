@@ -72,3 +72,4 @@ cpp.CommentLine("//")
 cpp.CommentBlock "/*", "*/"
 
 cpp.SetPairs( "[]{}()""""''" )
+cpp.AddCallTip "c.ecp", True, " ", "(", ",", ")", True

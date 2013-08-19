@@ -62,4 +62,5 @@ make.AddRegion(rString2)
 make.FoldingMethod="indent"
 make.SetPairs "(){}[]""""''"
 make.CommentLine "#"
-Make.IndentText ":$", False
+make.IndentText ":$", False
+make.AddCallTip "cmake.ecp", False, "", " (", " ", ")"

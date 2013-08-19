@@ -42,3 +42,4 @@ rJsRegion.SetPairs( "[](){}""""''" )
 rJsRegion.IndentText "{$", False, "^\s*}\)?;?$", False
 
 rJsRegion.AddSnippet "js.snippet"
+rJsRegion.AddCallTip "js.ecp", True, "."

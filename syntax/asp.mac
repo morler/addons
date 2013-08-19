@@ -36,6 +36,7 @@ rAsp.AddItem( html.CreateItem(COLOR_SUBLAN, "<%|%>", False) )
 
 rAsp.CommentLine("'")
 rAsp.SetPairs( "[](){}""""" )
+rAsp.AddCallTip "asp.ecp", False, "."
 
 '-----------------------add rAsp to html parser
 html.AddRegion( rAsp )

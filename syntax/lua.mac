@@ -60,3 +60,4 @@ Call lua.CommentLine("--")
 Call lua.CommentBlock("--[[", "]]")
 
 lua.AddSnippet "lua.snippet"
+lua.AddCallTip "lua.ecp", True, "."

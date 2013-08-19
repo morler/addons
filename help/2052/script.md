@@ -26,7 +26,8 @@ Document OpenDoc(string strPathName);
 void OutputText(string strText, bool bClear=false, bool bTerminate=false);
 string ShowInputBox(string strPrompt, string strTitle);
 int ShowMsgBox(string strText, string strTitle, int buttons);
- 
+int ShowHtmlHelp(string strPath, string strWord);
+
 //属性
 Document ActiveDoc;
 HexDoc ActiveHex;

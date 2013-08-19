@@ -35,3 +35,4 @@ rComment1.AddWord( wWord2 )
 
 bat.SetPairs( "[]{}()""""''" )
 bat.CommentLine( "REM " )
+bat.AddCallTip "bat.ecp", False, "%", " ", " ", ""

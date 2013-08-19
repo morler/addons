@@ -49,3 +49,4 @@ pas.FoldText "\b(begin)\s*$", False, "\b(end)\s*$", False
 pas.SetPairs( "[]''""{}()" )
 pas.CommentLine( "//" )
 pas.CommentBlock "{*", "*}"
+pas.AddCallTip "pascal.ecp", True, "", "(", ";", ")"

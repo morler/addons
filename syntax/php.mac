@@ -13,6 +13,7 @@ Set rPhp=html.CreateRegion( COLOR_DEFAULT, "<\?(php)?(?![a-zA-Z0-9_\-])", "+?>+"
 'comment
 Set rPhpBlockComment=html.CreateRegion( COLOR_COMMENT1, "+/*+", "+*/+", False )
 Set rPhpLineComment=html.CreateRegion( COLOR_COMMENT1, "+//+", "$", False )
+Set rPhpLineCommentSharp=html.CreateRegion( COLOR_COMMENT1, "+#+", "$", False )
 Set rPhpEOT=html.CreateRegion( COLOR_COMMENT2, "+<<<EOT+", "+EOT;+", True )
 'string
 Set rPhpString2=html.CreateStringRegion( COLOR_STRING1, """", "\", True )
@@ -21,6 +22,7 @@ Set rPhpString1=html.CreateStringRegion( COLOR_STRING1, "'", "\", True )
 rPhp.AddRegion( rPhpEOT )
 rPhp.AddRegion( rPhpBlockComment )
 rPhp.AddRegion( rPhpLineComment )
+rPhp.AddRegion( rPhpLineCommentSharp )
 rPhp.AddRegion( rPhpString2 )
 rPhp.AddRegion( rPhpString1 )
 
@@ -47,6 +49,7 @@ rPhp.AddItem( html.CreateItem(COLOR_SUBLAN, "<\?(php)?|\?>", False) )
 rPhp.AddItem( html.CreateItem(COLOR_VAR, "\$\w+", False) )
 
 rPhp.AddSnippet "php.snippet"
+rPhp.AddCallTip "php.ecp", True 
 
 'folding
 Call rPhp.FoldText( "\{", False )

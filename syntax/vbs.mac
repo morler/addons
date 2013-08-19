@@ -31,3 +31,4 @@ vbs.IndentText "\b(Then|Do|For|Function|Sub|Select|Case)\b", False, "\b(Next|Wen
 
 vbs.SetPairs( "[]{}()""""" )
 vbs.CommentLine("'")
+vbs.AddCallTip "vbs.ecp", False
