@@ -41,7 +41,7 @@ rebol.AddWord( rebol.CreateWord(COLOR_WORD1, "abs absolute action? add and~ any-
 rebol.AddWord( rebol.CreateWord(COLOR_WORD2, "action! any-block! any-function! any-string! any-type! any-word! binary! bitset! block! char! datatype! date! decimal! email! error! event! file! function! get-word! hash! image! integer! issue! library! list! lit-path! lit-word! logic! money! native! none! number! object! op! pair! paren! path! port! refinement! routine! series! set-path! set-word! string! struct! symbol! tag! time! tuple! unset! url! word!", False, "-!") )
 
 'number
-rebol.AddItem( rebol.CreateItem(COLOR_NUMBER, "(?<!\w)[-+]?\d+(\.\d+)?([E][-+]?[0-9]+)?", False) )
+rebol.AddItem( rebol.CreateItem(COLOR_NUMBER, "(?<!\w)[-+]?\d+(\.\d+)?(E[-+]?[0-9]+)?", False) )
 
 'hex number
 rebol.AddItem( rebol.CreateItem(COLOR_NUMBER, "\b([0-9A-F]{8}|[0-9A-F]{4}|[0-9A-F]{2})h\b", True) )
@@ -56,7 +56,7 @@ rebol.AddItem(pathStr)
 'Refinement string
 rebol.AddItem( rebol.CreateItem(COLOR_WORD1, "(?<=(\[|\s+))(\/)([^(\]\s]+)(?![a-zA-Z0-9_\-])", False) )
 
-set litWord = rebol.CreateItem(COLOR_WORD3, "(\')([^(\]\s]+)(?![a-zA-Z0-9_\-])", False)
+set litWord = rebol.CreateItem(COLOR_WORD3, "(?<=(\[|\s+))(\')([^(\]\s]+)(?![a-zA-Z0-9_\-])", False)
 rebol.AddItem(litWord)
 
 'operators
