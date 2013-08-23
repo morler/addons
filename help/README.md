@@ -1,9 +1,9 @@
-#EverEdit Help Files (English)
+#EverEdit Help Files
 * [Syntax](https://github.com/everedit/addons/blob/master/help/1033/syntax.md)
 * [Snippet](https://github.com/everedit/addons/blob/master/help/1033/snippet.md)
 * [Mode](https://github.com/everedit/addons/blob/master/help/1033/mode.md)
 * [Integrate Compilers](https://github.com/everedit/addons/blob/master/help/1033/compiler.md)
-* [AutoComplete]((https://github.com/everedit/addons/blob/master/help/1033/autocomplete.md))
+* [AutoComplete]((https://github.com/everedit/addons/blob/master/help/1033/autocomplete.md)
 
 *Help us to translate the docuements of EverEdit!*
 
