@@ -52,6 +52,7 @@ P57642=&Select
 46=Select &Word
 86=Select &Line
 67=Select to &Pair
+77=Select to Pair(Include Pairs)
 55=Select Line to &Up
 56=Select Line to &Down
 1410=&Quick Select
@@ -187,6 +188,7 @@ P1294=&Word Wrap
 1654=Auto &Indent
 1657=Auto &Pair
 1427=Auto &Complete
+1666=Auto HTML/XML &Tag
 1650=Copy &Path
 1651=&Monitor Clipboard
 1655=&Open Containing Folder
@@ -594,7 +596,7 @@ P244=Others
 1200=Edit	Enter
 1201=Hex Edit	C+H
 1215=Refresh Tags	F5
-1216=Find Symbols	C+F
+1216=Find Tags	C+F
 1202=Manage Projects	C+M
 1203=New Project	F3
 1204=Add File	C+N
@@ -735,6 +737,8 @@ P244=Others
 1203=Mark (*) when document is dirty
 1204=Fixed tab width
 1205=Hide tab when only one item
+1207=Show scroll buttons
+1208=Show file list button
 3000=Document's Tab Style:
 3001=Docking Window's Tab Style:
 
@@ -743,10 +747,9 @@ P244=Others
 1206=Add EverEdit to right mouse button
 1213=Show toolbar buttons in multiple rows
 1214=Use current file's path in Find/Replace in Files
-1215=Version Check
+1215=Auto Update
 1217=Merge mode toolbar into right side of main toolbar
 3000=Recent Files Count:
-3002=ToolBar
 
 [DLG220]
 0=Find/Replace in Files
@@ -795,11 +798,13 @@ P244=Others
 1212=Create a new file on startup
 1216=Encoding detector
 1217=Enable save function if document is not modified
+1219=Template file uses its own encoding and format
 3000=New File or 0byte File
 3001=Format:
 3002=Encoding:
 3003=Others
 3004=Change a read-only file:
+3005=Fixed mode file:
 
 [DLG227]
 3000=Please wait a while....
@@ -1104,10 +1109,6 @@ P244=Others
 3000=File name without extension:
 3001=Project Title:
 
-[DLG275]
-0=Find Tags
-1203=&Refresh
-
 [DLG276]
 0=Project Files
 1=Open
@@ -1368,6 +1369,7 @@ P244=Others
 1663=The caret will move to next pair\nMove to Next Pair
 1664=Enter full screen mode, then edit current file with focus mode\nDistraction Free Mode
 1665=Disable edit function for current file\nDon't Allow Edit
+1666=Auto complete unclosed HTML/XML tag on inputting char with backslash(/)\nAuto HTML/XML Tag
 1671=Use spaces to replace tab in current document\nSoft Tab
 1672=Show icon area along with line number\nIcon Area
 1673=Extend background of active line to left edge of window\nExtend Active Line
@@ -1559,6 +1561,7 @@ P244=Others
 15270=@Untitled Project
 15271=Delete this project?
 15272=Found %d items!
+15273=The tags of all opened files were updated!
 15300=Default Text
 15301=Selection
 15302=Line Number
