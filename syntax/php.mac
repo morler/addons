@@ -57,7 +57,7 @@ Call rPhp.UnfoldText( "\}", False )
 Call rPhp.CommentLine("//")
 Call rPhp.CommentBlock("/*", "*/")
 Call rPhp.SetPairs( "[](){}""""''" )
-Call rPhp.IndentText( "{$", False )
+Call rPhp.IndentText( "\{\n", False )
 Call rPhp.UnindentText( "^\s*}$", False )
 
 Set rPhpInTag=html.CopyRegion( rPhp )

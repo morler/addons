@@ -46,7 +46,7 @@ res.AddItem( res.CreateItem(COLOR_NUMBER, "\b([0-9]+\.?[0-9]*|0x[0-9a-fA-F]+)\b"
 
 'folding
 res.FoldText "\bBEGIN$", False, "\bEND$", False
-res.IndentText "\bBEGIN$", False, "\bEND$", False
+res.IndentText "\bBEGIN\n", False, "\bEND$", False
 res.SetPairs( "[]{}()""""''" )
 res.CommentLine("//")
 res.CommentBlock "/*", "*/"

@@ -49,7 +49,7 @@ erl.AddItem( erl.CreateItem(COLOR_OPERATOR, "[\{\}\(\)\+\-\*\\=%&\^!~\|<>?\.;\[\
 erl.AddItem( erl.CreateItem(COLOR_NUMBER, "\b\d+\b", False) )
 
 
-Call erl.IndentText( "(->|of)$", False )
+Call erl.IndentText( "(->|of)\n", False )
 
 Call erl.SetPairs( "[]{}()""""''" )
 

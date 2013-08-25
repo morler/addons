@@ -50,5 +50,5 @@ rCssRegion.AddSnippet "css.snippet"
 rCssRegion.SetPairs( "()[]{}""""''" )
 rCssRegion.CommentBlock "/*", "*/"
 rCssRegion.FoldText "\{", False, "\}", False
-rCssRegion.IndentText "{$", False, "^\s*}$", False
+rCssRegion.IndentText "\{\n", False, "^\s*}$", False
 

@@ -45,7 +45,7 @@ bash.AddItem( bash.CreateItem(COLOR_NUMBER, "\b\d+\b", False) )
 'First line
 rComment1.AddItem( bash.CreateItem(COLOR_MACRO, "^#!/bin/bash$", True) )
 
-bash.IndentText "\{\s*$", False,  "\}\s*$", False
+bash.IndentText "\{\s*\n", False,  "\}\s*$", False
 bash.FoldText "\{", False, "\}", False
 bash.SetPairs( "[]''""{}()" )
 bash.CommentLine( "#" )

@@ -87,7 +87,7 @@ Call newlisp.FoldText( "\(", False )
 Call newlisp.UnfoldText( "\)", False )
 
 '代码自动缩进
-Call newlisp.IndentText( "^\s*(\([^()]+((\(([^()]|(?R3))*\))|$))(?!\))\s*(\;.+)?$", False )
+Call newlisp.IndentText( "^\s*(\([^()]+((\(([^()]|(?R3))*\))|$))(?!\))\s*(\;.+)?\n", False )
 Call newlisp.UnindentText( "^\s*\)$", False )
 
 '

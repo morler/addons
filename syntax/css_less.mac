@@ -63,6 +63,6 @@ Call rLessScript.CommentLine("//")
 Call rLessScript.SetPairs( "()[]{}""""''" )
 Call rLessScript.FoldText( "\{", False )
 Call rLessScript.UnfoldText( "\}", False )
-Call rLessScript.IndentText( "{$", False )
+Call rLessScript.IndentText( "\{\n", False )
 Call rLessScript.UnindentText( "^\s*}$", False )
 

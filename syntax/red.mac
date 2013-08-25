@@ -76,7 +76,7 @@ red.AddItem( iInclude1 )
 'folding
 red.FoldText "\[", False, "\]", False
 
-red.IndentText "\[$", False, "^\s*\]$", False
+red.IndentText "\[\n", False, "^\s*\]$", False
 
 red.CommentLine(";")
 red.CommentBlock "{", "}"

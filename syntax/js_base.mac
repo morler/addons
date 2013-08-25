@@ -39,7 +39,7 @@ rJsRegion.FoldText "\{", False, "\}", False
 rJsRegion.CommentLine("//")
 rJsRegion.CommentBlock "/*", "*/"
 rJsRegion.SetPairs( "[](){}""""''" )
-rJsRegion.IndentText "{$", False, "^\s*}\)?;?$", False
+rJsRegion.IndentText "\{\n", False, "^\s*}\)?;?$", False
 
 rJsRegion.AddSnippet "js.snippet"
 rJsRegion.AddCallTip "js.ecp", True, "."

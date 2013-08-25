@@ -21,7 +21,7 @@ todo.AddItem(todo.CreateItem(COLOR_SUBLAN, "\(\d{4}-\d{1,2}-\d{1,2} \d{1,2}:\d{1
 
 'folding
 todo.FoldingMethod = "indent"
-todo.IndentText "\S+[:£º]$", False 
+todo.IndentText "\S+[:£º]\n", False 
 todo.SetPairs "[]{}()""""''"
 
 'easter egg

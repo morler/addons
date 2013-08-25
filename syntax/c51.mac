@@ -80,7 +80,7 @@ c51.AddSnippet "c51.snippet"
 Call c51.FoldText( "\{", False )
 Call c51.UnfoldText( "\}", False )
 
-Call c51.IndentText( "(\[|{|\w+:)$", False )
+Call c51.IndentText( "(\[|{|\w+:)\n", False )
 Call c51.UnindentText( "^\s*}|\]$", False )
 
 Call c51.SetPairs( "[]{}()""""''" )
