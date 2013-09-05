@@ -60,7 +60,7 @@ python.AddItem( python.CreateItem(COLOR_NUMBER, "(?<!\w)[-+]?\d+(\.\d+)?(E[-+]?[
 'folding
 python.FoldingMethod="indent"
 
-python.IndentText "\S+:\n", False 
+python.IndentText "\S+:$", False 
 python.SetPairs "[]{}()""""''"
 python.CommentLine "#"
 python.CommentBlock """""""", """"""""

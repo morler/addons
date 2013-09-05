@@ -29,7 +29,7 @@ rJavaRegion.AddItem( java_creator.CreateItem(COLOR_NUMBER, "\b\d+\b", False) )
 
 'folding
 rJavaRegion.FoldText "\{", False, "\}", False
-rJavaRegion.IndentText "\{|\w+:\n", False, "^\s*}$", False
+rJavaRegion.IndentText "\{|\w+:$", False, "^\s*}$", False
 
 rJavaRegion.SetPairs( "[]{}()""""''" )
 rJavaRegion.CommentLine("//")

@@ -61,7 +61,7 @@ AddAutoCaseWord
 Call nsi.FoldText("^\s*((Function|Section(Group)?|!(macro|if((macro)?n?(def)?)))\b|\$\{(If(Not)?|Unless|Do(While|Until)?|While|For(Each)?|Select|Switch)\}(\s|$))", false)
 Call nsi.UnfoldText("^\s*(((Function|Section(Group)?|!macro)End|!endif)\b|\$\{(End(If|Unless|While|Select|Switch)|Loop(While|Until)?|Next)\}(\s|$))", false)
 
-Call nsi.IndentText("^\s*((Function|Section(Group)?|!(macro|else|if((macro)?n?(def)?)))\b|\$\{((Or|And|Else)?(If(Not)?|Unless)|Do(While|Until)?|While|For(Each)?|Select|Switch|Case(\d|Else)?|Else)\})(\s|\n)", false)
+Call nsi.IndentText("^\s*((Function|Section(Group)?|!(macro|else|if((macro)?n?(def)?)))\b|\$\{((Or|And|Else)?(If(Not)?|Unless)|Do(While|Until)?|While|For(Each)?|Select|Switch|Case(\d|Else)?|Else)\})(\s|$)", false)
 Call nsi.UnIndentText("^\s*(((Function|Section(Group)?|!macro)End|!endif)\b|(!else|\$\{((Or|And|Else)(If|Unless)|Case\d?)\})(?![\t ])|\$\{(End(If|Unless|While|Select|Switch)|Loop(While|Until)?|Next|(Case)?Else)\})", false)
 
 Call nsi.SetPairs("{}()""""``''")

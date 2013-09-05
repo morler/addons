@@ -74,7 +74,7 @@ c99.AddSnippet "c.snippet"
 Call c99.FoldText( "\{", False )
 Call c99.UnfoldText( "\}", False )
 
-Call c99.IndentText( "(\[|{|\w+:)\n", False )
+Call c99.IndentText( "(\[|{|\w+:)\s*$", False )
 Call c99.UnindentText( "^\s*}|\]$", False )
 
 Call c99.SetPairs( "[]{}()""""''" )

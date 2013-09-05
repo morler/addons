@@ -340,7 +340,7 @@ Set AutoLisp=CreateParser()
 	'		$0(B...))
 	'	注：上例中，缩进前应先删除光标处的空格。但即使不删除光标处的空格，无论光标位于空格左方还是右方，均应正常缩进。
 	'注：ee的indenttext里面的$表示光标位置。(即从行首到光标处符合定义即缩进)
-	AutoLisp.IndentText "^\s*\(((\([^()]*([^()]*|(?R2))[^()]*\))|[^()]*|\([^()]*)*\n", False
+	AutoLisp.IndentText "^\s*\(((\([^()]*([^()]*|(?R2))[^()]*\))|[^()]*|\([^()]*)*$", False
 	AutoLisp.UnIndentText "^\s*\)$", False
 
 '定义 快捷键注释

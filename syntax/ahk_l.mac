@@ -68,7 +68,7 @@ ahk_l.AddItem( iOperator )
 'number
 ahk_l.AddItem( ahk_l.CreateItem(COLOR_NUMBER, "(?<!\w)[+-]?([0-9_]+\.?[0-9_]*|0x[A-Fa-f0-9]+)(?!\w)", False) )
 
-Call ahk_l.IndentText( "\{\n", False )
+Call ahk_l.IndentText( "\{\s*$", False )
 Call ahk_l.UnindentText( "\}$", False )
 
 Call ahk_l.FoldText( "\{", False )

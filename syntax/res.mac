@@ -4,6 +4,7 @@
 ' Maintainer:  www.everedit.net  
 ' History:
 '  2013/04/19 Created
+'  2013/09/05 Updated
 '*******************************************************************************
 Include( ".\const.mac" )
 
@@ -23,19 +24,25 @@ Set rString2=res.CreateStringRegion( COLOR_STRING1, """", "\", False )
 res.AddRegion( rString2 )
 
 'words
-res.AddWord( res.CreateWord(COLOR_WORD1, "LANGUAGE ACCELERATORS TEXTINCLUDE TOOLBAR BITMAP STRINGTABLE", True ) )
+Set iWord1=res.CreateWord(COLOR_WORD1, "LANGUAGE ACCELERATORS TEXTINCLUDE TOOLBAR BITMAP STRINGTABLE", False )
+iWord1.AutoCase=True
+res.AddWord iWord1
 
-res.AddWord( res.CreateWord(COLOR_WORD2, "BEGIN END BUTTON SEPARATOR POPUP MENUITEM ICON", True ) )
+Set iWord2=res.CreateWord(COLOR_WORD2, "BEGIN END BUTTON SEPARATOR POPUP MENUITEM ICON", False )
+iWord2.AutoCase=True
+res.AddWord iWord2
 
-res.AddWord( res.CreateWord(COLOR_WORD3, "STYLE DS_MODALFRAME CAPTION FONT", True ) )
+Set iWord3=res.CreateWord(COLOR_WORD3, "STYLE DS_MODALFRAME CAPTION FONT", False )
+iWord3.AutoCase=True 
+res.AddWord iWord3
 
 'macro
 res.AddItem( res.CreateItem(COLOR_MACRO, "#\s*if\s+!?defined",False ) )
-res.AddItem( res.CreateItem(COLOR_MACRO, "#\s*(if|pragma|else|elif|error|ifndef|define|endif|undef|ifdef)\b", False ) )
+res.AddItem( res.CreateItem(COLOR_MACRO, "#\s*(if|pragma|else|elif|error|ifndef|define|endif|undef|ifdef)\b", True ) )
 
-Set iInclude1=res.CreateItem( COLOR_MACRO, "#\s*include\s*(<.*?>)", False )
+Set iInclude1=res.CreateItem( COLOR_MACRO, "#\s*include\s*(<.*?>)", True )
 iInclude1.Capture 1, COLOR_STRING2
-Set iInclude2=res.CreateItem( COLOR_MACRO, "#\s*include\s*(?="")", False )
+Set iInclude2=res.CreateItem( COLOR_MACRO, "#\s*include\s*(?="")", True )
 iInclude2.Capture 1, COLOR_STRING2
 
 res.AddItem( iInclude1 )
@@ -46,7 +53,7 @@ res.AddItem( res.CreateItem(COLOR_NUMBER, "\b([0-9]+\.?[0-9]*|0x[0-9a-fA-F]+)\b"
 
 'folding
 res.FoldText "\bBEGIN$", False, "\bEND$", False
-res.IndentText "\bBEGIN\n", False, "\bEND$", False
-res.SetPairs( "[]{}()""""''" )
-res.CommentLine("//")
+res.IndentText "\bBEGIN\s*$", False, "\bEND$", False
+res.SetPairs "[]{}()""""''"
+res.CommentLine "//"
 res.CommentBlock "/*", "*/"
