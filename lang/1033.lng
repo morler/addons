@@ -253,7 +253,6 @@ P1222=&Window
 1214=&Always on Top
 P1220=&Transparency
 1220=&Opaque
-1207=&Window List...
 P2009=&Help
 2009=&Context help
 2010=&Help
@@ -424,9 +423,11 @@ P201=More...
 4=Bitmap Fill
 
 [MENU316]
-1=Snippet
-2=Context Word
-3=KeyWord
+1=@Snippet
+2=-Context Word
+3=*KeyWord
+4=#Tags
+5=~File Name
 
 [MENU317]
 1=None
@@ -794,6 +795,7 @@ P244=Others
 1243=Advanced
 1249=Get More
 1252=Use spaces to replace tab
+1255=More
 3001=Title:
 3002=Syntax File:
 3003=Extensions:
@@ -909,6 +911,7 @@ P244=Others
 3002=Tailing of Line:
 3003=Selection
 3004=Folding Style
+3005=Caret Style
 
 [DLG239]
 0=Sequence
@@ -1020,7 +1023,8 @@ P244=Others
 3000=Trigger key:
 3001=Delay:
 3002=(MS, Recommend 150ms)
-3003=Order:
+3003=All:
+3004=Selected:
 
 [DLG255]
 0=Change Type
@@ -1156,6 +1160,23 @@ P244=Others
 3001=Begin color:
 3002=End color:
 
+[DLG281]
+0=Syntax Pattern
+1=OK
+2=Cancel
+3000=File extensions (txt;log;html):
+3001=Pattern of file name:
+3002=Pattern of first line:
+
+[DLG282]
+1201=This program is designed for Windows NT systems.
+1202=This program should be called from EverEdit!
+1203=Can't create file "%s"
+1204=Can't set security options for pipe.
+1205=Can't get security options of file "%s"
+1206=Can't set security options for file "%s"
+1207=Can't get privilege to set security options of file "%s"
+
 [STRING]
 1=Move caret to left\nMove Left
 2=Move caret to right\nMove Right
@@ -1250,7 +1271,6 @@ P244=Others
 1204=Vertical split current view\nVertical split
 1205=Horizontal split current view\nHorizontal split
 1206=Close the active document\nClose
-1207=Show list of all document\nWindow List
 1208=Scroll splitted windows at the sametime\nSynchronize Scroll
 1209=Move active view to vertical tab group, if not exist then create\nVertical Group
 1211=Move active view to horizontal tab group, if not exist then create\nHorizontal Group
@@ -1500,7 +1520,7 @@ P244=Others
 15097=SIZE: %d
 15098=This file donesn't exist!\n%s
 15099=%d lines were found
-15100=Can't load file %s!\n\n%s
+15100=Can't load file %s!\n
 15102=%s:Can't execute thie command!%s
 15103=Can't tear off this menu!
 15104=An error occured while parsing the script:\nFile: %ws\nSource: %ws\nError: %08X\nDescription: %ws\nLine: %d\n
