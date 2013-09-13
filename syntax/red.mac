@@ -40,7 +40,7 @@ red.AddWord( red.CreateWord(COLOR_WORD1, "abs absolute action? add and~ any-bloc
 red.AddWord( red.CreateWord(COLOR_WORD2, "action! any-block! any-function! any-string! any-type! any-word! binary! bitset! block! char! datatype! date! decimal! email! error! event! file! function! get-word! hash! image! integer! issue! library! list! lit-path! lit-word! logic! money! native! none! number! object! op! pair! paren! path! port! refinement! routine! series! set-path! set-word! string! struct! symbol! tag! time! tuple! unset! url! word!", False, "-!") )
 
 'number
-red.AddItem( red.CreateItem(COLOR_NUMBER, "(?<!\w)[-+]?\d+(\.\d+)?(E[-+]?[0-9]+)?", False) )
+red.AddItem( red.CreateItem(COLOR_NUMBER, "[-+]?\d+(\.\d+)?(E[-+]?[0-9]+)?", False) )
 
 'hex number
 red.AddItem( red.CreateItem(COLOR_NUMBER, "\b([0-9A-F]{8}|[0-9A-F]{4}|[0-9A-F]{2})h\b", True) )
@@ -49,7 +49,7 @@ set typeStr = red.CreateItem(COLOR_WORD2, "[^\(\[\s]+!", False)
 red.AddItem(typeStr)
 
 'path string
-set pathStr = red.CreateItem(COLOR_STRING1, "%[^\]\s]+", False)
+set pathStr = red.CreateItem(COLOR_STRING1, "%[^\]\[\s]+", False)
 red.AddItem(pathStr)
 
 'Refinement string
@@ -58,7 +58,7 @@ red.AddItem( red.CreateItem(COLOR_WORD1, "(?<=(\[|\s+))(\/)([^(\]\s]+)(?![a-zA-Z
 'Special keywords
 red.AddWord( red.CreateWord(COLOR_WORD4, "Red Red/System", True, "/"))
 
-set litWord = red.CreateItem(COLOR_WORD3, "(?<=(\[|\s+))(\')([^(\]\s]+)(?![a-zA-Z0-9_\-])", False)
+set litWord = red.CreateItem(COLOR_WORD3, "\'[^(\]\[\s]+", False)
 red.AddItem(litWord)
 
 'operators
