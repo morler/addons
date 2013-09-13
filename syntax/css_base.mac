@@ -5,7 +5,7 @@
 ' History:
 '   2012/02/15 First Version
 '   2012/04/11 Separated from main parser
-'	2013/04/24 Updated some keywords
+'   2013/04/24 Updated some keywords
 '*******************************************************************************
 
 'css string
@@ -34,7 +34,7 @@ rCssRegion.AddWord( css_creator.CreateWord(COLOR_WORD3, "A ABBR ADDRESS AREA ART
 rCssRegion.AddItem( css_creator.CreateItem(COLOR_WORD2, "\.[\w-]+",False ) )
 
 'Fake class
-rCssRegion.AddItem( css_creator.CreateItem(COLOR_WORD2, "::?[\w-]+",False ) )
+'rCssRegion.AddItem( css_creator.CreateItem(COLOR_WORD2, "::?[\w-]+",False ) )
 
 'Id
 rCssRegion.AddItem( css_creator.CreateItem(COLOR_WORD3, "#[\w+-]+",False ) )
@@ -50,5 +50,5 @@ rCssRegion.AddSnippet "css.snippet"
 rCssRegion.SetPairs( "()[]{}""""''" )
 rCssRegion.CommentBlock "/*", "*/"
 rCssRegion.FoldText "\{", False, "\}", False
-rCssRegion.IndentText "\{\s$", False, "^\s*}$", False
+rCssRegion.IndentText "\{\s*$", False, "^\s*}$", False
 

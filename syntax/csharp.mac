@@ -4,6 +4,7 @@
 ' Maintainer:  www.everedit.net  
 ' History:
 '   2012/08/03 First Version
+'   2013/09/13 Added new string region with @
 '*******************************************************************************
 Include( ".\const.mac" )
 
@@ -19,6 +20,10 @@ cs.AddRegion( rBlockComment )
 Set iTodo=cs.CreateItem( COLOR_HIGHLIGHT2, "\b(TODO|FIX)\b", False )
 rLineComment.AddItem( iTodo )
 rBlockComment.AddItem( iTodo )
+
+'string with @
+Set rStringAt=cs.CreateRegion( COLOR_STRING1, "+@""+", "+""+", False )
+cs.AddRegion( rStringAt )
 
 'double quote string
 Set rString2=cs.CreateStringRegion( COLOR_STRING1, """", "\", False )

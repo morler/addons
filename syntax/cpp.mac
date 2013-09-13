@@ -63,6 +63,8 @@ cpp.AddItem( cpp.CreateItem(COLOR_MACRO, "#\s*(if|pragma|else|elif|error|ifndef|
 'number
 cpp.AddItem( cpp.CreateItem(COLOR_NUMBER, "\b([0-9]+\.?[0-9]*|0x[0-9a-fA-F]+)\b", False) )
 
+'case xxxxx
+cpp.AddItem( cpp.CreateItem(COLOR_VAR, "(?<=\bcase\b).*?:", False) )
 
 cpp.AddSnippet "c.snippet"
 cpp.FoldText "\{", False, "\}", False

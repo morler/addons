@@ -244,13 +244,14 @@ P1222=&Window
 1212=&Next Window(Focus Order)
 1213=&Prev Window(Focus Order)
 1221=&Last Visited
+1206=&Close
+1203=&Close Others
 1204=&Vertical Split
 1205=&Horizontal Split
 1208=S&ynchronize Scroll
-1206=&Close
-1203=&Close Others
 1209=Move to &Vertical Tab Group
 1211=Move to &Horizontal Tab Group
+1223=&Switch Focus
 1214=&Always on Top
 P1220=&Transparency
 1220=&Opaque
@@ -623,6 +624,13 @@ P244=Others
 1213=Force Save	C+S
 1214=Property	C+P
 
+[MENU343]
+1=Background Color
+2=Solid Line
+3=Dot Line
+4=Solid Line2
+5=Dot Line2
+
 [DLG202]
 0=Encoding
 1=OK
@@ -918,6 +926,7 @@ P244=Others
 3003=Selection
 3004=Folding Style
 3005=Caret Style
+3006=Active Line Style
 
 [DLG239]
 0=Sequence
@@ -1286,6 +1295,7 @@ P244=Others
 1220=Make main window opaque\nOpaque
 1221=Activate the latest visited window\nLast Visited
 1222=Show or hide valid panels\nShow or Hide Panels
+1223=Switch focus between split groups or windows\nSwitch Focus
 1230=Configure file template
 1231=Create a new document with template\nNew Template
 1233=Create a new binary document\nNew Binary

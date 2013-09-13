@@ -101,7 +101,7 @@ Command0=3,Beautify JS(Selection),${AppPath}\mode\js\jsBeautify.ejs
 [Menu2]
 Command0=3,Beautify CSS(Selection),${AppPath}\mode\css\beautify-css.ejs
 [Menu3]
-Command0=2,====Emmet====,http://docs.emmet.io
+SEP=Y
 [Menu4]
 Key=C+E
 Command0=3,Abbreviation,${AppPath}\mode\html\abbrev.ejs
@@ -158,4 +158,16 @@ SEP=Y
 [Menu30]
 Command0=2,Emmet Help,http://docs.emmet.io
 [Menu31]
-Command0=3,Update Image Size,${AppPath}\mode\html\update_image_size.ejs
+SEP=Y
+[Menu32]
+Command0=2,W3C HTML 4.01,http://www.w3.org/TR/html4/
+[Menu33]
+Command0=2,W3C XHTML 1.0,http://www.w3.org/TR/xhtml1/
+[Menu34]
+Command0=2,W3C XHTML 1.1,http://www.w3.org/TR/xhtml11/
+[Menu35]
+Command0=2,W3C HTML 5,http://www.w3.org/TR/html5/
+[Menu36]
+Command0=2,Mozilla,https://developer.mozilla.org/en-US/docs/Web_Development
+[Menu37]
+Command0=2,Opera,http://www.opera.com/docs/specs/
