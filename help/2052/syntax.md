@@ -74,6 +74,8 @@ void CommentBlock(string strOn, string strOff);
 void CommentLine(string strText);
 void SetPairs(string strText);
 void IndentText(string strIndnet, bool c1, string strUnIndnet, bool c2);
+void AddCallTip( string strPathName, bool bCase, string strWord="", string strBegin="(", string strSep=",", string strEnd=")", bool bRemoveSpace=false );
+
 //属性
 void TransRegion;
 string Name;//get;set
@@ -98,6 +100,7 @@ void FoldAnyText(int nLevel, string strText);
 void SetPairs(string strText);
 void CommentBlock(string strOn, string strOff);
 void CommentLine(string strText);
+void AddCallTip( string strPathName, bool bCase, string strWord="", string strBegin="(", string strSep=",", string strEnd=")", bool bRemoveSpace=false );
  
 //属性
 string Name;//get,set
@@ -145,7 +148,7 @@ Set regionBlock=cpp.CreateRegion( COLOR_COMMENT1, "+/*+", "+*/+", True )
 **创建字符串匹配**：
 
 ``` 
-Set regionBlock=cpp.CreateRegion( COLOR_COMMENT1, "+/*+", "+*/+", True )
+Set regionString=cpp.CreateStringRegion( COLOR_STRING1, """", "\", False )
 ```
 
 **创建关键字匹配**：
@@ -229,5 +232,3 @@ cpp.CommentBlock "/*", "*/"
 ```
 
 到这儿为止，我们为mycpp添加了TODO高亮;添加了缩进和反缩进，添加了括号匹配和代码折叠，同时还添加了可以被快捷键或者菜单命令调用的注释和反注释的匹配！EverEdit以其强大的功能，为您提供了大量的自定义特性！赶快动手试一下吧！
-
-**注意**：对于一个Parser，SyntaxRegion+SyntaxWord+SyntaxItem的个数不能超过64个！在使用CopyRegion的时候尤其要注意这一点！

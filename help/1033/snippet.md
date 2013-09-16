@@ -1,8 +1,8 @@
-##Foramt
+##Format
 You should use a specific format to define snippets of EverEdit. All the snippets were stored as a pure text format(ini), you can edit it directly with any text editor or Snippet Manager of EverEdit(Recommend).
 
 ###sample:
-```c++
+```
 for (${1:unsigned int} ${2:i} = ${3:0}; $2 ${4:<} ${5:count}; $2${6:++}) {
     $0
 }
@@ -23,7 +23,7 @@ Use Tab or Shift+Tab to jump between edit points.
 ##Use snippet manager
 Main **menu->View->Snippet** will open the snippet manager, right click the snippet item and edit a selected item. It will display as forllows:
 
-```c++
+```
 @Title:For loop
 @Trigger:for
 @Snippet:Input content from next line!
@@ -34,7 +34,7 @@ for (${1:unsigned int} ${2:i} = ${3:0}; $2 ${4:<} ${5:count}; $2${6:++}) {
 ##Enable your snippet
 A snippet file wouldn't become valid until you bind it in <code>Syntax Files</code>. You can use the below sequence to add a snippet.
 
-```c++
+```
 Cpp.AddSnippet “my.snippet”
 ```
 

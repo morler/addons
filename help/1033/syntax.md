@@ -136,6 +136,8 @@ void CommentBlock(string strOn, string strOff);
 void CommentLine(string strText);
 void SetPairs(string strText);
 void IndentText(string strIndnet, bool c1, string strUnIndnet, bool c2);
+void AddCallTip( string strPathName, bool bCase, string strWord="", string strBegin="(", string strSep=",", string strEnd=")", bool bRemoveSpace=false );
+
 //Properties
 void TransRegion;
 string Name;//get;set
@@ -160,6 +162,7 @@ void FoldAnyText(int nLevel, string strText);
 void SetPairs(string strText);
 void CommentBlock(string strOn, string strOff);
 void CommentLine(string strText);
+void AddCallTip( string strPathName, bool bCase, string strWord="", string strBegin="(", string strSep=",", string strEnd=")", bool bRemoveSpace=false );
  
 //Properties
 string Name;//get,set
@@ -168,3 +171,131 @@ string WordChars;//get,set
 SyntaxRegion DefaultRegion;//get
 ```
 
+##Sample:Create a syntax highlight for C++
+This is a sample that tells you hot to define a new syntax highlight for EverEdit!
+
+Well, let's look at some key syntax elements of C/C++:
+
+```
+Single line comment
+Multiple line comment
+String
+Key word
+```
+
+Mose of syntax schemes contain the above key elements, so we should highlight these text.
+
+###1. Create a File
+Create a mycpp.mac and put it into (syntax) folder;
+
+###2. Include color define file
+There are a couple of colors which can be used in EverEdit, so let's include the colors define.
+
+```
+Include( ".\const.mac" )
+```
+
+###3. Create a Parser object
+```
+Set cpp=Parser.CreateParser()
+```
+
+###4. Add single line comment match
+This match should be a region which starts from // and ends with End of Line(EOL).
+
+```
+Set regionLine=cpp.CreateRegion( COLOR_COMMENT1, "+//+", "$", True )
+```
+
+Note:The text surrounded with plus(+) means that this is a normal string match, otherwise it will be a match with regular expression.(This usage is valid in CreateRegion function).
+
+###5. Add multiple line comment match
+```
+regionBlock=cpp.CreateRegion( COLOR_COMMENT1, "+/*+", "+*/+", True )
+```
+
+###6. Add string match
+``` 
+Set regionString=cpp.CreateStringRegion( COLOR_STRING1, """", "\", False )
+```
+
+The last param of CreateStringRegion means whether the match will be continue to next line!
+
+###7. Add key word match
+``` 
+Set itemWord2=cpp.CreateWord(COLOR_WORD1, "int float double char void for while if else return break continue", True)
+```
+
+There are 4 params in CreateWord function. The last one is a string which contains the delimiters that can be treated as word.
+
+For example:
+``` 
+cpp.CreateWord(COLOR_WORD1, "bottom-top bottom-right", True, "-")
+```
+
+###8. Add matches into Parser
+``` 
+cpp.AddRegion( regionLine )
+cpp.AddRegion( regionBlock )
+cpp.AddRegion( regionString )
+cpp.AddItem( itemWord )
+```
+
+###9. Overview
+
+```
+Include( ".\const.mac" )
+Set cpp=Parser.CreateParser()
+Set regionLine=cpp.CreateRegion( COLOR_COMMENT1, "+//+", "", True )
+Set regionBlock=cpp.CreateRegion( COLOR_COMMENT1, "+/*+", "+*/+", True )
+Set regionString=cpp.CreateStringRegion( COLOR_STRING1, """", "\", False )
+Set itemWord=cpp.CreateItem(COLOR_WORD1, "\b(int|float|double|char|void|for|while|if|else|return|break|continue)\b", True)
+cpp.AddRegion( regionLine )
+cpp.AddRegion( regionBlock )
+cpp.AddRegion( regionString )
+cpp.AddItem( itemWord )
+```
+
+##Sample2:Enhance C++ syntax highlight
+
+###1. Add todo match in comment region
+
+Create todo Match:
+
+```
+Set itemTodo=cpp.CreateItem(COLOR_HIGHLIGHT1, "\bTODO\b", True)
+```
+
+
+Add todo match into single/multiple line comment:
+
+```
+regionLine.AddItem( itemTodo )
+regionBlock.AddItem( itemTodo )
+```
+
+###2. Code folding
+
+C++ source files are normally folded begin with { and end with }
+```
+cpp.FoldText "\{", False, "\}", False
+```
+
+###3. Auto Indent
+
+``` 
+cpp.IndentText "\{$", False, "^\s*}$", False
+
+```
+
+###4. Add auto pair complete
+``` 
+cpp.SetPairs "[]{}()""""''"
+```
+
+###5. Add quick line comment
+``` 
+cpp.CommentLine "//"
+cpp.CommentBlock "/*", "*/"
+```
+Now you can use <key>Ctrl+/</key> to comment your selelction or current line quickly.
