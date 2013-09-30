@@ -44,7 +44,7 @@ Const COLOR_CONCEAL       =30
 凡是被指定为COLOR_IGNORE模式的字符串，它的前景色将和主界面的背景色一致，看起来好像不存在一样。只有被选择的时候，才会看到！而COLOR_CONCEAL则是一个比较有意思的模式，被指定为COLOR_CONCEAL的字符仅当处于选区或者当前行的时候，才是可见的！借助这个特性，可以实现出很多非常有用的功能！
  
 #脚本系统
-SyntaxItem
+###SyntaxItem
 
 ```
 //函数
@@ -53,7 +53,7 @@ void Capture(int group, int state);
 string Name;//get,set
 ```
 
-WordItem
+###WordItem
 
 ```
 //属性
@@ -61,11 +61,11 @@ bool AutoCase;//get,set
 string Name;//get,set
 ```
 
-SyntaxRegion
+###SyntaxRegion
 
 ```
 //函数
-bool AddSnippet(string strPathName, bool bCase=true)
+bool AddSnippet(string strName, bool bCase=true)
 void AddItem(SyntaxItem item );
 void AddWord(WordItem item );
 void AddRegion(SyntaxRegion child );
@@ -77,11 +77,51 @@ void IndentText(string strIndnet, bool c1, string strUnIndnet, bool c2);
 void AddCallTip( string strPathName, bool bCase, string strWord="", string strBegin="(", string strSep=",", string strEnd=")", bool bRemoveSpace=false );
 
 //属性
-void TransRegion;
+void TransRegion;//set
 string Name;//get;set
 ```
 
-Parser
+####重要函数说明
+```
+bool AddSnippet(string strName, bool bCase=true)
+添加snippet到该Region。strName为snippet的文件名称，因所有的snippet文件必须放到snippet文件夹，所以只需要提供snippet的文件名称即可。bCase:snippet在匹配的时候是否区分大小写。
+```
+
+```
+void FoldText(string strFold, bool bFCase, string strUnFold, bool bUFCase);
+指定语法文件的折叠方法。strFold和strUnFold指示了折叠和反折叠的正则表达式。
+```
+
+```
+void CommentBlock(string strOn, string strOff);
+块注释的文本。主要用于CS+/的调用。
+```
+
+```
+void CommentLine(string strText);
+行注释的文本。用户C+/的调用。
+```
+
+```
+void SetPairs(string strText);
+指示该Region可用的配对字符。strText:包含所有的配对字符。配对字符必须连续的放在一块定义，很显然strText的长度应为偶数。
+```
+
+```
+void IndentText(string strIndnet, bool c1, string strUnIndnet, bool c2);
+定义用于缩进和反缩进的正则表达式。
+```
+
+```
+TransRegion
+当该区域的文本结束时，该Region默认情况下将会自动跳转到父Region；如果定义了TransRegion那么将会跳转到Region。
+```
+
+```
+Name
+该Region的名称。
+```
+###Parser
 
 ```
 //函数
@@ -107,6 +147,74 @@ string Name;//get,set
 string FoldingMethod;//get,set
 string WordChars;//get,set
 SyntaxRegion DefaultRegion;//get
+```
+
+####重要函数说明
+Parser默认情况下包含了一个DefaultRegion。部分针对Default Region函数的使用可以参考SyntaxRegion的说明。
+
+```
+SyntaxRegion CopyRegion(SyntaxRegion pCopy);
+复制一个Region。用于某两个不相关的Region可能包含类似的代码。该函数较耗费资源。
+```
+
+```
+SyntaxItem CreateItem(int state, string strMatch, bool bCase, bool bToRight=false);
+创建正则表达式描述的匹配规则。
+state:颜色值。
+bToRight:如果该匹配正好在行末，那么背景色是否延伸到窗口右侧。
+```
+
+```
+WordItem CreateWord(int state, string strMatch, bool bCase, string strDelimiters="");
+创建关键字匹配。理论上CreateItem可以代替CreateWord，但CreateWord的效率更高且可以自动完成和自动纠正大小写。
+
+strMatch:以空格分割的关键字字符串。
+strDelimiters:默认的情况下strMatch所匹配的文本只包括字母数字和下划线，
+strDelimiters则表示哪些特殊字符可以被当作一个词，比如中划线-等。
+```
+
+```
+SyntaxRegion CreateRegion(int state, string strBegin, string strEnd, bool bCase, bool bToRight=false );
+创建一个正则表达式描述的Region。
+strBegin/strEnd:描述该区域开始或者结束的正则表达式
+bToRight:如果该Region在行末,那么扩展背景色到右侧窗口
+
+注意:被+两个加号+包围起来的文本表示这不是一个正则表达式，就是普通的文字匹配(效率更高)。
+```
+
+```
+SyntaxRegion CreateStringRegion(int state, string strChar, string strEscape, bool mline );
+创建字符串匹配。
+strChar:字符串指示字符，通常为"或者'。
+strEscape:转义字符，通常为\
+mline:字符串是否跨行。
+```
+
+```
+void FoldAnyText(int nLevel, string strText);
+正则表达式描述的较为宽松的折叠。
+nLevel:折叠的层级
+strText:正则表达式
+```
+
+```
+void AddCallTip( string strPathName, bool bCase, string strWord="", string strBegin="(", string strSep=",", string strEnd=")", bool bRemoveSpace=false );
+详情参考calltip说明
+```
+
+```
+Name
+默认区域的命名
+```
+
+```
+FoldingMethod
+该语法文件的折叠方法。取值为syntax/indent/anytext
+```
+
+```
+WordChars
+该语法文件可以被认为是单词的特殊字符。当鼠标双击或者其它操作选择词汇时将会使用该设置。
 ```
 
 #实例1:创建C++着色器

@@ -32,6 +32,7 @@ P87=&Clipboard
 91=&Paste as Cloumn
 94=&Paste at Line Tail
 61=&Paste and Indent
+1695=Paste from &History
 1429=&Erase Clipboard
 1338=&Column Mode
 P26=&Delete
@@ -196,6 +197,7 @@ P1294=&Word Wrap
 1651=&Monitor Clipboard
 1655=&Open Containing Folder
 1667=&Statistics
+1668=Insert CR/LF on Wrapped &Lines
 P1653=&Advanced
 1653=&Update Syntax
 1660=&View Scope
@@ -212,6 +214,7 @@ P336=&Settings
 1298=&Theme
 1460=&Shortcut
 1459=Syntax &Highlight
+1581=&File Association
 1652=&Sort
 1612=Se&quence
 1614=S&um Selection
@@ -526,6 +529,7 @@ P244=Others
 1233=Filter Lines
 1224=Count Found
 1225=Set Marker
+1236=Find in All Opened Documents
 
 [MENU330]
 1200=Force Refresh
@@ -632,6 +636,11 @@ P244=Others
 3=Dot Line
 4=Solid Line2
 5=Dot Line2
+
+[MENU344]
+1=Default
+2=Partial Match
+3=Fuzzy Match
 
 [DLG202]
 0=Encoding
@@ -988,7 +997,16 @@ P244=Others
 3004=Right
 
 [DLG248]
-1203=Assoc Selected
+0=EverEdit File Association
+1=Apply
+2=Close
+1200=Check All
+1201=Uncheck All
+1202=User Input
+2000=EverEdit will not backup your existing settings!\nAre you sure you want to continue?
+2001=Input your exts(txt;log;csv;tsv):
+2002=User Defined
+2003=File associations were updated!
 
 [DLG249]
 1204=Bold
@@ -1036,12 +1054,12 @@ P244=Others
 3000=Automatic detect these encodings:
 
 [DLG254]
-1202=Use fuzzy match
 3000=Trigger key:
 3001=Delay:
 3002=(MS, Recommend 150ms)
 3003=All:
 3004=Selected:
+3005=Match method:
 
 [DLG255]
 0=Change Type
@@ -1395,6 +1413,7 @@ P244=Others
 1576=Load a macro into buffer and you could play it\nLoad Buffer
 1577=View current macro as plain text\nView Current
 1580=Add or remove user tools\nUser Tools
+1581=Set file associations for EverEdit\nFile Association
 1590=Use this tool group\nUse Group
 1612=Generate sequence text\nSequence
 1613=View github to get more addons\nGet More
@@ -1417,7 +1436,8 @@ P244=Others
 1664=Enter full screen mode, then edit current file with focus mode\nDistraction Free Mode
 1665=Disable edit function for current file\nDon't Allow Edit
 1666=Auto complete unclosed HTML/XML tag on inputting char with backslash(/)\nAuto HTML/XML Tag
-1667=Show the current statistics info, such as words, chars count etc...
+1667=Show statistics info for normal selection or document, such as words, chars etc...\nStatistics
+1668=Insert line breaks on each sub line\nInsert CR/LF on Wrapped &Lines
 1671=Use spaces to replace tab in current document\nSoft Tab
 1672=Show icon area along with line number\nIcon Area
 1673=Extend background of active line to left edge of window\nExtend Active Line
@@ -1427,6 +1447,7 @@ P244=Others
 1690=Ignore this word until exist EverEidt\nIgnore All
 1691=Add this word to user dictionary\nAdd to Dictionary
 1692=Config current spell checking\nConfig Spell Checking
+1695=Show a popup menu with 10 history items of clipboard\nPaste from History
 1770=View project window\nProject Window
 1771=Update tags from current project and all opend files\nRefresh Tags
 1772=Create or delete projects\nManage Projects
@@ -1497,7 +1518,6 @@ P244=Others
 15051=%d occurrences were found!
 15052=Start Page
 15053=Please enter a specified column of auto word-wrap:
-15054=A new version of EverEdit is available, download now?
 15055=<COMMAND>: command process ended!
 15056=Alert
 15057=Auto Reload
@@ -1579,6 +1599,7 @@ P244=Others
 15217=You selected same file!
 15218=Diff tool does not exist!\n%s
 15219=You are trying to replace multiple files, continue?
+15220=Selected text is too long, this operation will no be appended into clipboard history!
 15240=Find
 15241=Replace To
 15242=Options

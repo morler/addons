@@ -1,8 +1,12 @@
 ~常见问题	https://github.com/everedit/addons/blob/master/help/2052/faq.md
-#通用
+#常规
+	~文件和编码	https://github.com/everedit/addons/blob/master/help/2052/fileencoding.md
 	~字体	https://github.com/everedit/addons/blob/master/help/2052/font.md
 	~快捷键	https://github.com/everedit/addons/blob/master/help/2052/shortcut.md
 	~自定义工具	https://github.com/everedit/addons/blob/master/help/2052/tool.md
+	~列选	https://github.com/everedit/addons/blob/master/help/2052/colsel.md
+	~查找和替换	https://github.com/everedit/addons/blob/master/help/2052/findreplace.md
+	~宏	https://github.com/everedit/addons/blob/master/help/2052/macro.md
 #高级
 	~脚本	https://github.com/everedit/addons/blob/master/help/2052/script.md
 	~语法着色	https://github.com/everedit/addons/blob/master/help/2052/syntax.md
@@ -10,6 +14,7 @@
 	~模式	https://github.com/everedit/addons/blob/master/help/2052/mode.md
 	~自动完成	https://github.com/everedit/addons/blob/master/help/2052/autocomplete.md
 	~函数提示	https://github.com/everedit/addons/blob/master/help/2052/calltip.md
+	~万能查找	https://github.com/everedit/addons/blob/master/help/2052/findeverything.md
 #其它
 	~设置编译器	https://github.com/everedit/addons/blob/master/help/2052/compiler.md
 	~正则表达式	https://github.com/everedit/addons/blob/master/help/2052/regex.md
@@ -17,6 +22,7 @@
 	~自动更新	https://github.com/everedit/addons/blob/master/help/2052/autoupdate.md
 #网址
 	~官方网站	http://www.everedit.net
+	~购买注册码	http://www.everedit.net/buy
 	~论坛	http://forum.everedit.net
 	~GitHub	http://git.everedit.net/
 

@@ -38,6 +38,9 @@ abs(int x):int\nReturns the absolute value of x
 ```
 如上文所示，该函数的原型为`int abs(int x)`。我们把返回值的类型放在最后是为了进行高效的匹配。最后面的字符串是该函数的说明。
 
+##Calltip文件的编码
+calltip文件必须被存储为不带BOM的UTF-8编码的文件。
+
 ##最后一步
 在您准备完上述工作之后，还有最后一步。每个calltip文件是有作用域的，您需要明确的告诉语法文件需要加载哪个calltip。打开对应的语法着色文件syntax\xxx.mac然后按照下述示例添加即可。
 
