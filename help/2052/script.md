@@ -132,6 +132,7 @@ Pos Offset2Pos(int nOffset);
 int Pos2Offset(Pos pos);
 int ReplaceAll(string strFind, string strReplace, bool bCase=true, bool bRegex=false, bool bWord=false);
 int FindAll(string strFind, bool bCase=true, bool bRegex=false, bool bWord=false);
+bool FindNext(string strFind, bool bCase=true, bool bRegex=false, bool bWord=false);
 string GetWord(int flag);
 string GetLineText(int nLine);
 int  GetLineLength(int nLine);
@@ -242,6 +243,11 @@ int ReplaceAll(string strFind, string strReplace, bool bCase=true, bool bRegex=f
 ```
 int FindAll(string strFind, bool bCase=true, bool bRegex=false, bool bWord=false);
 查找匹配的指定文本字符串，并显示到输出窗口。
+```
+
+```
+bool FindNext(string strFind, bool bCase=true, bool bRegex=false, bool bWord=false);
+以当前光标位置为基准，向下查找并高亮匹配的指定字符串，未找到则返回False。
 ```
 
 ```

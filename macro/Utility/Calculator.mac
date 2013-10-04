@@ -1,0 +1,11 @@
+' Calc selection or cursor line and output the result into output window.
+' 2013-10-03 15:05
+' By www.EverEdit.net
+
+strText=ActiveDoc.SelText
+If Len(strText)=0 Then
+   strText=ActiveDoc.GetLineText( ActiveDoc.CaretLine )
+End If
+On Error Resume Next
+strResult=Eval( strText )
+App.OutputText strResult & vbCrLf

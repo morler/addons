@@ -89,17 +89,17 @@ bool AddSnippet(string strName, bool bCase=true)
 
 ```
 void FoldText(string strFold, bool bFCase, string strUnFold, bool bUFCase);
-指定语法文件的折叠方法。strFold和strUnFold指示了折叠和反折叠的正则表达式。
+指定语法文件的折叠方法。strFold和strUnFold指示了折叠和反折叠的正则表达式。bFCase/bUFCase:是否匹配大小写
 ```
 
 ```
 void CommentBlock(string strOn, string strOff);
-块注释的文本。主要用于CS+/的调用。
+块注释的文本。主要用于CS+/的调用。比如c++中，可以这么设置 cpp.CommentBlock "/*", “*/"
 ```
 
 ```
 void CommentLine(string strText);
-行注释的文本。用户C+/的调用。
+行注释的文本。用户C+/的调用。比如c++中，可以这么设置 cpp.CommentLine "//"
 ```
 
 ```
@@ -161,6 +161,8 @@ SyntaxRegion CopyRegion(SyntaxRegion pCopy);
 SyntaxItem CreateItem(int state, string strMatch, bool bCase, bool bToRight=false);
 创建正则表达式描述的匹配规则。
 state:颜色值。
+strMatch:正则描述的匹配文本
+bCase:是否区分大小写
 bToRight:如果该匹配正好在行末，那么背景色是否延伸到窗口右侧。
 ```
 
@@ -169,6 +171,7 @@ WordItem CreateWord(int state, string strMatch, bool bCase, string strDelimiters
 创建关键字匹配。理论上CreateItem可以代替CreateWord，但CreateWord的效率更高且可以自动完成和自动纠正大小写。
 
 strMatch:以空格分割的关键字字符串。
+bCase:是否区分大小写
 strDelimiters:默认的情况下strMatch所匹配的文本只包括字母数字和下划线，
 strDelimiters则表示哪些特殊字符可以被当作一个词，比如中划线-等。
 ```
@@ -176,7 +179,9 @@ strDelimiters则表示哪些特殊字符可以被当作一个词，比如中划�
 ```
 SyntaxRegion CreateRegion(int state, string strBegin, string strEnd, bool bCase, bool bToRight=false );
 创建一个正则表达式描述的Region。
+
 strBegin/strEnd:描述该区域开始或者结束的正则表达式
+bCase:strBegin/strEnd描述的正则是否区分大小写
 bToRight:如果该Region在行末,那么扩展背景色到右侧窗口
 
 注意:被+两个加号+包围起来的文本表示这不是一个正则表达式，就是普通的文字匹配(效率更高)。
