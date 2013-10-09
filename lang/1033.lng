@@ -534,9 +534,10 @@ P244=Others
 1236=Find in All Opened Documents
 
 [MENU330]
-1200=Force Refresh
-1201=Use CTags
-1202=CTags Settings
+1200=Force Refresh	F5
+1201=Show Functions
+1202=Show Outline
+1203=Find Tags	Ctrl+F
 
 [MENU331]
 1=Simple
@@ -1182,7 +1183,7 @@ P244=Others
 1405=EverEdit is running, please close it first!
 1406=Do you want to cancel the current operation?
 1407=%d files require your confirmation!
-1408=Congratulations you have successfully update your EverEdit!
+1408=Congratulations, you have successfully updated your EverEdit!
 1409=Can't copy file from %s to %s!\n\nTry again?
 
 [DLG278]

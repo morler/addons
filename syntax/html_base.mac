@@ -19,6 +19,7 @@ Set rHtmlTag=html.CreateRegion( COLOR_TAG, "<\w+|</[^>]|<![^>]", "/?>", False )
 Set rTagString2=html.CreateStringRegion( COLOR_STRING2, """", "", True )
 Set rTagString1=html.CreateStringRegion( COLOR_STRING1, "'", "", True )
 Set rTagStyle=html.CreateRegion( COLOR_SUBLAN, "\bstyle\s*=\s*""", """", False )
+rTagStyle.AddSnippet "css.snippet"
 rTagStyle.Name="source.css"
 
 html.AddWord( html.CreateWord(COLOR_DEFAULT, "aacute agrave acirc amp atilde aring auml aelig ccedil copy eacute egrave ecirc euml euro iacute igrave icirc iuml eth gt lt nbsp ntilde oacute ograve ocirc otilde ouml oslash quot reg szlig uacute ugrave ucirc uuml yacute thorn trade yuml", False) )

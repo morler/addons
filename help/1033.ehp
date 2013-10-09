@@ -1,10 +1,17 @@
+~FAQ	https://github.com/everedit/addons/blob/master/help/1033/faq.md
 #General
-	~Syntax	https://github.com/everedit/addons/blob/master/help/1033/syntax.md
+	~File Encoding	https://github.com/everedit/addons/blob/master/help/1033/fileencoding.md
+	~Font	https://github.com/everedit/addons/blob/master/help/1033/font.md
+	~Shortcut	https://github.com/everedit/addons/blob/master/help/1033/shortcut.md
+	~Column Selection	https://github.com/everedit/addons/blob/master/help/1033/colsel.md
 	~Snippet	https://github.com/everedit/addons/blob/master/help/1033/snippet.md
 	~Mode	https://github.com/everedit/addons/blob/master/help/1033/mode.md
-	~Auto Complete	https://github.com/everedit/addons/blob/master/help/1033/autocomplete.md
+	~Auto Update	https://github.com/everedit/addons/blob/master/help/1033/autoupdate.md
 #Advanced
 	~Script	https://github.com/everedit/addons/blob/master/help/1033/script.md
+	~Syntax	https://github.com/everedit/addons/blob/master/help/1033/syntax.md
+	~Auto Complete	https://github.com/everedit/addons/blob/master/help/1033/autocomplete.md
+	~Calltip	https://github.com/everedit/addons/blob/master/help/1033/calltip.md
 	~Compiler	https://github.com/everedit/addons/blob/master/help/1033/compiler.md
 #Web
 	~EverEdit	http://www.everedit.net
