@@ -311,12 +311,13 @@ P62=&Code Folding
 P1720=Directories
 
 [MENU305]
+1=More Encodings...
+3=BOM(BOM)
+4=Convert Encoding
 936=Chinese Simplified(GB2312)
 950=Chinese Traditional(Big5)
 932=Japanese(Shift-JIS)
 949=Korean (949)
-3=BOM(BOM)
-1=More...
 
 [MENU307]
 P201=More...
@@ -1319,7 +1320,7 @@ P244=Others
 1220=Make main window opaque\nOpaque
 1221=Activate the latest visited window\nLast Visited
 1222=Show or hide valid panels\nShow or Hide Panels
-1223=Switch focus between split groups or windows\nSwitch Focus
+1223=Switch focus between split windows\nSwitch Focus
 1230=Configure file template
 1231=Create a new document with template\nNew Template
 1233=Create a new binary document\nNew Binary
@@ -1461,6 +1462,8 @@ P244=Others
 2004=Report bugs to www.everedit.net\nReport Bug
 2005=Show all the defined shortcuts in a new document\nKeyboard map
 2008=Buy license for EverEdit\nBuy License
+2009=Show help file that linked with current syntax file\nContext Help
+2010=Show help file of EverEdit\nHelp
 2200=Next Page\nNext Page
 2201=Previous Page\nPrev Page
 2202=Zoom In\nZoom In
