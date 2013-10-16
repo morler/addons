@@ -7,8 +7,10 @@ You can input commands or menu text to filter commands quickly.
 Input first shortcut in New Keys area. If you want to use multiple keys, continue to input second key. EverEdit supports 4 functions keys:`Ctrl,Shift,Alt,Win`.
 
 ##Bind shortcut to a Script
-- Drag and drop a script file into shortcut dialog to bind a shortcut
-- Click bind button.
+There are a couple of built-in script commands in Add-Ons Menu. These commands don't be displayed in the shortcut dialog. If you want to bind shortcuts to these commands, There are 2 ways:
+
+1. Drag and drop a script file into shortcut dialog to bind a shortcut
+2. Click bind button.
 
 ##Format of shortcut
 All shortcuts are saved with plain text format into key.ini, you can modify keys manually.

@@ -147,6 +147,7 @@ P1305=&Show Symbols
 1309=Folding Tail
 1673=Extend Active Line
 1674=Same Level with Background
+1675=Line Edit State
 1339=&Fold All
 1400=&Expand All
 1323=&Line Spacing
@@ -268,6 +269,7 @@ P2009=&Help
 2004=&Report Bug
 2003=&Check Latest Version
 2008=&Buy License
+2011=&Enter License
 57664=&About EverEdit...
 
 [MENU302]
@@ -506,6 +508,7 @@ P201=More...
 P224=Editor
 224=File
 238=Edit
+275=Style
 254=Auto Complete
 223=Syntax
 252=Performance
@@ -645,6 +648,17 @@ P244=Others
 1=Default
 2=Partial Match
 3=Fuzzy Match
+
+[MENU345]
+1=Arrow
+2=Line
+3=Arrow Line
+4=Char
+
+[MENU346]
+1=Big dot
+2=Small dot
+3=Line
 
 [DLG202]
 0=Encoding
@@ -897,6 +911,7 @@ P244=Others
 [DLG233]
 0=License
 1=OK
+2=Close
 3000=Enter your license:
 1201=Buy
 
@@ -939,9 +954,6 @@ P244=Others
 3001=Heading of Line:
 3002=Tailing of Line:
 3003=Selection
-3004=Folding Style
-3005=Caret Style
-3006=Active Line Style
 
 [DLG239]
 0=Sequence
@@ -983,7 +995,7 @@ P244=Others
 3000=Open these file with HEX mode:
 
 [DLG245]
-3000=Inspector
+0=Inspector
 
 [DLG246]
 1200=Reload closed files on startup
@@ -1158,6 +1170,13 @@ P244=Others
 2=Cancel
 3000=File name without extension:
 3001=Project Title:
+
+[DLG275]
+3000=Folding style:
+3001=Caret style:
+3002=Active line style:
+3003=Tab char style:
+3004=Space style:
 
 [DLG276]
 0=Project Files
@@ -1446,6 +1465,7 @@ P244=Others
 1672=Show icon area along with line number\nIcon Area
 1673=Extend background of active line to left edge of window\nExtend Active Line
 1674=Show background color of lines with same folding level\nSame Level with Background
+1675=Mark modified lines and saved lines with user defined colors\nLine Edit State
 1683=Prompt a modal dialog and check the spellings in this document\nCheck Spelling
 1684=Enable instant spelling check in this document, incorrect word will be painted with wavy line\nInstant Check
 1690=Ignore this word until exist EverEidt\nIgnore All
@@ -1464,6 +1484,7 @@ P244=Others
 2008=Buy license for EverEdit\nBuy License
 2009=Show help file that linked with current syntax file\nContext Help
 2010=Show help file of EverEdit\nHelp
+2011=Enter your license code\nEnter License Code
 2200=Next Page\nNext Page
 2201=Previous Page\nPrev Page
 2202=Zoom In\nZoom In
@@ -1478,7 +1499,7 @@ P244=Others
 15003=Enter line (%d ~ %d):
 15004=Enter line spacing(0~200):
 15005=%d files were found!
-15006=----STATISTICS---\nLines:%d\nWord Count:%d\nByte Size:%d\nChar Count:%d\nANSI Chars:%d\nUnicode Chars:%d\nWhite Spaces:%d\n-------END-------\n
+15006=----STATISTICS---\nLines:%d\nWord Count:%d\nByte Size:%d\nChar Count:%d\nASCII Chars:%d\nNon-ASCII Chars:%d\nWhite Spaces:%d\n-------END-------\n
 15007=Do you want to clear this shortcut?
 15008=[%s] is not a command!
 15009=Args
