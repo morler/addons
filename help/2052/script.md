@@ -30,6 +30,7 @@ int ShowMsgBox(string strText, string strTitle, int buttons);
 int ShowHtmlHelp(string strPathName, string strWord);
 string CreateTempFile(bool bAutoDelete);
 void DebugLibrary(string strPathName);
+string ShowFileDialog()bool bOpen, string strDefaultDir, string strExts);
 
 //属性
 Document ActiveDoc;
@@ -106,6 +107,14 @@ string CreateTempFile(bool bAutoDelete);
 void DebugLibrary(string strPathName);
 用于调试插件DLL。通过个简单的脚本(App.DebugLibrary "xxxx.dll")加载指定路径的DLL，
 结合开发工具(比如Visual Studio)的附加到进程的功能，可以非常方便地达到调试DLL的目的。
+```
+
+```
+string ShowFileDialog()bool bOpen, string strDefaultDir, string strExts);
+显示打开或保存文件的对话框。
+bOpen:true为打开对话框, false为保存对话框
+strDefaultDir:对话框默认定位到该路径，可为空
+strExts:只显示某些后缀, 格式:*.png;*jpg;*.bmp
 ```
 
 ##Document

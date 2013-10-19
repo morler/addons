@@ -117,6 +117,14 @@ This function is used for debug a plugin that developed by C/C++.
 You could attach process of EverEdit easily via this function.,
 ```
 
+```
+string ShowFileDialog()bool bOpen, string strDefaultDir, string strExts);
+Show save dialog or open dialog.
+bOpen:true:open dialog, false:save dialog
+strDefaultDir:default directory path
+strExts:default exts, format:*.png;*jpg;*.bmp
+```
+
 ##Document
 Document represents the text documents
 

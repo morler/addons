@@ -15,15 +15,31 @@ if( export_to.length )
 	var file = fso.CreateTextFile( export_to, true );
 
 	var css=App.AppPath+"\\mode\\markdown\\" + "default.css";
+	var prettify_js=App.AppPath+"\\mode\\markdown\\" + "prettify.js";
+	var prettify_css=App.AppPath+"\\mode\\markdown\\" + "prettify.css";
+	var jquery_js=App.AppPath+"\\mode\\markdown\\" + "jquery-1.10.2.min.js";
+
 	var header="<html>\n\
 	<head>\n\
 	<title>Markdown Preview of EverEdit</title>\n\
 	<meta name='generator' content='EverEdit' />\n\
 	<link href='" + css + "' rel='stylesheet'></link>\n\
+	<link href='" + prettify_css + "' rel='stylesheet'></link>\n\
+	<script type='text/javascript' src='" + prettify_js + "'></script>\n\
+	<script type='text/javascript' src='" + jquery_js + "'></script>\n\
 	</head>\n\
 	<body>\n";
 
-	var footer="</body>\n\
+	var footer="\n\
+	<script type='text/javascript'>\n\
+	$(document).ready(function(){\n\
+	  if($('code').length>0){\n\
+	    $('code').parent().addClass('prettyprint');\n\
+	    prettyPrint();\n\
+	};\n\
+	});\n\
+	</script>\n\
+	</body>\n\
 	</html>";
 
 	file.Write( header );

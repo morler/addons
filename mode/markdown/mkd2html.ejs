@@ -1,12 +1,3 @@
-/********************************************************************************
-Web Preview for Markdown
-Markdown parser:
-	PageDown http://code.google.com/p/pagedown/
-	PageDown-Extra https://github.com/jmcmanus/pagedown-extra/
-History:
-	2013/10/19 First Version
-********************************************************************************/
-
 Include(App.AppPath+"\\mode\\markdown\\Markdown.Converter.js")
 Include(App.AppPath+"\\mode\\markdown\\Markdown.Extra.js")
 
@@ -18,19 +9,36 @@ Markdown.Extra.init(converter);
 var html = converter.makeHtml(text);
 
 var fso = new ActiveXObject("Scripting.FileSystemObject")
-var preview=App.AppPath+"\\mode\\markdown\\preview.html";
+var temp_folder=fso.GetSpecialFolder(2);//temp folder
+var preview=temp_folder + "\\preview.html";//preview current buffer in temp folder
 var file = fso.CreateTextFile( preview, true );
 
 var css=App.AppPath+"\\mode\\markdown\\" + "default.css";
+var prettify_js=App.AppPath+"\\mode\\markdown\\" + "prettify.js";
+var prettify_css=App.AppPath+"\\mode\\markdown\\" + "prettify.css";
+var jquery_js=App.AppPath+"\\mode\\markdown\\" + "jquery-1.10.2.min.js";
+
 var header="<html>\n\
 <head>\n\
 <title>Markdown Preview of EverEdit</title>\n\
 <meta name='generator' content='EverEdit' />\n\
 <link href='" + css + "' rel='stylesheet'></link>\n\
+<link href='" + prettify_css + "' rel='stylesheet'></link>\n\
+<script type='text/javascript' src='" + prettify_js + "'></script>\n\
+<script type='text/javascript' src='" + jquery_js + "'></script>\n\
 </head>\n\
 <body>\n";
 
-var footer="</body>\n\
+var footer="\n\
+<script type='text/javascript'>\n\
+$(document).ready(function(){\n\
+  if($('code').length>0){\n\
+    $('code').parent().addClass('prettyprint linenums');\n\
+    prettyPrint();\n\
+};\n\
+});\n\
+</script>\n\
+</body>\n\
 </html>";
 
 file.Write( header );
