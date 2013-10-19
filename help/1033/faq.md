@@ -1,97 +1,88 @@
-##How to config the size of Tab
-Every syntax file has it own tab size setting.
+##How to config the size of Tab?
+Each syntax higlight has it own tab size setting.
 
 **Temporary Change**: Click status bar's Tab area and select your tab size.
 
 **Permanent Change**: Open syntax dialog, find your syntax file, and then change the tab size.
-##如何切换文件的着色类型
-1. 点击状态栏的类型区域，那个绿色的P图标
-2. 主菜单→文档→切换文件类型
+##How to change syntax highlight for current file?
+1. Click syntax area of statusbar
+2. MainMenu->Document->Change Type
 
-##如何隐藏列标记（屏幕中的那条竖线）
-1. 主菜单→查看→符号显示→列标记
-2. 语法着色设置中对该语言的列标记予以清零
+##How to hide column marker?
+1. MainMenu->View->Show Symbols->Column Marker
+2. Go goto syntax dialog and config column marker via advanced button.
 
-##如何改变当前文档的编码
-1. 点击状态栏的编码区域（状态栏的最右下角）
-2. 主菜单→文档→指定编码重读
+##How to change current encoding of document?
+1. Click encoding area of statusbar and select Convert Encoding
+2. MainMenu->Document->Convert Encoding
 
-##如何转换当前文档的编码，它和指定编码重读有什么区别？
-主菜单→文档→转换编码。
+##How to set default encoding and line break format?
+MainMenu->Tools->Settings->General->File->New file or 0 byte file
 
-指定编码重读是按照用户指定的编码再一次的加载这个文档，用户的修改将会被抛弃，一般用于当前文件是乱码的情况。而转换编码则是在当前文档不是乱码的情况下，从一种编码转换到另一种编码，在保存的时候EverEdit将会做这种转换。
+##How to set default encoding and line break format for empty file?
+MainMenu->Tools->Settings->General->File->New file or 0 byte file
 
-##如何设置默认文件的编码和换行符
-主菜单→设定→常规→文件→[新建文件或者0字节文件]
+##How to set default syntax highlight
+Open syntax dialog and click the green check button. If you want to remove default highlight, just click the remove button.
 
-##打开空白文件如何强制用指定的编码和换行符
-主菜单→设定→常规→文件→[新建文件或者0字节文件]
+##How to config line height?
+MainMenu->View->Line Spacing
 
-##如何设置默认的着色类型
-语法着色对话框中，选择要设置为默认的文件，然后点击那个绿色的对号；如需删除默认的着色类型，点击叉号即可。
+##How to display white space, control chars?
+MainMenu->View->Show Symbols
 
-##如何设置行间距
-主菜单→查看→行间距
+##How to change the style of folding?
+MainMenu->Tools->Settings->General->Style->Folding Style
 
-##如何显示空白等特殊符号
-主菜单→查看→符号显示
+##How to higlight selection?
+Right click->Custom Marker
 
-##如何切换折叠区域的样式
-主菜单→设定→常规→编辑→折叠样式
+##How to delete duplicated lines or blank lines?
+Right click->Delete->Delete duplicated lines or Delete blank lines
 
-##如何对选区的文本进行着色显示
-右键→自定义标记，选择1-8标记即可。
+##How to comment selection quickly?
+Right click->Format->Line Comment or Block comment, the most useful shortcut is `Ctr+/`
 
-##如何删除重复行
-右键→删除→删除重复行
+##How to reload all syntax highlights without restarting EverEdit?
+MainMenu->Document->Advanced->Update Syntax
 
-##如何删除空白行
-右键→删除→删除空白行
+##How to make EverEdit topmost?
+MainMenu->Window->Always on Top
 
-##如何对当前选择的文本进行快速的注释和取消注释
-右键→格式→单行注释或者多行注释
+##How to sort lines by length of each line?
+MainMenu->Tools->Sort->check [sort by length of line]
 
-单行注释默认的快捷键是ctrl+/,多行是ctrl+shift+/
+##How to use soft space?
+1. Temporary Change:Click tab area and select soft space
+2. Permanent Chang:Open syntax dialog and check [use spaces to replace tab]
 
-##如何不关闭EverEdit重新加载所有的语法着色文件
-主菜单→文档→高级→刷新语法文件
+##How to paste text to each line from clipboard?
+Right click->Other paste->Paste at line tail
 
-##如何使EverEdit主窗口始终在最前面
-主菜单→窗口→窗口置顶
+##How to paste text that copied from other programs with column mode?
+Right click->Other paste->Paste as Column
 
-##如何按照行的长度排序
-主菜单→工具→排序→按照长度排序
+##How to convert case? How to convert tabs to spaces or spaces to tabs?
+Right click->Convert
 
-##如何使用软空格
-1. 点击状态栏的制表符位置，选择软控格。
-2. 语法着色对话框→使用空格代替制表符
+##How to set a special font for Chinese/Japanese/Korean characters?
+MainMenu->Tools->Settings->Set Font
 
-##如何让剪贴板中的文本美观的缩进。
-有时候我们从其它软件中拷贝了一些文本，直接粘贴到EverEdit中的话，我们往往会在首行的位置输入缩进，但是被粘贴的其它行的文本并不会缩进。可以使用`右键→其它粘贴→粘贴并缩进`这个功能来加速这个操作。当然也可以把这个操作绑定为快捷键。
+Select your current font and check [CJK characters use second font].
 
-##如何把剪贴板中的每一行逐行拼接到当前光标之后的每一行
-右键→其它粘贴→行末列模式粘贴
+##How to terminate current running external tools in output window?
+Right click in output window and select terminate
 
-##如何把从其它软件拷贝的文本按照列模式粘贴
-右键→其它粘贴→列模式粘贴
+##Does EverEdit support Emmet(Zencoding)?
+Yes, Everedit fully supports Emmet, you can use most of Emment's commands. Ctrl+E is default shortcut for abbreviation, other commands can be got from MainMenu->Html.
 
-##如何进行各种大小写,空白到制表符的转换
-右键→转换
+**Note**:Emment only works on html scope.
 
-##如何对中文字体设置专门的字体
-主菜单→工具→设定→字体，选择当前视图使用的字体，勾选`对CJK字符使用单独的字体`并配置即可。
+##Can I use EverEdit to beautify some sources?
+There are 3 built-in beautify tools: HTML/JavaScript/CSS. Other beautify commands can be easily added from external tools/scripts/plugins.
 
-##如何终止自定义工具的运行
-在输出窗口单击右键→终止
-
-##EverEdit支持Zencoding, Emmet吗
-支持。目前Emmet是以模式的形式在EverEdit中运行的，EverEdit支持Emmet(原Zencoding)的所有命令。默认展开的快捷键是`ctrl+e`。
-
-##EverEdit支持代码美化吗
-EverEidt可以通过自定义工具、模式、插件来进行各种代码的美化。默认支持JS,CSS,HTML的代码美化。
-
-##EverEdit支持markdown吗
-EverEdit完美支持markdown的书写和预览，并且能够完美同步上次滚动的位置。
+##Dose EverEdit supports markdown?
+Yes, EverEdit not only supports highlight of markdown but also preview function and EverEdit provides many built-in commands for markdown. Just switch to markdown mode and Enjoy!
 
 ##EverEdit如何把当前文件放在另一个分组中
 在标签上点击右键，选择`移动到垂直或者水平分组`即可。在`窗口`菜单中也有相同的命令。
