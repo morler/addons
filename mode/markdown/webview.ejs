@@ -1,0 +1,33 @@
+Include(App.AppPath+"\\mode\\markdown\\Markdown.Converter.js")
+Include(App.AppPath+"\\mode\\markdown\\Markdown.Extra.js")
+
+var doc=App.ActiveDoc;
+var text = doc.Text
+
+var converter = new Markdown.Converter();
+Markdown.Extra.init(converter);
+var html = converter.makeHtml(text);
+
+var fso = new ActiveXObject("Scripting.FileSystemObject")
+var preview=App.AppPath+"\\mode\\markdown\\preview.html";
+var file = fso.CreateTextFile( preview, true );
+
+var css=App.AppPath+"\\mode\\markdown\\" + "default.css";
+var header="<html>\n\
+<head>\n\
+<title>Markdown Preview of EverEdit</title>\n\
+<meta name='generator' content='EverEdit' />\n\
+<link href='" + css + "' rel='stylesheet'></link>\n\
+</head>\n\
+<body>\n";
+
+var footer="</body>\n\
+</html>";
+
+file.Write( header );
+file.Write( html )
+file.Write( footer )
+file.Close()
+
+var shell = new ActiveXObject("WScript.Shell")
+shell.Run( preview )

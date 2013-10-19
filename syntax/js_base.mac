@@ -17,7 +17,7 @@ Set rJsRegex=js_creator.CreateRegion( COLOR_STRING2, "(?<=(?<![\w\)\]/]\s*)|\*/)
 rJsRegion.AddRegion( rJsRegex )
 
 'string
-Set rJsString2=js_creator.CreateStringRegion( COLOR_STRING1, """", "\", False )
+Set rJsString2=js_creator.CreateStringRegion( COLOR_STRING1, """", "\", False, "\" )
 Set rJsString1=js_creator.CreateStringRegion( COLOR_STRING1, "'", "\", False )
 rJsRegion.AddRegion( rJsString2 )
 rJsRegion.AddRegion( rJsString1 )

@@ -27,7 +27,7 @@ rBlockComment.AddItem( iTodo )
 Set rString1=cpp.CreateStringRegion( COLOR_STRING1, "'", "\", False )
 cpp.AddRegion( rString1 )
 
-Set rString2=cpp.CreateStringRegion( COLOR_STRING1, """", "\", False )
+Set rString2=cpp.CreateStringRegion( COLOR_STRING1, """", "\", False, "\" )
 cpp.AddRegion( rString2 )
 
 'function

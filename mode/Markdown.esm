@@ -82,6 +82,12 @@ Command0=1,Insert Table,${AppPath}\mode\html\HTMLBar.dll,HTMLTable
 [Button19]
 SEP=TRUE
 [Button20]
+Icon=18
+Command0=3,Preview with External Browser,${AppPath}\mode\markdown\webview.ejs
+[Button21]
+Icon=19
+Command0=3,Export,${AppPath}\mode\markdown\export.ejs
+[Button22]
 Icon=14
 Key=C+B
-Command0=1,Markdown Preview,${AppPath}\mode\markdown\MarkdownBar.dll,MarkdownPreview,github.css
+Command0=3,Markdown Preview,${AppPath}\mode\markdown\mkd2html.ejs
