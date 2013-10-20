@@ -13,7 +13,7 @@
 * [Calltip](1033/calltip.md)
 * [Compiler](1033/compiler.md)
 
-*Help us to translate docuements!*
+###*Help us to translate documents, correct spelling and grammar mistakes!*
 
 #EverEdit帮助文档
 * [常见问题](https://github.com/everedit/addons/blob/master/help/2052/faq.md)
@@ -36,4 +36,4 @@
 * [其它脚本引擎](https://github.com/everedit/addons/blob/master/help/2052/otherscript.md)
 * [自动更新](https://github.com/everedit/addons/blob/master/help/2052/autoupdate.md)
 
-*欢迎您贡献自己的翻译!*
+###*欢迎您贡献自己的翻译!*
