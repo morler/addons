@@ -104,7 +104,7 @@ When you are preparing the syntax files, you must want to distinguish the colors
 	</tr>
 </table>
 
-##Script
+##Objects
 
 SyntaxItem
 
@@ -155,7 +155,7 @@ SyntaxRegion CopyRegion(SyntaxRegion pCopy);
 SyntaxItem CreateItem(int state, string strMatch, bool bCase, bool bToRight=false);
 WordItem CreateWord(int state, string strMatch, bool bCase, string strDelimiters="");
 SyntaxRegion CreateRegion(int state, string strBegin, string strEnd, bool bCase, bool bToRight=false );
-SyntaxRegion CreateStringRegion(int state, string strChar, string strEscape, bool mline );
+SyntaxRegion CreateStringRegion(int state, string strChar, string strEscape, bool mline, string strContinueChar );
 void FoldText(string strFold, bool bFCase, string strUnFold, bool bUFCase);
 void IndentText(string strIndnet, bool c1, string strUnIndnet, bool c2);
 void FoldAnyText(int nLevel, string strText);

@@ -133,7 +133,7 @@ SyntaxRegion CopyRegion(SyntaxRegion pCopy);
 SyntaxItem CreateItem(int state, string strMatch, bool bCase, bool bToRight=false);
 WordItem CreateWord(int state, string strMatch, bool bCase, string strDelimiters="");
 SyntaxRegion CreateRegion(int state, string strBegin, string strEnd, bool bCase, bool bToRight=false );
-SyntaxRegion CreateStringRegion(int state, string strChar, string strEscape, bool mline );
+SyntaxRegion CreateStringRegion(int state, string strChar, string strEscape, bool mline, string strContinueChar );
 void FoldText(string strFold, bool bFCase, string strUnFold, bool bUFCase);
 void IndentText(string strIndnet, bool c1, string strUnIndnet, bool c2);
 void FoldAnyText(int nLevel, string strText);
@@ -188,11 +188,12 @@ bToRight:如果该Region在行末,那么扩展背景色到右侧窗口
 ```
 
 ```
-SyntaxRegion CreateStringRegion(int state, string strChar, string strEscape, bool mline );
+SyntaxRegion CreateStringRegion(int state, string strChar, string strEscape, bool mline, string strContinueChar );
 创建字符串匹配。
 strChar:字符串指示字符，通常为"或者'。
 strEscape:转义字符，通常为\
 mline:字符串是否跨行。
+strContinueChar:字符串续行符，比如C++中的\
 ```
 
 ```
