@@ -12,7 +12,7 @@ Set bash=CreateParser()
 Set rComment1=bash.CreateRegion(COLOR_COMMENT1, "+#+", "$", False )
 
 Set rString1=bash.CreateStringRegion( COLOR_STRING1, "'", "\", False )
-Set rString2=bash.CreateStringRegion( COLOR_STRING2, "'", "\", False )
+Set rString2=bash.CreateStringRegion( COLOR_STRING2, """", "\", False )
 
 'Reserved Words
 Set iWord1=bash.CreateWord(COLOR_WORD1, "alias bg bind break builtin caller case cd command compgen complete continue declare do done echo elif else enable esac eval exec exit export false fc fg fi for function getopts hash help history if in jobs kill let local logout mapfile newgrp popd print printf ps pushd pwd read readarray readonly return select set Shell shift shopt source suspend test then time times trap true type typeset ulimit umask unalias unset until wait whence while", True)

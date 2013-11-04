@@ -118,7 +118,7 @@ You could attach process of EverEdit easily via this function.,
 ```
 
 ```
-string ShowFileDialog()bool bOpen, string strDefaultDir, string strExts);
+string ShowFileDialog(bool bOpen, string strDefaultDir, string strExts);
 Show save dialog or open dialog.
 bOpen:true:open dialog, false:save dialog
 strDefaultDir:default directory path
@@ -142,7 +142,6 @@ void IndentInsert(string strText);
 void Delete(int sline, int scol, int eline, int ecol);
 void Delete(Pos spos, Pos epos);
 void Delete();
-void SetSyntax(string strText);
 void SetCaretPos(int line, int col, bool bVisible);
 void SetSel(int sline, int scol, int eline, int ecol);
 void SetSel(Pos pos1, Pos pos2);
@@ -181,6 +180,7 @@ int Codepage;//get,set
 int TabStop;//get,set
 bool SoftTab;//get,set
 string Text;//get,set
+string Syntax;//get,set
 ```
 
 ###Document' Functions

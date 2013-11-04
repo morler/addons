@@ -85,4 +85,4 @@ html.UnfoldText "</(html|body|table|tbody|tr|div|blockquote|pre|code|p|form|ul|o
 html.CommentBlock "<!--", "-->"
 html.SetPairs( "<>()[]{}""""''" )
 html.AddSnippet( "html.snippet" )
-html.IndentText "<\w[^>]+>\s*$", False, "^\s*</[^>]+?>$", False
+html.IndentText "<\w[^>]+[^/]>\s*$", False, "^\s*</[^>]+?>$", False

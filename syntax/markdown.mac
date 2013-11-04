@@ -44,7 +44,7 @@ r_mdlist.AddItem(i_mdlink2)
 
 Set r_mdquote=mk.CreateRegion(COLOR_COMMENT2, "^\s*>", "^$", False)
 Set r_mdcode=mk.CreateRegion(COLOR_COMMENT1, "(?<=^(\x20{4}|\t)).", "^(?!\x20{4})", False)
-Set r_mdcodeline=mk.CreateStringRegion(COLOR_COMMENT1, "`", "", False)
+Set i_mdcodeline=mk.CreateItem(COLOR_COMMENT1, "`.+?`", False)
 Set r_mdcodeblock=mk.CreateRegion(COLOR_COMMENT2, "^```", "^```", False)
 
 Set r_tag=mk.CreateRegion( COLOR_WORD1, "<\w+|</+|<!+", "/?>", False )
@@ -84,7 +84,7 @@ mk.AddRegion( r_mdlist )
 mk.AddRegion( r_mdquote )
 mk.AddRegion( r_mdcode )
 mk.AddRegion( r_mdcodeblock )
-mk.AddRegion( r_mdcodeline )
+mk.AddItem( i_mdcodeline )
 mk.AddRegion( r_mdtitle )
 
 'this is a hack, if r_tag will return a same state, your can add it to other parents without re-creating.

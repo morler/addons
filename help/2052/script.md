@@ -30,7 +30,7 @@ int ShowMsgBox(string strText, string strTitle, int buttons);
 int ShowHtmlHelp(string strPathName, string strWord);
 string CreateTempFile(bool bAutoDelete);
 void DebugLibrary(string strPathName);
-string ShowFileDialog()bool bOpen, string strDefaultDir, string strExts);
+string ShowFileDialog(bool bOpen, string strDefaultDir, string strExts);
 
 //属性
 Document ActiveDoc;
@@ -64,7 +64,7 @@ web预览指定路径的文件，预览的web文件将会链接当前活动的�
 
 ```
 void OutputText(string strText, bool bClear=false, bool bTerminate=false);
-输出文本到输出窗口, bCase:是否清除当前文本；bTerminate:是否终止当前正在运行的程序。
+输出文本到输出窗口, bClear:是否清除当前文本；bTerminate:是否终止当前正在运行的程序。
 ```
 
 ```
@@ -110,7 +110,7 @@ void DebugLibrary(string strPathName);
 ```
 
 ```
-string ShowFileDialog()bool bOpen, string strDefaultDir, string strExts);
+string ShowFileDialog(bool bOpen, string strDefaultDir, string strExts);
 显示打开或保存文件的对话框。
 bOpen:true为打开对话框, false为保存对话框
 strDefaultDir:对话框默认定位到该路径，可为空
@@ -128,12 +128,11 @@ bool HasSel();
 void ClearSel();
 void InsertAt(int line, int col, string strText);
 void Insert(string strText);
-void MoveCaret(int nLength);
 void IndentInsert(string strText);
+void MoveCaret(int nLength);
 void Delete(int sline, int scol, int eline, int ecol);
 void Delete(Pos spos, Pos epos);
 void Delete();
-void SetSyntax(string strText);
 void SetCaretPos(int line, int col, bool bVisible);
 void SetSel(int sline, int scol, int eline, int ecol);
 void SetSel(Pos pos1, Pos pos2);
@@ -172,6 +171,7 @@ int Codepage;//get,set
 int TabStop;//get,set
 bool SoftTab;//get,set
 string Text;//get,set
+string Syntax;//get,set
 ```
 
 ###重要函数说明
@@ -308,6 +308,11 @@ bool ExportTo(string strPathName, int nCodepage=/*same as document*/, bool bBom=
 WIN=1
 UNIX=2
 MAC=3
+```
+
+```
+Syntax
+获取或者设置当前语法文件的着色模式，该设置回影响到对应的模式和自定义工具等。
 ```
 
 ##Menu
