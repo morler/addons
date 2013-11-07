@@ -108,3 +108,4 @@ newlisp.AddItem(nl_words7)
 newlisp.AddItem(nl_words8)
 newlisp.AddItem(nldoc_content)
 regionLine1.AddItem(todo)
+newlisp.AddCallTip "autolisp.ecp", False, "(:+-*/><=~", " ", " ", ")"

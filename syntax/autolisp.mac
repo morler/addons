@@ -347,3 +347,5 @@ Set AutoLisp=CreateParser()
 	AutoLisp.CommentLine(";")
 	'不支持AutoLisp.CommentBlock(";|","|;")这样的用法
 	Call AutoLisp.CommentBlock(";|","|;")
+	AutoLisp.AddCallTip "autolisp.ecp", False, "(:+-*/><=~", " ", " ", ")"
+		
