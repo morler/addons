@@ -20,7 +20,7 @@ sql.AddRegion( rString2 )
 sql.AddRegion( rString1 )
 
 'num
-Set iWordNum=sql.CreateItem(COLOR_MACRO, "\b\d+\b", False)
+Set iWordNum=sql.CreateItem(COLOR_NUMBER, "\b\d+\b", False)
 '$xxxx$
 Set iWordDollar=sql.CreateItem(COLOR_MACRO, "\$.+\$", False)
 
