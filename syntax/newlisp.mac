@@ -20,6 +20,7 @@
 '	2013/05/16	修改数字高亮颜色为正确的COLOR_NUMBER
 '   2013/05/23  添加支持正则分组标签'$x'的着色
 '   2013/06/05  添加v10.5.0支持的"bigint bigint?"函数和长整数表示法"123L"
+'   2013/11/07  添加Calltips
 '*******************************************************************************
 
 Include( ".\const.mac" )
@@ -108,4 +109,4 @@ newlisp.AddItem(nl_words7)
 newlisp.AddItem(nl_words8)
 newlisp.AddItem(nldoc_content)
 regionLine1.AddItem(todo)
-newlisp.AddCallTip "autolisp.ecp", False, "(:+-*/><=~", " ", " ", ")"
+newlisp.AddCallTip "newlisp.ecp", False, "(:+-*/><=~!", " ", " ", ")"
