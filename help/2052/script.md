@@ -322,7 +322,7 @@ Syntax
 void AddItem(int nCommand, string strText);
 
 弹出菜单
-int Popup();
+int Popup(BOOL bCaretPos=FALSE);
 
 依据ID获取选定的菜单项
 string GetText(int nCommand)
