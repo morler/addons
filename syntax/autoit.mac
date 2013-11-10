@@ -1,9 +1,10 @@
 '*******************************************************************************
 ' EverEdit Syntax File
 ' Language:    AutoIt3
-' Maintainer:  www.everedit.net  
+' Maintainer:  www.everedit.net	morler
 ' History:
 '   2012/03/22 First Version
+'   2013/11/10 Add Calltips - dumped from Scite4AutoIt3
 '*******************************************************************************
 
 Include( ".\const.mac" )
@@ -50,4 +51,4 @@ au.SetPairs "[]{}()"""""
 
 au.FoldText "(#region|Then)\s*$|\b(While|For|Func)\b", False
 au.UnfoldText "(#endregion|EndIf|WEnd|Next|EndFunc)\s*\b", False
-
+au.AddCallTip "au3.ecp", False, "_", "(", ",", ")", False
