@@ -11,8 +11,10 @@ if( export_to.length )
 	Markdown.Extra.init(converter);
 	var html = converter.makeHtml(text);
 
-	var fso = new ActiveXObject("Scripting.FileSystemObject")
-	var file = fso.CreateTextFile( export_to, true );
+	var file = new ActiveXObject("Adodb.Stream");
+	file.Type = 2;
+	file.Open();
+	file.Charset = "utf-8";
 
 	var css=App.AppPath+"\\mode\\markdown\\" + "default.css";
 	var prettify_js=App.AppPath+"\\mode\\markdown\\" + "prettify.js";
@@ -43,10 +45,11 @@ if( export_to.length )
 	</body>\n\
 	</html>";
 
-	file.Write( header );
-	file.Write( html )
-	file.Write( footer )
-	file.Close()
+	file.WriteText(header);
+	file.WriteText(html);
+	file.WriteText(footer);
+	file.SaveToFile(export_to,2);
+	file.Close();
 
 	var msg="Saved to [" + export_to + "]";
 	App.ShowMsgBox( msg, "Markdown2Html", 64);

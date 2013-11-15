@@ -154,3 +154,9 @@ Key=C+K,E
 ##Can EverEdit support favorite files function?
 EverEdit don't support this feature natively. But you can use project to simulate it.
 
+##Can EverEdit open files which beyond 2GB?
+You can use EverEdit x64 edition to open files with any size. EverEdit 32bit can only open files less than 2GB.
+
+##I can't save my license to file!
+If you installed EverEdit into Program Files directory on Windows Vista+, make sure you have right permission. If you couldn't save license to files, run EverEdit as administrator and try again!
+

@@ -11,7 +11,11 @@ var html = converter.makeHtml(text);
 var fso = new ActiveXObject("Scripting.FileSystemObject")
 var temp_folder=fso.GetSpecialFolder(2);//temp folder
 var preview=temp_folder + "\\preview.html";//preview current buffer in temp folder
-var file = fso.CreateTextFile( preview, true );
+
+var file = new ActiveXObject("Adodb.Stream");
+file.Type = 2;
+file.Open();
+file.Charset = "utf-8";
 
 var css=App.AppPath+"\\mode\\markdown\\" + "default.css";
 var prettify_js=App.AppPath+"\\mode\\markdown\\" + "prettify.js";
@@ -23,6 +27,7 @@ var header="\
 <html>\n\
 <head>\n\
 <title>Markdown Preview of EverEdit</title>\n\
+<meta charset='UTF-8' />\n\
 <meta name='generator' content='EverEdit' />\n\
 <link href='" + css + "' rel='stylesheet'></link>\n\
 <link href='" + prettify_css + "' rel='stylesheet'></link>\n\
@@ -43,10 +48,11 @@ $(document).ready(function(){\n\
 </body>\n\
 </html>";
 
-file.Write( header );
-file.Write( html )
-file.Write( footer )
-file.Close()
+file.WriteText(header);
+file.WriteText(html);
+file.WriteText(footer);
+file.SaveToFile(preview,2);
+file.Close();
 
 var shell = new ActiveXObject("WScript.Shell")
 shell.Run( preview )

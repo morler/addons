@@ -8,23 +8,26 @@ Set objFSO = CreateObject("Scripting.FileSystemObject")
 strFolderName=objFSO.GetParentFolderName(doc.PathName)
 strBaseName=objFSO.GetBaseName(doc.PathName)
 strExtName=objFSO.GetExtensionName(doc.PathName)
-strErrMsg="Can't find header or source file!"
+strErrMsg="Can't find associated header or source files!"
+strErrTitle="C++ Mode"
 
-If IsHeader(strExtName) Then
+If Len(strExtName)=0 Then
+	App.ShowMsgBox strErrMsg, strErrTitle, MB_OK
+ElseIf IsHeader(strExtName) Then
 	Dim extSrc(3)
 	extSrc(0)="c"
 	extSrc(1)="cpp"
 	extSrc(2)="cc"
 	extSrc(2)="cxx"
 	If OpenFile(extSrc)=False Then
-		MsgBox strErrMsg
+		App.ShowMsgBox strErrMsg, strErrTitle, MB_OK
 	End If
 ElseIf IsSource(strExtName) Then
 	Dim extHeader(2)
 	extHeader(0)="h"
 	extHeader(1)="hpp"
 	If OpenFile(extHeader)=False Then
-		MsgBox strErrMsg
+		App.ShowMsgBox strErrMsg, strErrTitle, MB_OK
 	End If
 End If
 
