@@ -5,6 +5,7 @@
 ' History:
 '   2012/10/15 First Version
 '   2013/05/14 New syntax from Editra
+'   2013/11/18 Adding Calltips - from SciEd in offical Gui4CLi packages
 '*******************************************************************************
 Include( ".\const.mac" )
 
@@ -65,3 +66,5 @@ gui4cli.AddItem(gui4clidoc)
 Call gui4cli.SetPairs( "[]{}()""""" )
 
 Call gui4cli.CommentLine("//")
+
+gui4cli.AddCallTip "gui4cli.ecp", False, "#", " ", " ", "\n", False
