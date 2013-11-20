@@ -1,0 +1,197 @@
+NewFile GuiName 
+xTextFile FilePath (then text, ending with ###) 
+xVariable VarName (then text, ending with ###) 
+Window L T W H Title 
+WinAttr Attribute Value\n(Background, Icon, Menu, MinSize, MaxSize, Parent, Shape, Style)
+xArea L T W H 
+xBrowser L T W H Path 
+xButton L T W H Title 
+xCheckbox L T W H Title Variable OnText OffText On|Off 
+xCombo L T W H Variable 
+xEdbox L T W H File 
+xGroupBox L T W H Title 
+xIcon L T W H Normal [Selected] 
+xImage L T W H Normal [Selected] 
+xListview L T W H Title File Variable 
+xProgress L T W H Current 
+xRadio L T W H Title Value Variable 
+xSpliter L T W H Left Top [Horizontal] 
+xTab L T W H Titles ID 
+xTextbox L T W H Text 
+xTextin L T W H Text Variable 
+xTrackbar L T W H Spec Variable 
+xTreeview L T W H File Variable 
+xUpdown L T W H Min Max Current Variable 
+xMenu ParentID ID Title [Flags]
+xRebar ID/ID/... 
+xReqfile ID Title Type InitialDir Variable 
+xStatus Segments [Texts] 
+xToolbar IconList index/index/... 
+xOnLoad [6 arguments] 
+xOnOpen [6 arguments] 
+xOnClose [6 arguments] 
+xOnQuit [6 arguments] 
+xOnReload [6 arguments] 
+xBeforeClose
+xOnActive
+xOnInactive
+xSysMenu Choice/Choice/.. 
+xOnLMB
+xOnDoubleClick
+xOnRMB
+xOnMMB
+xOnWheelUp 
+xOnWheelDown
+xOnMark
+xOnLVClick ID 
+xOnLVDir ID 
+xAttr ID 
+xEnum ID [Flags] 
+xHotkey Modifier Key [On/Off] 
+xOnBrowser Event ID* 
+xOnDrop ID* 
+xOnFail
+xOnHelp Mode [Interval] 
+xOnKey Key 
+xOnTextIn Event ID* 
+xRoutine Name [Arguments..] 
+xTBarIcon Icon Helptext 
+xTimer Type Time Mode [ON] 
+xWait Type Item [arg1] [arg2] 
+xOnReturn ID 
+Gui Command [arguments] 
+GuiLoad FilePath [arguments] 
+GuiOpen GuiName [arguments] 
+GuiClose GuiName [arguments] 
+GuiQuit GuiName [arguments] 
+GuiRename OldName NewName 
+GuiWindow GuiName Action 
+MoveWindow GuiName Left Top Width Height 
+SetWinAttr GuiName Name Value 
+SetWinTitle GuiName Title 
+Event Command [Arguments] 
+MoveEvent GuiName ID Left Top Width Height 
+SetAttr GuiName ID Name Value 
+SetEvent GuiName ID Action 
+Update GuiName ID Value 
+Browser Command [arguments] 
+Combo Command [argument] 
+Edbox Command [argument] 
+Enum Command [arguments] 
+ReqFile Type Title/Value [Dir] [Variable] [Filter] 
+Status Command GuiName [arguments] 
+Tab Command [Arguments] 
+Updown Command [arguments..] 
+Listview Command [arguments..] 
+LVAction Action Destination [Flags] 
+LVClip Cut|Copy Amount Add|Paste|Insert Gui ID 
+LVRep String ReplaceString [Flags] 
+LVSearch String First|Next [Flags] 
+LVSwitch Gui ID 
+LVSum Keyword %Field Variable 
+Treeview Command [arguments..] 
+TVSearch String First|Next [flags] 
+TVSearchVar String VarName First|Next [flags] 
+Branch GuiName Routine [Arguments..] 
+DoCase Value, CASE Operator Value, BREAK, ENDCASE 
+For Variable Min Max [Step] 
+Gosub GuiName Routine [Arguments..] 
+Goto LableName, LABEL LableName 
+IF Argument Operator Argument 
+Else 
+IFExists ItemType Item 
+Quit 
+Stop 
+While Argument Operator Argument, ENDWHILE 
+System CommandLine 
+Run File [Arguments] [Flags] 
+Launch ID File [Arguments] [Flags] 
+Sleep Milliseconds 
+TerminateProc ProcessName 
+Wait Type Item [arg1] [arg2] 
+Win, AWin Command [Argument] 
+GetClip Type Data [Flags] 
+SetClip Type Data 
+Address WindowClass WindowTitle 
+Send Type Argument [Argument] 
+SendKey "key/~key/.." [TEXT] 
+SendMouse X Y Flags/.. 
+DDUse System Topic 
+DDExec Command [Timeout] 
+RegCreate key:subkey value [string] 
+RegDelete key:subkey [value] 
+RegGet key:subkey value variable [string] 
+RegSet key:subkey value string [flags] 
+Append File String 
+Assign Name Path|#Remove 
+Copy Source Destination [Flags] 
+CreateLink Object LinkName [Description] 
+Delete Dir/File [Flags] 
+File Command [Arguments...] 
+MakeDir NewDirName 
+Move Source Destination [Flags] 
+Rename OldName NewName [Flags] 
+AppVar Var string
+- Appends a string to a variable 
+CutVar Var1 Cut|Copy Char|Word|Line Amount [Var2] 
+Extract Var Item [Var] 
+JoinFile Path File Variable 
+Parsevar Variable [delimeters] 
+Random Variable Min Max 
+RepVar Variable String Repstring [Flags] 
+SearchVar Variable String First|Next [Flags] 
+AddCode GuiName Code|#LV 
+Beep [mode] 
+CD NewDirName 
+Command [Command line..] 
+EmptyBin [Quiet] 
+HTMLHelp Command CHMFile Topic [DefTopic] 
+GCWin Command [argument] 
+GetColor Variable StartColor [Flags..] 
+GetFont Variable StartFont [Flags..] 
+MCI String 
+MsgBox Text [Flags] 
+PopMenu GuiFile ParentID [x] [y] 
+QuickMenu L T Choices 
+Set Item Value 
+Use Object Arg1 [Arg2] 
+Icon Command [Arguments]
+Loadicon Filepath Name (old, do not use) 
+Freeicon Name (old, do not use) 
+SetIcon Gui ID Index Command [start] [end] 
+Image Command [Arguments..]
+LoadFont Specification Name
+FreeFont Name
+SetPointer Gui Pointer
+PurgeFiles Path
+DeleteFile FileName [INSIST/TEST]
+(no arguments)
+xOnResize [no arguments]
+LoadIni IniFile SectionName 
+SaveIni IniFile SectionName var/var/..
+xOnListview EventType ID*
+xOnTreeview EventType ID*
+xOnMouse EventType ID*
+xOnDropFail (no arguments)
+xButton Left Top Width Height IconSpec Text Mode
+xBorderButton Type Icon|Text
+xBuffer Name (then text, followed by ### ending marker)
+Command [Arg1] [Arg2]
+Command [Arg1] [Arg2]
+Include FileName
+Newfile GuiName
+xCalendar L T W H
+xOnRichEdit EventType ID*
+xOnRDoubleClick (no arguments)
+xX (no arguments)
+Menu GuiName Refresh
+Net Command [Arg1] [Arg2]
+FTP Command [Arg1] [Arg2]
+Toolbar Command [Arg1] [Arg2]
+Cursor Command [Arg1] [Arg2]
+MNSpec Command [Arg1] [Arg2]
+Calendar Command [Arg1] [Arg2]
+Input Title Variable [Text]
+Pixel Get|Set Window X Y Variable|RGB
+TrimVar Variable CharactersToTrim [NOLEFT|NORIGHT]
+
