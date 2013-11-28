@@ -30,7 +30,7 @@ P87=&Clipboard
 88=&Copy Append
 90=Cut &Marked Lines
 89=Copy Marked &Lines
-91=&Paste as Cloumn
+91=&Paste as Column
 94=&Paste at Line Tail
 61=&Paste and Indent
 1695=Paste from &History
@@ -1224,6 +1224,7 @@ P244=Others
 1407=%d files require your confirmation!
 1408=Congratulations, you have successfully updated your EverEdit!
 1409=Can't copy file from %s to %s!\n\nTry again?
+1410=A connection failure has occurred, EverEdit can't get latest version!
 
 [DLG278]
 0=Help
@@ -1336,7 +1337,7 @@ P244=Others
 88=Copy the selection and append it to clipboard\nCopy Append
 89=Copy all marked lines and append them to clipboard\nCopy Marked Lines
 90=Cut all marked lines and append them to clipboard\nCut Marked Lines
-91=Paste the clipboard as column mode\nPaste as Cloumn
+91=Paste the clipboard as column mode\nPaste as Column
 94=Paste text of clipboard to each line\nPaste at Line Tail
 95=Move caret to next paragraph\nNext Paragraph
 96=Move caret to previous paragraph\nPrevious Paragraph
