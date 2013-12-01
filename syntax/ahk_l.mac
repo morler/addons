@@ -5,6 +5,7 @@
 ' History:
 '   2013/04/06 First Version
 '	2013/05/08 Support Autohotkey_L syntax
+'   2013/11/29 Add Calltips - dumped from Scite4AutoHotkey
 '*******************************************************************************
 Include( ".\const.mac" )
 
@@ -78,3 +79,4 @@ ahk_l.SetPairs( "[]''""{}()" )
 
 ahk_l.CommentLine( ";" )
 ahk_l.CommentBlock "/*", "*/"
+ahk_l.AddCallTip "ahk_l.ecp", False, "#_", " ", ",", "\n", False
